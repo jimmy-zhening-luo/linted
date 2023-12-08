@@ -13,7 +13,7 @@
 
 ##### BEGIN Project-Specific Files to .gitignore #####
 
-/.tsbuild/
+
 
 #####   END Project-Specific Files to .gitignore #####
 
