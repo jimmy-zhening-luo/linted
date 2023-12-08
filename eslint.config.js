@@ -28,6 +28,8 @@ function ConfigOptions() {
     ],
     ts: [
       "src/**/*.ts",
+      "src/**/*.cts",
+      "src/**/*.mts",
     ],
   };
 
