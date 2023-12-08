@@ -2,6 +2,7 @@
   "name": "@jimbojet/lint",
   "version": "1.0.0",
   "description": "Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic",
+  "type": "module",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
@@ -13,10 +14,6 @@
     "url": "https://github.com/jimmy-zhening-luo/lint/issues"
   },
   "homepage": "https://github.com/jimmy-zhening-luo/lint#readme",
-  "engines": {
-    "node": ">=20.10.0",
-    "npm": ">=10.2.4"
-  },
   "scripts": {
     "clean": "npm run clean:dist && npm run clean:lint-cache",
     "clean:dist": "shx rm -rf dist",
@@ -25,6 +22,10 @@
     "lint:fix": "npm run lint -- --fix",
     "prebuild": "npm run lint:fix",
     "build": "tsc"
+  },
+  "engines": {
+    "node": ">=20.10.0",
+    "npm": ">=10.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^8.55.0",
