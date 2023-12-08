@@ -1,0 +1,19 @@
+{
+  "name": "@jimbojet/lint",
+  "version": "1.0.0",
+  "description": "Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmy-zhening-luo/lint.git"
+  },
+  "author": "Jimmy Zhening Luo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimmy-zhening-luo/lint/issues"
+  },
+  "homepage": "https://github.com/jimmy-zhening-luo/lint#readme",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
