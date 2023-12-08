@@ -1,4 +1,4 @@
-# gitignore-boilerplate
+# jimmy-styled-eslint
 
 ## What am I?
 
