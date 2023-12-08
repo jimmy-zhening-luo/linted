@@ -1,8 +1,8 @@
-# jimmy-styled-eslint
+# lint
 
 ## What am I?
 
-A public npm package containing Jimmy’s highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic
+A public npm package containing Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic
 
 
 ## How am I used?
