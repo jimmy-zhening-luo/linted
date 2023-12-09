@@ -1,10 +1,12 @@
 {
   "name": "@jimbojet/lint",
   "version": "1.0.0",
-  "description": "Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic",
+  "description": "Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic. Use it at your own peril.",
   "type": "module",
-  "main": "./lib/packages/cjs/index.js",
-  "module": "./lib/packages/esm/index.js",
+  "private": false,
+  "exports": {
+    ".": "./lib/packages/index.js"
+  },
   "files": [
     "lib/"
   ],
@@ -18,15 +20,29 @@
     "url": "https://github.com/jimmy-zhening-luo/lint/issues"
   },
   "homepage": "https://github.com/jimmy-zhening-luo/lint#readme",
-  "scripts": {
-    "clean": "npm run clean:lib && npm run clean:lint-cache",
-    "clean:lib": "shx rm -rf lib",
-    "clean:lint-cache": "shx rm -rf .eslintcache",
-    "lint": "eslint --cache --cache-strategy content -c eslint.config.js **",
-    "lint:fix": "npm run lint -- --fix",
-    "prebuild": "npm run clean && npm run lint:fix",
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
+  "peerDependencies": {
+    "eslint": "8.55.0",
+    "@eslint/js": "8.55.0",
+    "@stylistic/eslint-plugin": "1.5.0",
+    "@typescript-eslint/eslint-plugin": "6.13.2",
+    "@typescript-eslint/parser": "6.13.2"
+  },
+  "peerDependenciesMeta": {
+    "eslint": {
+      "optional": false
+    },
+    "@eslint/js": {
+      "optional": false
+    },
+    "@stylistic/eslint-plugin": {
+      "optional": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "optional": false
+    },
+    "@typescript-eslint/parser": {
+      "optional": false
+    }
   },
   "engines": {
     "node": ">=20.10.0",
@@ -40,5 +56,15 @@
     "eslint": "^8.55.0",
     "shx": "^0.3.4",
     "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "clean": "npm run clean:lib && npm run clean:lint-cache",
+    "clean:lib": "shx rm -rf lib",
+    "clean:lint-cache": "shx rm -rf .eslintcache",
+    "lint": "eslint --cache --cache-strategy content -c eslint.config.js **",
+    "lint:fix": "npm run lint -- --fix",
+    "prebuild": "npm run clean && npm run lint:fix",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   }
 }
