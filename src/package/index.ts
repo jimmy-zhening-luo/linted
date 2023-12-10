@@ -26,9 +26,13 @@ export default class Configs {
         ts: IRuleSet;
       };
     };
-    overrides: {
+    moduleOverrides: {
       js: typeof JsRuleSets;
       ts: typeof TsRuleSets;
+    };
+    userOverrides: {
+      js: IRuleSet;
+      ts: IRuleSet;
     };
   };
 
@@ -39,6 +43,8 @@ export default class Configs {
     tsParser: ConstructorParameters<typeof TsConfigOptions>[3],
     jsFiles: string[],
     tsFiles: string[],
+    jsOverrides: IRuleSet = {},
+    tsOverrides: IRuleSet = {},
   ) {
     this.options = {
       js: new JsConfigOptions(
@@ -64,9 +70,13 @@ export default class Configs {
           ts: { ...this.options.ts.config.plugins["@typescript-eslint"].configs["eslint-recommended"].rules },
         },
       },
-      overrides: {
+      moduleOverrides: {
         js: JsRuleSets,
         ts: TsRuleSets,
+      },
+      userOverrides: {
+        js: jsOverrides,
+        ts: tsOverrides,
       },
     };
   }
@@ -87,8 +97,10 @@ export default class Configs {
       ...[
         { ...this.rules.presets.functional[language] },
         { ...this.rules.presets.stylistic.shared },
-        ...Object.values(this.rules.overrides[language]),
+        ...Object.values(this.rules.moduleOverrides[language]),
+        { ...this.rules.userOverrides[language] },
       ]
+        .filter(ruleSet => Object.keys(ruleSet).length > 0)
         .map(
           ruleSet => ({
             ...this.options[language].config,
