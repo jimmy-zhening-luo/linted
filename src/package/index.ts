@@ -33,29 +33,25 @@ export default class Configs {
   };
 
   constructor(
-    files: {
-      ts: string[];
-      js: string[];
-    },
-    plugins: {
-      stylistic: ConstructorParameters<typeof JsConfigOptions>[0];
-      js: ConstructorParameters<typeof JsConfigOptions>[1];
-      ts: ConstructorParameters<typeof TsConfigOptions>[2];
-    },
-    parser: unknown,
+    stylisticPlugin: ConstructorParameters<typeof JsConfigOptions>[0],
+    jsPlugin: ConstructorParameters<typeof JsConfigOptions>[1],
+    tsPlugin: ConstructorParameters<typeof TsConfigOptions>[2],
+    tsParser: ConstructorParameters<typeof TsConfigOptions>[3],
+    jsFiles: string[],
+    tsFiles: string[],
   ) {
     this.options = {
       js: new JsConfigOptions(
-        plugins.stylistic,
-        plugins.js,
-        ...files.js,
+        stylisticPlugin,
+        jsPlugin,
+        ...jsFiles,
       ),
       ts: new TsConfigOptions(
-        plugins.stylistic,
-        plugins.js,
-        plugins.ts,
-        parser,
-        ...files.ts,
+        stylisticPlugin,
+        jsPlugin,
+        tsPlugin,
+        tsParser,
+        ...tsFiles,
       ),
     };
     this.rules = {
