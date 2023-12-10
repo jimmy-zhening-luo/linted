@@ -37,26 +37,6 @@ const TsRuleSets: IRuleSets = {
     "@typescript-eslint/no-implied-eval": "error",
     "@typescript-eslint/no-loop-func": "error",
     "@typescript-eslint/no-loss-of-precision": "error",
-    "@typescript-eslint/no-magic-numbers": [
-      "error",
-      {
-        ignore: [
-          -1,
-          0,
-          1,
-          2,
-        ],
-        ignoreArrayIndexes: true,
-        ignoreDefaultValues: false,
-        ignoreClassFieldInitialValues: false,
-        enforceConst: true,
-        detectObjects: false,
-        ignoreEnums: false,
-        ignoreNumericLiteralTypes: true,
-        ignoreReadonlyClassProperties: true,
-        ignoreTypeIndexes: true,
-      },
-    ],
     "@typescript-eslint/no-throw-literal": "error",
     "@typescript-eslint/no-unused-expressions": [
       "error",

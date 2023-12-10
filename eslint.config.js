@@ -538,26 +538,6 @@ RuleSets.ts = {
     "@typescript-eslint/no-implied-eval": ERROR,
     "@typescript-eslint/no-loop-func": ERROR,
     "@typescript-eslint/no-loss-of-precision": ERROR,
-    "@typescript-eslint/no-magic-numbers": [
-      ERROR,
-      {
-        ignore: [
-          -1,
-          0,
-          1,
-          2,
-        ],
-        ignoreArrayIndexes: true,
-        ignoreDefaultValues: false,
-        ignoreClassFieldInitialValues: false,
-        enforceConst: true,
-        detectObjects: false,
-        ignoreEnums: false,
-        ignoreNumericLiteralTypes: true,
-        ignoreReadonlyClassProperties: true,
-        ignoreTypeIndexes: true,
-      },
-    ],
     "@typescript-eslint/no-throw-literal": ERROR,
     "@typescript-eslint/no-unused-expressions": [
       ERROR,
