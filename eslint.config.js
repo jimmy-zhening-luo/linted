@@ -14,8 +14,6 @@ const files = {
   ],
   ts: [
     "src/**/*.ts",
-    "src/**/*.cts",
-    "src/**/*.mts",
   ],
 };
 
