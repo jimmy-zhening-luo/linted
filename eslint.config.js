@@ -558,7 +558,6 @@ RuleSets.ts = {
   // Custom: ESLint TypeScript-only rules
   // [ Reference: https://typescript-eslint.io/rules/?=xextension-xformatting-xdeprecated#rules ]
   functionalOverride_TsOnly: {
-    "@typescript-eslint/adjacent-overload-signatures": ERROR,
     "@typescript-eslint/array-type": [
       ERROR,
       {

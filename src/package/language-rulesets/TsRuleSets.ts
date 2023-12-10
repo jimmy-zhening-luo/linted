@@ -57,7 +57,6 @@ const TsRuleSets: IRuleSets = {
   // TS Overrides: TSLint Plugin: Rules without analogs in ESLint
   // [ Reference: https://typescript-eslint.io/rules/?=xextension-xformatting-xdeprecated#rules ]
   functionalOverride_TsOnly: {
-    "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
       "error",
       {
