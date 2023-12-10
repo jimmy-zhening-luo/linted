@@ -1,8 +1,8 @@
-import type Values from "./values/index.js";
+import type { Severity } from "./values/index.js";
 
 export default interface IRuleSet {
-  [key: string]: Values.Severity | [
-    Values.Severity,
+  [key: string]: Severity | [
+    Severity,
     ...unknown[],
   ];
 }

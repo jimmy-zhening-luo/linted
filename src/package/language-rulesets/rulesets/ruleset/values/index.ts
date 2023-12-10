@@ -1,15 +1,14 @@
-export namespace Values {
-  export type Severity = "error" | "warn" | "off";
-  export enum Option {
-    always,
-    never,
-    any,
-    explicit,
-    consistent,
-    "as-needed",
-    "no-public",
-    "*",
-  }
+type Severity = "error" | "warn" | "off";
+enum Option {
+  always,
+  never,
+  any,
+  explicit,
+  consistent,
+  "as-needed",
+  "no-public",
+  "*",
 }
 
-export default Values;
+export type { Severity };
+export { Option };
