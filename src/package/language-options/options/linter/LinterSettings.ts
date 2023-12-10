@@ -1,6 +1,5 @@
 import type IRuleSet from "../../../language-rulesets/rulesets/ruleset/IRuleSet.js";
 
-type ECMA_VERSION_2022 = 2022;
 type StylisticPlugin = { configs: { "disable-legacy": { rules: IRuleSet } } };
 type JSLintPlugin = { configs: { recommended: { rules: IRuleSet } } };
 type TSLintPlugin = { configs: { "eslint-recommended": { rules: IRuleSet } } };
@@ -11,7 +10,7 @@ type BasePlugins = {
 };
 
 type BaseLanguageOptions = {
-  ecmaVersion: ECMA_VERSION_2022;
+  ecmaVersion: 2022;
   sourceType: "module";
 };
 

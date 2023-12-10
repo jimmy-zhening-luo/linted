@@ -1,9 +1,6 @@
 import type LinterSettings from "./linter/LinterSettings.js";
 import type { FilesToLint } from "./files/FilesToLint.js";
 
-type ECMA_VERSION_2022 = 2022;
-const ECMA_VERSION_2022: ECMA_VERSION_2022 = 2022;
-
 type IConfigOptions<TS extends boolean = false> = LinterSettings<TS> & {
   files: FilesToLint;
 };
@@ -69,7 +66,7 @@ export default abstract class ConfigOptions<
     tsLintParser: ConstructorParameters<typeof ConfigOptions<TS>>[3],
   ): IConfigOptions<TS>["languageOptions"] {
     const baseLanguageOptions: IConfigOptions["languageOptions"] = {
-      ecmaVersion: ECMA_VERSION_2022,
+      ecmaVersion: 2022,
       sourceType: "module",
     };
 
