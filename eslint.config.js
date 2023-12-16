@@ -34,7 +34,7 @@ const ConfigOptions = {
   },
   languageOptions: {
     js: {
-      ecmaVersion: 2022,
+      ecmaVersion: "latest",
       sourceType: "module",
     },
   },
@@ -49,7 +49,7 @@ ConfigOptions.languageOptions.ts = {
   ...ConfigOptions.languageOptions.js,
   parser: tsLintParser,
   parserOptions: {
-    ecmaVersion: "es2022",
+    ecmaVersion: "latest",
     sourceType: "module",
     project: true,
   },
