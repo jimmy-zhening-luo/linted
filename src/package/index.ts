@@ -82,7 +82,7 @@ export default class Configs {
   }
 
   public get configs(): Array<
-  Config<boolean, JsConfigOptions | TsConfigOptions>
+    Config<boolean, JsConfigOptions | TsConfigOptions>
   > {
     return [
       ...this.getLanguageConfigs("js"),
