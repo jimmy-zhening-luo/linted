@@ -30,12 +30,12 @@
   "devDependencies": {
     "@eslint/js": "^8.57.0",
     "@stylistic/eslint-plugin": "^1.7.0",
-    "@types/eslint": "^8.56.7",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "@typescript-eslint/parser": "^7.6.0",
+    "@types/eslint": "^8.56.9",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
     "eslint": "^8.57.0",
     "shx": "^0.3.4",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "clean": "npm run clean:dist",
