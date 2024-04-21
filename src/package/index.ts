@@ -1,8 +1,8 @@
+import type IRuleSet from "./language-rulesets/rulesets/ruleset/IRuleSet.js";
 import JsConfigOptions from "./language-options/JsConfigOptions.js";
 import TsConfigOptions from "./language-options/TsConfigOptions.js";
 import JsRuleSets from "./language-rulesets/JsRuleSets.js";
 import TsRuleSets from "./language-rulesets/TsRuleSets.js";
-import type IRuleSet from "./language-rulesets/rulesets/ruleset/IRuleSet.js";
 
 type Config<
   TS extends boolean,
