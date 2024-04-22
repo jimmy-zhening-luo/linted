@@ -5,7 +5,10 @@ const SharedRuleSets: IRuleSets = {
   stylisticOverrides: {
     "@stylistic/array-bracket-newline": [
       "error",
-      "consistent",
+      {
+        multiline: true,
+        minItems: null,
+      },
     ],
     "@stylistic/array-bracket-spacing": [
       "error",
