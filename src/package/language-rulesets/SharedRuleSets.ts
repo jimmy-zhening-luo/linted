@@ -345,12 +345,12 @@ const SharedRuleSets: IRuleSets = {
       {
         ObjectExpression: {
           multiline: true,
-          minProperties: 1,
+          minProperties: 2,
           consistent: false,
         },
         ObjectPattern: {
           multiline: true,
-          minProperties: 1,
+          minProperties: 2,
           consistent: false,
         },
         ImportDeclaration: {
