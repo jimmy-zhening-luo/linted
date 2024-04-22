@@ -450,7 +450,6 @@ const SharedRuleSets: IRuleSets = {
           "switch",
           "block",
           "block-like",
-          "expression",
           "iife",
           "empty",
           "debugger",
@@ -527,6 +526,16 @@ const SharedRuleSets: IRuleSets = {
           "let",
           "var",
         ],
+      },
+      {
+        blankLine: "always",
+        prev: "expression",
+        next: "*",
+      },
+      {
+        blankLine: "never",
+        prev: "expression",
+        next: "expression",
       },
       {
         blankLine: "always",
