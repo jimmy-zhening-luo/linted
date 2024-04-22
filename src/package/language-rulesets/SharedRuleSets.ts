@@ -106,7 +106,7 @@ const SharedRuleSets: IRuleSets = {
     ],
     "@stylistic/function-paren-newline": [
       "error",
-      "multiline",
+      "multiline-arguments",
     ],
     "@stylistic/generator-star-spacing": [
       "error",
