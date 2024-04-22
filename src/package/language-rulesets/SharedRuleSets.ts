@@ -376,7 +376,7 @@ const SharedRuleSets: IRuleSets = {
     "@stylistic/object-property-newline": [
       "error",
       {
-        allowAllPropertiesOnSameLine: false,
+        allowAllPropertiesOnSameLine: true,
       },
     ],
     "@stylistic/one-var-declaration-per-line": [
