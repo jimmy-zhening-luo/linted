@@ -104,6 +104,7 @@ const SharedRuleSets: IRuleSets = {
       "error",
       "never",
     ],
+    // Useless rule. See issue with my comment: https://github.com/eslint-community/eslint-stylistic/issues/290
     "@stylistic/function-paren-newline": [
       "error",
       "multiline-arguments",
