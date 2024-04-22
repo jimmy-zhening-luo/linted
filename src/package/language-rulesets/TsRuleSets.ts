@@ -5,12 +5,6 @@ const TsRuleSets: IRuleSets = {
   // Shared (Stylistic overrides)
   ...SharedRuleSets,
 
-  // TS Overrides: Additional TS-specific Stylistic rules
-  stylisticOverridesTsOnly: {
-    "@stylistic/member-delimiter-style": "error",
-    "@stylistic/type-annotation-spacing": "error",
-  },
-
   // TS Overrides: TSLint Plugin: Extensions of ESLint base rules
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xformatting-xdeprecated#rules ]
   // Step 1/2: Disable ESLint base rules
