@@ -4,6 +4,7 @@ import JsRuleSets from "./language-rulesets/JsRuleSets.js";
 import TsRuleSets from "./language-rulesets/TsRuleSets.js";
 import type IRuleSet from "./language-rulesets/rulesets/ruleset/IRuleSet.js";
 
+type Language = "js" | "ts";
 type Config<
   TS extends boolean,
   ConfigOptions extends TS extends true ? TsConfigOptions : JsConfigOptions,
@@ -80,7 +81,7 @@ export default class Configs {
     ];
   }
 
-  protected getLanguageConfigs<L extends "js" | "ts">(
+  protected getLanguageConfigs<L extends Language>(
     language: L,
   ): Array<Config<boolean, JsConfigOptions | TsConfigOptions>> {
     return [
