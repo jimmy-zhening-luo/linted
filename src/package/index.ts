@@ -18,13 +18,8 @@ export default class Configs {
   };
   protected readonly rules: {
     presets: {
-      stylistic: {
-        shared: IRuleSet;
-      };
-      functional: {
-        js: IRuleSet;
-        ts: IRuleSet;
-      };
+      js: IRuleSet;
+      ts: IRuleSet;
     };
     moduleOverrides: {
       js: typeof JsRuleSets;
@@ -62,11 +57,8 @@ export default class Configs {
     };
     this.rules = {
       presets: {
-        stylistic: { shared: { ...this.options.js.config.plugins["@stylistic"].configs["disable-legacy"].rules } },
-        functional: {
-          js: { ...this.options.js.config.plugins["@eslint/js"].configs.recommended.rules },
-          ts: { ...this.options.ts.config.plugins["@typescript-eslint"].configs["eslint-recommended"].rules },
-        },
+        js: { ...this.options.js.config.plugins["@eslint/js"].configs.recommended.rules },
+        ts: { ...this.options.ts.config.plugins["@typescript-eslint"].configs["eslint-recommended"].rules },
       },
       moduleOverrides: {
         js: JsRuleSets,
@@ -83,18 +75,17 @@ export default class Configs {
     Config<boolean, JsConfigOptions | TsConfigOptions>
   > {
     return [
-      ...this.getLanguageConfigs("js"),
-      ...this.getLanguageConfigs("ts"),
+      ...this.getLanguageConfigs<"js">("js"),
+      ...this.getLanguageConfigs<"ts">("ts"),
     ];
   }
 
-  protected getLanguageConfigs(
-    language: "js" | "ts",
+  protected getLanguageConfigs<L extends "js" | "ts">(
+    language: L,
   ): Array<Config<boolean, JsConfigOptions | TsConfigOptions>> {
     return [
       ...[
-        { ...this.rules.presets.functional[language] },
-        { ...this.rules.presets.stylistic.shared },
+        { ...this.rules.presets[language] },
         ...Object.values(this.rules.moduleOverrides[language]),
         { ...this.rules.userOverrides[language] },
       ]
