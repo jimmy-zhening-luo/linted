@@ -1,11 +1,14 @@
 export default {
   "@stylistic/array-bracket-newline": [
     "error",
-    "consistent",
+    {
+      multiline: true,
+      minItems: null,
+    },
   ],
   "@stylistic/array-bracket-spacing": [
     "error",
-    "always",
+    "never",
     {
       singleValue: false,
       objectsInArrays: false,
@@ -14,50 +17,83 @@ export default {
   ],
   "@stylistic/array-element-newline": [
     "error",
-    "consistent",
+    {
+      ArrayExpression: "always",
+      ArrayPattern: "always",
+    },
   ],
   "@stylistic/arrow-parens": [
     "error",
     "as-needed",
+    { requireForBlockBody: false },
   ],
-  "@stylistic/arrow-spacing": "error",
-  "@stylistic/block-spacing": "error",
+  "@stylistic/arrow-spacing": [
+    "error",
+    {
+      before: true,
+      after: true,
+    },
+  ],
+  "@stylistic/block-spacing": [
+    "error",
+    "always",
+  ],
   "@stylistic/brace-style": [
     "error",
     "stroustrup",
-    {
-      allowSingleLine: true,
-    },
+    { allowSingleLine: true },
   ],
   "@stylistic/comma-dangle": [
     "error",
     "always-multiline",
   ],
-  "@stylistic/comma-spacing": "error",
+  "@stylistic/comma-spacing": [
+    "error",
+    {
+      before: false,
+      after: true,
+    },
+  ],
   "@stylistic/comma-style": [
     "error",
     "last",
     {
-      exceptions: {},
+      exceptions: {
+        ArrayExpression: false,
+        ArrayPattern: false,
+        ArrowFunctionExpression: false,
+        CallExpression: false,
+        FunctionDeclaration: false,
+        FunctionExpression: false,
+        ImportDeclaration: false,
+        ObjectExpression: false,
+        ObjectPattern: false,
+        VariableDeclaration: false,
+        NewExpression: false,
+      },
     },
   ],
   "@stylistic/computed-property-spacing": [
     "error",
     "never",
-    {
-      enforceForClassMembers: true,
-    },
+    { enforceForClassMembers: true },
   ],
   "@stylistic/dot-location": [
     "error",
     "property",
   ],
-  "@stylistic/eol-last": "error",
+  "@stylistic/eol-last": [
+    "error",
+    "always",
+  ],
   "@stylistic/function-call-argument-newline": [
     "error",
-    "consistent",
+    "always",
   ],
-  "@stylistic/function-call-spacing": "error",
+  "@stylistic/function-call-spacing": [
+    "error",
+    "never",
+  ],
   "@stylistic/function-paren-newline": [
     "error",
     "multiline-arguments",
@@ -69,14 +105,44 @@ export default {
       after: false,
     },
   ],
-  // https://eslint.style/rules/default/indent
+  "@stylistic/implicit-arrow-linebreak": [
+    "error",
+    "below",
+  ],
   "@stylistic/indent": [
     "error",
     2,
     {
+      ignoredNodes: [],
+      SwitchCase: 1,
+      VariableDeclarator: {
+        "var": "first",
+        let: "first",
+        "const": "first",
+      },
+      outerIIFEBody: 1,
+      MemberExpression: 1,
+      FunctionDeclaration: {
+        parameters: 1,
+        body: 1,
+      },
+      FunctionExpression: {
+        parameters: 1,
+        body: 1,
+      },
+      StaticBlock: { body: 1 },
+      CallExpression: { arguments: 1 },
+      ArrayExpression: 1,
+      ObjectExpression: 1,
+      ImportDeclaration: 1,
       flatTernaryExpressions: false,
       offsetTernaryExpressions: true,
+      ignoreComments: false,
     },
+  ],
+  "@stylistic/indent-binary-ops": [
+    "error",
+    2,
   ],
   "@stylistic/key-spacing": [
     "error",
@@ -99,7 +165,7 @@ export default {
     {
       beforeBlockComment: true,
       afterBlockComment: false,
-      beforeLineComment: false,
+      beforeLineComment: true,
       afterLineComment: false,
       allowBlockStart: true,
       allowBlockEnd: true,
@@ -110,6 +176,17 @@ export default {
       allowClassStart: true,
       allowClassEnd: true,
       applyDefaultIgnorePatterns: true,
+      afterHashbangComment: false,
+
+      // TS-only
+      allowEnumEnd: false,
+      allowEnumStart: false,
+      allowInterfaceEnd: false,
+      allowInterfaceStart: false,
+      allowModuleEnd: false,
+      allowModuleStart: false,
+      allowTypeEnd: false,
+      allowTypeStart: false,
     },
   ],
   "@stylistic/lines-between-class-members": [
@@ -135,25 +212,40 @@ export default {
     },
     {
       exceptAfterSingleLine: false,
+
+      // TS-only
+      exceptAfterOverload: true,
     },
   ],
   "@stylistic/max-len": [
     "error",
     {
-      code: 80,
+      code: 120,
       tabWidth: 2,
       ignoreComments: true,
+      ignoreTrailingComments: true,
       ignoreUrls: true,
       ignoreStrings: true,
       ignoreTemplateLiterals: true,
       ignoreRegExpLiterals: true,
-
     },
   ],
   "@stylistic/max-statements-per-line": [
     "error",
+    { max: 1 },
+  ],
+  "@stylistic/member-delimiter-style": [
+    "error",
     {
-      max: 1,
+      multiline: {
+        delimiter: "semi",
+        requireLast: true,
+      },
+      singleline: {
+        delimiter: "semi",
+        requireLast: false,
+      },
+      multilineDetection: "brackets",
     },
   ],
   "@stylistic/multiline-ternary": [
@@ -166,15 +258,35 @@ export default {
   ],
   "@stylistic/newline-per-chained-call": [
     "error",
+    { ignoreChainWithDepth: 1 },
+  ],
+  "@stylistic/no-confusing-arrow": "off",
+  "@stylistic/no-extra-parens": [
+    "error",
+    "all",
     {
-      ignoreChainWithDepth: 1,
+      conditionalAssign: true,
+      returnAssign: true,
+      nestedBinaryExpressions: true,
+      ternaryOperandBinaryExpressions: true,
+      enforceForArrowConditionals: true,
+      enforceForSequenceExpressions: true,
+      enforceForNewInMemberExpressions: true,
+      enforceForFunctionPrototypeMethods: true,
     },
   ],
-  "@stylistic/no-extra-parens": "error",
   "@stylistic/no-extra-semi": "error",
   "@stylistic/no-floating-decimal": "error",
+  "@stylistic/no-mixed-operators": "off",
   "@stylistic/no-mixed-spaces-and-tabs": "error",
-  "@stylistic/no-multi-spaces": "error",
+  "@stylistic/no-multi-spaces": [
+    "error",
+    {
+      ignoreEOLComments: false,
+      exceptions: { Property: false },
+      includeTabs: true,
+    },
+  ],
   "@stylistic/no-multiple-empty-lines": [
     "error",
     {
@@ -182,6 +294,10 @@ export default {
       maxEOF: 1,
       maxBOF: 0,
     },
+  ],
+  "@stylistic/no-tabs": [
+    "error",
+    { allowIndentationTabs: false },
   ],
   "@stylistic/no-trailing-spaces": [
     "error",
@@ -193,7 +309,16 @@ export default {
   "@stylistic/no-whitespace-before-property": "error",
   "@stylistic/nonblock-statement-body-position": [
     "error",
-    "any",
+    "below",
+    {
+      overrides: {
+        "if": "below",
+        "else": "below",
+        "while": "below",
+        "do": "below",
+        "for": "below",
+      },
+    },
   ],
   "@stylistic/object-curly-newline": [
     "error",
@@ -201,22 +326,22 @@ export default {
       ObjectExpression: {
         multiline: true,
         minProperties: 2,
-        consistent: true,
+        consistent: false,
       },
       ObjectPattern: {
         multiline: true,
         minProperties: 2,
-        consistent: true,
+        consistent: false,
       },
       ImportDeclaration: {
         multiline: true,
-        minProperties: 3,
-        consistent: true,
+        minProperties: 2,
+        consistent: false,
       },
       ExportDeclaration: {
         multiline: true,
-        minProperties: 3,
-        consistent: true,
+        minProperties: 2,
+        consistent: false,
       },
     },
   ],
@@ -230,39 +355,168 @@ export default {
   ],
   "@stylistic/object-property-newline": [
     "error",
-    {
-      allowAllPropertiesOnSameLine: false,
-    },
+    { allowAllPropertiesOnSameLine: true },
+  ],
+  "@stylistic/one-var-declaration-per-line": [
+    "error",
+    "always",
   ],
   "@stylistic/operator-linebreak": [
     "error",
     "before",
+    {
+      overrides: {
+        "=": "after",
+        "?": "before",
+        ":": "before",
+      },
+    },
   ],
   "@stylistic/padded-blocks": [
     "error",
-    "never",
     {
-      allowSingleLineBlocks: true,
+      blocks: "never",
+      classes: "never",
+      switches: "never",
     },
+    { allowSingleLineBlocks: true },
   ],
-  // https://eslint.style/rules/default/padding-line-between-statements
   "@stylistic/padding-line-between-statements": [
     "error",
     {
       blankLine: "always",
+      prev: "directive",
+      next: "*",
+    },
+    {
+      blankLine: "never",
+      prev: "directive",
+      next: "directive",
+    },
+    {
+      blankLine: "always",
+      prev: [
+        "import",
+        "cjs-import",
+      ],
+      next: "*",
+    },
+    {
+      blankLine: "never",
+      prev: [
+        "import",
+        "cjs-import",
+      ],
+      next: [
+        "import",
+        "cjs-import",
+      ],
+    },
+    {
+      blankLine: "always",
       prev: [
         "class",
-        "for",
-        "while",
+        "interface",
         "try",
+        "for",
+        "if",
+        "do",
+        "while",
+        "switch",
         "block",
+        "block-like",
+        "iife",
+        "empty",
+        "debugger",
+        "with",
       ],
       next: "*",
     },
     {
       blankLine: "always",
+      prev: "case",
+      next: "*",
+    },
+    {
+      blankLine: "always",
+      prev: "case",
+      next: [
+        "case",
+        "default",
+      ],
+    },
+    {
+      blankLine: "always",
+      prev: "default",
+      next: "*",
+    },
+    {
+      blankLine: "always",
+      prev: "type",
+      next: "*",
+    },
+    {
+      blankLine: "never",
+      prev: "type",
+      next: "type",
+    },
+    {
+      blankLine: "always",
+      prev: "function",
+      next: "*",
+    },
+    {
+      blankLine: "always",
+      prev: "function-overload",
+      next: "*",
+    },
+    {
+      blankLine: "never",
+      prev: "function-overload",
+      next: "function-overload",
+    },
+    {
+      blankLine: "never",
+      prev: "function-overload",
+      next: "function",
+    },
+    {
+      blankLine: "always",
+      prev: [
+        "const",
+        "let",
+        "var",
+      ],
+      next: "*",
+    },
+    {
+      blankLine: "never",
+      prev: [
+        "const",
+        "let",
+        "var",
+      ],
+      next: [
+        "const",
+        "let",
+        "var",
+      ],
+    },
+    {
+      blankLine: "always",
+      prev: "expression",
+      next: "*",
+    },
+    {
+      blankLine: "never",
+      prev: "expression",
+      next: "expression",
+    },
+    {
+      blankLine: "always",
       prev: "*",
       next: [
+        "throw",
         "return",
         "break",
         "continue",
@@ -270,55 +524,22 @@ export default {
     },
     {
       blankLine: "always",
-      prev: [
-        "const",
-        "let",
-        "var",
+      prev: "*",
+      next: [
+        "export",
+        "cjs-export",
       ],
-      next: "*",
     },
     {
-      blankLine: "any",
+      blankLine: "never",
       prev: [
-        "const",
-        "let",
-        "var",
+        "export",
+        "cjs-export",
       ],
       next: [
-        "const",
-        "let",
-        "var",
+        "export",
+        "cjs-export",
       ],
-    },
-    {
-      blankLine: "always",
-      prev: ["import"],
-      next: "*",
-    },
-    {
-      blankLine: "any",
-      prev: ["import"],
-      next: ["import"],
-    },
-    {
-      blankLine: "always",
-      prev: "*",
-      next: ["export"],
-    },
-    {
-      blankLine: "any",
-      prev: ["export"],
-      next: ["export"],
-    },
-    {
-      blankLine: "always",
-      prev: "directive",
-      next: "*",
-    },
-    {
-      blankLine: "any",
-      prev: "directive",
-      next: "directive",
     },
   ],
   "@stylistic/quote-props": [
@@ -350,9 +571,25 @@ export default {
       omitLastInOneLineClassBody: false,
     },
   ],
-  "@stylistic/semi-spacing": "error",
-  "@stylistic/semi-style": "error",
-  "@stylistic/space-before-blocks": "error",
+  "@stylistic/semi-spacing": [
+    "error",
+    {
+      before: false,
+      after: true,
+    },
+  ],
+  "@stylistic/semi-style": [
+    "error",
+    "last",
+  ],
+  "@stylistic/space-before-blocks": [
+    "error",
+    {
+      functions: "always",
+      keywords: "always",
+      classes: "always",
+    },
+  ],
   "@stylistic/space-before-function-paren": [
     "error",
     {
@@ -361,12 +598,13 @@ export default {
       asyncArrow: "always",
     },
   ],
-  "@stylistic/space-in-parens": "error",
+  "@stylistic/space-in-parens": [
+    "error",
+    "never",
+  ],
   "@stylistic/space-infix-ops": [
     "error",
-    {
-      int32Hint: true,
-    },
+    { int32Hint: true },
   ],
   "@stylistic/space-unary-ops": [
     "error",
@@ -380,18 +618,41 @@ export default {
     "error",
     "always",
   ],
-  "@stylistic/switch-colon-spacing": "error",
+  "@stylistic/switch-colon-spacing": [
+    "error",
+    {
+      after: true,
+      before: false,
+    },
+  ],
+  "@stylistic/template-curly-spacing": [
+    "error",
+    "never",
+  ],
   "@stylistic/template-tag-spacing": [
     "error",
-    "always",
+    "never",
   ],
+  "@stylistic/type-annotation-spacing": [
+    "error",
+    {
+      before: false,
+      after: true,
+    },
+  ],
+  "@stylistic/type-generic-spacing": "error",
+  "@stylistic/type-named-tuple-spacing": "error",
   "@stylistic/wrap-iife": [
     "error",
     "inside",
-    {
-      functionPrototypeMethods: true,
-    },
+    { functionPrototypeMethods: true },
   ],
   "@stylistic/wrap-regex": "error",
-  "@stylistic/yield-star-spacing": "error",
+  "@stylistic/yield-star-spacing": [
+    "error",
+    {
+      before: true,
+      after: false,
+    },
+  ],
 };

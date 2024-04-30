@@ -62,9 +62,7 @@ export default class Configs {
     };
     this.rules = {
       presets: {
-        stylistic: {
-          shared: { ...this.options.js.config.plugins["@stylistic"].configs["disable-legacy"].rules },
-        },
+        stylistic: { shared: { ...this.options.js.config.plugins["@stylistic"].configs["disable-legacy"].rules } },
         functional: {
           js: { ...this.options.js.config.plugins["@eslint/js"].configs.recommended.rules },
           ts: { ...this.options.ts.config.plugins["@typescript-eslint"].configs["eslint-recommended"].rules },
@@ -100,12 +98,14 @@ export default class Configs {
         ...Object.values(this.rules.moduleOverrides[language]),
         { ...this.rules.userOverrides[language] },
       ]
-        .filter(ruleSet => Object.keys(ruleSet).length > 0)
+        .filter(ruleSet =>
+          Object.keys(ruleSet).length > 0)
         .map(
-          ruleSet => ({
-            ...this.options[language].config,
-            rules: { ...ruleSet },
-          }),
+          ruleSet =>
+            ({
+              ...this.options[language].config,
+              rules: { ...ruleSet },
+            }),
         ),
     ];
   }

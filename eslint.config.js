@@ -3,8 +3,6 @@ import stylistic from "@stylistic/eslint-plugin";
 import jsLint from "@eslint/js";
 import tsLint from "@typescript-eslint/eslint-plugin";
 import tsLintParser from "@typescript-eslint/parser";
-
-// STYLISTIC BASE RULES (both JS and TS)
 import stylisticBaseRules from "./stylistic.base.config.js";
 
 const files = {
@@ -12,12 +10,8 @@ const files = {
     "eslint.config.js",
     "stylistic.base.config.js",
   ],
-  ts: [
-    "src/**/*.ts",
-  ],
+  ts: ["src/**/*.ts"],
 };
-
-// CONFIG OPTIONS
 const ConfigOptions = {
   files,
   plugins: {
@@ -52,35 +46,29 @@ ConfigOptions.languageOptions.ts = {
     ecmaVersion: "latest",
     sourceType: "module",
     project: true,
+    tsconfigRootDir: import.meta.dirname,
   },
 };
 
-// RULESETS
 const RuleSets = {
-  js: {
-    functionalPreset: { ...jsLint.configs.recommended.rules },
-    stylisticPreset: { ...stylistic.configs["disable-legacy"].rules },
-    stylisticOverride: { ...stylisticBaseRules },
-  },
-  ts: {
-    functionalPreset: { ...tsLint.configs["strict-type-checked"].rules },
-    stylisticPreset: { ...stylistic.configs["disable-legacy"].rules },
-    stylisticOverride: {
-      ...stylisticBaseRules,
-      "@stylistic/member-delimiter-style": "error",
-      "@stylistic/type-annotation-spacing": "error",
-    },
-  },
+  js: [
+    { ...jsLint.configs.recommended.rules },
+    { ...stylistic.configs["disable-legacy"].rules },
+    { ...stylisticBaseRules },
+  ],
+  ts: [
+    { ...tsLint.configs["strict-type-checked"].rules },
+    { ...stylisticBaseRules },
+  ],
 };
 
 function _flattenRuleSets(
   language,
 ) {
-  return [
-    ...Object.values(RuleSets[language])
-      .filter(ruleset => Object.keys(ruleset).length > 0)
-      .map(
-        ruleset => (
+  return RuleSets[language]
+    .map(
+      ruleset =>
+        (
           {
             files: ConfigOptions.files[language],
             plugins: ConfigOptions.plugins[language],
@@ -89,8 +77,7 @@ function _flattenRuleSets(
             rules: { ...ruleset },
           }
         ),
-      ),
-  ];
+    );
 }
 
 export default [

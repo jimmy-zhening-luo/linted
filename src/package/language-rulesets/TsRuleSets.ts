@@ -23,6 +23,7 @@ const TsRuleSets: IRuleSets = {
     "require-await": "off",
     "return-await": "off",
   },
+
   // Step 2/2: Enable ESLint extended rules for TypeScript
   functionalOverride_JsExtension_EnableExtended: {
     // Maybe: https://typescript-eslint.io/rules/class-methods-use-this/
@@ -281,6 +282,7 @@ const TsRuleSets: IRuleSets = {
       },
     ],
     "@typescript-eslint/method-signature-style": "error",
+
     // TODO: @typescript-eslint/naming-convention
     "@typescript-eslint/no-base-to-string": "error",
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
@@ -330,6 +332,7 @@ const TsRuleSets: IRuleSets = {
     "@typescript-eslint/prefer-nullish-coalescing": "error",
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-readonly": "error",
+
     // maybe: prefer-readonly-parameter-types
     "@typescript-eslint/prefer-reduce-type-parameter": "error",
     "@typescript-eslint/prefer-regexp-exec": "error",

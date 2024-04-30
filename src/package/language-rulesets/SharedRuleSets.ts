@@ -29,9 +29,7 @@ const SharedRuleSets: IRuleSets = {
     "@stylistic/arrow-parens": [
       "error",
       "as-needed",
-      {
-        requireForBlockBody: false,
-      },
+      { requireForBlockBody: false },
     ],
     "@stylistic/arrow-spacing": [
       "error",
@@ -47,9 +45,7 @@ const SharedRuleSets: IRuleSets = {
     "@stylistic/brace-style": [
       "error",
       "stroustrup",
-      {
-        allowSingleLine: true,
-      },
+      { allowSingleLine: true },
     ],
     "@stylistic/comma-dangle": [
       "error",
@@ -84,9 +80,7 @@ const SharedRuleSets: IRuleSets = {
     "@stylistic/computed-property-spacing": [
       "error",
       "never",
-      {
-        enforceForClassMembers: true,
-      },
+      { enforceForClassMembers: true },
     ],
     "@stylistic/dot-location": [
       "error",
@@ -104,6 +98,7 @@ const SharedRuleSets: IRuleSets = {
       "error",
       "never",
     ],
+
     // Useless rule. See issue with my comment: https://github.com/eslint-community/eslint-stylistic/issues/290
     "@stylistic/function-paren-newline": [
       "error",
@@ -141,12 +136,8 @@ const SharedRuleSets: IRuleSets = {
           parameters: 1,
           body: 1,
         },
-        StaticBlock: {
-          body: 1,
-        },
-        CallExpression: {
-          arguments: 1,
-        },
+        StaticBlock: { body: 1 },
+        CallExpression: { arguments: 1 },
         ArrayExpression: 1,
         ObjectExpression: 1,
         ImportDeclaration: 1,
@@ -192,6 +183,7 @@ const SharedRuleSets: IRuleSets = {
         allowClassEnd: true,
         applyDefaultIgnorePatterns: true,
         afterHashbangComment: false,
+
         // TS-only
         allowEnumEnd: false,
         allowEnumStart: false,
@@ -226,6 +218,7 @@ const SharedRuleSets: IRuleSets = {
       },
       {
         exceptAfterSingleLine: false,
+
         // TS-only
         exceptAfterOverload: true,
       },
@@ -245,9 +238,7 @@ const SharedRuleSets: IRuleSets = {
     ],
     "@stylistic/max-statements-per-line": [
       "error",
-      {
-        max: 1,
-      },
+      { max: 1 },
     ],
     "@stylistic/member-delimiter-style": [
       "error",
@@ -273,9 +264,7 @@ const SharedRuleSets: IRuleSets = {
     ],
     "@stylistic/newline-per-chained-call": [
       "error",
-      {
-        ignoreChainWithDepth: 1,
-      },
+      { ignoreChainWithDepth: 1 },
     ],
     "@stylistic/no-confusing-arrow": "off",
     "@stylistic/no-extra-parens": [
@@ -300,9 +289,7 @@ const SharedRuleSets: IRuleSets = {
       "error",
       {
         ignoreEOLComments: false,
-        exceptions: {
-          Property: false,
-        },
+        exceptions: { Property: false },
         includeTabs: true,
       },
     ],
@@ -316,9 +303,7 @@ const SharedRuleSets: IRuleSets = {
     ],
     "@stylistic/no-tabs": [
       "error",
-      {
-        allowIndentationTabs: false,
-      },
+      { allowIndentationTabs: false },
     ],
     "@stylistic/no-trailing-spaces": [
       "error",
@@ -376,9 +361,7 @@ const SharedRuleSets: IRuleSets = {
     ],
     "@stylistic/object-property-newline": [
       "error",
-      {
-        allowAllPropertiesOnSameLine: true,
-      },
+      { allowAllPropertiesOnSameLine: true },
     ],
     "@stylistic/one-var-declaration-per-line": [
       "error",
@@ -402,9 +385,7 @@ const SharedRuleSets: IRuleSets = {
         classes: "never",
         switches: "never",
       },
-      {
-        allowSingleLineBlocks: true,
-      },
+      { allowSingleLineBlocks: true },
     ],
     "@stylistic/padding-line-between-statements": [
       "error",
@@ -629,9 +610,7 @@ const SharedRuleSets: IRuleSets = {
     ],
     "@stylistic/space-infix-ops": [
       "error",
-      {
-        int32Hint: true,
-      },
+      { int32Hint: true },
     ],
     "@stylistic/space-unary-ops": [
       "error",
@@ -672,9 +651,7 @@ const SharedRuleSets: IRuleSets = {
     "@stylistic/wrap-iife": [
       "error",
       "inside",
-      {
-        functionPrototypeMethods: true,
-      },
+      { functionPrototypeMethods: true },
     ],
     "@stylistic/wrap-regex": "error",
     "@stylistic/yield-star-spacing": [
