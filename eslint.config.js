@@ -53,7 +53,6 @@ ConfigOptions.languageOptions.ts = {
 const RuleSets = {
   js: [
     { ...jsLint.configs.recommended.rules },
-    { ...stylistic.configs["disable-legacy"].rules },
     { ...stylisticBaseRules },
   ],
   ts: [
