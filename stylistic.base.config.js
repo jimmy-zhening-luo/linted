@@ -1,3 +1,4 @@
+// https://eslint.style/rules
 export default {
   "@stylistic/array-bracket-newline": [
     "error",
@@ -206,7 +207,12 @@ export default {
         {
           blankLine: "always",
           prev: "method",
-          next: "*",
+          next: "method",
+        },
+        {
+          blankLine: "always",
+          prev: "method",
+          next: "field",
         },
       ],
     },
