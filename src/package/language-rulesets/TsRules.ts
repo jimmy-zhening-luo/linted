@@ -10,7 +10,12 @@ const TsRules: IRules[] = [
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   {
     // Maybe: https://typescript-eslint.io/rules/class-methods-use-this/
+    "class-methods-use-this": "off",
+    "consistent-return": "off",
+    "default-param-last": "off",
+    "dot-notation": "off",
     "init-declarations": "off",
+    "max-params": "off",
     "no-array-constructor": "off",
     "no-implied-eval": "off",
     "no-loop-func": "off",
@@ -28,8 +33,23 @@ const TsRules: IRules[] = [
   //   Step 2: Enable ESLint extended rules for TypeScript
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   {
-    // Maybe: https://typescript-eslint.io/rules/class-methods-use-this/
-    "@typescript-eslint/init-declarations": "error",
+    "@typescript-eslint/class-methods-use-this": "off",
+    "@typescript-eslint/consistent-return": "off",
+    "@typescript-eslint/default-param-last": "error",
+    "@typescript-eslint/dot-notation": [
+      "error",
+      {
+        allowKeywords: true,
+        allowPrivateClassPropertyAccess: true,
+        allowProtectedClassPropertyAccess: true,
+        allowIndexSignaturePropertyAccess: true,
+      },
+    ],
+    "@typescript-eslint/init-declarations": [
+      "error",
+      "always",
+    ],
+    "@typescript-eslint/max-params": "off",
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-implied-eval": "error",
     "@typescript-eslint/no-loop-func": "error",
