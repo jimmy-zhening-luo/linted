@@ -3,9 +3,11 @@ import SharedRules from "./SharedRules.js";
 const TsRules: IRules[] = [
   ...SharedRules,
 
-  // TS Overrides: TSLint Plugin: Extensions of ESLint base rules
-  // [ Reference: https://typescript-eslint.io/rules/?=extension-xformatting-xdeprecated#rules ]
-  // Step 1/2: Disable ESLint base rules
+  // https://typescript-eslint.io/rules/?=xdeprecated#rules
+
+  // ESLint Extensions (2-STEP)
+  //   Step 1: Disable ESLint base rules
+  // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   {
     // Maybe: https://typescript-eslint.io/rules/class-methods-use-this/
     "init-declarations": "off",
@@ -22,7 +24,9 @@ const TsRules: IRules[] = [
     "return-await": "off",
   },
 
-  // Step 2/2: Enable ESLint extended rules for TypeScript
+  // ESLint Extensions (2-STEP)
+  //   Step 2: Enable ESLint extended rules for TypeScript
+  // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   {
     // Maybe: https://typescript-eslint.io/rules/class-methods-use-this/
     "@typescript-eslint/init-declarations": "error",
@@ -47,8 +51,8 @@ const TsRules: IRules[] = [
     ],
   },
 
-  // TS Overrides: TSLint Plugin: Rules without analogs in ESLint
-  // [ Reference: https://typescript-eslint.io/rules/?=xextension-xformatting-xdeprecated#rules ]
+  // @typescript-eslint ONLY
+  // [ Reference: https://typescript-eslint.io/rules/?=xextension-xdeprecated#rules ]
   {
     "@typescript-eslint/array-type": [
       "error",

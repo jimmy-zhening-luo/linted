@@ -1,5 +1,4 @@
 const SharedRules: IRules[] = [
-  // Stylistic
   // https://eslint.style/rules
   {
     "@stylistic/array-bracket-newline": [
