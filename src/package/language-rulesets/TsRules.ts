@@ -468,9 +468,7 @@ const TsRules: IRules[] = [
     "@typescript-eslint/no-dynamic-delete": E,
     "@typescript-eslint/no-empty-interface": [
       E,
-      {
-        allowSingleExtends: true,
-      },
+      { allowSingleExtends: true },
     ],
     "@typescript-eslint/no-explicit-any": [
       E,
@@ -508,9 +506,7 @@ const TsRules: IRules[] = [
     ],
     "@typescript-eslint/no-meaningless-void-operator": [
       E,
-      {
-        checkNever: true,
-      },
+      { checkNever: true },
     ],
     "@typescript-eslint/no-misused-new": E,
     "@typescript-eslint/no-misused-promises": [
@@ -555,16 +551,14 @@ const TsRules: IRules[] = [
       E,
       {
         allowConstantLoopConditions: false,
-      allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
+        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       },
     ],
     "@typescript-eslint/no-unnecessary-qualifier": E,
     "@typescript-eslint/no-unnecessary-type-arguments": E,
     "@typescript-eslint/no-unnecessary-type-assertion": [
       E,
-      {
-        typesToIgnore: [],
-      },
+      { typesToIgnore: [] },
     ],
     "@typescript-eslint/no-unnecessary-type-constraint": E,
     "@typescript-eslint/no-unsafe-argument": E,
