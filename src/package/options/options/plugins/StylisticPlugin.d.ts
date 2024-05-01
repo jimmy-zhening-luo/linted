@@ -1,1 +1,1 @@
-declare type StylisticPlugin = { configs: { "disable-legacy": { rules: IRules } } };
+declare type StylisticPlugin = IPlugin<"disable-legacy">;

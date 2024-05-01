@@ -1,1 +1,1 @@
-declare type JsPlugin = { configs: { recommended: { rules: IRules } } };
+declare type JsPlugin = IPlugin<"recommended">;

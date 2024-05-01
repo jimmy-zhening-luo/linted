@@ -1,1 +1,1 @@
-declare type TsPlugin = { configs: { "strict-type-checked": { rules: IRules } } };
+declare type TsPlugin = IPlugin<"strict-type-checked">;
