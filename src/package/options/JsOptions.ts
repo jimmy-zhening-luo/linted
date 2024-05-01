@@ -1,35 +1,24 @@
 import Options from "./options/Options.js";
 
-export default class JsOptions extends Options {
+export default class JsOptions extends Options<
+  JsPlugin,
+  Record<string, unknown>
+> {
   constructor(
-    stylistic: ConstructorParameters<typeof Options<false>>[0],
-    jsLint: ConstructorParameters<typeof Options<false>>[1],
+    stylistic: StylisticPluginBody,
+    jsLint: JsPluginBody,
     ...files: string[]
   ) {
     super(
-      stylistic,
-      jsLint,
-      null,
-      null,
-      ...files,
+      {
+        "@stylistic": stylistic,
+        "@eslint/js": jsLint,
+      },
+      {
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
+      files,
     );
-  }
-
-  protected setTsPlugin(
-    tsLintPlugin: null,
-    basePlugins: Options["plugins"],
-  ): Options["plugins"] {
-    tsLintPlugin = tsLintPlugin;
-
-    return { ...basePlugins };
-  }
-
-  protected setTsParser(
-    tsParser: null,
-    baseLanguageOptions: Options["languageOptions"],
-  ): Options["languageOptions"] {
-    tsParser = tsParser;
-
-    return baseLanguageOptions;
   }
 }

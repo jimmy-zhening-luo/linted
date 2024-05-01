@@ -1,48 +1,24 @@
 export default abstract class Options<
-  TS extends boolean = false,
+  Plugins,
+  Language,
 > implements IOptions<
-  TS extends true ? JsPlugin & TsPlugin : JsPlugin,
-  TS extends true ? TsLanguage : Record<string, never>
+  Plugins,
+  Language
 > {
-  public readonly files: string[];
-  public readonly linterOptions: {
-    noInlineConfig: true;
-    reportUnusedDisableDirectives: true; };
-  public readonly plugins: IOptions<
-    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
-    TS extends true ? TsLanguage : Record<string, never>
-  >["plugins"];
-  public readonly languageOptions: IOptions<
-    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
-    TS extends true ? TsLanguage : Record<string, never>
-  >["languageOptions"];
+  public readonly linterOptions: LinterOptions;
 
   constructor(
-    stylisticPlugin: StylisticPluginBody,
-    jsLintPlugin: JsPluginBody,
-    tsLintPlugin: TS extends true ? TsPluginBody : null,
-    tsLintParser: TS extends true ? TsLanguage["parser"] : null,
-    ...files: string[]
+    public readonly plugins: IOptions<Plugins, Language>["plugins"],
+    public readonly languageOptions: IOptions<Plugins, Language>["languageOptions"],
+    public readonly files: IFiles,
   ) {
-    this.files = files;
     this.linterOptions = {
       noInlineConfig: true,
       reportUnusedDisableDirectives: true,
     };
-    this.plugins = this.setPlugins(
-      stylisticPlugin,
-      jsLintPlugin,
-      tsLintPlugin,
-    );
-    this.languageOptions = this.setLanguageOptions(
-      tsLintParser,
-    );
   }
 
-  public get config(): IOptions<
-    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
-    TS extends true ? TsLanguage : Record<string, never>
-  > {
+  public get config(): IOptions<Plugins, Language> {
     return {
       files: this.files,
       linterOptions: this.linterOptions,
@@ -50,56 +26,4 @@ export default abstract class Options<
       languageOptions: this.languageOptions,
     };
   }
-
-  protected setPlugins(
-    stylisticPlugin: StylisticPluginBody,
-    jsLintPlugin: JsPluginBody,
-    tsLintPlugin: TS extends true ? TsPluginBody : null,
-  ): IOptions<
-      TS extends true ? JsPlugin & TsPlugin : JsPlugin,
-      TS extends true ? TsLanguage : Record<string, never>
-    >["plugins"] {
-    const basePlugins: StylisticPlugin & JsPlugin = {
-      "@stylistic": stylisticPlugin,
-      "@eslint/js": jsLintPlugin,
-    };
-
-    return this.setTsPlugin(
-      tsLintPlugin,
-      basePlugins,
-    );
-  }
-
-  protected setLanguageOptions(
-    tsLintParser: ConstructorParameters<typeof Options<TS>>[3],
-  ): IOptions<
-      TS extends true ? JsPlugin & TsPlugin : JsPlugin,
-      TS extends true ? TsLanguage : Record<string, never>
-    >["languageOptions"] {
-    const baseLanguageOptions: EcmaLanguage = {
-      ecmaVersion: "latest",
-      sourceType: "module",
-    };
-
-    return this.setTsParser(
-      tsLintParser,
-      baseLanguageOptions,
-    );
-  }
-
-  protected abstract setTsPlugin(
-    tsLintPlugin: TS extends true ? TsPluginBody : null,
-    basePlugins: StylisticPlugin & JsPlugin
-  ): IOptions<
-    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
-    TS extends true ? TsLanguage : Record<string, never>
-  >["plugins"];
-
-  protected abstract setTsParser(
-    tsLintParser: unknown,
-    baseLanguageOptions: EcmaLanguage
-  ): IOptions<
-    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
-    TS extends true ? TsLanguage : Record<string, never>
-  >["languageOptions"];
 }
