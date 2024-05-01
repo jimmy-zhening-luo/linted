@@ -1,7 +1,7 @@
 import StylisticRules from "./rules/StylisticRules.js";
 
 const E = "error";
-const OFF = "off";
+const OOOFF = "off";
 const TsRuleset: IRules[] = [
   StylisticRules,
 
@@ -11,40 +11,40 @@ const TsRuleset: IRules[] = [
   //   Step 1: Disable ESLint base rules
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   {
-    "class-methods-use-this": OFF,
-    "consistent-return": OFF,
-    "default-param-last": OFF,
-    "dot-notation": OFF,
-    "init-declarations": OFF,
-    "max-params": OFF,
-    "no-array-constructor": OFF,
-    "no-dupe-class-members": OFF,
-    "no-empty-function": OFF,
-    "no-implied-eval": OFF,
-    "no-invalid-this": OFF,
-    "no-loop-func": OFF,
-    "no-loss-of-precision": OFF,
-    "no-magic-numbers": OFF,
-    "no-redeclare": OFF,
-    "no-restricted-imports": OFF,
-    "no-return-await": OFF, // @typescript-eslint/return-await
-    "no-shadow": OFF, // TBD
-    "no-throw-literal": OFF, // @typescript-eslint/only-throw-error
-    "no-unused-expressions": OFF,
-    "no-unused-vars": OFF,
-    "no-use-before-define": OFF,
-    "no-useless-constructor": OFF,
-    "prefer-destructuring": OFF,
-    "prefer-promise-reject-errors": OFF,
-    "require-await": OFF,
+    "class-methods-use-this": OOOFF,
+    "consistent-return": OOOFF,
+    "default-param-last": OOOFF,
+    "dot-notation": OOOFF,
+    "init-declarations": OOOFF,
+    "max-params": OOOFF,
+    "no-array-constructor": OOOFF,
+    "no-dupe-class-members": OOOFF,
+    "no-empty-function": OOOFF,
+    "no-implied-eval": OOOFF,
+    "no-invalid-this": OOOFF,
+    "no-loop-func": OOOFF,
+    "no-loss-of-precision": OOOFF,
+    "no-magic-numbers": OOOFF,
+    "no-redeclare": OOOFF,
+    "no-restricted-imports": OOOFF,
+    "no-return-await": OOOFF, // @typescript-eslint/return-await
+    "no-shadow": OOOFF,
+    "no-throw-literal": OOOFF, // @typescript-eslint/only-throw-error
+    "no-unused-expressions": OOOFF,
+    "no-unused-vars": OOOFF,
+    "no-use-before-define": OOOFF,
+    "no-useless-constructor": OOOFF,
+    "prefer-destructuring": OOOFF,
+    "prefer-promise-reject-errors": OOOFF,
+    "require-await": OOOFF,
   },
 
   // ESLint Extensions (2-STEP)
   //   Step 2: Enable ESLint extended rules for TypeScript
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   {
-    "@typescript-eslint/class-methods-use-this": OFF,
-    "@typescript-eslint/consistent-return": OFF,
+    "@typescript-eslint/class-methods-use-this": OOOFF, // preference
+    "@typescript-eslint/consistent-return": OOOFF, // tsconfig: noImplicitReturns
     "@typescript-eslint/default-param-last": E,
     "@typescript-eslint/dot-notation": [
       E,
@@ -61,12 +61,22 @@ const TsRuleset: IRules[] = [
       E,
       "always",
     ],
-    "@typescript-eslint/max-params": OFF,
+    "@typescript-eslint/max-params": OOOFF, // preference
     "@typescript-eslint/no-array-constructor": E,
-    "@typescript-eslint/no-dupe-class-members": OFF,
-    "@typescript-eslint/no-empty-function": OFF,
+    "@typescript-eslint/no-dupe-class-members": OOOFF, // tsc
+    "@typescript-eslint/no-empty-function": [
+      E,
+      {
+        allow: [
+          "constructors",
+          "private-constructors",
+          "protected-constructors",
+          "decoratedFunctions",
+        ],
+      }, // functions, arrowFunctions, generatorFunctions, methods, generatorMethods, getters, setters, constructors, asyncFunctions, asyncMethods; TS-ONLY: private-constructors, protected-constructors, decoratedFunctions, overrideMethods
+    ],
     "@typescript-eslint/no-implied-eval": E,
-    "@typescript-eslint/no-invalid-this": OFF,
+    "@typescript-eslint/no-invalid-this": OOOFF, // tsconfig: { strict, noImplicitThis }
     "@typescript-eslint/no-loop-func": E,
     "@typescript-eslint/no-loss-of-precision": E,
     "@typescript-eslint/no-magic-numbers": [
@@ -86,9 +96,9 @@ const TsRuleset: IRules[] = [
         ignoreTypeIndexes: true,
       },
     ],
-    "@typescript-eslint/no-redeclare": OFF,
-    "@typescript-eslint/no-restricted-imports": OFF,
-    "@typescript-eslint/no-shadow": OFF, // TBD
+    "@typescript-eslint/no-redeclare": OOOFF, // tsc
+    "@typescript-eslint/no-restricted-imports": OOOFF, // investigate
+    "@typescript-eslint/no-shadow": OOOFF, // investigate
     "@typescript-eslint/no-unused-expressions": [
       E,
       {
@@ -179,7 +189,7 @@ const TsRuleset: IRules[] = [
       },
     ],
     "@typescript-eslint/ban-tslint-comment": E,
-    "@typescript-eslint/ban-types": OFF,
+    "@typescript-eslint/ban-types": OOOFF,
     "@typescript-eslint/class-literal-property-style": [
       E,
       "fields",
@@ -436,7 +446,7 @@ const TsRuleset: IRules[] = [
       E,
       "property",
     ],
-    "@typescript-eslint/naming-convention": OFF,
+    "@typescript-eslint/naming-convention": OOOFF,
     "@typescript-eslint/no-array-delete": E,
     "@typescript-eslint/no-base-to-string": [
       E,
@@ -496,7 +506,7 @@ const TsRuleset: IRules[] = [
     ],
     "@typescript-eslint/no-for-in-array": E,
     "@typescript-eslint/no-import-type-side-effects": E,
-    "@typescript-eslint/no-inferrable-types": OFF,
+    "@typescript-eslint/no-inferrable-types": OOOFF,
     "@typescript-eslint/no-invalid-void-type": [
       E,
       {
@@ -524,7 +534,7 @@ const TsRuleset: IRules[] = [
       },
     ],
     "@typescript-eslint/no-mixed-enums": E,
-    "@typescript-eslint/no-namespace": OFF,
+    "@typescript-eslint/no-namespace": OOOFF,
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": E,
     "@typescript-eslint/no-non-null-asserted-optional-chain": E,
     "@typescript-eslint/no-non-null-assertion": E,
