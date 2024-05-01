@@ -159,21 +159,38 @@ const TsRules: IRules[] = [
   // @typescript-eslint ONLY
   // [ Reference: https://typescript-eslint.io/rules/?=xextension-xdeprecated#rules ]
   {
+    "@typescript-eslint/adjacent-overload-signatures": E,
     "@typescript-eslint/array-type": [
       E,
       {
         "default": "array-simple",
-        readonly: "array-simple",
+        readonly: "array",
       },
     ],
     "@typescript-eslint/await-thenable": E,
-    "@typescript-eslint/ban-ts-comment": E,
+    "@typescript-eslint/ban-ts-comment": [
+      E,
+      {
+        "ts-check": true,
+        "ts-expect-error": true,
+        "ts-ignore": true,
+        "ts-nocheck": true,
+        minimumDescriptionLength: 10,
+      },
+    ],
     "@typescript-eslint/ban-tslint-comment": E,
-    "@typescript-eslint/ban-types": E,
-    "@typescript-eslint/class-literal-property-style": E,
+    "@typescript-eslint/ban-types": OFF,
+    "@typescript-eslint/class-literal-property-style": [
+      E,
+      "fields",
+    ],
     "@typescript-eslint/consistent-generic-constructors": [
       E,
       "type-annotation",
+    ],
+    "@typescript-eslint/consistent-indexed-object-style": [
+      E,
+      "record",
     ],
     "@typescript-eslint/consistent-type-assertions": [
       E,
@@ -182,8 +199,24 @@ const TsRules: IRules[] = [
         objectLiteralTypeAssertions: "never",
       },
     ],
-    "@typescript-eslint/consistent-type-exports": E,
-    "@typescript-eslint/consistent-type-imports": E,
+    "@typescript-eslint/consistent-type-definitions": [
+      E,
+      "type",
+    ],
+    "@typescript-eslint/consistent-type-exports": [
+      E,
+      { fixMixedExportsWithInlineTypeSpecifier: false },
+    ],
+    "@typescript-eslint/consistent-type-imports": [
+      E,
+      {
+        disallowTypeAnnotations: true,
+        fixStyle: "separate-type-imports",
+        prefer: "type-imports",
+      },
+    ],
+
+    // 4/30 - left off here
     "@typescript-eslint/explicit-function-return-type": E,
     "@typescript-eslint/explicit-member-accessibility": [
       E,
