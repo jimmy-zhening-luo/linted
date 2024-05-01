@@ -1,10 +1,6 @@
 declare type LinterSettings<
   TS extends boolean = false,
-> = {
-  linterOptions: {
-    noInlineConfig: true;
-    reportUnusedDisableDirectives: true;
-  };
+> = LinterOptions & {
   plugins: TS extends true
     ? StylisticPlugin & JsPlugin & TsPlugin
     : StylisticPlugin & JsPlugin;
