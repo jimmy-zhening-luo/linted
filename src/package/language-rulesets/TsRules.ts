@@ -9,7 +9,6 @@ const TsRules: IRules[] = [
   //   Step 1: Disable ESLint base rules
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   {
-    // Maybe: https://typescript-eslint.io/rules/class-methods-use-this/
     "class-methods-use-this": "off",
     "consistent-return": "off",
     "default-param-last": "off",
