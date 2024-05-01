@@ -45,7 +45,7 @@ export default class Configs {
     this.rules = {
       presets: {
         js: [{ ...this.options.js.config.plugins["@eslint/js"].configs.recommended.rules }],
-        ts: [{ ...this.options.ts.config.plugins["@typescript-eslint"].configs["eslint-recommended"].rules }],
+        ts: [{ ...this.options.ts.config.plugins["@typescript-eslint"].configs["strict-type-checked"].rules }],
       },
       moduleOverrides: {
         js: JsRules,

@@ -24,10 +24,10 @@ console.log(
     },
     {
       configs: {
-        "eslint-recommended": {
+        "strict-type-checked": {
           rules: {
-            "@typescript-eslint/some-ts-preset-recommended-rule": "warn",
-            "@typescript-eslint/other-ts-preset-recommended-rule": "error",
+            "@typescript-eslint/some-ts-strict-typechecked-preset-rule": "warn",
+            "@typescript-eslint/other-ts-strict-typechecked-preset-rule": "error",
           },
         },
       },

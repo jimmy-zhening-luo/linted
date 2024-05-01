@@ -1,6 +1,6 @@
 declare type StylisticPlugin = { configs: { "disable-legacy": { rules: IRules } } };
 declare type JSLintPlugin = { configs: { recommended: { rules: IRules } } };
-declare type TSLintPlugin = { configs: { "eslint-recommended": { rules: IRules } } };
+declare type TSLintPlugin = { configs: { "strict-type-checked": { rules: IRules } } };
 declare type BasePlugins = {
   "@stylistic": StylisticPlugin;
   "@eslint/js": JSLintPlugin;
