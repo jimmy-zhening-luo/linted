@@ -2,7 +2,6 @@ import type IRuleSets from "./rulesets/IRuleSets.js";
 import SharedRuleSets from "./SharedRuleSets.js";
 
 const TsRuleSets: IRuleSets = {
-  // Shared (Stylistic overrides)
   ...SharedRuleSets,
 
   // TS Overrides: TSLint Plugin: Extensions of ESLint base rules
