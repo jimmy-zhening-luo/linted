@@ -5,9 +5,8 @@ import TsRuleset from "./rulesets/TsRuleset.js";
 
 declare type Language = "js" | "ts";
 declare type Config<
-  TS extends boolean,
-  ConfigOptions extends TS extends true ? TsOptions : JsOptions,
-> = ConfigOptions["config"] & {
+  L extends Language,
+> = Configs["options"][L]["config"] & {
   rules: IRules;
 };
 
@@ -63,7 +62,7 @@ export default class Configs {
   }
 
   public get configs(): Array<
-    Config<boolean, JsOptions | TsOptions>
+    Config<Language>
   > {
     return [
       ...this.getLanguageConfigs<"js">("js"),
@@ -73,7 +72,7 @@ export default class Configs {
 
   protected getLanguageConfigs<L extends Language>(
     language: L,
-  ): Array<Config<boolean, JsOptions | TsOptions>> {
+  ): Array<Config<L>> {
     return [
       ...[
         ...this.rules.presets[language],
