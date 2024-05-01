@@ -1,9 +1,6 @@
-declare type StylisticPlugin = { configs: { "disable-legacy": { rules: IRules } } };
-declare type JSLintPlugin = { configs: { recommended: { rules: IRules } } };
-declare type TSLintPlugin = { configs: { "strict-type-checked": { rules: IRules } } };
 declare type BasePlugins = {
   "@stylistic": StylisticPlugin;
-  "@eslint/js": JSLintPlugin;
+  "@eslint/js": JsPlugin;
 };
 declare type BaseLanguageOptions = {
   ecmaVersion: 2022;
@@ -20,7 +17,7 @@ declare type LinterSettings<
   plugins: TS extends true
     ? (
         BasePlugins & {
-          "@typescript-eslint": TSLintPlugin;
+          "@typescript-eslint": TsPlugin;
         }
       )
     : BasePlugins;

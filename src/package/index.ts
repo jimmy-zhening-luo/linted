@@ -1,5 +1,5 @@
-import JsOptions from "./language-options/JsOptions.js";
-import TsOptions from "./language-options/TsOptions.js";
+import JsOptions from "./options/JsOptions.js";
+import TsOptions from "./options/TsOptions.js";
 import JsRules from "./rules/JsRules.js";
 import TsRules from "./rules/TsRules.js";
 
@@ -19,9 +19,9 @@ export default class Configs {
   protected readonly rules: Record<"presets" | "moduleOverrides" | "userOverrides", Record<Language, IRules[]>>;
 
   constructor(
-    stylisticPlugin: ConstructorParameters<typeof JsOptions>[0],
-    jsPlugin: ConstructorParameters<typeof JsOptions>[1],
-    tsPlugin: ConstructorParameters<typeof TsOptions>[2],
+    stylisticPlugin: StylisticPlugin,
+    jsPlugin: JsPlugin,
+    tsPlugin: TsPlugin,
     tsParser: ConstructorParameters<typeof TsOptions>[3],
     jsFiles: string[],
     tsFiles: string[],
