@@ -44,8 +44,7 @@ const OPTIONS = {
         ...OPTIONS.languageOptions.js,
         parser: tsLintParser,
         parserOptions: {
-          ecmaVersion: "latest",
-          sourceType: "module",
+          ...OPTIONS.languageOptions.js,
           project: true,
         },
       };
