@@ -21,7 +21,7 @@ export default class TsOptions extends Options<true> {
       ...baseLanguageOptions,
       parser: tsParser,
       parserOptions: {
-        ecmaVersion: "es2022",
+        ecmaVersion: "latest",
         sourceType: "module",
         project: true,
       },

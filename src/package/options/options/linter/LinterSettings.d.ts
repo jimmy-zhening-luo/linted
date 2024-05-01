@@ -1,9 +1,3 @@
-declare type BasePlugins = StylisticPlugin & JsPlugin;
-declare type BaseLanguageOptions = {
-  ecmaVersion: 2022;
-  sourceType: "module";
-};
-
 declare type LinterSettings<
   TS extends boolean = false,
 > = {
@@ -12,20 +6,9 @@ declare type LinterSettings<
     reportUnusedDisableDirectives: true;
   };
   plugins: TS extends true
-    ? (
-        BasePlugins & TsPlugin
-      )
-    : BasePlugins;
+    ? StylisticPlugin & JsPlugin & TsPlugin
+    : StylisticPlugin & JsPlugin;
   languageOptions: TS extends true
-    ? (
-        BaseLanguageOptions & {
-          parser: unknown;
-          parserOptions: {
-            ecmaVersion: "es2022";
-            sourceType: "module";
-            project: true;
-          };
-        }
-      )
-    : BaseLanguageOptions;
+    ? EcmaLanguage & TsLanguage
+    : EcmaLanguage;
 };

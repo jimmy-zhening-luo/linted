@@ -1,1 +1,1 @@
-declare type IPlugin<A extends PluginAlias, B extends IPluginBody<Preset>, Preset extends string> = Record<A, B>;
+declare type IPlugin<A extends PluginAlias, B extends IPluginBody<Extract<keyof B["configs"], string>>> = Record<A, B>;

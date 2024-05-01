@@ -63,7 +63,7 @@ export default abstract class Options<
     tsLintParser: ConstructorParameters<typeof Options<TS>>[3],
   ): IOptions<TS>["languageOptions"] {
     const baseLanguageOptions: IOptions["languageOptions"] = {
-      ecmaVersion: 2022,
+      ecmaVersion: "latest",
       sourceType: "module",
     };
 

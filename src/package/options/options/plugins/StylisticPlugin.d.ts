@@ -1,1 +1,1 @@
-declare type StylisticPlugin = IPlugin<"@stylistic", StylisticPluginBody, "disable-legacy">;
+declare type StylisticPlugin = IPlugin<"@stylistic", StylisticPluginBody>;
