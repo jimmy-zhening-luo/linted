@@ -5,7 +5,7 @@ import tsLint from "@typescript-eslint/eslint-plugin";
 import tsLintParser from "@typescript-eslint/parser";
 import stylisticBaseRules from "./stylistic.base.config.js";
 
-const ConfigOptions = {
+const OPTIONS = {
   files: {
     js: [
       "eslint.config.js",
@@ -18,11 +18,20 @@ const ConfigOptions = {
       "@eslint/js": jsLint,
       "@stylistic": stylistic,
     },
+    get ts() {
+      return {
+        ...OPTIONS.plugins.js,
+        "@typescript-eslint": tsLint,
+      };
+    },
   },
   linterOptions: {
     js: {
       noInlineConfig: true,
       reportUnusedDisableDirectives: true,
+    },
+    get ts() {
+      return OPTIONS.linterOptions.js;
     },
   },
   languageOptions: {
@@ -30,26 +39,21 @@ const ConfigOptions = {
       ecmaVersion: "latest",
       sourceType: "module",
     },
+    get ts() {
+      return {
+        ...OPTIONS.languageOptions.js,
+        parser: tsLintParser,
+        parserOptions: {
+          ecmaVersion: "latest",
+          sourceType: "module",
+          project: true,
+          tsconfigRootDir: import.meta.dirname,
+        },
+      };
+    },
   },
 };
-
-ConfigOptions.plugins.ts = {
-  ...ConfigOptions.plugins.js,
-  "@typescript-eslint": tsLint,
-};
-ConfigOptions.linterOptions.ts = ConfigOptions.linterOptions.js;
-ConfigOptions.languageOptions.ts = {
-  ...ConfigOptions.languageOptions.js,
-  parser: tsLintParser,
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: true,
-    tsconfigRootDir: import.meta.dirname,
-  },
-};
-
-const RuleSets = {
+const RULESETS = {
   js: [
     { ...jsLint.configs.recommended.rules },
     { ...stylisticBaseRules },
@@ -63,15 +67,15 @@ const RuleSets = {
 function _flattenRuleSets(
   language,
 ) {
-  return RuleSets[language]
+  return RULESETS[language]
     .map(
       ruleset =>
         (
           {
-            files: ConfigOptions.files[language],
-            plugins: ConfigOptions.plugins[language],
-            linterOptions: ConfigOptions.linterOptions[language],
-            languageOptions: ConfigOptions.languageOptions[language],
+            files: OPTIONS.files[language],
+            plugins: OPTIONS.plugins[language],
+            linterOptions: OPTIONS.linterOptions[language],
+            languageOptions: OPTIONS.languageOptions[language],
             rules: { ...ruleset },
           }
         ),
