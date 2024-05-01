@@ -1,22 +1,27 @@
-type IOptions<TS extends boolean = false> = LinterSettings<TS> & {
-  files: string[];
-};
-
 export default abstract class Options<
   TS extends boolean = false,
-> implements IOptions<TS> {
+> implements IOptions<
+  TS extends true ? JsPlugin & TsPlugin : JsPlugin,
+  TS extends true ? TsLanguage : Record<string, never>
+> {
   public readonly files: string[];
   public readonly linterOptions: {
     noInlineConfig: true;
     reportUnusedDisableDirectives: true; };
-  public readonly plugins: IOptions<TS>["plugins"];
-  public readonly languageOptions: IOptions<TS>["languageOptions"];
+  public readonly plugins: IOptions<
+    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
+    TS extends true ? TsLanguage : Record<string, never>
+  >["plugins"];
+  public readonly languageOptions: IOptions<
+    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
+    TS extends true ? TsLanguage : Record<string, never>
+  >["languageOptions"];
 
   constructor(
-    stylisticPlugin: IOptions["plugins"]["@stylistic"],
-    jsLintPlugin: IOptions["plugins"]["@eslint/js"],
-    tsLintPlugin: TS extends true ? IOptions<true>["plugins"]["@typescript-eslint"] : null,
-    tsLintParser: TS extends true ? IOptions<true>["languageOptions"]["parser"] : null,
+    stylisticPlugin: StylisticPluginBody,
+    jsLintPlugin: JsPluginBody,
+    tsLintPlugin: TS extends true ? TsPluginBody : null,
+    tsLintParser: TS extends true ? TsLanguage["parser"] : null,
     ...files: string[]
   ) {
     this.files = files;
@@ -34,7 +39,10 @@ export default abstract class Options<
     );
   }
 
-  public get config(): IOptions<TS> {
+  public get config(): IOptions<
+    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
+    TS extends true ? TsLanguage : Record<string, never>
+  > {
     return {
       files: this.files,
       linterOptions: this.linterOptions,
@@ -44,11 +52,14 @@ export default abstract class Options<
   }
 
   protected setPlugins(
-    stylisticPlugin: ConstructorParameters<typeof Options<TS>>[0],
-    jsLintPlugin: ConstructorParameters<typeof Options<TS>>[1],
-    tsLintPlugin: ConstructorParameters<typeof Options<TS>>[2],
-  ): IOptions<TS>["plugins"] {
-    const basePlugins: IOptions["plugins"] = {
+    stylisticPlugin: StylisticPluginBody,
+    jsLintPlugin: JsPluginBody,
+    tsLintPlugin: TS extends true ? TsPluginBody : null,
+  ): IOptions<
+      TS extends true ? JsPlugin & TsPlugin : JsPlugin,
+      TS extends true ? TsLanguage : Record<string, never>
+    >["plugins"] {
+    const basePlugins: StylisticPlugin & JsPlugin = {
       "@stylistic": stylisticPlugin,
       "@eslint/js": jsLintPlugin,
     };
@@ -61,8 +72,11 @@ export default abstract class Options<
 
   protected setLanguageOptions(
     tsLintParser: ConstructorParameters<typeof Options<TS>>[3],
-  ): IOptions<TS>["languageOptions"] {
-    const baseLanguageOptions: IOptions["languageOptions"] = {
+  ): IOptions<
+      TS extends true ? JsPlugin & TsPlugin : JsPlugin,
+      TS extends true ? TsLanguage : Record<string, never>
+    >["languageOptions"] {
+    const baseLanguageOptions: EcmaLanguage = {
       ecmaVersion: "latest",
       sourceType: "module",
     };
@@ -74,12 +88,18 @@ export default abstract class Options<
   }
 
   protected abstract setTsPlugin(
-    tsLintPlugin: TS extends true ? IOptions<true>["plugins"]["@typescript-eslint"] : null,
-    basePlugins: IOptions["plugins"]
-  ): IOptions<TS>["plugins"];
+    tsLintPlugin: TS extends true ? TsPluginBody : null,
+    basePlugins: StylisticPlugin & JsPlugin
+  ): IOptions<
+    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
+    TS extends true ? TsLanguage : Record<string, never>
+  >["plugins"];
 
   protected abstract setTsParser(
     tsLintParser: unknown,
-    baseLanguageOptions: IOptions["languageOptions"]
-  ): IOptions<TS>["languageOptions"];
+    baseLanguageOptions: EcmaLanguage
+  ): IOptions<
+    TS extends true ? JsPlugin & TsPlugin : JsPlugin,
+    TS extends true ? TsLanguage : Record<string, never>
+  >["languageOptions"];
 }

@@ -1,0 +1,1 @@
+declare type IFiles = string[];

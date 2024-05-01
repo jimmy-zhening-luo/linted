@@ -1,6 +1,6 @@
 declare type LinterSettings<
   TS extends boolean = false,
-> = LinterOptions & {
+> = Record<"linterOptions", LinterOptions> & {
   plugins: TS extends true
     ? StylisticPlugin & JsPlugin & TsPlugin
     : StylisticPlugin & JsPlugin;
