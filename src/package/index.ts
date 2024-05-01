@@ -1,7 +1,7 @@
 import JsOptions from "./options/JsOptions.js";
 import TsOptions from "./options/TsOptions.js";
-import JsRules from "./rules/JsRules.js";
-import TsRules from "./rules/TsRules.js";
+import JsRuleset from "./rulesets/JsRuleset.js";
+import TsRuleset from "./rulesets/TsRuleset.js";
 
 declare type Language = "js" | "ts";
 declare type Config<
@@ -30,14 +30,18 @@ export default class Configs {
   ) {
     this.options = {
       js: new JsOptions(
-        stylisticPlugin,
-        jsPlugin,
+        {
+          "@stylistic": stylisticPlugin,
+          "@eslint/js": jsPlugin,
+        },
         ...jsFiles,
       ),
       ts: new TsOptions(
-        stylisticPlugin,
-        jsPlugin,
-        tsPlugin,
+        {
+          "@stylistic": stylisticPlugin,
+          "@eslint/js": jsPlugin,
+          "@typescript-eslint": tsPlugin,
+        },
         tsParser,
         ...tsFiles,
       ),
@@ -48,8 +52,8 @@ export default class Configs {
         ts: [{ ...this.options.ts.config.plugins["@typescript-eslint"].configs["strict-type-checked"].rules }],
       },
       moduleOverrides: {
-        js: JsRules,
-        ts: TsRules,
+        js: JsRuleset,
+        ts: TsRuleset,
       },
       userOverrides: {
         js: [jsOverrides],

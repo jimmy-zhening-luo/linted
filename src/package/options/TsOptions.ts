@@ -5,18 +5,12 @@ export default class TsOptions extends Options<
   TsLanguage
 > {
   constructor(
-    stylistic: StylisticPluginBody,
-    jsLint: JsPluginBody,
-    tsLint: TsPluginBody,
+    plugins: StylisticPlugin & JsPlugin & TsPlugin,
     parser: TsLanguage["parser"],
     ...files: string[]
   ) {
     super(
-      {
-        "@stylistic": stylistic,
-        "@eslint/js": jsLint,
-        "@typescript-eslint": tsLint,
-      },
+      plugins,
       {
         ecmaVersion: "latest",
         sourceType: "module",

@@ -5,15 +5,11 @@ export default class JsOptions extends Options<
   Record<string, unknown>
 > {
   constructor(
-    stylistic: StylisticPluginBody,
-    jsLint: JsPluginBody,
+    plugins: StylisticPlugin & JsPlugin,
     ...files: string[]
   ) {
     super(
-      {
-        "@stylistic": stylistic,
-        "@eslint/js": jsLint,
-      },
+      plugins,
       {
         ecmaVersion: "latest",
         sourceType: "module",

@@ -1,9 +1,9 @@
-import SharedRules from "./SharedRules.js";
+import StylisticRules from "./rules/StylisticRules.js";
 
 const E = "error";
 const OFF = "off";
-const TsRules: IRules[] = [
-  ...SharedRules,
+const TsRuleset: IRules[] = [
+  StylisticRules,
 
   // https://typescript-eslint.io/rules/?=xdeprecated#rules
 
@@ -606,4 +606,4 @@ const TsRules: IRules[] = [
   },
 ];
 
-export default TsRules;
+export default TsRuleset;
