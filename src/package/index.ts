@@ -1,7 +1,7 @@
 import JsOptions from "./language-options/JsOptions.js";
 import TsOptions from "./language-options/TsOptions.js";
-import JsRules from "./language-rulesets/JsRules.js";
-import TsRules from "./language-rulesets/TsRules.js";
+import JsRules from "./rules/JsRules.js";
+import TsRules from "./rules/TsRules.js";
 
 type Language = "js" | "ts";
 type Config<
