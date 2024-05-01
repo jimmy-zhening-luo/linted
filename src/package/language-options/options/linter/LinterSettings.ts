@@ -1,8 +1,6 @@
-import type IRuleSet from "../../../language-rulesets/rulesets/ruleset/IRuleSet.js";
-
-type StylisticPlugin = { configs: { "disable-legacy": { rules: IRuleSet } } };
-type JSLintPlugin = { configs: { recommended: { rules: IRuleSet } } };
-type TSLintPlugin = { configs: { "eslint-recommended": { rules: IRuleSet } } };
+type StylisticPlugin = { configs: { "disable-legacy": { rules: IRules } } };
+type JSLintPlugin = { configs: { recommended: { rules: IRules } } };
+type TSLintPlugin = { configs: { "eslint-recommended": { rules: IRules } } };
 type BasePlugins = {
   "@stylistic": StylisticPlugin;
   "@eslint/js": JSLintPlugin;

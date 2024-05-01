@@ -1,13 +1,12 @@
-import type IRuleSets from "./rulesets/IRuleSets.js";
-import SharedRuleSets from "./SharedRuleSets.js";
+import SharedRules from "./SharedRules.js";
 
-const TsRuleSets: IRuleSets = {
-  ...SharedRuleSets,
+const TsRules: IRules[] = [
+  ...SharedRules,
 
   // TS Overrides: TSLint Plugin: Extensions of ESLint base rules
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xformatting-xdeprecated#rules ]
   // Step 1/2: Disable ESLint base rules
-  functionalOverride_JsExtension_DisableBase: {
+  {
     // Maybe: https://typescript-eslint.io/rules/class-methods-use-this/
     "init-declarations": "off",
     "no-array-constructor": "off",
@@ -24,7 +23,7 @@ const TsRuleSets: IRuleSets = {
   },
 
   // Step 2/2: Enable ESLint extended rules for TypeScript
-  functionalOverride_JsExtension_EnableExtended: {
+  {
     // Maybe: https://typescript-eslint.io/rules/class-methods-use-this/
     "@typescript-eslint/init-declarations": "error",
     "@typescript-eslint/no-array-constructor": "error",
@@ -50,7 +49,7 @@ const TsRuleSets: IRuleSets = {
 
   // TS Overrides: TSLint Plugin: Rules without analogs in ESLint
   // [ Reference: https://typescript-eslint.io/rules/?=xextension-xformatting-xdeprecated#rules ]
-  functionalOverride_TsOnly: {
+  {
     "@typescript-eslint/array-type": [
       "error",
       {
@@ -347,6 +346,6 @@ const TsRuleSets: IRuleSets = {
     "@typescript-eslint/triple-slash-reference": "error",
     "@typescript-eslint/unbound-method": "error",
   },
-};
+];
 
-export default TsRuleSets;
+export default TsRules;

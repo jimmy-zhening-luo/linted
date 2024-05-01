@@ -48,6 +48,7 @@
     "prebuild": "npm run clean && npm run lint:fix",
     "build": "tsc",
     "prepublishOnly": "npm run build",
+    "pretest": "npm run build",
     "test": "node ./dist/test/index.js"
   }
 }

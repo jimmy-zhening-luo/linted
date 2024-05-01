@@ -1,15 +1,14 @@
 import JsConfigOptions from "./language-options/JsConfigOptions.js";
 import TsConfigOptions from "./language-options/TsConfigOptions.js";
-import JsRuleSets from "./language-rulesets/JsRuleSets.js";
-import TsRuleSets from "./language-rulesets/TsRuleSets.js";
-import type IRuleSet from "./language-rulesets/rulesets/ruleset/IRuleSet.js";
+import JsRules from "./language-rulesets/JsRules.js";
+import TsRules from "./language-rulesets/TsRules.js";
 
 type Language = "js" | "ts";
 type Config<
   TS extends boolean,
   ConfigOptions extends TS extends true ? TsConfigOptions : JsConfigOptions,
 > = ConfigOptions["config"] & {
-  rules: IRuleSet;
+  rules: IRules;
 };
 
 export default class Configs {
@@ -17,20 +16,7 @@ export default class Configs {
     js: JsConfigOptions;
     ts: TsConfigOptions;
   };
-  protected readonly rules: {
-    presets: {
-      js: IRuleSet;
-      ts: IRuleSet;
-    };
-    moduleOverrides: {
-      js: typeof JsRuleSets;
-      ts: typeof TsRuleSets;
-    };
-    userOverrides: {
-      js: IRuleSet;
-      ts: IRuleSet;
-    };
-  };
+  protected readonly rules: Record<"presets" | "moduleOverrides" | "userOverrides", Record<Language, IRules[]>>;
 
   constructor(
     stylisticPlugin: ConstructorParameters<typeof JsConfigOptions>[0],
@@ -39,8 +25,8 @@ export default class Configs {
     tsParser: ConstructorParameters<typeof TsConfigOptions>[3],
     jsFiles: string[],
     tsFiles: string[],
-    jsOverrides: IRuleSet = {},
-    tsOverrides: IRuleSet = {},
+    jsOverrides: IRules = {},
+    tsOverrides: IRules = {},
   ) {
     this.options = {
       js: new JsConfigOptions(
@@ -58,16 +44,16 @@ export default class Configs {
     };
     this.rules = {
       presets: {
-        js: { ...this.options.js.config.plugins["@eslint/js"].configs.recommended.rules },
-        ts: { ...this.options.ts.config.plugins["@typescript-eslint"].configs["eslint-recommended"].rules },
+        js: [{ ...this.options.js.config.plugins["@eslint/js"].configs.recommended.rules }],
+        ts: [{ ...this.options.ts.config.plugins["@typescript-eslint"].configs["eslint-recommended"].rules }],
       },
       moduleOverrides: {
-        js: JsRuleSets,
-        ts: TsRuleSets,
+        js: JsRules,
+        ts: TsRules,
       },
       userOverrides: {
-        js: jsOverrides,
-        ts: tsOverrides,
+        js: [jsOverrides],
+        ts: [tsOverrides],
       },
     };
   }
@@ -86,17 +72,15 @@ export default class Configs {
   ): Array<Config<boolean, JsConfigOptions | TsConfigOptions>> {
     return [
       ...[
-        { ...this.rules.presets[language] },
-        ...Object.values(this.rules.moduleOverrides[language]),
-        { ...this.rules.userOverrides[language] },
+        ...this.rules.presets[language],
+        ...this.rules.moduleOverrides[language],
+        ...this.rules.userOverrides[language],
       ]
-        .filter(ruleSet =>
-          Object.keys(ruleSet).length > 0)
         .map(
-          ruleSet =>
+          rules =>
             ({
               ...this.options[language].config,
-              rules: { ...ruleSet },
+              rules,
             }),
         ),
     ];

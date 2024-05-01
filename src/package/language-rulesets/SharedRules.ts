@@ -1,8 +1,7 @@
-// https://eslint.style/rules
-import type IRuleSets from "./rulesets/IRuleSets.js";
-
-const SharedRuleSets: IRuleSets = {
-  stylisticOverrides: {
+const SharedRules: IRules[] = [
+  // Stylistic
+  // https://eslint.style/rules
+  {
     "@stylistic/array-bracket-newline": [
       "error",
       {
@@ -662,6 +661,6 @@ const SharedRuleSets: IRuleSets = {
       },
     ],
   },
-};
+];
 
-export default SharedRuleSets;
+export default SharedRules;
