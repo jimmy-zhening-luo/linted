@@ -1,6 +1,6 @@
 declare type BasePlugins = {
-  "@stylistic": StylisticPlugin;
-  "@eslint/js": JsPlugin;
+  "@stylistic": StylisticPluginBody;
+  "@eslint/js": JsPluginBody;
 };
 declare type BaseLanguageOptions = {
   ecmaVersion: 2022;
@@ -17,7 +17,7 @@ declare type LinterSettings<
   plugins: TS extends true
     ? (
         BasePlugins & {
-          "@typescript-eslint": TsPlugin;
+          "@typescript-eslint": TsPluginBody;
         }
       )
     : BasePlugins;

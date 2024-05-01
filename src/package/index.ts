@@ -19,9 +19,9 @@ export default class Configs {
   protected readonly rules: Record<"presets" | "moduleOverrides" | "userOverrides", Record<Language, IRules[]>>;
 
   constructor(
-    stylisticPlugin: StylisticPlugin,
-    jsPlugin: JsPlugin,
-    tsPlugin: TsPlugin,
+    stylisticPlugin: StylisticPluginBody,
+    jsPlugin: JsPluginBody,
+    tsPlugin: TsPluginBody,
     tsParser: ConstructorParameters<typeof TsOptions>[3],
     jsFiles: string[],
     tsFiles: string[],
