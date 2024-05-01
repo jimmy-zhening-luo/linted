@@ -3,8 +3,8 @@ import TsOptions from "./language-options/TsOptions.js";
 import JsRules from "./rules/JsRules.js";
 import TsRules from "./rules/TsRules.js";
 
-type Language = "js" | "ts";
-type Config<
+declare type Language = "js" | "ts";
+declare type Config<
   TS extends boolean,
   ConfigOptions extends TS extends true ? TsOptions : JsOptions,
 > = ConfigOptions["config"] & {
