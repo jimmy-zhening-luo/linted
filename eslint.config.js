@@ -5,15 +5,14 @@ import tsLint from "@typescript-eslint/eslint-plugin";
 import tsLintParser from "@typescript-eslint/parser";
 import stylisticBaseRules from "./stylistic.base.config.js";
 
-const files = {
-  js: [
-    "eslint.config.js",
-    "stylistic.base.config.js",
-  ],
-  ts: ["src/**/*.ts"],
-};
 const ConfigOptions = {
-  files,
+  files: {
+    js: [
+      "eslint.config.js",
+      "stylistic.base.config.js",
+    ],
+    ts: ["src/**/*.ts"],
+  },
   plugins: {
     js: {
       "@eslint/js": jsLint,

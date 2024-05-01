@@ -1,8 +1,8 @@
 {
   "include": [
-    "./src/**/*",
+    "./stylistic.base.config.js",
     "./eslint.config.js",
-    "./stylistic.base.config.js"
+    "./src/**/*",
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
