@@ -1,7 +1,7 @@
+// https://eslint.style/rules
 import type IRuleSets from "./rulesets/IRuleSets.js";
 
 const SharedRuleSets: IRuleSets = {
-  // Stylistic Overrides (Enable ESLint Stylistic plugin rules)
   stylisticOverrides: {
     "@stylistic/array-bracket-newline": [
       "error",
