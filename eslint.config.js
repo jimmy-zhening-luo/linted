@@ -47,7 +47,6 @@ const OPTIONS = {
           ecmaVersion: "latest",
           sourceType: "module",
           project: true,
-          tsconfigRootDir: import.meta.dirname,
         },
       };
     },
