@@ -1,40 +1,40 @@
-import JsConfigOptions from "./language-options/JsConfigOptions.js";
-import TsConfigOptions from "./language-options/TsConfigOptions.js";
+import JsOptions from "./language-options/JsOptions.js";
+import TsOptions from "./language-options/TsOptions.js";
 import JsRules from "./language-rulesets/JsRules.js";
 import TsRules from "./language-rulesets/TsRules.js";
 
 type Language = "js" | "ts";
 type Config<
   TS extends boolean,
-  ConfigOptions extends TS extends true ? TsConfigOptions : JsConfigOptions,
+  ConfigOptions extends TS extends true ? TsOptions : JsOptions,
 > = ConfigOptions["config"] & {
   rules: IRules;
 };
 
 export default class Configs {
   protected readonly options: {
-    js: JsConfigOptions;
-    ts: TsConfigOptions;
+    js: JsOptions;
+    ts: TsOptions;
   };
   protected readonly rules: Record<"presets" | "moduleOverrides" | "userOverrides", Record<Language, IRules[]>>;
 
   constructor(
-    stylisticPlugin: ConstructorParameters<typeof JsConfigOptions>[0],
-    jsPlugin: ConstructorParameters<typeof JsConfigOptions>[1],
-    tsPlugin: ConstructorParameters<typeof TsConfigOptions>[2],
-    tsParser: ConstructorParameters<typeof TsConfigOptions>[3],
+    stylisticPlugin: ConstructorParameters<typeof JsOptions>[0],
+    jsPlugin: ConstructorParameters<typeof JsOptions>[1],
+    tsPlugin: ConstructorParameters<typeof TsOptions>[2],
+    tsParser: ConstructorParameters<typeof TsOptions>[3],
     jsFiles: string[],
     tsFiles: string[],
     jsOverrides: IRules = {},
     tsOverrides: IRules = {},
   ) {
     this.options = {
-      js: new JsConfigOptions(
+      js: new JsOptions(
         stylisticPlugin,
         jsPlugin,
         ...jsFiles,
       ),
-      ts: new TsConfigOptions(
+      ts: new TsOptions(
         stylisticPlugin,
         jsPlugin,
         tsPlugin,
@@ -59,7 +59,7 @@ export default class Configs {
   }
 
   public get configs(): Array<
-    Config<boolean, JsConfigOptions | TsConfigOptions>
+    Config<boolean, JsOptions | TsOptions>
   > {
     return [
       ...this.getLanguageConfigs<"js">("js"),
@@ -69,7 +69,7 @@ export default class Configs {
 
   protected getLanguageConfigs<L extends Language>(
     language: L,
-  ): Array<Config<boolean, JsConfigOptions | TsConfigOptions>> {
+  ): Array<Config<boolean, JsOptions | TsOptions>> {
     return [
       ...[
         ...this.rules.presets[language],

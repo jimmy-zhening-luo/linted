@@ -1,18 +1,18 @@
-type StylisticPlugin = { configs: { "disable-legacy": { rules: IRules } } };
-type JSLintPlugin = { configs: { recommended: { rules: IRules } } };
-type TSLintPlugin = { configs: { "eslint-recommended": { rules: IRules } } };
-type BasePlugins = {
+declare type StylisticPlugin = { configs: { "disable-legacy": { rules: IRules } } };
+declare type JSLintPlugin = { configs: { recommended: { rules: IRules } } };
+declare type TSLintPlugin = { configs: { "eslint-recommended": { rules: IRules } } };
+declare type BasePlugins = {
   "@stylistic": StylisticPlugin;
   "@eslint/js": JSLintPlugin;
 };
-type BaseLanguageOptions = {
+declare type BaseLanguageOptions = {
   ecmaVersion: 2022;
   sourceType: "module";
 };
 
-export default interface LinterSettings<
+declare type LinterSettings<
   TS extends boolean = false,
-> {
+> = {
   linterOptions: {
     noInlineConfig: true;
     reportUnusedDisableDirectives: true;
@@ -36,4 +36,4 @@ export default interface LinterSettings<
         }
       )
     : BaseLanguageOptions;
-}
+};
