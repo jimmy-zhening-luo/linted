@@ -215,19 +215,30 @@ const TsRules: IRules[] = [
         prefer: "type-imports",
       },
     ],
-
-    // 4/30 - left off here
-    "@typescript-eslint/explicit-function-return-type": E,
+    "@typescript-eslint/explicit-function-return-type": [
+      E,
+      {
+        allowExpressions: false,
+        allowTypedFunctionExpressions: false,
+        allowHigherOrderFunctions: false,
+        allowDirectConstAssertionInArrowFunctions: false,
+        allowConciseArrowFunctionExpressionsStartingWithVoid: true,
+        allowFunctionsWithoutTypeParameters: false,
+        allowedNames: [],
+        allowIIFEs: false,
+      },
+    ],
     "@typescript-eslint/explicit-member-accessibility": [
       E,
       {
         accessibility: "explicit",
+        ignoredMethodNames: [],
         overrides: {
           properties: "explicit",
           constructors: "no-public",
           accessors: "explicit",
           methods: "explicit",
-          parameterProperties: OFF,
+          parameterProperties: "explicit",
         },
       },
     ],
@@ -421,35 +432,140 @@ const TsRules: IRules[] = [
 
       },
     ],
-    "@typescript-eslint/method-signature-style": E,
-
-    // TODO: @typescript-eslint/naming-convention
-    "@typescript-eslint/no-base-to-string": E,
+    "@typescript-eslint/method-signature-style": [
+      E,
+      "property",
+    ],
+    "@typescript-eslint/naming-convention": OFF,
+    "@typescript-eslint/no-array-delete": E,
+    "@typescript-eslint/no-base-to-string": [
+      E,
+      {
+        ignoredTypeNames: [
+          "Error",
+          "RegExp",
+          "URL",
+          "URLSearchParams",
+        ],
+      },
+    ],
     "@typescript-eslint/no-confusing-non-null-assertion": E,
-    "@typescript-eslint/no-confusing-void-expression": E,
+    "@typescript-eslint/no-confusing-void-expression": [
+      E,
+      {
+        ignoreArrowShorthand: true,
+        ignoreVoidOperator: true,
+      },
+    ],
     "@typescript-eslint/no-duplicate-enum-values": E,
-    "@typescript-eslint/no-duplicate-type-constituents": E,
+    "@typescript-eslint/no-duplicate-type-constituents": [
+      E,
+      {
+        ignoreIntersections: false,
+        ignoreUnions: false,
+      },
+    ],
     "@typescript-eslint/no-dynamic-delete": E,
-    "@typescript-eslint/no-empty-interface": E,
+    "@typescript-eslint/no-empty-interface": [
+      E,
+      {
+        allowSingleExtends: true,
+      },
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      E,
+      {
+        fixToUnknown: false,
+        ignoreRestArgs: false,
+      },
+    ],
     "@typescript-eslint/no-extra-non-null-assertion": E,
-    "@typescript-eslint/no-floating-promises": E,
+    "@typescript-eslint/no-extraneous-class": [
+      E,
+      {
+        allowConstructorOnly: false,
+        allowEmpty: true,
+        allowStaticOnly: false,
+        allowWithDecorator: false,
+      },
+    ],
+    "@typescript-eslint/no-floating-promises": [
+      E,
+      {
+        ignoreVoid: true,
+        ignoreIIFE: false,
+      },
+    ],
     "@typescript-eslint/no-for-in-array": E,
     "@typescript-eslint/no-import-type-side-effects": E,
-    "@typescript-eslint/no-invalid-void-type": E,
-    "@typescript-eslint/no-meaningless-void-operator": E,
+    "@typescript-eslint/no-inferrable-types": OFF,
+    "@typescript-eslint/no-invalid-void-type": [
+      E,
+      {
+        allowInGenericTypeArguments: true,
+        allowAsThisParameter: false,
+      },
+    ],
+    "@typescript-eslint/no-meaningless-void-operator": [
+      E,
+      {
+        checkNever: true,
+      },
+    ],
     "@typescript-eslint/no-misused-new": E,
-    "@typescript-eslint/no-misused-promises": E,
+    "@typescript-eslint/no-misused-promises": [
+      E,
+      {
+        checksConditionals: true,
+        checksSpreads: true,
+        checksVoidReturn: {
+          arguments: true,
+          attributes: true,
+          properties: true,
+          returns: true,
+          variables: true,
+        },
+      },
+    ],
     "@typescript-eslint/no-mixed-enums": E,
+    "@typescript-eslint/no-namespace": OFF,
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": E,
     "@typescript-eslint/no-non-null-asserted-optional-chain": E,
+    "@typescript-eslint/no-non-null-assertion": E,
     "@typescript-eslint/no-redundant-type-constituents": E,
-    "@typescript-eslint/no-require-imports": E,
-    "@typescript-eslint/no-this-alias": E,
-    "@typescript-eslint/no-unnecessary-boolean-literal-compare": E,
-    "@typescript-eslint/no-unnecessary-condition": E,
+    "@typescript-eslint/no-require-imports": [
+      E,
+      { allow: [] },
+    ],
+    "@typescript-eslint/no-this-alias": [
+      E,
+      {
+        allowDestructuring: true,
+        allowedNames: [],
+      },
+    ],
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
+      E,
+      {
+        allowComparingNullableBooleansToTrue: true,
+        allowComparingNullableBooleansToFalse: true,
+      },
+    ],
+    "@typescript-eslint/no-unnecessary-condition": [
+      E,
+      {
+        allowConstantLoopConditions: false,
+      allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
+      },
+    ],
     "@typescript-eslint/no-unnecessary-qualifier": E,
     "@typescript-eslint/no-unnecessary-type-arguments": E,
-    "@typescript-eslint/no-unnecessary-type-assertion": E,
+    "@typescript-eslint/no-unnecessary-type-assertion": [
+      E,
+      {
+        typesToIgnore: [],
+      },
+    ],
     "@typescript-eslint/no-unnecessary-type-constraint": E,
     "@typescript-eslint/no-unsafe-argument": E,
     "@typescript-eslint/no-unsafe-assignment": E,
@@ -460,8 +576,14 @@ const TsRules: IRules[] = [
     "@typescript-eslint/no-unsafe-return": E,
     "@typescript-eslint/no-unsafe-unary-minus": E,
     "@typescript-eslint/no-useless-empty-export": E,
-    "@typescript-eslint/no-var-requires": E,
+    "@typescript-eslint/no-useless-template-literals": E,
+    "@typescript-eslint/no-var-requires": [
+      E,
+      { allow: [] },
+    ],
     "@typescript-eslint/non-nullable-type-assertion-style": E,
+
+    // 5/1
     "@typescript-eslint/parameter-properties": E,
     "@typescript-eslint/prefer-as-const": E,
     "@typescript-eslint/prefer-for-of": E,
