@@ -115,7 +115,6 @@ const TsRuleset: IRules[] = [
         args: "all",
         caughtErrors: "all",
         ignoreRestSiblings: false,
-        ignoreClassWithStaticInitBlock: false,
       },
     ],
     "@typescript-eslint/no-use-before-define": [
