@@ -55,8 +55,7 @@ const JsRules: IRules = {
   "no-import-assign": E, // tsc (except Object.assign())
   "no-inner-declarations": [
     E,
-    "functions",
-    { blockScopedFunctions: "allow" },
+    "both",
   ],
   "no-invalid-regexp": [
     E,
