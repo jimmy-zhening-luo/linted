@@ -15,7 +15,7 @@ export default class Configs {
     js: JsOptions;
     ts: TsOptions;
   };
-  protected readonly rules: Record<"moduleOverrides" | "userOverrides", Record<Language, IRules[]>>;
+  protected readonly rules: Record<"module" | "userOverrides", Record<Language, IRules[]>>;
 
   constructor(
     stylisticPlugin: StylisticPluginBody,
@@ -46,7 +46,7 @@ export default class Configs {
       ),
     };
     this.rules = {
-      moduleOverrides: {
+      module: {
         js: JsRuleset,
         ts: TsRuleset,
       },
@@ -71,7 +71,7 @@ export default class Configs {
   ): Array<Config<L>> {
     return [
       ...[
-        ...this.rules.moduleOverrides[language],
+        ...this.rules.module[language],
         ...this.rules.userOverrides[language],
       ]
         .map(
