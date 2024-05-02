@@ -30,7 +30,7 @@ const JsRules: IRules = {
   "no-constant-binary-expression": E,
   "no-constant-condition": [
     E,
-    { checkLoops: "all" },
+    { checkLoops: true },
   ],
   "no-constructor-return": E,
   "no-control-regex": E,
