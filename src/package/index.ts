@@ -15,7 +15,7 @@ export default class Configs {
     js: JsOptions;
     ts: TsOptions;
   };
-  protected readonly rules: Record<"presets" | "moduleOverrides" | "userOverrides", Record<Language, IRules[]>>;
+  protected readonly rules: Record<"moduleOverrides" | "userOverrides", Record<Language, IRules[]>>;
 
   constructor(
     stylisticPlugin: StylisticPluginBody,
@@ -46,10 +46,6 @@ export default class Configs {
       ),
     };
     this.rules = {
-      presets: {
-        js: [{ ...this.options.js.config.plugins["@eslint/js"].configs.recommended.rules }],
-        ts: [{ ...this.options.ts.config.plugins["@typescript-eslint"].configs["strict-type-checked"].rules }],
-      },
       moduleOverrides: {
         js: JsRuleset,
         ts: TsRuleset,
@@ -75,7 +71,6 @@ export default class Configs {
   ): Array<Config<L>> {
     return [
       ...[
-        ...this.rules.presets[language],
         ...this.rules.moduleOverrides[language],
         ...this.rules.userOverrides[language],
       ]

@@ -1,9 +1,9 @@
-import StylisticRules from "./rules/StylisticRules.js";
+import JsRuleset from "./JsRuleset.js";
 
 const E = "error";
 const OOOFF = "off";
 const TsRuleset: IRules[] = [
-  StylisticRules,
+  ...JsRuleset,
 
   // https://typescript-eslint.io/rules/?=xdeprecated#rules
 
