@@ -278,7 +278,7 @@ const JsRules: IRules = {
   "no-lonely-if": OOOFF, // preference
   "no-loop-func": E, // TSLint
   "no-magic-numbers": [
-    E,
+    OOOFF,
     {
       ignore: [],
       ignoreArrayIndexes: true,

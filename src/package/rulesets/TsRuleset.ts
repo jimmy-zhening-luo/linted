@@ -98,7 +98,7 @@ const TsRuleset: IRules[] = [
     "@typescript-eslint/no-loop-func": E,
     "@typescript-eslint/no-loss-of-precision": E,
     "@typescript-eslint/no-magic-numbers": [
-      E,
+      OOOFF,
       {
         ignore: [],
         ignoreArrayIndexes: true,
@@ -169,7 +169,7 @@ const TsRuleset: IRules[] = [
       },
       {
         enforceForRenamedProperties: true,
-        enforceForDeclarationWithTypeAnnotation: true,
+        enforceForDeclarationWithTypeAnnotation: false,
       },
     ],
     "@typescript-eslint/prefer-promise-reject-errors": [
