@@ -424,8 +424,8 @@ const JsRules: IRules = {
         object: true,
       },
       AssignmentExpression: {
-        array: true,
-        object: true,
+        array: false,
+        object: false,
       },
     },
     { enforceForRenamedProperties: true },

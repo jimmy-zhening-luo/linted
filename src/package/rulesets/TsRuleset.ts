@@ -163,12 +163,12 @@ const TsRuleset: IRules[] = [
           object: true,
         },
         AssignmentExpression: {
-          array: true,
-          object: true,
+          array: false,
+          object: false,
         },
       },
       {
-        enforceForRenamedProperties: true,
+        enforceForRenamedProperties: false,
         enforceForDeclarationWithTypeAnnotation: false,
       },
     ],
