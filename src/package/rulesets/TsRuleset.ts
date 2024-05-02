@@ -586,33 +586,143 @@ const TsRuleset: IRules[] = [
       { allow: [] },
     ],
     "@typescript-eslint/non-nullable-type-assertion-style": E,
-
-    // 5/1
-    "@typescript-eslint/parameter-properties": E,
+    "@typescript-eslint/parameter-properties": [
+      E,
+      {
+        allows: [], /**  "private readonly" | "private" | "protected readonly" | "protected" | "public readonly" | "public" | "readonly"  */
+        prefer: "parameter-property", /**  "parameter-property" | "class-property"  */
+      },
+    ],
     "@typescript-eslint/prefer-as-const": E,
+    "@typescript-eslint/prefer-enum-initializers": E,
+    "@typescript-eslint/prefer-find": E,
     "@typescript-eslint/prefer-for-of": E,
     "@typescript-eslint/prefer-function-type": E,
     "@typescript-eslint/prefer-includes": E,
-    "@typescript-eslint/prefer-literal-enum-member": E,
+    "@typescript-eslint/prefer-literal-enum-member": [
+      E,
+      { allowBitwiseExpressions: false },
+    ],
     "@typescript-eslint/prefer-namespace-keyword": E,
-    "@typescript-eslint/prefer-nullish-coalescing": E,
-    "@typescript-eslint/prefer-optional-chain": E,
-    "@typescript-eslint/prefer-readonly": E,
-
-    // maybe: prefer-readonly-parameter-types
+    "@typescript-eslint/prefer-nullish-coalescing": [
+      E,
+      {
+        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
+        ignoreConditionalTests: false,
+        ignoreTernaryTests: false,
+        ignoreMixedLogicalExpressions: false,
+        ignorePrimitives: {
+          bigint: false,
+          "boolean": false,
+          number: false,
+          string: false,
+        },
+      },
+    ], // requires tsconfig: strictNullChecks
+    "@typescript-eslint/prefer-optional-chain": [
+      E,
+      {
+        allowPotentiallyUnsafeFixesThatModifyTheReturnTypeIKnowWhatImDoing: false,
+        checkAny: true,
+        checkBigInt: true,
+        checkBoolean: true,
+        checkNumber: true,
+        checkString: true,
+        checkUnknown: true,
+        requireNullish: false,
+      },
+    ],
+    "@typescript-eslint/prefer-readonly": [
+      E,
+      { onlyInlineLambdas: false },
+    ],
+    "@typescript-eslint/prefer-readonly-parameter-types": OOOFF, // investigate
     "@typescript-eslint/prefer-reduce-type-parameter": E,
     "@typescript-eslint/prefer-regexp-exec": E,
     "@typescript-eslint/prefer-return-this-type": E,
-    "@typescript-eslint/prefer-string-starts-ends-with": E,
+    "@typescript-eslint/prefer-string-starts-ends-with": [
+      E,
+      { allowSingleElementEquality: "never" },
+    ],
     "@typescript-eslint/prefer-ts-expect-error": E,
-    "@typescript-eslint/promise-function-async": E,
-    "@typescript-eslint/require-array-sort-compare": E,
-    "@typescript-eslint/restrict-plus-operands": E,
-    "@typescript-eslint/restrict-template-expressions": E,
-    "@typescript-eslint/strict-boolean-expressions": E,
-    "@typescript-eslint/switch-exhaustiveness-check": E,
-    "@typescript-eslint/triple-slash-reference": E,
-    "@typescript-eslint/unbound-method": E,
+    "@typescript-eslint/promise-function-async": [
+      E,
+      {
+        allowAny: false,
+        allowedPromiseNames: [],
+        checkArrowFunctions: true,
+        checkFunctionDeclarations: true,
+        checkFunctionExpressions: true,
+        checkMethodDeclarations: true,
+      },
+    ],
+    "@typescript-eslint/require-array-sort-compare": [
+      E,
+      { ignoreStringArrays: true },
+    ],
+    "@typescript-eslint/restrict-plus-operands": [
+      E,
+      {
+        allowAny: false,
+        allowBoolean: false,
+        allowNullish: false,
+        allowNumberAndString: false,
+        allowRegExp: false,
+        skipCompoundAssignments: false,
+      },
+    ],
+    "@typescript-eslint/restrict-template-expressions": [
+      E,
+      {
+        allowAny: true,
+        allowArray: true,
+        allowBoolean: true,
+        allowNullish: true,
+        allowNumber: true,
+        allowNever: false,
+        allowRegExp: false,
+      }, // investigate: make stricter
+    ],
+    "@typescript-eslint/sort-type-constituents": OOOFF, // investigate
+    "@typescript-eslint/strict-boolean-expressions": [
+      E,
+      {
+        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
+        allowAny: false,
+        allowNumber: false,
+        allowString: false,
+        allowNullableBoolean: false,
+        allowNullableEnum: false,
+        allowNullableNumber: false,
+        allowNullableObject: false,
+        allowNullableString: false,
+      },
+    ], // requires tsconfig: strictNullChecks
+    "@typescript-eslint/switch-exhaustiveness-check": [
+      E,
+      {
+        allowDefaultCaseForExhaustiveSwitch: false,
+        requireDefaultForNonUnion: true,
+      },
+    ],
+    "@typescript-eslint/triple-slash-reference": [
+      E,
+      {
+        lib: "never", /** always | never */
+        path: "never", /** always | never */
+        types: "never", /** always | never | prefer-import */
+      },
+    ],
+    "@typescript-eslint/typedef": OOOFF, // tsconfig: { noImplicitAny, strictPropertyInitialization }
+    "@typescript-eslint/unbound-method": [
+      E,
+      { ignoreStatic: false },
+    ],
+    "@typescript-eslint/unified-signatures": [
+      E,
+      { ignoreDifferentlyNamedParameters: false },
+    ],
+    "@typescript-eslint/use-unknown-in-catch-callback-variable": E,
   },
 ];
 
