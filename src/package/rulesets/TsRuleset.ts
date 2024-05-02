@@ -144,7 +144,7 @@ const TsRuleset: IRules[] = [
         allowNamedExports: false,
         enums: true,
         typedefs: true, // questionable
-        ignoreTypeReferences: false, // questionable
+        ignoreTypeReferences: true,
       },
     ],
     "@typescript-eslint/no-useless-constructor": E,
