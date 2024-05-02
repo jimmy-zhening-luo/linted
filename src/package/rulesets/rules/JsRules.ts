@@ -165,7 +165,7 @@ const JsRules: IRules = {
   "consistent-return": [
     E,
     { treatUndefinedAsUnspecified: false },
-  ], // TSLint:OFF: tsconfig: noImplicitReturns
+  ], // tsc -- TSLint:OFF: tsconfig: noImplicitReturns
   "consistent-this": [E],
   curly: [
     E,
@@ -318,7 +318,7 @@ const JsRules: IRules = {
   "no-redeclare": [
     E,
     { builtinGlobals: true },
-  ], // TSLint:OFF: tsc (let, const, -var)
+  ], // tsc -- TSLint:OFF: tsc (let, const, -var)
   "no-regex-spaces": OOOFF, // preference
   "no-restricted-exports": OOOFF, // preference
   "no-restricted-globals": OOOFF, // preference

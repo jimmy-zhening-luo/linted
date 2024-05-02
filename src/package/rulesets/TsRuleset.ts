@@ -7,6 +7,24 @@ const TsRuleset: IRules[] = [
 
   // https://typescript-eslint.io/rules/?=xdeprecated#rules
 
+  // ESLint DISABLE (TSC)
+  {
+    "constructor-super": OOOFF,
+    "no-const-assign": OOOFF,
+    "no-dupe-args": OOOFF,
+    "no-dupe-class-members": OOOFF,
+    "no-dupe-keys": OOOFF,
+    "no-func-assign": OOOFF,
+    "no-obj-calls": OOOFF,
+    "no-setter-return": OOOFF,
+    "no-this-before-super": OOOFF,
+    "no-undef": OOOFF,
+    "no-unreachable": OOOFF,
+    "no-unsafe-negation": OOOFF,
+    "consistent-return": OOOFF,
+    "no-redeclare": OOOFF,
+  },
+
   // ESLint Extensions (2-STEP)
   //   Step 1: Disable ESLint base rules
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
