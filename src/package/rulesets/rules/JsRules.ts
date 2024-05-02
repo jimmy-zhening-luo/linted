@@ -125,7 +125,6 @@ const JsRules: IRules = {
       allowNamedExports: false,
     },
   ], // TSLint
-  "no-useless-assignment": E,
   "no-useless-backreference": E,
   "require-atomic-updates": [
     E,
