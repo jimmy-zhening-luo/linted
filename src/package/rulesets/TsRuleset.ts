@@ -587,10 +587,7 @@ const TsRuleset: IRules[] = [
     "@typescript-eslint/non-nullable-type-assertion-style": E,
     "@typescript-eslint/parameter-properties": [
       E,
-      {
-        allows: [], /**  "private readonly" | "private" | "protected readonly" | "protected" | "public readonly" | "public" | "readonly"  */
-        prefer: "parameter-property", /**  "parameter-property" | "class-property"  */
-      },
+      { prefer: "parameter-property" /**  "parameter-property" | "class-property"  */ },
     ],
     "@typescript-eslint/prefer-as-const": E,
     "@typescript-eslint/prefer-enum-initializers": E,
