@@ -185,10 +185,7 @@ const JsRules: IRules = {
   "func-name-matching": OOOFF, // preference
   "func-names": OOOFF, // preference
   "func-style": OOOFF, // preference
-  "grouped-accessor-pairs": [
-    E,
-    "getBeforeSet",
-  ],
+  "grouped-accessor-pairs": OOOFF, // preference -- buggy behavior (requires adjacency, not as described in documentation)
   "guard-for-in": E,
   "id-denylist": OOOFF, // preference
   "id-length": OOOFF, // preference
