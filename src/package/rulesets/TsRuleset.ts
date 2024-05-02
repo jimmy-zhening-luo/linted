@@ -27,7 +27,7 @@ const TsRuleset: IRules[] = [
     "no-magic-numbers": OOOFF,
     "no-redeclare": OOOFF,
     "no-restricted-imports": OOOFF,
-    "no-return-await": OOOFF, // @typescript-eslint/return-await
+    "no-return-await": OOOFF, // DEPRECATED -- @typescript-eslint/return-await
     "no-shadow": OOOFF,
     "no-throw-literal": OOOFF, // @typescript-eslint/only-throw-error
     "no-unused-expressions": OOOFF,
@@ -43,7 +43,7 @@ const TsRuleset: IRules[] = [
   //   Step 2: Enable ESLint extended rules for TypeScript
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   {
-    "@typescript-eslint/class-methods-use-this": OOOFF, // preference
+    "@typescript-eslint/class-methods-use-this": OOOFF, // preference -- eslint:OFF
     "@typescript-eslint/consistent-return": OOOFF, // tsconfig: noImplicitReturns
     "@typescript-eslint/default-param-last": E,
     "@typescript-eslint/dot-notation": [
@@ -96,8 +96,8 @@ const TsRuleset: IRules[] = [
         ignoreTypeIndexes: true,
       },
     ],
-    "@typescript-eslint/no-redeclare": OOOFF, // tsc
-    "@typescript-eslint/no-restricted-imports": OOOFF, // investigate
+    "@typescript-eslint/no-redeclare": OOOFF, // tsc (let, const, -var)
+    "@typescript-eslint/no-restricted-imports": OOOFF, // preference
     "@typescript-eslint/no-shadow": OOOFF, // investigate
     "@typescript-eslint/no-unused-expressions": [
       E,
