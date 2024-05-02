@@ -50,13 +50,7 @@ const JsRules: IRules = {
     { allowObjectPatternsAsParameters: true },
   ],
   "no-ex-assign": E,
-  "no-fallthrough": [
-    E,
-    {
-      allowEmptyCase: false,
-      reportUnusedFallthroughComment: true,
-    },
-  ],
+  "no-fallthrough": OOOFF, // buggy
   "no-func-assign": E, // tsc
   "no-import-assign": E, // tsc (except Object.assign())
   "no-inner-declarations": [
