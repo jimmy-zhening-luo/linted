@@ -186,7 +186,7 @@ const TsRuleset: IRules[] = [
   // @typescript-eslint ONLY
   // [ Reference: https://typescript-eslint.io/rules/?=xextension-xdeprecated#rules ]
   {
-    "@typescript-eslint/adjacent-overload-signatures": E,
+    "@typescript-eslint/adjacent-overload-signatures": OOOFF,
     "@typescript-eslint/array-type": [
       E,
       {
