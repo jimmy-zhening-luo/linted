@@ -1,4 +1,4 @@
-import Configs from "../package/index.js";
+import Configs from "../pkg/index.js";
 
 console.log(
   new Configs(
