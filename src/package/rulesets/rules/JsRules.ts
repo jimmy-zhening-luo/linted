@@ -40,10 +40,7 @@ const JsRules: IRules = {
   "no-dupe-else-if": E,
   "no-dupe-keys": E, // tsc
   "no-duplicate-case": E,
-  "no-duplicate-imports": [
-    E,
-    { includeExports: true },
-  ],
+  "no-duplicate-imports": OOOFF, // buggy, breaks separation of TS type-only imports from value imports
   "no-empty-character-class": E,
   "no-empty-pattern": [
     E,
