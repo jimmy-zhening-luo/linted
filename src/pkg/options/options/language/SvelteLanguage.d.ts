@@ -5,9 +5,7 @@ declare type SvelteLanguage = {
     {
       files: IFiles;
       parser: SvelteParser;
-      parserOptions: {
-        parser: TsParser;
-      };
+      parserOptions: Record<"parser", TsLanguage["parser"]>;
     },
   ];
 };
