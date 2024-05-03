@@ -6,7 +6,7 @@ export default class TsOptions extends Options<
 > {
   constructor(
     plugins: StylisticPlugin & TsPlugin,
-    parser: TsLanguage["parser"],
+    parser: TsParser,
     ...files: string[]
   ) {
     super(

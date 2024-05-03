@@ -1,4 +1,4 @@
-declare type TsLanguage<Parser = unknown> = {
-  parser: Parser;
+declare type TsLanguage = {
+  parser: TsParser;
   parserOptions: EcmaLanguage & Record<"project", true>;
 };

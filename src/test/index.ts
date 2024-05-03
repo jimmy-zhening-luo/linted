@@ -22,7 +22,7 @@ console.log(
         },
       },
     },
-    "fooParser",
+    "@typescript-eslint/parser" as Parser<"@typescript-eslint/parser">,
     ["eslint.config.js"],
     ["src/**/*.ts"],
     {

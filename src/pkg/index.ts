@@ -20,7 +20,7 @@ export default class Configs {
   constructor(
     stylistic: StylisticPluginBody,
     ts: TsPluginBody,
-    tsParser: ConstructorParameters<typeof TsOptions>[3],
+    tsParser: TsParser,
     jsFiles: string[],
     tsFiles: string[],
     jsOverrides: IRules = {},
