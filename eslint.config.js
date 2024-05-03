@@ -1,8 +1,7 @@
 // PLUGINS
-import stylistic from "@stylistic/eslint-plugin";
-import jsLint from "@eslint/js";
-import tsLint from "@typescript-eslint/eslint-plugin";
-import tsLintParser from "@typescript-eslint/parser";
+import pluginStylistic from "@stylistic/eslint-plugin";
+import pluginTs from "@typescript-eslint/eslint-plugin";
+import parserTs from "@typescript-eslint/parser";
 import rulesJTsStylistic from "./stylistic.base.config.js";
 import rulesJs from "./eslint.js.config.js";
 import rulesTsDisableCompiler from "./eslint.ts.disable.compiler.config.js";
@@ -24,14 +23,11 @@ const OPTIONS = {
     ts: ["src/**/*.ts"],
   },
   plugins: {
-    js: {
-      "@eslint/js": jsLint,
-      "@stylistic": stylistic,
-    },
+    js: { "@stylistic": pluginStylistic },
     get ts() {
       return {
         ...OPTIONS.plugins.js,
-        "@typescript-eslint": tsLint,
+        "@typescript-eslint": pluginTs,
       };
     },
   },
@@ -52,7 +48,7 @@ const OPTIONS = {
     get ts() {
       return {
         ...OPTIONS.languageOptions.js,
-        parser: tsLintParser,
+        parser: parserTs,
         parserOptions: {
           ...OPTIONS.languageOptions.js,
           project: true,
