@@ -8,6 +8,27 @@ A public npm package containing Jimmy's highly-opinionated config plugin for esl
 ## Package
 [@jimbojet/lint](https://www.npmjs.com/package/@jimbojet/lint)
 
+
+## Plugins
+
+### v7
+
+- stylistic
+- typescript-eslint
+
+### v8 (under consideration)
+
+- [Svelte](https://github.com/sveltejs/eslint-plugin-svelte)
+- [JSON](https://github.com/azeemba/eslint-plugin-json)
+- [JSON](https://github.com/kuceb/eslint-plugin-json-format)
+- [JSON (lol)](https://github.com/ota-meshi/eslint-plugin-jsonc)
+- [YAML (apt name...)](https://github.com/ota-meshi/eslint-plugin-yml)
+- [import](https://github.com/import-js/eslint-plugin-import)
+- [path](https://github.com/vitonsky/eslint-plugin-paths)
+- [Jest](https://github.com/jest-community/eslint-plugin-jest)
+- [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
+
+
 ## How am I used?
 
 1. In your project's root where your root ESLint config is located, run ```npm i -D @jimbojet/lint```
