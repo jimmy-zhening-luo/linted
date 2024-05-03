@@ -14,16 +14,6 @@ console.log(
     },
     {
       configs: {
-        recommended: {
-          rules: {
-            "some-js-preset-recommended-rule": "error",
-            "other-js-preset-recommended-rule": "warn",
-          },
-        },
-      },
-    },
-    {
-      configs: {
         "strict-type-checked": {
           rules: {
             "@typescript-eslint/some-ts-strict-typechecked-preset-rule": "warn",

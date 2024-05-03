@@ -19,7 +19,6 @@ export default class Configs {
 
   constructor(
     stylisticPlugin: StylisticPluginBody,
-    jsPlugin: JsPluginBody,
     tsPlugin: TsPluginBody,
     tsParser: ConstructorParameters<typeof TsOptions>[3],
     jsFiles: string[],
@@ -29,16 +28,12 @@ export default class Configs {
   ) {
     this.options = {
       js: new JsOptions(
-        {
-          "@stylistic": stylisticPlugin,
-          "@eslint/js": jsPlugin,
-        },
+        { "@stylistic": stylisticPlugin },
         ...jsFiles,
       ),
       ts: new TsOptions(
         {
           "@stylistic": stylisticPlugin,
-          "@eslint/js": jsPlugin,
           "@typescript-eslint": tsPlugin,
         },
         tsParser,

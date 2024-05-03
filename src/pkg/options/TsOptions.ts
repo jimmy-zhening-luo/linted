@@ -1,11 +1,11 @@
 import Options from "./options/Options.js";
 
 export default class TsOptions extends Options<
-  JsPlugin & TsPlugin,
+  TsPlugin,
   TsLanguage
 > {
   constructor(
-    plugins: StylisticPlugin & JsPlugin & TsPlugin,
+    plugins: StylisticPlugin & TsPlugin,
     parser: TsLanguage["parser"],
     ...files: string[]
   ) {
