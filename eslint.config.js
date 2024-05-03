@@ -1,7 +1,7 @@
 // PLUGINS
-import pluginStylistic from "@stylistic/eslint-plugin";
-import pluginTs from "@typescript-eslint/eslint-plugin";
-import parserTs from "@typescript-eslint/parser";
+import stylistic from "@stylistic/eslint-plugin";
+import ts from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 import rulesJTsStylistic from "./stylistic.base.config.js";
 import rulesJs from "./eslint.js.config.js";
 import rulesTsDisableCompiler from "./eslint.ts.disable.compiler.config.js";
@@ -23,11 +23,11 @@ const OPTIONS = {
     ts: ["src/**/*.ts"],
   },
   plugins: {
-    js: { "@stylistic": pluginStylistic },
+    js: { "@stylistic": stylistic },
     get ts() {
       return {
         ...OPTIONS.plugins.js,
-        "@typescript-eslint": pluginTs,
+        "@typescript-eslint": ts,
       };
     },
   },
@@ -48,7 +48,7 @@ const OPTIONS = {
     get ts() {
       return {
         ...OPTIONS.languageOptions.js,
-        parser: parserTs,
+        parser: tsParser,
         parserOptions: {
           ...OPTIONS.languageOptions.js,
           project: true,
@@ -57,38 +57,38 @@ const OPTIONS = {
     },
   },
 };
-const RULESETS = {
+const RULESET = {
   js: [
-    { ...rulesJs },
-    { ...rulesJTsStylistic },
+    rulesJs,
+    rulesJTsStylistic,
   ],
   ts: [
-    { ...rulesTsDisableCompiler },
-    { ...rulesTsDisableExtend },
-    { ...rulesTsEnableExtend },
-    { ...rulesTsEnable },
-    { ...rulesJTsStylistic },
+    rulesTsDisableCompiler,
+    rulesTsDisableExtend,
+    rulesTsEnableExtend,
+    rulesTsEnable,
+    rulesJTsStylistic,
   ],
 };
 
-function _flattenRuleSets(
-  language,
+function flattenRuleset(
+  lang,
 ) {
-  return RULESETS[language]
+  return RULESET[lang]
     .map(
-      ruleset => {
+      rules => {
         return {
-          files: OPTIONS.files[language],
-          plugins: OPTIONS.plugins[language],
-          linterOptions: OPTIONS.linterOptions[language],
-          languageOptions: OPTIONS.languageOptions[language],
-          rules: { ...ruleset },
+          files: OPTIONS.files[lang],
+          plugins: OPTIONS.plugins[lang],
+          linterOptions: OPTIONS.linterOptions[lang],
+          languageOptions: OPTIONS.languageOptions[lang],
+          rules,
         };
       },
     );
 }
 
 export default [
-  ..._flattenRuleSets("js"),
-  ..._flattenRuleSets("ts"),
+  ...flattenRuleset("js"),
+  ...flattenRuleset("ts"),
 ];
