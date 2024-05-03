@@ -75,7 +75,7 @@ export default class Configs {
         ...this.rules.userOverrides[language],
       ]
         .map(
-          rules =>
+          (rules: IRules): Config<L> =>
             ({
               ...this.options[language].config,
               rules,
