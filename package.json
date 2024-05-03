@@ -41,7 +41,7 @@
     "clean": "npm run clean:dist",
     "clean:dist": "shx rm -rf dist",
     "clean:lint": "shx rm -rf .eslintcache",
-    "lint": "eslint --cache --cache-strategy content -c eslint.config.js src/**/*.ts",
+    "lint": "eslint --cache --cache-strategy content -c eslint.config.js src/**/*",
     "lint:fix": "npm run lint -- --fix",
     "relint": "npm run clean:lint && npm run lint",
     "relint:fix": "npm run clean:lint && npm run lint:fix",
