@@ -18,8 +18,8 @@ export default class Configs {
   protected readonly rules: Record<"module" | "userOverrides", Record<Language, IRules[]>>;
 
   constructor(
-    stylisticPlugin: StylisticPluginBody,
-    tsPlugin: TsPluginBody,
+    stylistic: StylisticPluginBody,
+    ts: TsPluginBody,
     tsParser: ConstructorParameters<typeof TsOptions>[3],
     jsFiles: string[],
     tsFiles: string[],
@@ -28,13 +28,13 @@ export default class Configs {
   ) {
     this.options = {
       js: new JsOptions(
-        { "@stylistic": stylisticPlugin },
+        { "@stylistic": stylistic },
         ...jsFiles,
       ),
       ts: new TsOptions(
         {
-          "@stylistic": stylisticPlugin,
-          "@typescript-eslint": tsPlugin,
+          "@stylistic": stylistic,
+          "@typescript-eslint": ts,
         },
         tsParser,
         ...tsFiles,
