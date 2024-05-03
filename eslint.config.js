@@ -3,13 +3,23 @@ import stylistic from "@stylistic/eslint-plugin";
 import jsLint from "@eslint/js";
 import tsLint from "@typescript-eslint/eslint-plugin";
 import tsLintParser from "@typescript-eslint/parser";
-import stylisticBaseRules from "./stylistic.base.config.js";
+import rulesJTsStylistic from "./stylistic.base.config.js";
+import rulesJs from "./eslint.js.config.js";
+import rulesTsDisableCompiler from "./eslint.ts.disable.compiler.config.js";
+import rulesTsDisableExtend from "./eslint.ts.disable.extend.config.js";
+import rulesTsEnableExtend from "./eslint.ts.enable.extend.config.js";
+import rulesTsEnable from "./eslint.ts.enable.tsonly.config.js";
 
 const OPTIONS = {
   files: {
     js: [
-      "eslint.config.js",
       "stylistic.base.config.js",
+      "eslint.ts.enable.tsonly.config.js",
+      "eslint.ts.enable.extend.config.js",
+      "eslint.ts.disable.extend.config.js",
+      "eslint.ts.disable.compiler.config.js",
+      "eslint.js.config.js",
+      "eslint.config.js",
     ],
     ts: ["src/**/*.ts"],
   },
@@ -53,12 +63,15 @@ const OPTIONS = {
 };
 const RULESETS = {
   js: [
-    { ...jsLint.configs.recommended.rules },
-    { ...stylisticBaseRules },
+    { ...rulesJs },
+    { ...rulesJTsStylistic },
   ],
   ts: [
-    { ...tsLint.configs["strict-type-checked"].rules },
-    { ...stylisticBaseRules },
+    { ...rulesTsDisableCompiler },
+    { ...rulesTsDisableExtend },
+    { ...rulesTsEnableExtend },
+    { ...rulesTsEnable },
+    { ...rulesJTsStylistic },
   ],
 };
 
@@ -67,16 +80,15 @@ function _flattenRuleSets(
 ) {
   return RULESETS[language]
     .map(
-      ruleset =>
-        (
-          {
-            files: OPTIONS.files[language],
-            plugins: OPTIONS.plugins[language],
-            linterOptions: OPTIONS.linterOptions[language],
-            languageOptions: OPTIONS.languageOptions[language],
-            rules: { ...ruleset },
-          }
-        ),
+      ruleset => {
+        return {
+          files: OPTIONS.files[language],
+          plugins: OPTIONS.plugins[language],
+          linterOptions: OPTIONS.linterOptions[language],
+          languageOptions: OPTIONS.languageOptions[language],
+          rules: { ...ruleset },
+        };
+      },
     );
 }
 
