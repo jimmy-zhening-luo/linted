@@ -20,7 +20,6 @@
   },
   "homepage": "https://github.com/jimmy-zhening-luo/lint#readme",
   "peerDependencies": {
-    "@eslint/js": "8",
     "@stylistic/eslint-plugin": "1",
     "@typescript-eslint/eslint-plugin": "7",
     "@typescript-eslint/parser": "7",
@@ -28,7 +27,6 @@
     "typescript": "5"
   },
   "devDependencies": {
-    "@eslint/js": "^8.57.0",
     "@stylistic/eslint-plugin": "^1.8.0",
     "@types/eslint": "^8.56.10",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
