@@ -1,7 +1,9 @@
 // PLUGINS
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
+import svelte from "eslint-plugin-svelte";
 import tsParser from "@typescript-eslint/parser";
+import svelteParser from "svelte-eslint-parser";
 import rulesJTsStylistic from "./stylistic.base.config.js";
 import rulesJs from "./eslint.js.config.js";
 import rulesTsDisableCompiler from "./eslint.ts.disable.compiler.config.js";
@@ -21,6 +23,7 @@ const OPTIONS = {
       "eslint.config.js",
     ],
     ts: ["src/**/*.ts"],
+    svelte: ["src/**/*.svelte"],
   },
   plugins: {
     js: { "@stylistic": stylistic },
@@ -28,6 +31,12 @@ const OPTIONS = {
       return {
         ...OPTIONS.plugins.js,
         "@typescript-eslint": ts,
+      };
+    },
+    get svelte() {
+      return {
+        ...OPTIONS.plugins.ts,
+        svelte,
       };
     },
   },
@@ -38,6 +47,9 @@ const OPTIONS = {
     },
     get ts() {
       return OPTIONS.linterOptions.js;
+    },
+    get svelte() {
+      return OPTIONS.linterOptions.ts;
     },
   },
   languageOptions: {
@@ -55,20 +67,45 @@ const OPTIONS = {
         },
       };
     },
+    get svelte() {
+      return {
+        ...OPTIONS.languageOptions.js,
+        parser: OPTIONS.languageOptions.ts.parser,
+        parserOptions: {
+          ...OPTIONS.languageOptions.ts.parserOptions,
+          extraFileExtensions: [".svelte"],
+        },
+        overrides: [
+          {
+            files: OPTIONS.files.svelte,
+            parser: svelteParser,
+            parserOptions: { parser: OPTIONS.languageOptions.ts.parser },
+          },
+        ],
+      };
+    },
   },
 };
 const RULESET = {
   js: [
+    rulesJTsStylistic,
     rulesJs,
-    rulesJTsStylistic,
   ],
-  ts: [
-    rulesTsDisableCompiler,
-    rulesTsDisableExtend,
-    rulesTsEnableExtend,
-    rulesTsEnable,
-    rulesJTsStylistic,
-  ],
+  get ts() {
+    return [
+      ...RULESET.js,
+      rulesTsDisableCompiler,
+      rulesTsDisableExtend,
+      rulesTsEnableExtend,
+      rulesTsEnable,
+    ];
+  },
+  get svelte() {
+    return [
+      ...RULESET.ts,
+      svelte.configs["flat/recommended"],
+    ];
+  },
 };
 
 function flattenRuleset(
