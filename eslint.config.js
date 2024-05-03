@@ -128,4 +128,5 @@ function flattenRuleset(
 export default [
   ...flattenRuleset("js"),
   ...flattenRuleset("ts"),
+  ...flattenRuleset("svelte"),
 ];
