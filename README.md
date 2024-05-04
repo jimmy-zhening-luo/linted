@@ -2,21 +2,22 @@
 
 ## What am I?
 
-A public npm package containing Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic
+Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible, whole-project TypeScript linter: TS, JS, Node, Svelte, JSON/5/C, Jest, HTML, CSS, and sadly YAML.
+
 
 
 ## Authorized Retailers
 [@jimbojet/lint](https://www.npmjs.com/package/@jimbojet/lint)
 
 
+
 ## Features
 
 ### v8.0
 
-#### TypeScript (required)
+#### TypeScript
 - stylistic
 - typescript-eslint
-
 
 #### Svelte on TypeScript
 - eslint-plugin-svelte
@@ -41,6 +42,17 @@ A public npm package containing Jimmy's highly-opinionated config plugin for esl
 - [Jest](https://github.com/jest-community/eslint-plugin-jest)
 - [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
 
+#### Markdown
+
+- [Markdown](https://github.com/eslint/eslint-plugin-markdown)
+
+#### HTML
+
+- [HTML](https://github.com/BenoitZugmeyer/eslint-plugin-html)
+
+#### CSS
+
+- [CSS](https://ota-meshi.github.io/eslint-plugin-css/)
 
 
 
