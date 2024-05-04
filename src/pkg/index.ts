@@ -3,6 +3,7 @@ import TsOptions from "./options/TsOptions.js";
 import SvelteOptions from "./options/SvelteOptions.js";
 import JsRuleset from "./rulesets/JsRuleset.js";
 import TsRuleset from "./rulesets/TsRuleset.js";
+import SvelteRuleset from "./rulesets/SvelteRuleset.js";
 
 declare type RequiredLanguage = "js" | "ts";
 declare type OptionalLanguage = "svelte";
@@ -100,6 +101,10 @@ export default class Configs {
               this.badSvelte(svelte.svelte.configs["flat/all"])[1].rules,
               this.badSvelte(svelte.svelte.configs["flat/all"])[2].rules,
             ],
+        ...SvelteRuleset,
+        ...overrideTs === null
+          ? []
+          : [overrideTs],
         ...overrideSvelte === null
           ? []
           : [overrideSvelte],
