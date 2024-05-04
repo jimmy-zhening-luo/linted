@@ -5,31 +5,48 @@
 A public npm package containing Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic
 
 
-## Package
+## Authorized Retailers
 [@jimbojet/lint](https://www.npmjs.com/package/@jimbojet/lint)
 
 
-## Plugins
+## Features
 
-### v7
+### v8.0
 
+#### TypeScript (required)
 - stylistic
 - typescript-eslint
 
-### v8 (under consideration)
 
-- [Svelte](https://github.com/sveltejs/eslint-plugin-svelte)
+#### Svelte on TypeScript
+- eslint-plugin-svelte
+  - svelte
+  - svelte-eslint-parser
+
+
+### v8.1 (under consideration)
+
+#### JSON
+
 - [JSON](https://github.com/azeemba/eslint-plugin-json)
 - [JSON](https://github.com/kuceb/eslint-plugin-json-format)
 - [JSON (lol)](https://github.com/ota-meshi/eslint-plugin-jsonc)
+
+#### YAML (lol)
+
 - [YAML (apt name...)](https://github.com/ota-meshi/eslint-plugin-yml)
-- [import](https://github.com/import-js/eslint-plugin-import)
-- [path](https://github.com/vitonsky/eslint-plugin-paths)
+
+#### Jest
+
 - [Jest](https://github.com/jest-community/eslint-plugin-jest)
 - [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
 
 
+
+
 ## How am I used?
+
+*Outdated... last updated 2023.*
 
 1. In your project's root where your root ESLint config is located, run ```npm i -D @jimbojet/lint```
 1. Look at eslint's website's instructions for how to add a plugin to your config. Ideally, use ESLint's modern (as of late 2023) flat config. The following steps assume you are using the flat config.
