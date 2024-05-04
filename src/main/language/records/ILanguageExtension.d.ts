@@ -1,4 +1,4 @@
 declare type ILanguageExtension = ILanguageRecord<
-  L,
+  Language,
   `.${string}`
 >;

@@ -1,1 +1,1 @@
-declare type ILanguageVsCodeId = ILanguageRecord<L>;
+declare type ILanguageVsCodeId = ILanguageRecord<Language>;
