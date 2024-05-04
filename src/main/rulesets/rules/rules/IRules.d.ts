@@ -1,1 +1,7 @@
-declare type IRules = Record<string, Severity | [Severity, ...unknown[]]>;
+declare type IRules = Record<
+  string,
+  (
+    | RuleSeverity
+    | [RuleSeverity, ...unknown[]]
+  )
+>;

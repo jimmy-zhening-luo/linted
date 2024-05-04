@@ -5,26 +5,30 @@ import JsRuleset from "./rulesets/JsRuleset.js";
 import TsRuleset from "./rulesets/TsRuleset.js";
 import SvelteRuleset from "./rulesets/SvelteRuleset.js";
 
-declare type _RequiredLanguage = "js" | "ts";
-declare type _OptionalLanguage = "svelte";
-declare type _Language = _RequiredLanguage | _OptionalLanguage;
-declare type MyOptions = {
+declare type _RequiredLanguage =
+  | "js"
+  | "ts"
+  ;
+declare type _OptionalLanguage =
+  | "svelte"
+  ;
+declare type _Language =
+  | _RequiredLanguage
+  | _OptionalLanguage
+  ;
+declare type ConfigOptions = {
   js: JsOptions;
   ts: TsOptions;
   svelte: SvelteOptions;
 };
-declare type MyNullableOptions = Record<_RequiredLanguage, MyOptions[_RequiredLanguage]>
-& Record<_OptionalLanguage, null | MyOptions[_OptionalLanguage]>;
-declare type Config<
-  L extends _Language,
-> = MyOptions[L]["config"] & {
-  rules: IRules;
-};
-declare type ReturnedConfig<L extends _Language> = Omit<Config<L>, "processor"> & Partial<Pick<Config<L>, "processor">>;
+declare type NullableConfigOptions = Record<_RequiredLanguage, ConfigOptions[_RequiredLanguage]>
+& Record<_OptionalLanguage, null | ConfigOptions[_OptionalLanguage]>;
+declare type Config<L extends _Language> = ConfigOptions[L]["config"] & Record<"rules", IRules>;
+declare type StrictConfig<L extends _Language> = Omit<Config<L>, "processor"> & Partial<Pick<Config<L>, "processor">>;
 
 export type BadSveltePlugin<Config> = [Config, Config, Config];
 export default class Configs {
-  protected readonly options: MyNullableOptions;
+  protected readonly options: NullableConfigOptions;
   protected readonly rulesets: Record<_Language, IRules[]>;
 
   constructor(
@@ -111,15 +115,13 @@ export default class Configs {
     };
   }
 
-  public get configs(): Array<
-    ReturnedConfig<_Language>
-  > {
+  public get configs(): StrictConfig<_Language>[] {
     return [
       ...this.getLanguageConfigs<"js">("js"),
       ...this.getLanguageConfigs<"ts">("ts"),
       ...this.getLanguageConfigs<"svelte">("svelte"),
     ].map(
-      (config: Config<_Language>): ReturnedConfig<_Language> =>
+      (config: Config<_Language>): StrictConfig<_Language> =>
         config.processor === null
           ? {
               rules: config.rules,
@@ -136,10 +138,8 @@ export default class Configs {
     return input as [Config, Config, Config];
   }
 
-  protected getLanguageConfigs<L extends _Language>(
-    language: L,
-  ): Array<Config<L>> {
-    const opt: MyNullableOptions[L] = this.options[language];
+  protected getLanguageConfigs<L extends _Language>(language: L): Config<L>[] {
+    const opt: NullableConfigOptions[L] = this.options[language];
 
     return opt === null
       ? []
