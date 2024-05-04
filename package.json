@@ -50,7 +50,7 @@
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build",
-    "test": "node ./dist/js/test/index.js",
+    "test": "node ./dist/js/test/test.js",
     "dev": "npm run test"
   }
 }

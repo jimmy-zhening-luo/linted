@@ -72,7 +72,6 @@ console.log(
     {
       svelte: badSvelte,
       parser: "svelte" as SvelteParser,
-      processor: "svelte/svelte" as SvelteProcessor,
       files: ["src/**/*.svelte"],
     },
   ).configs,

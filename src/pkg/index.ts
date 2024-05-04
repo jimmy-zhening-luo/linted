@@ -46,12 +46,11 @@ export default class Configs {
       overrideTs?: null | IRules;
       overrideSvelte?: null | IRules;
     } = {},
-    svelte?: {
+    svelte: null | {
       svelte: SveltePluginBody;
       parser: SvelteParser;
-      processor: SvelteProcessor;
       files: string[];
-    },
+    } = null,
   ) {
     this.options = {
       js: new JsOptions(
@@ -66,7 +65,7 @@ export default class Configs {
         ts.parser,
         ...ts.files,
       ),
-      svelte: typeof svelte === "undefined"
+      svelte: svelte === null
         ? null
         : new SvelteOptions(
           {
@@ -76,7 +75,7 @@ export default class Configs {
           },
           ts.parser,
           svelte.parser,
-          svelte.processor,
+          "svelte/svelte" as SvelteProcessor,
           ...svelte.files,
         ),
     };
@@ -95,7 +94,7 @@ export default class Configs {
       ],
       svelte: [
         ...TsRuleset,
-        ...svelte === undefined
+        ...svelte === null
           ? []
           : [
               this.badSvelte(svelte.svelte.configs["flat/all"])[1].rules,
