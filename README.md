@@ -29,9 +29,7 @@ Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible,
 
 #### JSON
 
-- [JSON](https://github.com/azeemba/eslint-plugin-json)
-- [JSON](https://github.com/kuceb/eslint-plugin-json-format)
-- [JSON (lol)](https://github.com/ota-meshi/eslint-plugin-jsonc)
+- [JSON](https://github.com/ota-meshi/eslint-plugin-jsonc)
 
 #### YAML (lol)
 
@@ -53,6 +51,10 @@ Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible,
 #### CSS
 
 - [CSS](https://ota-meshi.github.io/eslint-plugin-css/)
+
+#### Tailwind PostCSS
+
+- [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 
 
 
