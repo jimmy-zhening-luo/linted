@@ -1,11 +1,11 @@
 {
   "include": [
-    "./stylistic.base.config.js",
-    "./eslint.ts.enable.tsonly.config.js",
     "./eslint.ts.enable.extend.config.js",
     "./eslint.ts.disable.extend.config.js",
     "./eslint.ts.disable.compiler.config.js",
+    "./eslint.ts.config.js",
     "./eslint.js.config.js",
+    "./stylistic.base.config.js",
     "./eslint.config.js",
     "./src/**/*",
   ],

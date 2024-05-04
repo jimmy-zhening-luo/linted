@@ -4,10 +4,10 @@ import ts from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import rulesJTsStylistic from "./stylistic.base.config.js";
 import rulesJs from "./eslint.js.config.js";
+import rulesTs from "./eslint.ts.config.js";
 import rulesTsDisableCompiler from "./eslint.ts.disable.compiler.config.js";
 import rulesTsDisableExtend from "./eslint.ts.disable.extend.config.js";
 import rulesTsEnableExtend from "./eslint.ts.enable.extend.config.js";
-import rulesTsEnable from "./eslint.ts.enable.tsonly.config.js";
 
 const OPTIONS = {
   files: {
@@ -72,7 +72,7 @@ const RULESET = {
       rulesTsDisableCompiler,
       rulesTsDisableExtend,
       rulesTsEnableExtend,
-      rulesTsEnable,
+      rulesTs,
     ];
   },
 };
