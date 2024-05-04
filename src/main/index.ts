@@ -115,7 +115,7 @@ export default class Configs {
     };
   }
 
-  public get configs(): StrictConfig<_Language>[] {
+  public get configs(): Array<StrictConfig<_Language>> {
     return [
       ...this.getLanguageConfigs<"js">("js"),
       ...this.getLanguageConfigs<"ts">("ts"),
@@ -138,7 +138,7 @@ export default class Configs {
     return input as [Config, Config, Config];
   }
 
-  protected getLanguageConfigs<L extends _Language>(language: L): Config<L>[] {
+  protected getLanguageConfigs<L extends _Language>(language: L): Array<Config<L>> {
     const opt: NullableConfigOptions[L] = this.options[language];
 
     return opt === null
