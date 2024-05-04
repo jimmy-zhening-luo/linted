@@ -1,4 +1,4 @@
-import Configs from "../pkg/index.js";
+import Configs from "../main/index.js";
 
 const stylistic: StylisticPluginBody = {
   configs: {

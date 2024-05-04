@@ -4,8 +4,8 @@
   "description": "Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic. Use it at your own peril.",
   "type": "module",
   "private": false,
-  "main": "./dist/js/pkg/index.js",
-  "types": "./dist/d/pkg/index.d.ts",
+  "main": "./dist/js/main/index.js",
+  "types": "./dist/d/main/index.d.ts",
   "files": [
     "dist/"
   ],
