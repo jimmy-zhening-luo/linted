@@ -70,20 +70,19 @@ const OPTIONS = {
     get svelte() {
       return {
         ...OPTIONS.languageOptions.js,
-        parser: OPTIONS.languageOptions.ts.parser,
+        parser: svelteParser,
         parserOptions: {
           ...OPTIONS.languageOptions.ts.parserOptions,
           extraFileExtensions: [".svelte"],
+          parser: OPTIONS.languageOptions.ts.parser,
         },
-        overrides: [
-          {
-            files: OPTIONS.files.svelte,
-            parser: svelteParser,
-            parserOptions: { parser: OPTIONS.languageOptions.ts.parser },
-          },
-        ],
       };
     },
+  },
+  processor: {
+    js: {},
+    ts: {},
+    svelte: { processor: "svelte/svelte" },
   },
 };
 const RULESET = {
@@ -103,7 +102,8 @@ const RULESET = {
   get svelte() {
     return [
       ...RULESET.ts,
-      svelte.configs["flat/recommended"],
+      svelte.configs["flat/all"][1].rules,
+      svelte.configs["flat/all"][2].rules,
     ];
   },
 };
@@ -120,6 +120,7 @@ function flattenRuleset(
           linterOptions: OPTIONS.linterOptions[lang],
           languageOptions: OPTIONS.languageOptions[lang],
           rules,
+          ...OPTIONS.processor[lang],
         };
       },
     );
