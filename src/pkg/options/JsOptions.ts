@@ -1,20 +1,20 @@
 import Options from "./options/Options.js";
 
-export default class JsOptions extends Options<
-  {},
-  Record<string, unknown>
-> {
+export default class JsOptions extends Options {
   constructor(
     plugins: StylisticPlugin & {},
     ...files: string[]
   ) {
     super(
-      plugins,
       {
-        ecmaVersion: "latest",
-        sourceType: "module",
+        processor: null,
+        files,
+        plugins,
+        languageOptions: {
+          ecmaVersion: "latest",
+          sourceType: "module",
+        },
       },
-      files,
     );
   }
 }

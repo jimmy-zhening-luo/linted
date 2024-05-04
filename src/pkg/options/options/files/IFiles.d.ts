@@ -1,1 +1,1 @@
-declare type IFiles = string[];
+declare type IFiles = Record<"files", string[]>;

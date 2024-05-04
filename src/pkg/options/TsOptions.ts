@@ -10,18 +10,21 @@ export default class TsOptions extends Options<
     ...files: string[]
   ) {
     super(
-      plugins,
       {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        parser,
-        parserOptions: {
+        processor: null,
+        files,
+        plugins,
+        languageOptions: {
           ecmaVersion: "latest",
           sourceType: "module",
-          project: true,
+          parser,
+          parserOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module",
+            project: true,
+          },
         },
       },
-      files,
     );
   }
 }

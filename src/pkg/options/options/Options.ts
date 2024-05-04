@@ -1,29 +1,19 @@
 export default abstract class Options<
-  Plugins,
-  Language,
-> implements IOptions<
-  Plugins,
-  Language
+  Plugs = {},
+  LangOpts = {},
+  Pro extends string = "",
 > {
-  public readonly linterOptions: LinterOptions;
+  public readonly config: IOptions<Plugs, LangOpts, Pro>;
 
   constructor(
-    public readonly plugins: IOptions<Plugins, Language>["plugins"],
-    public readonly languageOptions: IOptions<Plugins, Language>["languageOptions"],
-    public readonly files: IFiles,
+    opts: Omit<IOptions<Plugs, LangOpts, Pro>, "linterOptions">,
   ) {
-    this.linterOptions = {
-      noInlineConfig: true,
-      reportUnusedDisableDirectives: true,
-    };
-  }
-
-  public get config(): IOptions<Plugins, Language> {
-    return {
-      files: this.files,
-      linterOptions: this.linterOptions,
-      plugins: this.plugins,
-      languageOptions: this.languageOptions,
+    this.config = {
+      linterOptions: {
+        noInlineConfig: true,
+        reportUnusedDisableDirectives: true,
+      },
+      ...opts,
     };
   }
 }

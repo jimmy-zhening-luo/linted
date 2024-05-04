@@ -1,4 +1,7 @@
-declare type LinterOptions = {
-  noInlineConfig: true;
-  reportUnusedDisableDirectives: true;
-};
+declare type LinterOptions = Record<
+  "linterOptions",
+  {
+    noInlineConfig: true;
+    reportUnusedDisableDirectives: true;
+  }
+>;

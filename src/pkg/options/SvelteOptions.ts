@@ -2,35 +2,34 @@ import Options from "./options/Options.js";
 
 export default class SvelteOptions extends Options<
   SveltePlugin & TsPlugin,
-  SvelteLanguage
+  SvelteLanguage,
+  "svelte/svelte"
 > {
   constructor(
     plugins: StylisticPlugin & SveltePlugin & TsPlugin,
     tsParser: TsParser,
     svelteParser: SvelteParser,
+    processor: SvelteProcessor,
     ...files: string[]
   ) {
     super(
-      plugins,
       {
-        ecmaVersion: "latest",
-        sourceType: "module",
-        parser: tsParser,
-        parserOptions: {
+        processor,
+        files,
+        plugins,
+        languageOptions: {
           ecmaVersion: "latest",
           sourceType: "module",
-          project: true,
-          extraFileExtensions: [".svelte"],
-        },
-        overrides: [
-          {
-            files,
-            parser: svelteParser,
-            parserOptions: { parser: tsParser },
+          parser: svelteParser,
+          parserOptions: {
+            ecmaVersion: "latest",
+            sourceType: "module",
+            project: true,
+            extraFileExtensions: [".svelte"],
+            parser: tsParser,
           },
-        ],
+        },
       },
-      files,
     );
   }
 }

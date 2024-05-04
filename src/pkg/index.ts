@@ -1,82 +1,154 @@
 import JsOptions from "./options/JsOptions.js";
 import TsOptions from "./options/TsOptions.js";
+import SvelteOptions from "./options/SvelteOptions.js";
 import JsRuleset from "./rulesets/JsRuleset.js";
 import TsRuleset from "./rulesets/TsRuleset.js";
 
-declare type Language = "js" | "ts";
+declare type RequiredLanguage = "js" | "ts";
+declare type OptionalLanguage = "svelte";
+declare type Language = RequiredLanguage | OptionalLanguage;
+declare type MyOptions = {
+  js: JsOptions;
+  ts: TsOptions;
+  svelte: SvelteOptions;
+};
+declare type MyNullableOptions = Record<RequiredLanguage, MyOptions[RequiredLanguage]>
+& Record<OptionalLanguage, null | MyOptions[OptionalLanguage]>;
 declare type Config<
   L extends Language,
-> = Configs["options"][L]["config"] & {
+> = MyOptions[L]["config"] & {
   rules: IRules;
 };
+declare type ReturnedConfig<L extends Language> = Omit<Config<L>, "processor"> & Partial<Pick<Config<L>, "processor">>;
 
+export type BadSveltePlugin<Config> = [Config, Config, Config];
 export default class Configs {
-  protected readonly options: {
-    js: JsOptions;
-    ts: TsOptions;
-  };
-  protected readonly rules: Record<"module" | "userOverrides", Record<Language, IRules[]>>;
+  protected readonly options: MyNullableOptions;
+  protected readonly rulesets: Record<Language, IRules[]>;
 
   constructor(
-    stylistic: StylisticPluginBody,
-    ts: TsPluginBody,
-    tsParser: TsParser,
-    jsFiles: string[],
-    tsFiles: string[],
-    jsOverrides: IRules = {},
-    tsOverrides: IRules = {},
+    js: {
+      stylistic: StylisticPluginBody;
+      files: string[];
+    },
+    ts: {
+      ts: TsPluginBody;
+      parser: TsParser;
+      files: string[];
+    },
+    {
+      overrideJs = null,
+      overrideTs = null,
+      overrideSvelte = null,
+    }: {
+      overrideJs?: null | IRules;
+      overrideTs?: null | IRules;
+      overrideSvelte?: null | IRules;
+    } = {},
+    svelte?: {
+      svelte: SveltePluginBody;
+      parser: SvelteParser;
+      processor: SvelteProcessor;
+      files: string[];
+    },
   ) {
     this.options = {
       js: new JsOptions(
-        { "@stylistic": stylistic },
-        ...jsFiles,
+        { "@stylistic": js.stylistic },
+        ...js.files,
       ),
       ts: new TsOptions(
         {
-          "@stylistic": stylistic,
-          "@typescript-eslint": ts,
+          "@stylistic": js.stylistic,
+          "@typescript-eslint": ts.ts,
         },
-        tsParser,
-        ...tsFiles,
+        ts.parser,
+        ...ts.files,
       ),
+      svelte: typeof svelte === "undefined"
+        ? null
+        : new SvelteOptions(
+          {
+            "@stylistic": js.stylistic,
+            "@typescript-eslint": ts.ts,
+            svelte: svelte.svelte,
+          },
+          ts.parser,
+          svelte.parser,
+          svelte.processor,
+          ...svelte.files,
+        ),
     };
-    this.rules = {
-      module: {
-        js: JsRuleset,
-        ts: TsRuleset,
-      },
-      userOverrides: {
-        js: [jsOverrides],
-        ts: [tsOverrides],
-      },
+    this.rulesets = {
+      js: [
+        ...JsRuleset,
+        ...overrideJs === null
+          ? []
+          : [overrideJs],
+      ],
+      ts: [
+        ...TsRuleset,
+        ...overrideTs === null
+          ? []
+          : [overrideTs],
+      ],
+      svelte: [
+        ...TsRuleset,
+        ...svelte === undefined
+          ? []
+          : [
+              this.badSvelte(svelte.svelte.configs["flat/all"])[1].rules,
+              this.badSvelte(svelte.svelte.configs["flat/all"])[2].rules,
+            ],
+        ...overrideSvelte === null
+          ? []
+          : [overrideSvelte],
+      ],
     };
   }
 
   public get configs(): Array<
-    Config<Language>
+    ReturnedConfig<Language>
   > {
     return [
       ...this.getLanguageConfigs<"js">("js"),
       ...this.getLanguageConfigs<"ts">("ts"),
-    ];
+      ...this.getLanguageConfigs<"svelte">("svelte"),
+    ].map(
+      (config: Config<Language>): ReturnedConfig<Language> =>
+        config.processor === null
+          ? {
+              rules: config.rules,
+              files: config.files,
+              languageOptions: config.languageOptions,
+              linterOptions: config.linterOptions,
+              plugins: config.plugins,
+            }
+          : config,
+    );
+  }
+
+  protected badSvelte<Config>(input: Config): BadSveltePlugin<Config> {
+    return input as [Config, Config, Config];
   }
 
   protected getLanguageConfigs<L extends Language>(
     language: L,
   ): Array<Config<L>> {
-    return [
-      ...[
-        ...this.rules.module[language],
-        ...this.rules.userOverrides[language],
-      ]
-        .map(
-          (rules: IRules): Config<L> => {
-            return {
-              ...this.options[language].config,
-              rules,
-            };
-          },
-        ),
-    ];
+    const opt: MyNullableOptions[L] = this.options[language];
+
+    return opt === null
+      ? []
+      : [
+          ...this.rulesets[language]
+            .map(
+              (rules: IRules): Config<L> => {
+                return {
+                  ...opt.config,
+                  rules,
+                };
+              },
+            ),
+        ];
   }
 }
