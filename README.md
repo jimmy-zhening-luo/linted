@@ -57,6 +57,13 @@ Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible,
 - [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 
 
+### v8.2 (long-tail)
+
+#### XML
+
+- XML
+
+
 
 ## How am I used?
 
