@@ -3,4 +3,4 @@ declare type RequiredLanguage =
   | "ts"
   | "json"
   | "md"
-  ;
+;

@@ -4,4 +4,4 @@ declare type OptionalLanguage =
   | "css"
   | "jest"
   | "yaml"
-  ;
+;

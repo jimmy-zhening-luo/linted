@@ -8,14 +8,14 @@ import SvelteRuleset from "./rulesets/SvelteRuleset.js";
 declare type _RequiredLanguage =
   | "js"
   | "ts"
-  ;
+;
 declare type _OptionalLanguage =
   | "svelte"
-  ;
+;
 declare type _Language =
   | _RequiredLanguage
   | _OptionalLanguage
-  ;
+;
 declare type ConfigOptions = {
   js: JsOptions;
   ts: TsOptions;
