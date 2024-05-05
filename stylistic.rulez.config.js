@@ -1,6 +1,4 @@
 export default {
-
-  // https://eslint.style/rules
   "@stylistic/array-bracket-newline": [
     "error",
     {

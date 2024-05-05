@@ -2,9 +2,6 @@ const E = "error";
 const OOOFF = "off";
 
 export default {
-
-  // ENABLE TS Extensions (STEP 2/2)
-  // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   "@typescript-eslint/class-methods-use-this": OOOFF, // preference -- eslint:OFF
   "@typescript-eslint/consistent-return": OOOFF, // tsconfig: noImplicitReturns
   "@typescript-eslint/default-param-last": E,

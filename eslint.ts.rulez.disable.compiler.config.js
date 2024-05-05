@@ -1,8 +1,6 @@
 const OOOFF = "off";
 
 export default {
-
-  // DISABLE ESLint (TSC)
   "constructor-super": OOOFF,
   "no-const-assign": OOOFF,
   "no-dupe-args": OOOFF,

@@ -22,7 +22,7 @@ declare type ConfigOptions = {
   svelte: SvelteOptions;
 };
 declare type NullableConfigOptions = Record<_RequiredLanguage, ConfigOptions[_RequiredLanguage]>
-& Record<_OptionalLanguage, null | ConfigOptions[_OptionalLanguage]>;
+& Record<_OptionalLanguage, Nullable<ConfigOptions[_OptionalLanguage]>>;
 declare type Config<L extends _Language> = ConfigOptions[L]["config"] & Record<"rules", IRules>;
 declare type StrictConfig<L extends _Language> = Omit<Config<L>, "processor"> & Partial<Pick<Config<L>, "processor">>;
 
@@ -46,15 +46,15 @@ export default class Configs {
       overrideTs = null,
       overrideSvelte = null,
     }: {
-      overrideJs?: null | IRules;
-      overrideTs?: null | IRules;
-      overrideSvelte?: null | IRules;
+      overrideJs?: Nullable<IRules>;
+      overrideTs?: Nullable<IRules>;
+      overrideSvelte?: Nullable<IRules>;
     } = {},
-    svelte: null | {
+    svelte: Nullable<{
       svelte: SveltePluginBody;
       parser: SvelteParser;
       files: string[];
-    } = null,
+    }> = null,
   ) {
     this.options = {
       js: new JsOptions(

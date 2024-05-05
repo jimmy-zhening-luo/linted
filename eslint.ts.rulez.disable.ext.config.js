@@ -1,9 +1,6 @@
 const OOOFF = "off";
 
 export default {
-
-  // DISABLE ESLint -- TS Extensions (STEP 1/2)
-  // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
   "class-methods-use-this": OOOFF,
   "consistent-return": OOOFF,
   "default-param-last": OOOFF,
