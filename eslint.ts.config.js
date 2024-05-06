@@ -1,7 +1,9 @@
-import tsDisable from "./eslint.ts.ruleset.disable.config.js";
-import tsEnable from "./eslint.ts.ruleset.enable.config.js";
+import js from "./eslint.js.config.js";
+import disable from "./eslint.ts.disable.config.js";
+import enable from "./eslint.ts.enable.config.js";
 
 export default [
-  ...tsDisable,
-  ...tsEnable,
+  ...js,
+  ...disable,
+  ...enable,
 ];

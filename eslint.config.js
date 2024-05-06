@@ -1,22 +1,24 @@
-// PLUGINS
-import stylistic from "@stylistic/eslint-plugin";
-import ts from "@typescript-eslint/eslint-plugin";
+import js from "./eslint.js.config.js";
+import ts from "./eslint.ts.config.js";
+import stylisticPlugin from "@stylistic/eslint-plugin";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
-import rulesStylistic from "./stylistic.config.js";
-import rulesJs from "./eslint.js.config.js";
-import rulesTs from "./eslint.ts.config.js";
 
+const RULESET = {
+  js,
+  ts,
+};
 const OPTIONS = {
   files: {
     js: ["*.config.js"],
     ts: ["src/**/*.ts"],
   },
   plugins: {
-    js: { "@stylistic": stylistic },
+    js: { "@stylistic": stylisticPlugin },
     get ts() {
       return {
         ...OPTIONS.plugins.js,
-        "@typescript-eslint": ts,
+        "@typescript-eslint": tsPlugin,
       };
     },
   },
@@ -26,7 +28,9 @@ const OPTIONS = {
       reportUnusedDisableDirectives: true,
     },
     get ts() {
-      return OPTIONS.linterOptions.js;
+      return {
+        ...OPTIONS.linterOptions.js;
+      };
     },
   },
   languageOptions: {
@@ -50,38 +54,24 @@ const OPTIONS = {
     ts: {},
   },
 };
-const RULESET = {
-  js: [
-    ...rulesStylistic,
-    ...rulesJs,
-  ],
-  get ts() {
-    return [
-      ...RULESET.js,
-      ...rulesTs,
-    ];
-  },
-};
 
-function flattenRuleset(
-  lang,
-) {
-  return RULESET[lang]
+function flat(language) {
+  return RULESET[language]
     .map(
       rules => {
         return {
-          files: OPTIONS.files[lang],
-          plugins: OPTIONS.plugins[lang],
-          linterOptions: OPTIONS.linterOptions[lang],
-          languageOptions: OPTIONS.languageOptions[lang],
+          files: OPTIONS.files[language],
+          plugins: OPTIONS.plugins[language],
+          linterOptions: OPTIONS.linterOptions[language],
+          languageOptions: OPTIONS.languageOptions[language],
           rules,
-          ...OPTIONS.processor[lang],
+          ...OPTIONS.processor[language],
         };
       },
     );
 }
 
 export default [
-  ...flattenRuleset("js"),
-  ...flattenRuleset("ts"),
+  ...flat("js"),
+  ...flat("ts"),
 ];
