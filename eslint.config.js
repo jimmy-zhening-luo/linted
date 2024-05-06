@@ -28,9 +28,7 @@ const OPTIONS = {
       reportUnusedDisableDirectives: true,
     },
     get ts() {
-      return {
-        ...OPTIONS.linterOptions.js,
-      };
+      return { ...OPTIONS.linterOptions.js };
     },
   },
   languageOptions: {
