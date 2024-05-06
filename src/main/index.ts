@@ -5,6 +5,11 @@ import JsOptions from "./options/JsOptions.js";
 import TsOptions from "./options/TsOptions.js";
 import SvelteOptions from "./options/SvelteOptions.js";
 
+declare type OPTIONS = {
+  js: JsOptions;
+  ts: TsOptions;
+  svelte: SvelteOptions;
+};
 declare type _RequiredLanguage =
   | "js"
   | "ts"
@@ -16,19 +21,14 @@ declare type _Language =
   | _RequiredLanguage
   | _OptionalLanguage
 ;
-declare type ConfigOptions = {
-  js: JsOptions;
-  ts: TsOptions;
-  svelte: SvelteOptions;
-};
-declare type NullableConfigOptions = Record<_RequiredLanguage, ConfigOptions[_RequiredLanguage]>
-& Record<_OptionalLanguage, Nullable<ConfigOptions[_OptionalLanguage]>>;
-declare type Config<L extends _Language> = ConfigOptions[L]["config"] & Record<"rules", IRules>;
+declare type NullableOPTIONS = Record<_RequiredLanguage, OPTIONS[_RequiredLanguage]>
+& Record<_OptionalLanguage, Nullable<OPTIONS[_OptionalLanguage]>>;
+declare type Config<L extends _Language> = OPTIONS[L]["config"] & Record<"rules", IRules>;
 declare type StrictConfig<L extends _Language> = Omit<Config<L>, "processor"> & Partial<Pick<Config<L>, "processor">>;
 declare type BadSveltePlugin<Config> = [Config, Config, Config];
 
 export default class Configs {
-  protected readonly options: NullableConfigOptions;
+  protected readonly options: NullableOPTIONS;
   protected readonly rulesets: Record<_Language, IRules[]>;
 
   constructor(
@@ -139,7 +139,7 @@ export default class Configs {
   }
 
   protected getLanguageConfigs<L extends _Language>(language: L): Array<Config<L>> {
-    const opt: NullableConfigOptions[L] = this.options[language];
+    const opt: NullableOPTIONS[L] = this.options[language];
 
     return opt === null
       ? []
