@@ -29,7 +29,7 @@ const OPTIONS = {
     },
     get ts() {
       return {
-        ...OPTIONS.linterOptions.js;
+        ...OPTIONS.linterOptions.js,
       };
     },
   },
