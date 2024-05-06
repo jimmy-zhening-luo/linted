@@ -1,7 +1,7 @@
 import stylistic from "./eslint.js.stylistic.config.js";
 
-const E = "error";
-const OOOFF = "off";
+const ERROR = "error";
+const O = "off";
 
 export default [
 
@@ -11,61 +11,61 @@ export default [
   // Vanilla ESLint
   {
     "array-callback-return": [
-      E,
+      ERROR,
       {
         allowImplicit: false,
         checkForEach: true,
         allowVoid: true,
       },
     ],
-    "constructor-super": E, // tsc
-    "for-direction": E,
+    "constructor-super": ERROR, // tsc
+    "for-direction": ERROR,
     "getter-return": [
-      E,
+      ERROR,
       { allowImplicit: false },
     ], // tsc
-    "no-async-promise-executor": E,
-    "no-await-in-loop": E,
-    "no-class-assign": E,
-    "no-compare-neg-zero": E,
+    "no-async-promise-executor": ERROR,
+    "no-await-in-loop": ERROR,
+    "no-class-assign": ERROR,
+    "no-compare-neg-zero": ERROR,
     "no-cond-assign": [
-      E,
+      ERROR,
       "always",
     ],
-    "no-const-assign": E, // tsc
-    "no-constant-binary-expression": E,
+    "no-const-assign": ERROR, // tsc
+    "no-constant-binary-expression": ERROR,
     "no-constant-condition": [
-      E,
+      ERROR,
       { checkLoops: true },
     ],
-    "no-constructor-return": E,
-    "no-control-regex": E,
-    "no-debugger": E,
-    "no-dupe-args": E, // tsc
-    "no-dupe-class-members": E, // tsc -- TSLint:OFF: tsc
-    "no-dupe-else-if": E,
-    "no-dupe-keys": E, // tsc
-    "no-duplicate-case": E,
-    "no-duplicate-imports": OOOFF, // buggy, breaks separation of TS type-only imports from value imports
-    "no-empty-character-class": E,
+    "no-constructor-return": ERROR,
+    "no-control-regex": ERROR,
+    "no-debugger": ERROR,
+    "no-dupe-args": ERROR, // tsc
+    "no-dupe-class-members": ERROR, // tsc -- TSLint:OFF: tsc
+    "no-dupe-else-if": ERROR,
+    "no-dupe-keys": ERROR, // tsc
+    "no-duplicate-case": ERROR,
+    "no-duplicate-imports": O, // buggy, breaks separation of TS type-only imports from value imports
+    "no-empty-character-class": ERROR,
     "no-empty-pattern": [
-      E,
+      ERROR,
       { allowObjectPatternsAsParameters: true },
     ],
-    "no-ex-assign": E,
-    "no-fallthrough": OOOFF, // buggy
-    "no-func-assign": E, // tsc
-    "no-import-assign": E, // tsc (except Object.assign())
+    "no-ex-assign": ERROR,
+    "no-fallthrough": O, // buggy
+    "no-func-assign": ERROR, // tsc
+    "no-import-assign": ERROR, // tsc (except Object.assign())
     "no-inner-declarations": [
-      E,
+      ERROR,
       "both",
     ],
     "no-invalid-regexp": [
-      E,
+      ERROR,
       { allowConstructorFlags: [] },
     ],
     "no-irregular-whitespace": [
-      E,
+      ERROR,
       {
         skipStrings: true,
         skipComments: true,
@@ -74,44 +74,44 @@ export default [
         skipJSXText: true,
       },
     ],
-    "no-loss-of-precision": E, // TSLint
-    "no-misleading-character-class": E,
-    "no-new-native-nonconstructor": E,
-    "no-obj-calls": E, // tsc
+    "no-loss-of-precision": ERROR, // TSLint
+    "no-misleading-character-class": ERROR,
+    "no-new-native-nonconstructor": ERROR,
+    "no-obj-calls": ERROR, // tsc
     "no-promise-executor-return": [
-      E,
+      ERROR,
       { allowVoid: true },
     ],
-    "no-prototype-builtins": E,
+    "no-prototype-builtins": ERROR,
     "no-self-assign": [
-      E,
+      ERROR,
       { props: true },
     ],
-    "no-self-compare": E,
-    "no-setter-return": E, // tsc
-    "no-sparse-arrays": E,
-    "no-template-curly-in-string": E,
-    "no-this-before-super": E, // tsc
-    "no-undef": E, // tsc
-    "no-unexpected-multiline": E,
-    "no-unmodified-loop-condition": E,
-    "no-unreachable": E, // tsc
+    "no-self-compare": ERROR,
+    "no-setter-return": ERROR, // tsc
+    "no-sparse-arrays": ERROR,
+    "no-template-curly-in-string": ERROR,
+    "no-this-before-super": ERROR, // tsc
+    "no-undef": ERROR, // tsc
+    "no-unexpected-multiline": ERROR,
+    "no-unmodified-loop-condition": ERROR,
+    "no-unreachable": ERROR, // tsc
     "no-unreachable-loop": [
-      E,
+      ERROR,
       { ignore: [] }, // WhileStatement, DoWhileStatement, ForStatement, ForInStatement, ForOfStatement
     ],
-    "no-unsafe-finally": E,
+    "no-unsafe-finally": ERROR,
     "no-unsafe-negation": [
-      E,
+      ERROR,
       { enforceForOrderingRelations: true },
     ], // tsc
     "no-unsafe-optional-chaining": [
-      E,
+      ERROR,
       { disallowArithmeticOperators: true },
     ],
-    "no-unused-private-class-members": E,
+    "no-unused-private-class-members": ERROR,
     "no-unused-vars": [
-      E,
+      ERROR,
       {
         vars: "all",
         args: "all",
@@ -120,7 +120,7 @@ export default [
       },
     ], // TSLint
     "no-use-before-define": [
-      E,
+      ERROR,
       {
         functions: true,
         classes: true,
@@ -128,24 +128,24 @@ export default [
         allowNamedExports: false,
       },
     ], // TSLint
-    "no-useless-backreference": E,
+    "no-useless-backreference": ERROR,
     "require-atomic-updates": [
-      E,
+      ERROR,
       { allowProperties: false },
     ],
     "use-isnan": [
-      E,
+      ERROR,
       {
         enforceForSwitchCase: true,
         enforceForIndexOf: true,
       },
     ],
     "valid-typeof": [
-      E,
+      ERROR,
       { requireStringLiterals: true },
     ],
     "accessor-pairs": [
-      E,
+      ERROR,
       {
         setWithoutGet: true,
         getWithoutSet: false,
@@ -153,107 +153,107 @@ export default [
       },
     ],
     "arrow-body-style": [
-      E,
+      ERROR,
       "as-needed",
       { requireReturnForObjectLiteral: true },
     ],
-    "block-scoped-var": E,
-    camelcase: OOOFF, // preference
-    "capitalized-comments": OOOFF, // preference
-    "class-methods-use-this": OOOFF, // preference -- TSLint
-    complexity: OOOFF, // preference
+    "block-scoped-var": ERROR,
+    camelcase: O, // preference
+    "capitalized-comments": O, // preference
+    "class-methods-use-this": O, // preference -- TSLint
+    complexity: O, // preference
     "consistent-return": [
-      E,
+      ERROR,
       { treatUndefinedAsUnspecified: false },
     ], // tsc -- TSLint:OFF: tsconfig: noImplicitReturns
-    "consistent-this": [E],
+    "consistent-this": [ERROR],
     curly: [
-      E,
+      ERROR,
       "multi",
     ],
-    "default-case": OOOFF, // preference: don't care
-    "default-case-last": E,
-    "default-param-last": E, // TSLint
+    "default-case": O, // preference: don't care
+    "default-case-last": ERROR,
+    "default-param-last": ERROR, // TSLint
     "dot-notation": [
-      E,
+      ERROR,
       { allowKeywords: true },
     ], // TSLint
     eqeqeq: [
-      E,
+      ERROR,
       "always",
     ],
-    "func-name-matching": OOOFF, // preference
-    "func-names": OOOFF, // preference
-    "func-style": OOOFF, // preference
-    "grouped-accessor-pairs": OOOFF, // preference -- buggy behavior (requires adjacency, not as described in documentation)
-    "guard-for-in": E,
-    "id-denylist": OOOFF, // preference
-    "id-length": OOOFF, // preference
-    "id-match": OOOFF, // preference
+    "func-name-matching": O, // preference
+    "func-names": O, // preference
+    "func-style": O, // preference
+    "grouped-accessor-pairs": O, // preference -- buggy behavior (requires adjacency, not as described in documentation)
+    "guard-for-in": ERROR,
+    "id-denylist": O, // preference
+    "id-length": O, // preference
+    "id-match": O, // preference
     "init-declarations": [
-      E,
+      ERROR,
       "always",
     ], // TSLint
     "logical-assignment-operators": [
-      E,
+      ERROR,
       "always",
       { enforceForIfStatements: true },
     ],
-    "max-classes-per-file": OOOFF, // preference
-    "max-depth": OOOFF, // preference
-    "max-lines": OOOFF, // preference
-    "max-lines-per-function": OOOFF, // preference
-    "max-nested-callbacks": OOOFF, // preference
-    "max-params": OOOFF, // preference -- TSLint:OFF: preference
-    "max-statements": OOOFF, // preference
-    "multiline-comment-style": OOOFF, // preference
-    "new-cap": OOOFF, // preference -- breaks Scriptable
-    "no-alert": E,
-    "no-array-constructor": E, // TSLint
+    "max-classes-per-file": O, // preference
+    "max-depth": O, // preference
+    "max-lines": O, // preference
+    "max-lines-per-function": O, // preference
+    "max-nested-callbacks": O, // preference
+    "max-params": O, // preference -- TSLint:OFF: preference
+    "max-statements": O, // preference
+    "multiline-comment-style": O, // preference
+    "new-cap": O, // preference -- breaks Scriptable
+    "no-alert": ERROR,
+    "no-array-constructor": ERROR, // TSLint
     "no-bitwise": [
-      E,
+      ERROR,
       {
         allow: [],
         int32Hint: true,
       },
     ],
-    "no-caller": E,
-    "no-case-declarations": E,
-    "no-console": OOOFF, // preference -- breaks Node.js
-    "no-continue": E,
-    "no-delete-var": E,
-    "no-div-regex": E,
-    "no-else-return": OOOFF, // preference
+    "no-caller": ERROR,
+    "no-case-declarations": ERROR,
+    "no-console": O, // preference -- breaks Node.js
+    "no-continue": ERROR,
+    "no-delete-var": ERROR,
+    "no-div-regex": ERROR,
+    "no-else-return": O, // preference
     "no-empty": [
-      E,
+      ERROR,
       { allowEmptyCatch: false },
     ],
     "no-empty-function": [
-      E,
+      ERROR,
       { allow: ["constructors"] }, /**  functions, arrowFunctions, generatorFunctions, methods, generatorMethods, getters, setters, constructors, asyncFunctions, asyncMethods; TS-ONLY: private-constructors, protected-constructors, decoratedFunctions, overrideMethods  */
     ], // TSLint
-    "no-empty-static-block": E,
-    "no-eq-null": E,
+    "no-empty-static-block": ERROR,
+    "no-eq-null": ERROR,
     "no-eval": [
-      E,
+      ERROR,
       { allowIndirect: false },
     ],
     "no-extend-native": [
-      E,
+      ERROR,
       { exceptions: [] },
     ],
-    "no-extra-bind": E,
+    "no-extra-bind": ERROR,
     "no-extra-boolean-cast": [
-      E,
+      ERROR,
       { enforceForLogicalOperands: true },
     ],
-    "no-extra-label": E,
+    "no-extra-label": ERROR,
     "no-global-assign": [
-      E,
+      ERROR,
       { exceptions: [] },
     ],
     "no-implicit-coercion": [
-      E,
+      ERROR,
       {
         "boolean": true,
         number: true,
@@ -262,20 +262,20 @@ export default [
         allow: [], /**  "~" | "!!" | "+" | "- -" | "-" | "*"  */
       },
     ],
-    "no-implicit-globals": OOOFF, // investigate (breaks Scriptable? breaks Sveltekit?)
-    "no-implied-eval": E, // TSLint
-    "no-inline-comments": OOOFF, // preference
+    "no-implicit-globals": O, // investigate (breaks Scriptable? breaks Sveltekit?)
+    "no-implied-eval": ERROR, // TSLint
+    "no-inline-comments": O, // preference
     "no-invalid-this": [
-      E,
+      ERROR,
       { capIsConstructor: false },
     ], // TSLint:OFF: tsconfig: { strict, noImplicitThis }
-    "no-iterator": E,
-    "no-label-var": E,
-    "no-lone-blocks": E,
-    "no-lonely-if": OOOFF, // preference
-    "no-loop-func": E, // TSLint
+    "no-iterator": ERROR,
+    "no-label-var": ERROR,
+    "no-lone-blocks": ERROR,
+    "no-lonely-if": O, // preference
+    "no-loop-func": ERROR, // TSLint
     "no-magic-numbers": [
-      OOOFF,
+      O,
       {
         ignore: [],
         ignoreArrayIndexes: true,
@@ -286,21 +286,21 @@ export default [
       },
     ], // TSLint
     "no-multi-assign": [
-      E,
+      ERROR,
       { ignoreNonDeclaration: false },
     ],
-    "no-multi-str": E,
-    "no-negated-condition": OOOFF, // preference
-    "no-nested-ternary": OOOFF, // preference
-    "no-new": E,
-    "no-new-func": E,
-    "no-new-wrappers": E,
-    "no-nonoctal-decimal-escape": E,
-    "no-object-constructor": E,
-    "no-octal": E,
-    "no-octal-escape": E,
+    "no-multi-str": ERROR,
+    "no-negated-condition": O, // preference
+    "no-nested-ternary": O, // preference
+    "no-new": ERROR,
+    "no-new-func": ERROR,
+    "no-new-wrappers": ERROR,
+    "no-nonoctal-decimal-escape": ERROR,
+    "no-object-constructor": ERROR,
+    "no-octal": ERROR,
+    "no-octal-escape": ERROR,
     "no-param-reassign": [
-      E,
+      ERROR,
       {
         props: true,
         ignorePropertyModificationsFor: [],
@@ -308,42 +308,42 @@ export default [
       },
     ],
     "no-plusplus": [
-      E,
+      ERROR,
       { allowForLoopAfterthoughts: true },
     ],
-    "no-proto": E,
+    "no-proto": ERROR,
     "no-redeclare": [
-      E,
+      ERROR,
       { builtinGlobals: true },
     ], // tsc -- TSLint:OFF: tsc (let, const, -var)
-    "no-regex-spaces": OOOFF, // preference
-    "no-restricted-exports": OOOFF, // preference
-    "no-restricted-globals": OOOFF, // preference
-    "no-restricted-imports": OOOFF, // preference -- TSLint:OFF: preference
-    "no-restricted-properties": OOOFF, // preference
-    "no-restricted-syntax": OOOFF, // preference
+    "no-regex-spaces": O, // preference
+    "no-restricted-exports": O, // preference
+    "no-restricted-globals": O, // preference
+    "no-restricted-imports": O, // preference -- TSLint:OFF: preference
+    "no-restricted-properties": O, // preference
+    "no-restricted-syntax": O, // preference
     "no-return-assign": [
-      E,
+      ERROR,
       "always", // "always" | "except-parens" (disallow assignments unless enclosed in parens)
     ],
-    "no-script-url": E,
+    "no-script-url": ERROR,
     "no-sequences": [
-      E,
+      ERROR,
       { allowInParentheses: true },
     ],
-    "no-shadow": OOOFF, // investigate -- TSLint:OFF: investigate
-    "no-shadow-restricted-names": E,
-    "no-ternary": OOOFF, // preference
-    "no-throw-literal": E, // TSLint
-    "no-undef-init": E,
-    "no-undefined": OOOFF, // investigate (breaks Scriptable? breaks Sveltekit?)
-    "no-underscore-dangle": OOOFF, // preference
+    "no-shadow": O, // investigate -- TSLint:OFF: investigate
+    "no-shadow-restricted-names": ERROR,
+    "no-ternary": O, // preference
+    "no-throw-literal": ERROR, // TSLint
+    "no-undef-init": ERROR,
+    "no-undefined": O, // investigate (breaks Scriptable? breaks Sveltekit?)
+    "no-underscore-dangle": O, // preference
     "no-unneeded-ternary": [
-      E,
+      ERROR,
       { defaultAssignment: false },
     ],
     "no-unused-expressions": [
-      E,
+      ERROR,
       {
         allowShortCircuit: true,
         allowTernary: true,
@@ -351,34 +351,34 @@ export default [
         enforceForJSX: false,
       },
     ], // TSLint
-    "no-unused-labels": E,
-    "no-useless-call": E,
-    "no-useless-catch": E,
+    "no-unused-labels": ERROR,
+    "no-useless-call": ERROR,
+    "no-useless-catch": ERROR,
     "no-useless-computed-key": [
-      E,
+      ERROR,
       { enforceForClassMembers: true },
     ],
-    "no-useless-concat": E,
-    "no-useless-constructor": E, // TSLint
-    "no-useless-escape": E,
+    "no-useless-concat": ERROR,
+    "no-useless-constructor": ERROR, // TSLint
+    "no-useless-escape": ERROR,
     "no-useless-rename": [
-      E,
+      ERROR,
       {
         ignoreImport: false,
         ignoreExport: false,
         ignoreDestructuring: false,
       },
     ],
-    "no-useless-return": E,
-    "no-var": E,
+    "no-useless-return": ERROR,
+    "no-var": ERROR,
     "no-void": [
-      E,
+      ERROR,
       { allowAsStatement: true },
     ],
-    "no-warning-comments": OOOFF, // preference
-    "no-with": E,
+    "no-warning-comments": O, // preference
+    "no-with": ERROR,
     "object-shorthand": [
-      E,
+      ERROR,
       "always",
       {
         avoidQuotes: true,
@@ -387,7 +387,7 @@ export default [
       },
     ],
     "one-var": [
-      E,
+      ERROR,
       {
         "var": "never",
         let: "never",
@@ -396,25 +396,25 @@ export default [
       },
     ],
     "operator-assignment": [
-      E,
+      ERROR,
       "always",
     ],
     "prefer-arrow-callback": [
-      E,
+      ERROR,
       {
         allowNamedFunctions: false,
         allowUnboundThis: true,
       },
     ],
     "prefer-const": [
-      E,
+      ERROR,
       {
         destructuring: "all",
         ignoreReadBeforeAssign: false,
       },
     ],
     "prefer-destructuring": [
-      E,
+      ERROR,
       {
         VariableDeclarator: {
           array: true,
@@ -427,44 +427,44 @@ export default [
       },
       { enforceForRenamedProperties: true },
     ], // TSLint
-    "prefer-exponentiation-operator": E,
-    "prefer-named-capture-group": E,
-    "prefer-numeric-literals": E,
-    "prefer-object-has-own": E,
-    "prefer-object-spread": E,
+    "prefer-exponentiation-operator": ERROR,
+    "prefer-named-capture-group": ERROR,
+    "prefer-numeric-literals": ERROR,
+    "prefer-object-has-own": ERROR,
+    "prefer-object-spread": ERROR,
     "prefer-promise-reject-errors": [
-      E,
+      ERROR,
       { allowEmptyReject: false },
     ],
     "prefer-regex-literals": [
-      E,
+      ERROR,
       { disallowRedundantWrapping: true },
     ], // TSLint
-    "prefer-rest-params": E,
-    "prefer-spread": E,
-    "prefer-template": E,
+    "prefer-rest-params": ERROR,
+    "prefer-spread": ERROR,
+    "prefer-template": ERROR,
     radix: [
-      E,
+      ERROR,
       "as-needed",
     ],
-    "require-await": E, // TSLint
-    "require-unicode-regexp": E,
-    "require-yield": E,
-    "sort-imports": OOOFF, // preference
-    "sort-keys": OOOFF, // preference
-    "sort-vars": OOOFF, // preference
-    strict: OOOFF, // preference
-    "symbol-description": OOOFF, // preference
-    "vars-on-top": E,
+    "require-await": ERROR, // TSLint
+    "require-unicode-regexp": ERROR,
+    "require-yield": ERROR,
+    "sort-imports": O, // preference
+    "sort-keys": O, // preference
+    "sort-vars": O, // preference
+    strict: O, // preference
+    "symbol-description": O, // preference
+    "vars-on-top": ERROR,
     yoda: [
-      E,
+      ERROR,
       "never",
       {
         exceptRange: false,
         onlyEquality: false,
       },
     ],
-    "line-comment-position": OOOFF, // preference
-    "unicode-bom": OOOFF, // preference: don't care
+    "line-comment-position": O, // preference
+    "unicode-bom": O, // preference: don't care
   },
 ];
