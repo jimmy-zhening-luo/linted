@@ -1,9 +1,9 @@
-import JsOptions from "./options/JsOptions.js";
-import TsOptions from "./options/TsOptions.js";
-import SvelteOptions from "./options/SvelteOptions.js";
 import JsRuleset from "./rulesets/JsRuleset.js";
 import TsRuleset from "./rulesets/TsRuleset.js";
 import SvelteRuleset from "./rulesets/SvelteRuleset.js";
+import JsOptions from "./options/JsOptions.js";
+import TsOptions from "./options/TsOptions.js";
+import SvelteOptions from "./options/SvelteOptions.js";
 
 declare type _RequiredLanguage =
   | "js"
