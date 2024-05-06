@@ -1,7 +1,7 @@
-const E = "error";
+const ERROR = "error";
 const SvelteEnableRules: IRules = {
   "svelte/block-lang": [
-    E,
+    ERROR,
     {
       enforceScriptPresent: true,
       enforceStylePresent: false,

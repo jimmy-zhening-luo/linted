@@ -30,7 +30,7 @@ const badSvelte: SveltePluginBody = {
   configs: {
     "flat/all": badSvelteTest<Record<"rules", IRules>>(
       [
-        { rules: { "svelte/ERROR-INDEX-ZERO-CONFIG-ACCESS?? SHOULD START FROM 1": "off" } },
+        { rules: { "svelte/UNEXPECTED-INDEX-ZERO-CONFIG-ACCESS?? SHOULD START FROM 1": "off" } },
         {
           rules: {
             "svelte/base-rule-svelte-plugin-design-is-poor": "error",

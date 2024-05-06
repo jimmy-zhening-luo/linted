@@ -1,34 +1,34 @@
-const OOOFF = "off";
+const O = "off";
 const TsDisableExtendRules: IRules = {
 
   // DISABLE ESLint -- TS Extensions (STEP 1/2)
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
-  "class-methods-use-this": OOOFF,
-  "consistent-return": OOOFF,
-  "default-param-last": OOOFF,
-  "dot-notation": OOOFF,
-  "init-declarations": OOOFF,
-  "max-params": OOOFF,
-  "no-array-constructor": OOOFF,
-  "no-dupe-class-members": OOOFF,
-  "no-empty-function": OOOFF,
-  "no-implied-eval": OOOFF,
-  "no-invalid-this": OOOFF,
-  "no-loop-func": OOOFF,
-  "no-loss-of-precision": OOOFF,
-  "no-magic-numbers": OOOFF,
-  "no-redeclare": OOOFF,
-  "no-restricted-imports": OOOFF,
-  "no-return-await": OOOFF, // DEPRECATED -- @typescript-eslint/return-await
-  "no-shadow": OOOFF,
-  "no-throw-literal": OOOFF, // @typescript-eslint/only-throw-error
-  "no-unused-expressions": OOOFF,
-  "no-unused-vars": OOOFF,
-  "no-use-before-define": OOOFF,
-  "no-useless-constructor": OOOFF,
-  "prefer-destructuring": OOOFF,
-  "prefer-promise-reject-errors": OOOFF,
-  "require-await": OOOFF,
+  "class-methods-use-this": O,
+  "consistent-return": O,
+  "default-param-last": O,
+  "dot-notation": O,
+  "init-declarations": O,
+  "max-params": O,
+  "no-array-constructor": O,
+  "no-dupe-class-members": O,
+  "no-empty-function": O,
+  "no-implied-eval": O,
+  "no-invalid-this": O,
+  "no-loop-func": O,
+  "no-loss-of-precision": O,
+  "no-magic-numbers": O,
+  "no-redeclare": O,
+  "no-restricted-imports": O,
+  "no-return-await": O, // DEPRECATED -- @typescript-eslint/return-await
+  "no-shadow": O,
+  "no-throw-literal": O, // @typescript-eslint/only-throw-error
+  "no-unused-expressions": O,
+  "no-unused-vars": O,
+  "no-use-before-define": O,
+  "no-useless-constructor": O,
+  "prefer-destructuring": O,
+  "prefer-promise-reject-errors": O,
+  "require-await": O,
 };
 
 export default TsDisableExtendRules;

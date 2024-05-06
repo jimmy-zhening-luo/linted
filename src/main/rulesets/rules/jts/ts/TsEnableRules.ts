@@ -1,20 +1,20 @@
-const E = "error";
-const OOOFF = "off";
+const ERROR = "error";
+const O = "off";
 const TsEnableRules: IRules = {
 
   // ENABLE TSLint (TypeScript ONLY)
   // [ Reference: https://typescript-eslint.io/rules/?=xextension-xdeprecated#rules ]
-  "@typescript-eslint/adjacent-overload-signatures": OOOFF,
+  "@typescript-eslint/adjacent-overload-signatures": O,
   "@typescript-eslint/array-type": [
-    E,
+    ERROR,
     {
       "default": "array-simple",
       readonly: "array",
     },
   ],
-  "@typescript-eslint/await-thenable": E,
+  "@typescript-eslint/await-thenable": ERROR,
   "@typescript-eslint/ban-ts-comment": [
-    E,
+    ERROR,
     {
       "ts-check": true,
       "ts-expect-error": true,
@@ -23,37 +23,37 @@ const TsEnableRules: IRules = {
       minimumDescriptionLength: 10,
     },
   ],
-  "@typescript-eslint/ban-tslint-comment": E,
-  "@typescript-eslint/ban-types": OOOFF,
+  "@typescript-eslint/ban-tslint-comment": ERROR,
+  "@typescript-eslint/ban-types": O,
   "@typescript-eslint/class-literal-property-style": [
-    E,
+    ERROR,
     "fields",
   ],
   "@typescript-eslint/consistent-generic-constructors": [
-    E,
+    ERROR,
     "type-annotation",
   ],
   "@typescript-eslint/consistent-indexed-object-style": [
-    E,
+    ERROR,
     "record",
   ],
   "@typescript-eslint/consistent-type-assertions": [
-    E,
+    ERROR,
     {
       assertionStyle: "as",
       objectLiteralTypeAssertions: "never",
     },
   ],
   "@typescript-eslint/consistent-type-definitions": [
-    E,
+    ERROR,
     "type",
   ],
   "@typescript-eslint/consistent-type-exports": [
-    E,
+    ERROR,
     { fixMixedExportsWithInlineTypeSpecifier: false },
   ],
   "@typescript-eslint/consistent-type-imports": [
-    E,
+    ERROR,
     {
       disallowTypeAnnotations: true,
       fixStyle: "separate-type-imports",
@@ -61,7 +61,7 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/explicit-function-return-type": [
-    E,
+    ERROR,
     {
       allowExpressions: false,
       allowTypedFunctionExpressions: false,
@@ -74,7 +74,7 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/explicit-member-accessibility": [
-    E,
+    ERROR,
     {
       accessibility: "explicit",
       ignoredMethodNames: [],
@@ -88,7 +88,7 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/explicit-module-boundary-types": [
-    E,
+    ERROR,
     {
       allowArgumentsExplicitlyTypedAsAny: false,
       allowDirectConstAssertionInArrowFunctions: false,
@@ -98,7 +98,7 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/member-ordering": [
-    E,
+    ERROR,
     {
       "default": {
         memberTypes: [
@@ -278,13 +278,13 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/method-signature-style": [
-    E,
+    ERROR,
     "property",
   ],
-  "@typescript-eslint/naming-convention": OOOFF,
-  "@typescript-eslint/no-array-delete": E,
+  "@typescript-eslint/naming-convention": O,
+  "@typescript-eslint/no-array-delete": ERROR,
   "@typescript-eslint/no-base-to-string": [
-    E,
+    ERROR,
     {
       ignoredTypeNames: [
         "Error",
@@ -294,37 +294,37 @@ const TsEnableRules: IRules = {
       ],
     },
   ],
-  "@typescript-eslint/no-confusing-non-null-assertion": E,
+  "@typescript-eslint/no-confusing-non-null-assertion": ERROR,
   "@typescript-eslint/no-confusing-void-expression": [
-    E,
+    ERROR,
     {
       ignoreArrowShorthand: true,
       ignoreVoidOperator: true,
     },
   ],
-  "@typescript-eslint/no-duplicate-enum-values": E,
+  "@typescript-eslint/no-duplicate-enum-values": ERROR,
   "@typescript-eslint/no-duplicate-type-constituents": [
-    E,
+    ERROR,
     {
       ignoreIntersections: false,
       ignoreUnions: false,
     },
   ],
-  "@typescript-eslint/no-dynamic-delete": E,
+  "@typescript-eslint/no-dynamic-delete": ERROR,
   "@typescript-eslint/no-empty-interface": [
-    E,
+    ERROR,
     { allowSingleExtends: true },
   ],
   "@typescript-eslint/no-explicit-any": [
-    E,
+    ERROR,
     {
       fixToUnknown: false,
       ignoreRestArgs: false,
     },
   ],
-  "@typescript-eslint/no-extra-non-null-assertion": E,
+  "@typescript-eslint/no-extra-non-null-assertion": ERROR,
   "@typescript-eslint/no-extraneous-class": [
-    E,
+    ERROR,
     {
       allowConstructorOnly: false,
       allowEmpty: true,
@@ -333,29 +333,29 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/no-floating-promises": [
-    E,
+    ERROR,
     {
       ignoreVoid: true,
       ignoreIIFE: false,
     },
   ],
-  "@typescript-eslint/no-for-in-array": E,
-  "@typescript-eslint/no-import-type-side-effects": E,
-  "@typescript-eslint/no-inferrable-types": OOOFF,
+  "@typescript-eslint/no-for-in-array": ERROR,
+  "@typescript-eslint/no-import-type-side-effects": ERROR,
+  "@typescript-eslint/no-inferrable-types": O,
   "@typescript-eslint/no-invalid-void-type": [
-    E,
+    ERROR,
     {
       allowInGenericTypeArguments: true,
       allowAsThisParameter: false,
     },
   ],
   "@typescript-eslint/no-meaningless-void-operator": [
-    E,
+    ERROR,
     { checkNever: true },
   ],
-  "@typescript-eslint/no-misused-new": E,
+  "@typescript-eslint/no-misused-new": ERROR,
   "@typescript-eslint/no-misused-promises": [
-    E,
+    ERROR,
     {
       checksConditionals: true,
       checksSpreads: true,
@@ -368,76 +368,76 @@ const TsEnableRules: IRules = {
       },
     },
   ],
-  "@typescript-eslint/no-mixed-enums": E,
-  "@typescript-eslint/no-namespace": OOOFF,
-  "@typescript-eslint/no-non-null-asserted-nullish-coalescing": E,
-  "@typescript-eslint/no-non-null-asserted-optional-chain": E,
-  "@typescript-eslint/no-non-null-assertion": E,
-  "@typescript-eslint/no-redundant-type-constituents": E,
+  "@typescript-eslint/no-mixed-enums": ERROR,
+  "@typescript-eslint/no-namespace": O,
+  "@typescript-eslint/no-non-null-asserted-nullish-coalescing": ERROR,
+  "@typescript-eslint/no-non-null-asserted-optional-chain": ERROR,
+  "@typescript-eslint/no-non-null-assertion": ERROR,
+  "@typescript-eslint/no-redundant-type-constituents": ERROR,
   "@typescript-eslint/no-require-imports": [
-    E,
+    ERROR,
     { allow: [] },
   ],
   "@typescript-eslint/no-this-alias": [
-    E,
+    ERROR,
     {
       allowDestructuring: true,
       allowedNames: [],
     },
   ],
   "@typescript-eslint/no-unnecessary-boolean-literal-compare": [
-    E,
+    ERROR,
     {
       allowComparingNullableBooleansToTrue: true,
       allowComparingNullableBooleansToFalse: true,
     },
   ],
   "@typescript-eslint/no-unnecessary-condition": [
-    E,
+    ERROR,
     {
       allowConstantLoopConditions: false,
       allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
     },
   ],
-  "@typescript-eslint/no-unnecessary-qualifier": E,
-  "@typescript-eslint/no-unnecessary-type-arguments": E,
+  "@typescript-eslint/no-unnecessary-qualifier": ERROR,
+  "@typescript-eslint/no-unnecessary-type-arguments": ERROR,
   "@typescript-eslint/no-unnecessary-type-assertion": [
-    E,
+    ERROR,
     { typesToIgnore: [] },
   ],
-  "@typescript-eslint/no-unnecessary-type-constraint": E,
-  "@typescript-eslint/no-unsafe-argument": E,
-  "@typescript-eslint/no-unsafe-assignment": E,
-  "@typescript-eslint/no-unsafe-call": E,
-  "@typescript-eslint/no-unsafe-declaration-merging": E,
-  "@typescript-eslint/no-unsafe-enum-comparison": E,
-  "@typescript-eslint/no-unsafe-member-access": E,
-  "@typescript-eslint/no-unsafe-return": E,
-  "@typescript-eslint/no-unsafe-unary-minus": E,
-  "@typescript-eslint/no-useless-empty-export": E,
-  "@typescript-eslint/no-useless-template-literals": E,
+  "@typescript-eslint/no-unnecessary-type-constraint": ERROR,
+  "@typescript-eslint/no-unsafe-argument": ERROR,
+  "@typescript-eslint/no-unsafe-assignment": ERROR,
+  "@typescript-eslint/no-unsafe-call": ERROR,
+  "@typescript-eslint/no-unsafe-declaration-merging": ERROR,
+  "@typescript-eslint/no-unsafe-enum-comparison": ERROR,
+  "@typescript-eslint/no-unsafe-member-access": ERROR,
+  "@typescript-eslint/no-unsafe-return": ERROR,
+  "@typescript-eslint/no-unsafe-unary-minus": ERROR,
+  "@typescript-eslint/no-useless-empty-export": ERROR,
+  "@typescript-eslint/no-useless-template-literals": ERROR,
   "@typescript-eslint/no-var-requires": [
-    E,
+    ERROR,
     { allow: [] },
   ],
-  "@typescript-eslint/non-nullable-type-assertion-style": E,
+  "@typescript-eslint/non-nullable-type-assertion-style": ERROR,
   "@typescript-eslint/parameter-properties": [
-    E,
+    ERROR,
     { prefer: "parameter-property" /**  "parameter-property" | "class-property"  */ },
   ],
-  "@typescript-eslint/prefer-as-const": E,
-  "@typescript-eslint/prefer-enum-initializers": E,
-  "@typescript-eslint/prefer-find": E,
-  "@typescript-eslint/prefer-for-of": E,
-  "@typescript-eslint/prefer-function-type": E,
-  "@typescript-eslint/prefer-includes": E,
+  "@typescript-eslint/prefer-as-const": ERROR,
+  "@typescript-eslint/prefer-enum-initializers": ERROR,
+  "@typescript-eslint/prefer-find": ERROR,
+  "@typescript-eslint/prefer-for-of": ERROR,
+  "@typescript-eslint/prefer-function-type": ERROR,
+  "@typescript-eslint/prefer-includes": ERROR,
   "@typescript-eslint/prefer-literal-enum-member": [
-    E,
+    ERROR,
     { allowBitwiseExpressions: false },
   ],
-  "@typescript-eslint/prefer-namespace-keyword": E,
+  "@typescript-eslint/prefer-namespace-keyword": ERROR,
   "@typescript-eslint/prefer-nullish-coalescing": [
-    E,
+    ERROR,
     {
       allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       ignoreConditionalTests: false,
@@ -452,7 +452,7 @@ const TsEnableRules: IRules = {
     },
   ], // requires tsconfig: strictNullChecks
   "@typescript-eslint/prefer-optional-chain": [
-    E,
+    ERROR,
     {
       allowPotentiallyUnsafeFixesThatModifyTheReturnTypeIKnowWhatImDoing: false,
       checkAny: true,
@@ -465,20 +465,20 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/prefer-readonly": [
-    E,
+    ERROR,
     { onlyInlineLambdas: false },
   ],
-  "@typescript-eslint/prefer-readonly-parameter-types": OOOFF, // investigate
-  "@typescript-eslint/prefer-reduce-type-parameter": E,
-  "@typescript-eslint/prefer-regexp-exec": E,
-  "@typescript-eslint/prefer-return-this-type": E,
+  "@typescript-eslint/prefer-readonly-parameter-types": O, // investigate
+  "@typescript-eslint/prefer-reduce-type-parameter": ERROR,
+  "@typescript-eslint/prefer-regexp-exec": ERROR,
+  "@typescript-eslint/prefer-return-this-type": ERROR,
   "@typescript-eslint/prefer-string-starts-ends-with": [
-    E,
+    ERROR,
     { allowSingleElementEquality: "never" },
   ],
-  "@typescript-eslint/prefer-ts-expect-error": E,
+  "@typescript-eslint/prefer-ts-expect-error": ERROR,
   "@typescript-eslint/promise-function-async": [
-    E,
+    ERROR,
     {
       allowAny: false,
       allowedPromiseNames: [],
@@ -489,11 +489,11 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/require-array-sort-compare": [
-    E,
+    ERROR,
     { ignoreStringArrays: true },
   ],
   "@typescript-eslint/restrict-plus-operands": [
-    E,
+    ERROR,
     {
       allowAny: false,
       allowBoolean: false,
@@ -504,7 +504,7 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/restrict-template-expressions": [
-    E,
+    ERROR,
     {
       allowAny: true,
       allowArray: true,
@@ -515,9 +515,9 @@ const TsEnableRules: IRules = {
       allowRegExp: false,
     }, // investigate: make stricter
   ],
-  "@typescript-eslint/sort-type-constituents": OOOFF, // investigate
+  "@typescript-eslint/sort-type-constituents": O, // investigate
   "@typescript-eslint/strict-boolean-expressions": [
-    E,
+    ERROR,
     {
       allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       allowAny: false,
@@ -531,30 +531,30 @@ const TsEnableRules: IRules = {
     },
   ], // requires tsconfig: strictNullChecks
   "@typescript-eslint/switch-exhaustiveness-check": [
-    E,
+    ERROR,
     {
       allowDefaultCaseForExhaustiveSwitch: false,
       requireDefaultForNonUnion: true,
     },
   ],
   "@typescript-eslint/triple-slash-reference": [
-    E,
+    ERROR,
     {
       lib: "never", /** always | never */
       path: "never", /** always | never */
       types: "never", /** always | never | prefer-import */
     },
   ],
-  "@typescript-eslint/typedef": OOOFF, // tsconfig: { noImplicitAny, strictPropertyInitialization }
+  "@typescript-eslint/typedef": O, // tsconfig: { noImplicitAny, strictPropertyInitialization }
   "@typescript-eslint/unbound-method": [
-    E,
+    ERROR,
     { ignoreStatic: false },
   ],
   "@typescript-eslint/unified-signatures": [
-    E,
+    ERROR,
     { ignoreDifferentlyNamedParameters: false },
   ],
-  "@typescript-eslint/use-unknown-in-catch-callback-variable": E,
+  "@typescript-eslint/use-unknown-in-catch-callback-variable": ERROR,
 };
 
 export default TsEnableRules;

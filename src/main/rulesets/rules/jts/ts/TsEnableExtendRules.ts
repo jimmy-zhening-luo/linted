@@ -1,14 +1,14 @@
-const E = "error";
-const OOOFF = "off";
+const ERROR = "error";
+const O = "off";
 const TsEnableExtendRules: IRules = {
 
   // ENABLE TS Extensions (STEP 2/2)
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
-  "@typescript-eslint/class-methods-use-this": OOOFF, // preference -- eslint:OFF
-  "@typescript-eslint/consistent-return": OOOFF, // tsconfig: noImplicitReturns
-  "@typescript-eslint/default-param-last": E,
+  "@typescript-eslint/class-methods-use-this": O, // preference -- eslint:off
+  "@typescript-eslint/consistent-return": O, // tsconfig: noImplicitReturns
+  "@typescript-eslint/default-param-last": ERROR,
   "@typescript-eslint/dot-notation": [
-    E,
+    ERROR,
     {
       allowKeywords: true,
 
@@ -19,14 +19,14 @@ const TsEnableExtendRules: IRules = {
     },
   ],
   "@typescript-eslint/init-declarations": [
-    E,
+    ERROR,
     "always",
   ],
-  "@typescript-eslint/max-params": OOOFF, // preference
-  "@typescript-eslint/no-array-constructor": E,
-  "@typescript-eslint/no-dupe-class-members": OOOFF, // tsc
+  "@typescript-eslint/max-params": O, // preference
+  "@typescript-eslint/no-array-constructor": ERROR,
+  "@typescript-eslint/no-dupe-class-members": O, // tsc
   "@typescript-eslint/no-empty-function": [
-    E,
+    ERROR,
     {
       allow: [
         "constructors",
@@ -36,12 +36,12 @@ const TsEnableExtendRules: IRules = {
       ],
     }, // functions, arrowFunctions, generatorFunctions, methods, generatorMethods, getters, setters, constructors, asyncFunctions, asyncMethods; TS-ONLY: private-constructors, protected-constructors, decoratedFunctions, overrideMethods
   ],
-  "@typescript-eslint/no-implied-eval": E,
-  "@typescript-eslint/no-invalid-this": OOOFF, // tsconfig: { strict, noImplicitThis }
-  "@typescript-eslint/no-loop-func": E,
-  "@typescript-eslint/no-loss-of-precision": E,
+  "@typescript-eslint/no-implied-eval": ERROR,
+  "@typescript-eslint/no-invalid-this": O, // tsconfig: { strict, noImplicitThis }
+  "@typescript-eslint/no-loop-func": ERROR,
+  "@typescript-eslint/no-loss-of-precision": ERROR,
   "@typescript-eslint/no-magic-numbers": [
-    OOOFF,
+    O,
     {
       ignore: [],
       ignoreArrayIndexes: true,
@@ -57,11 +57,11 @@ const TsEnableExtendRules: IRules = {
       ignoreTypeIndexes: true,
     },
   ],
-  "@typescript-eslint/no-redeclare": OOOFF, // tsc (let, const, -var)
-  "@typescript-eslint/no-restricted-imports": OOOFF, // preference
-  "@typescript-eslint/no-shadow": OOOFF, // investigate
+  "@typescript-eslint/no-redeclare": O, // tsc (let, const, -var)
+  "@typescript-eslint/no-restricted-imports": O, // preference
+  "@typescript-eslint/no-shadow": O, // investigate
   "@typescript-eslint/no-unused-expressions": [
-    E,
+    ERROR,
     {
       allowShortCircuit: true,
       allowTernary: true,
@@ -70,7 +70,7 @@ const TsEnableExtendRules: IRules = {
     },
   ],
   "@typescript-eslint/no-unused-vars": [
-    E,
+    ERROR,
     {
       vars: "all",
       args: "all",
@@ -79,7 +79,7 @@ const TsEnableExtendRules: IRules = {
     },
   ],
   "@typescript-eslint/no-use-before-define": [
-    E,
+    ERROR,
     {
       functions: true,
       classes: true,
@@ -90,16 +90,16 @@ const TsEnableExtendRules: IRules = {
       ignoreTypeReferences: true,
     },
   ],
-  "@typescript-eslint/no-useless-constructor": E,
+  "@typescript-eslint/no-useless-constructor": ERROR,
   "@typescript-eslint/only-throw-error": [
-    E,
+    ERROR,
     {
       allowThrowingAny: false,
       allowThrowingUnknown: false,
     },
   ],
   "@typescript-eslint/prefer-destructuring": [
-    E,
+    ERROR,
     {
       VariableDeclarator: {
         array: true,
@@ -116,12 +116,12 @@ const TsEnableExtendRules: IRules = {
     },
   ],
   "@typescript-eslint/prefer-promise-reject-errors": [
-    E,
+    ERROR,
     { allowEmptyReject: false },
   ],
-  "@typescript-eslint/require-await": E,
+  "@typescript-eslint/require-await": ERROR,
   "@typescript-eslint/return-await": [
-    E,
+    ERROR,
     "in-try-catch",
   ],
 };

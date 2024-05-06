@@ -1,17 +1,17 @@
-const E = "error";
-const OFF = "off";
+const ERROR = "error";
+const O = "off";
 const StylisticRules: IRules = {
 
   // https://eslint.style/rules
   "@stylistic/array-bracket-newline": [
-    E,
+    ERROR,
     {
       multiline: true,
       minItems: null,
     },
   ],
   "@stylistic/array-bracket-spacing": [
-    E,
+    ERROR,
     "never",
     {
       singleValue: false,
@@ -20,46 +20,46 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/array-element-newline": [
-    E,
+    ERROR,
     {
       ArrayExpression: "always",
       ArrayPattern: "always",
     },
   ],
   "@stylistic/arrow-parens": [
-    E,
+    ERROR,
     "as-needed",
     { requireForBlockBody: false },
   ],
   "@stylistic/arrow-spacing": [
-    E,
+    ERROR,
     {
       before: true,
       after: true,
     },
   ],
   "@stylistic/block-spacing": [
-    E,
+    ERROR,
     "always",
   ],
   "@stylistic/brace-style": [
-    E,
+    ERROR,
     "stroustrup",
     { allowSingleLine: true },
   ],
   "@stylistic/comma-dangle": [
-    E,
+    ERROR,
     "always-multiline",
   ],
   "@stylistic/comma-spacing": [
-    E,
+    ERROR,
     {
       before: false,
       after: true,
     },
   ],
   "@stylistic/comma-style": [
-    E,
+    ERROR,
     "last",
     {
       exceptions: {
@@ -78,45 +78,45 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/computed-property-spacing": [
-    E,
+    ERROR,
     "never",
     { enforceForClassMembers: true },
   ],
   "@stylistic/dot-location": [
-    E,
+    ERROR,
     "property",
   ],
   "@stylistic/eol-last": [
-    E,
+    ERROR,
     "always",
   ],
   "@stylistic/function-call-argument-newline": [
-    E,
+    ERROR,
     "always",
   ],
   "@stylistic/function-call-spacing": [
-    E,
+    ERROR,
     "never",
   ],
 
   // Useless rule. See issue with my comment: https://github.com/eslint-community/eslint-stylistic/issues/290
   "@stylistic/function-paren-newline": [
-    E,
+    ERROR,
     "multiline-arguments",
   ],
   "@stylistic/generator-star-spacing": [
-    E,
+    ERROR,
     {
       before: true,
       after: false,
     },
   ],
   "@stylistic/implicit-arrow-linebreak": [
-    E,
+    ERROR,
     "below",
   ],
   "@stylistic/indent": [
-    E,
+    ERROR,
     2,
     {
       ignoredNodes: [],
@@ -147,11 +147,11 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/indent-binary-ops": [
-    E,
+    ERROR,
     2,
   ],
   "@stylistic/key-spacing": [
-    E,
+    ERROR,
     {
       beforeColon: false,
       afterColon: true,
@@ -159,7 +159,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/keyword-spacing": [
-    E,
+    ERROR,
     {
       before: true,
       after: true,
@@ -167,7 +167,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/lines-around-comment": [
-    E,
+    ERROR,
     {
       beforeBlockComment: true,
       afterBlockComment: false,
@@ -196,7 +196,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/lines-between-class-members": [
-    E,
+    ERROR,
     {
       enforce: [
         {
@@ -224,7 +224,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/max-len": [
-    E,
+    ERROR,
     {
       code: 120,
       tabWidth: 2,
@@ -237,11 +237,11 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/max-statements-per-line": [
-    E,
+    ERROR,
     { max: 1 },
   ],
   "@stylistic/member-delimiter-style": [
-    E,
+    ERROR,
     {
       multiline: {
         delimiter: "semi",
@@ -255,20 +255,20 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/multiline-ternary": [
-    E,
+    ERROR,
     "always",
   ],
   "@stylistic/new-parens": [
-    E,
+    ERROR,
     "always",
   ],
   "@stylistic/newline-per-chained-call": [
-    E,
+    ERROR,
     { ignoreChainWithDepth: 1 },
   ],
-  "@stylistic/no-confusing-arrow": OFF,
+  "@stylistic/no-confusing-arrow": O,
   "@stylistic/no-extra-parens": [
-    E,
+    ERROR,
     "all",
     {
       conditionalAssign: true,
@@ -281,12 +281,12 @@ const StylisticRules: IRules = {
       enforceForFunctionPrototypeMethods: true,
     },
   ],
-  "@stylistic/no-extra-semi": E,
-  "@stylistic/no-floating-decimal": E,
-  "@stylistic/no-mixed-operators": OFF,
-  "@stylistic/no-mixed-spaces-and-tabs": E,
+  "@stylistic/no-extra-semi": ERROR,
+  "@stylistic/no-floating-decimal": ERROR,
+  "@stylistic/no-mixed-operators": O,
+  "@stylistic/no-mixed-spaces-and-tabs": ERROR,
   "@stylistic/no-multi-spaces": [
-    E,
+    ERROR,
     {
       ignoreEOLComments: false,
       exceptions: { Property: false },
@@ -294,7 +294,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/no-multiple-empty-lines": [
-    E,
+    ERROR,
     {
       max: 1,
       maxEOF: 1,
@@ -302,19 +302,19 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/no-tabs": [
-    E,
+    ERROR,
     { allowIndentationTabs: false },
   ],
   "@stylistic/no-trailing-spaces": [
-    E,
+    ERROR,
     {
       skipBlankLines: false,
       ignoreComments: false,
     },
   ],
-  "@stylistic/no-whitespace-before-property": E,
+  "@stylistic/no-whitespace-before-property": ERROR,
   "@stylistic/nonblock-statement-body-position": [
-    E,
+    ERROR,
     "below",
     {
       overrides: {
@@ -327,7 +327,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/object-curly-newline": [
-    E,
+    ERROR,
     {
       ObjectExpression: {
         multiline: true,
@@ -352,7 +352,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/object-curly-spacing": [
-    E,
+    ERROR,
     "always",
     {
       arraysInObjects: true,
@@ -360,15 +360,15 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/object-property-newline": [
-    E,
+    ERROR,
     { allowAllPropertiesOnSameLine: true },
   ],
   "@stylistic/one-var-declaration-per-line": [
-    E,
+    ERROR,
     "always",
   ],
   "@stylistic/operator-linebreak": [
-    E,
+    ERROR,
     "before",
     {
       overrides: {
@@ -379,7 +379,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/padded-blocks": [
-    E,
+    ERROR,
     {
       blocks: "never",
       classes: "never",
@@ -388,7 +388,7 @@ const StylisticRules: IRules = {
     { allowSingleLineBlocks: true },
   ],
   "@stylistic/padding-line-between-statements": [
-    E,
+    ERROR,
     {
       blankLine: "always",
       prev: "directive",
@@ -549,7 +549,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/quote-props": [
-    E,
+    ERROR,
     "as-needed",
     {
       keywords: true,
@@ -558,7 +558,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/quotes": [
-    E,
+    ERROR,
     "double",
     {
       avoidEscape: true,
@@ -566,11 +566,11 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/rest-spread-spacing": [
-    E,
+    ERROR,
     "never",
   ],
   "@stylistic/semi": [
-    E,
+    ERROR,
     "always",
     {
       omitLastInOneLineBlock: false,
@@ -578,18 +578,18 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/semi-spacing": [
-    E,
+    ERROR,
     {
       before: false,
       after: true,
     },
   ],
   "@stylistic/semi-style": [
-    E,
+    ERROR,
     "last",
   ],
   "@stylistic/space-before-blocks": [
-    E,
+    ERROR,
     {
       functions: "always",
       keywords: "always",
@@ -597,7 +597,7 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/space-before-function-paren": [
-    E,
+    ERROR,
     {
       anonymous: "always",
       named: "never",
@@ -605,15 +605,15 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/space-in-parens": [
-    E,
+    ERROR,
     "never",
   ],
   "@stylistic/space-infix-ops": [
-    E,
+    ERROR,
     { int32Hint: true },
   ],
   "@stylistic/space-unary-ops": [
-    E,
+    ERROR,
     {
       words: true,
       nonwords: false,
@@ -621,41 +621,41 @@ const StylisticRules: IRules = {
     },
   ],
   "@stylistic/spaced-comment": [
-    E,
+    ERROR,
     "always",
   ],
   "@stylistic/switch-colon-spacing": [
-    E,
+    ERROR,
     {
       after: true,
       before: false,
     },
   ],
   "@stylistic/template-curly-spacing": [
-    E,
+    ERROR,
     "never",
   ],
   "@stylistic/template-tag-spacing": [
-    E,
+    ERROR,
     "never",
   ],
   "@stylistic/type-annotation-spacing": [
-    E,
+    ERROR,
     {
       before: false,
       after: true,
     },
   ],
-  "@stylistic/type-generic-spacing": E,
-  "@stylistic/type-named-tuple-spacing": E,
+  "@stylistic/type-generic-spacing": ERROR,
+  "@stylistic/type-named-tuple-spacing": ERROR,
   "@stylistic/wrap-iife": [
-    E,
+    ERROR,
     "inside",
     { functionPrototypeMethods: true },
   ],
-  "@stylistic/wrap-regex": E,
+  "@stylistic/wrap-regex": ERROR,
   "@stylistic/yield-star-spacing": [
-    E,
+    ERROR,
     {
       before: true,
       after: false,

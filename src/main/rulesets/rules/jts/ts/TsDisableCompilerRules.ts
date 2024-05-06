@@ -1,21 +1,21 @@
-const OOOFF = "off";
+const O = "off";
 const TsDisableCompilerRules: IRules = {
 
   // ESLint DISABLE (TSC)
-  "constructor-super": OOOFF,
-  "no-const-assign": OOOFF,
-  "no-dupe-args": OOOFF,
-  "no-dupe-class-members": OOOFF,
-  "no-dupe-keys": OOOFF,
-  "no-func-assign": OOOFF,
-  "no-obj-calls": OOOFF,
-  "no-setter-return": OOOFF,
-  "no-this-before-super": OOOFF,
-  "no-undef": OOOFF,
-  "no-unreachable": OOOFF,
-  "no-unsafe-negation": OOOFF,
-  "consistent-return": OOOFF,
-  "no-redeclare": OOOFF,
+  "constructor-super": O,
+  "no-const-assign": O,
+  "no-dupe-args": O,
+  "no-dupe-class-members": O,
+  "no-dupe-keys": O,
+  "no-func-assign": O,
+  "no-obj-calls": O,
+  "no-setter-return": O,
+  "no-this-before-super": O,
+  "no-undef": O,
+  "no-unreachable": O,
+  "no-unsafe-negation": O,
+  "consistent-return": O,
+  "no-redeclare": O,
 };
 
 export default TsDisableCompilerRules;
