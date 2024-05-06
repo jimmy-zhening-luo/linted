@@ -25,8 +25,8 @@ declare type NullableConfigOptions = Record<_RequiredLanguage, ConfigOptions[_Re
 & Record<_OptionalLanguage, Nullable<ConfigOptions[_OptionalLanguage]>>;
 declare type Config<L extends _Language> = ConfigOptions[L]["config"] & Record<"rules", IRules>;
 declare type StrictConfig<L extends _Language> = Omit<Config<L>, "processor"> & Partial<Pick<Config<L>, "processor">>;
+declare type BadSveltePlugin<Config> = [Config, Config, Config];
 
-export type BadSveltePlugin<Config> = [Config, Config, Config];
 export default class Configs {
   protected readonly options: NullableConfigOptions;
   protected readonly rulesets: Record<_Language, IRules[]>;
