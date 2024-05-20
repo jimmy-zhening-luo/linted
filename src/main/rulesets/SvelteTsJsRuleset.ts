@@ -1,9 +1,11 @@
+import TsJsRuleset from "./TsJsRuleset.js";
 import SvelteDisableTsRules from "./rules/svelte/SvelteDisableTsRules.js";
 import SvelteEnableRules from "./rules/svelte/SvelteEnableRules.js";
 
-const SvelteRuleset: IRules[] = [
+const SvelteTsJsRuleset: IRules[] = [
+  ...TsJsRuleset,
   SvelteDisableTsRules,
   SvelteEnableRules,
 ];
 
-export default SvelteRuleset;
+export default SvelteTsJsRuleset;

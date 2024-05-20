@@ -1,6 +1,6 @@
 import JsRuleset from "./rulesets/JsRuleset.js";
-import TsRuleset from "./rulesets/TsRuleset.js";
-import SvelteRuleset from "./rulesets/SvelteRuleset.js";
+import TsJsRuleset from "./rulesets/TsJsRuleset.js";
+import SvelteTsJsRuleset from "./rulesets/SvelteTsJsRuleset.js";
 import JsOptions from "./options/JsOptions.js";
 import TsOptions from "./options/TsOptions.js";
 import SvelteOptions from "./options/SvelteOptions.js";
@@ -42,13 +42,13 @@ export default class Configs {
       files: string[];
     },
     {
-      overrideJs = null,
-      overrideTs = null,
-      overrideSvelte = null,
+      overrideJs = {},
+      overrideTs = {},
+      overrideSvelte = {},
     }: {
-      overrideJs?: Nullable<IRules>;
-      overrideTs?: Nullable<IRules>;
-      overrideSvelte?: Nullable<IRules>;
+      overrideJs?: IRules;
+      overrideTs?: IRules;
+      overrideSvelte?: IRules;
     } = {},
     svelte: Nullable<{
       svelte: SveltePluginBody;
@@ -86,32 +86,20 @@ export default class Configs {
     this.rulesets = {
       js: [
         ...JsRuleset,
-        ...overrideJs === null
-          ? []
-          : [overrideJs],
+        overrideJs,
       ],
       ts: [
-        ...TsRuleset,
-        ...overrideTs === null
-          ? []
-          : [overrideTs],
+        ...TsJsRuleset,
+        overrideTs,
       ],
-      svelte: [
-        ...TsRuleset,
-        ...svelte === null
-          ? []
-          : [
-              this.badSvelte(svelte.svelte.configs["flat/all"])[1].rules,
-              this.badSvelte(svelte.svelte.configs["flat/all"])[2].rules,
-            ],
-        ...SvelteRuleset,
-        ...overrideTs === null
-          ? []
-          : [overrideTs],
-        ...overrideSvelte === null
-          ? []
-          : [overrideSvelte],
-      ],
+      svelte: svelte === null
+        ? []
+        : [
+            this.badSvelte(svelte.svelte.configs["flat/all"])[1].rules,
+            this.badSvelte(svelte.svelte.configs["flat/all"])[2].rules,
+            ...SvelteTsJsRuleset,
+            overrideSvelte,
+          ],
     };
   }
 

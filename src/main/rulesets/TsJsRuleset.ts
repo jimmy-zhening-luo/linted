@@ -4,7 +4,7 @@ import TsDisableExtendRules from "./rules/jts/ts/TsDisableExtendRules.js";
 import TsEnableExtendRules from "./rules/jts/ts/TsEnableExtendRules.js";
 import TsEnableRules from "./rules/jts/ts/TsEnableRules.js";
 
-const TsRuleset: IRules[] = [
+const TsJsRuleset: IRules[] = [
   ...JsRuleset,
   TsDisableCompilerRules,
   TsDisableExtendRules,
@@ -12,4 +12,4 @@ const TsRuleset: IRules[] = [
   TsEnableRules,
 ];
 
-export default TsRuleset;
+export default TsJsRuleset;
