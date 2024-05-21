@@ -193,7 +193,7 @@ export default [
         allowHigherOrderFunctions: false,
         allowDirectConstAssertionInArrowFunctions: false,
         allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-        allowFunctionsWithoutTypeParameters: false,
+        allowFunctionsWithoutTypeParameters: true,
         allowedNames: [],
         allowIIFEs: false,
       },
