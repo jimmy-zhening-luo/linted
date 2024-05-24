@@ -521,7 +521,7 @@ const TsEnableRules: IRules = {
     {
       allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       allowAny: false,
-      allowNumber: false,
+      allowNumber: true,
       allowString: false,
       allowNullableBoolean: false,
       allowNullableEnum: false,
