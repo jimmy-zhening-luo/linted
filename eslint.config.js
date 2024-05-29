@@ -2,7 +2,7 @@ import js from "./eslint.js.config.js";
 import ts from "./eslint.ts.config.js";
 import stylisticPlugin from "@stylistic/eslint-plugin";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
+import parser from "@typescript-eslint/parser";
 
 const RULESET = {
   js,
@@ -39,7 +39,7 @@ const OPTIONS = {
     get ts() {
       return {
         ...OPTIONS.languageOptions.js,
-        parser: tsParser,
+        parser,
         parserOptions: {
           ...OPTIONS.languageOptions.js,
           project: true,
