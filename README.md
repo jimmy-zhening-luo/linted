@@ -25,7 +25,7 @@ Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible,
   - svelte-eslint-parser
 
 
-### v8.1 (under consideration)
+### v9 (under consideration)
 
 #### JSON
 
