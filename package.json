@@ -20,14 +20,17 @@
   },
   "homepage": "https://github.com/jimmy-zhening-luo/lint#readme",
   "scripts": {
-    "lint": "eslint --cache --cache-strategy content -c eslint.config.js *.config.js src/**/*",
-    "lint:fix": "npm run lint -- --fix",
-    "prebuild": "npm run lint:fix",
+    "es": "eslint --fix --cache --cache-strategy content -c eslint.config.js",
+    "lint": "npm run lint:config && npm run lint:src",
+    "lint:config": "npm run lint:config:js",
+    "lint:src": "npm run lint:src:ts",
+    "lint:config:js": "npm run es -- *.config.js",
+    "lint:src:ts": "npm run es -- src/**/*.ts",
+    "prebuild": "npm run lint",
     "build": "tsc",
-    "prestart": "npm run build",
-    "prepublishOnly": "npm run build",
     "pretest": "npm run build",
     "test": "node dist/test/test.js",
+    "prepublishOnly": "npm test",
     "dev": "npm test"
   },
   "peerDependencies": {
