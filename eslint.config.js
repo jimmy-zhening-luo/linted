@@ -1,8 +1,8 @@
-import js from "./eslint.js.config.js";
-import ts from "./eslint.ts.config.js";
-import stylisticPlugin from "@stylistic/eslint-plugin";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
+import stylistic from "@stylistic/eslint-plugin";
+import plugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
+import js from "./project/lint/js.config.js";
+import ts from "./project/lint/ts.config.js";
 
 const RULESET = {
   js,
@@ -10,15 +10,18 @@ const RULESET = {
 };
 const OPTIONS = {
   files: {
-    js: ["*.config.js"],
+    js: [
+      "project/lint/**/*.config.js",
+      "*.config.js",
+    ],
     ts: ["src/**/*.ts"],
   },
   plugins: {
-    js: { "@stylistic": stylisticPlugin },
+    js: { "@stylistic": stylistic },
     get ts() {
       return {
         ...OPTIONS.plugins.js,
-        "@typescript-eslint": tsPlugin,
+        "@typescript-eslint": plugin,
       };
     },
   },
@@ -42,7 +45,7 @@ const OPTIONS = {
         parser,
         parserOptions: {
           ...OPTIONS.languageOptions.js,
-          project: true,
+          project: "tsconfig.json",
         },
       };
     },

@@ -1,5 +1,6 @@
 {
   "include": [
+    "project/lint/**/*.config.js",
     "*.config.js",
     "src/**/*.ts",
   ],

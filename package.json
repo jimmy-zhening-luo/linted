@@ -4,10 +4,10 @@
   "description": "Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic. Use it at your own peril.",
   "type": "module",
   "private": false,
-  "main": "dist/main/index.js",
-  "types": "dist/main/index.d.ts",
+  "main": "dist/package/index.js",
+  "types": "dist/package/index.d.ts",
   "files": [
-    "dist/main"
+    "dist/package"
   ],
   "repository": {
     "type": "git",
@@ -22,14 +22,15 @@
   "scripts": {
     "es": "eslint --fix --cache --cache-strategy content -c eslint.config.js",
     "lint": "npm run lint:config && npm run lint:src",
-    "lint:config": "npm run lint:config:js",
+    "lint:config": "npm run lint:config:js:project && npm run lint:config:js",
     "lint:src": "npm run lint:src:ts",
+    "lint:config:js:project": "npm run es -- project/lint/**/*.config.js",
     "lint:config:js": "npm run es -- *.config.js",
     "lint:src:ts": "npm run es -- src/**/*.ts",
     "prebuild": "npm run lint",
     "build": "tsc",
     "pretest": "npm run build",
-    "test": "node dist/test/test.js",
+    "test": "node dist/test/index.js",
     "prepublishOnly": "npm test",
     "dev": "npm test"
   },
