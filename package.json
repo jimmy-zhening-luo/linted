@@ -4,10 +4,10 @@
   "description": "Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic. Use it at your own peril.",
   "type": "module",
   "private": false,
-  "main": "./dist/js/main/index.js",
-  "types": "./dist/d/main/index.d.ts",
+  "main": "dist/main/index.js",
+  "types": "dist/main/index.d.ts",
   "files": [
-    "dist/"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -24,10 +24,11 @@
     "lint:fix": "npm run lint -- --fix",
     "prebuild": "npm run lint:fix",
     "build": "tsc",
+    "prestart": "npm run build",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build",
-    "test": "node ./dist/js/test/test.js",
-    "dev": "npm run test"
+    "test": "node dist/test/test.js",
+    "dev": "npm test"
   },
   "peerDependencies": {
     "@stylistic/eslint-plugin": "2",
