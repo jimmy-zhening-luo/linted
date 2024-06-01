@@ -31,15 +31,6 @@ Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible,
 
 - [JSON](https://github.com/ota-meshi/eslint-plugin-jsonc)
 
-#### YAML (lol)
-
-- [YAML (apt name...)](https://github.com/ota-meshi/eslint-plugin-yml)
-
-#### Jest
-
-- [Jest](https://github.com/jest-community/eslint-plugin-jest)
-- [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
-
 #### Markdown
 
 - [Markdown](https://github.com/eslint/eslint-plugin-markdown)
@@ -57,7 +48,16 @@ Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible,
 - [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 
 
-### v11+ (long-tail)
+### Backlog
+
+#### Jest
+
+- [Jest](https://github.com/jest-community/eslint-plugin-jest)
+- [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
+
+#### YAML (lol)
+
+- [YAML (apt name...)](https://github.com/ota-meshi/eslint-plugin-yml)
 
 #### XML
 
