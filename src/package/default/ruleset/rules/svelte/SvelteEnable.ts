@@ -23,7 +23,7 @@ const SvelteEnable: IRules = {
   "svelte/no-unknown-style-directive-property": [
     ERROR,
     {
-      ignoreProperties: [],
+      // ignoreProperties: [], // ESLint error if array empty
       ignorePrefixed: true,
     },
   ],
@@ -78,10 +78,14 @@ const SvelteEnable: IRules = {
   "svelte/no-reactive-functions": ERROR,
   "svelte/no-reactive-literals": ERROR,
   "svelte/no-svelte-internal": ERROR,
+  "svelte/no-unused-class-name": ERROR, // ESLint error if array empty
+
+  /*
   "svelte/no-unused-class-name": [
     ERROR,
     { allowedClassNames: [] },
   ],
+  */
   "svelte/no-unused-svelte-ignore": ERROR,
   "svelte/no-useless-mustaches": [
     ERROR,
@@ -138,7 +142,7 @@ const SvelteEnable: IRules = {
     ERROR,
     {
       indent: 2,
-      ignoredNodes: [],
+      // ignoredNodes: [], // ESLint error if array empty
       switchCase: 1,
       alignAttributesVertically: true,
     },
