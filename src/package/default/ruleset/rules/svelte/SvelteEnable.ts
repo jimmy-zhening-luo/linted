@@ -142,6 +142,7 @@ const SvelteEnable: IRules = {
     ERROR,
     {
       indent: 2,
+
       // ignoredNodes: [], // ESLint error if array empty
       switchCase: 1,
       alignAttributesVertically: true,
