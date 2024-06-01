@@ -188,30 +188,30 @@ export default class Lint {
 
     return [
       ...language in options
-        && language in rulesets
-          ? (
-              rulesets[
-                language
-              ] as RulesetIndex[
-                L
-              ]
+      && language in rulesets
+        ? (
+            rulesets[
+              language
+            ] as RulesetIndex[
+              L
+            ]
+          )
+            .map(
+              rules => {
+                return {
+                  ...(
+                    options[
+                      language
+                    ] as LanguageIndex[
+                      L
+                    ]
+                  )
+                    .config,
+                  rules,
+                };
+              },
             )
-              .map(
-                rules => {
-                  return {
-                    ...(
-                      options[
-                        language
-                      ] as LanguageIndex[
-                        L
-                      ]
-                    )
-                      .config,
-                    rules,
-                  };
-                },
-              )
-          : [],
+        : [],
     ];
   }
 }
