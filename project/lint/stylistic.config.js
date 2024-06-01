@@ -1,5 +1,5 @@
 const ERROR = "error";
-const O = "off";
+const OFF = "off";
 
 export default {
 
@@ -267,7 +267,7 @@ export default {
     ERROR,
     { ignoreChainWithDepth: 1 },
   ],
-  "@stylistic/no-confusing-arrow": O,
+  "@stylistic/no-confusing-arrow": OFF,
   "@stylistic/no-extra-parens": [
     ERROR,
     "all",
@@ -284,7 +284,7 @@ export default {
   ],
   "@stylistic/no-extra-semi": ERROR,
   "@stylistic/no-floating-decimal": ERROR,
-  "@stylistic/no-mixed-operators": O,
+  "@stylistic/no-mixed-operators": OFF,
   "@stylistic/no-mixed-spaces-and-tabs": ERROR,
   "@stylistic/no-multi-spaces": [
     ERROR,

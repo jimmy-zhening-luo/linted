@@ -1,12 +1,12 @@
 const ERROR = "error";
-const O = "off";
+const OFF = "off";
 
 export default [
 
   // ESLint extensions
   {
-    "@typescript-eslint/class-methods-use-this": O, // preference -- eslint:O
-    "@typescript-eslint/consistent-return": O, // tsconfig: noImplicitReturns
+    "@typescript-eslint/class-methods-use-this": OFF, // preference -- eslint:OFF
+    "@typescript-eslint/consistent-return": OFF, // tsconfig: noImplicitReturns
     "@typescript-eslint/default-param-last": ERROR,
     "@typescript-eslint/dot-notation": [
       ERROR,
@@ -23,9 +23,9 @@ export default [
       ERROR,
       "always",
     ],
-    "@typescript-eslint/max-params": O, // preference
+    "@typescript-eslint/max-params": OFF, // preference
     "@typescript-eslint/no-array-constructor": ERROR,
-    "@typescript-eslint/no-dupe-class-members": O, // tsc
+    "@typescript-eslint/no-dupe-class-members": OFF, // tsc
     "@typescript-eslint/no-empty-function": [
       ERROR,
       {
@@ -38,11 +38,11 @@ export default [
       }, // functions, arrowFunctions, generatorFunctions, methods, generatorMethods, getters, setters, constructors, asyncFunctions, asyncMethods; TS-ONLY: private-constructors, protected-constructors, decoratedFunctions, overrideMethods
     ],
     "@typescript-eslint/no-implied-eval": ERROR,
-    "@typescript-eslint/no-invalid-this": O, // tsconfig: { strict, noImplicitThis }
+    "@typescript-eslint/no-invalid-this": OFF, // tsconfig: { strict, noImplicitThis }
     "@typescript-eslint/no-loop-func": ERROR,
     "@typescript-eslint/no-loss-of-precision": ERROR,
     "@typescript-eslint/no-magic-numbers": [
-      O,
+      OFF,
       {
         ignore: [],
         ignoreArrayIndexes: true,
@@ -58,9 +58,9 @@ export default [
         ignoreTypeIndexes: true,
       },
     ],
-    "@typescript-eslint/no-redeclare": O, // tsc (let, const, -var)
-    "@typescript-eslint/no-restricted-imports": O, // preference
-    "@typescript-eslint/no-shadow": O, // investigate
+    "@typescript-eslint/no-redeclare": OFF, // tsc (let, const, -var)
+    "@typescript-eslint/no-restricted-imports": OFF, // preference
+    "@typescript-eslint/no-shadow": OFF, // investigate
     "@typescript-eslint/no-unused-expressions": [
       ERROR,
       {
@@ -129,7 +129,7 @@ export default [
 
   // TypeScript only
   {
-    "@typescript-eslint/adjacent-overload-signatures": O,
+    "@typescript-eslint/adjacent-overload-signatures": OFF,
     "@typescript-eslint/array-type": [
       ERROR,
       {
@@ -149,7 +149,7 @@ export default [
       },
     ],
     "@typescript-eslint/ban-tslint-comment": ERROR,
-    "@typescript-eslint/ban-types": O,
+    "@typescript-eslint/ban-types": OFF,
     "@typescript-eslint/class-literal-property-style": [
       ERROR,
       "fields",
@@ -406,7 +406,7 @@ export default [
       ERROR,
       "property",
     ],
-    "@typescript-eslint/naming-convention": O,
+    "@typescript-eslint/naming-convention": OFF,
     "@typescript-eslint/no-array-delete": ERROR,
     "@typescript-eslint/no-base-to-string": [
       ERROR,
@@ -466,7 +466,7 @@ export default [
     ],
     "@typescript-eslint/no-for-in-array": ERROR,
     "@typescript-eslint/no-import-type-side-effects": ERROR,
-    "@typescript-eslint/no-inferrable-types": O,
+    "@typescript-eslint/no-inferrable-types": OFF,
     "@typescript-eslint/no-invalid-void-type": [
       ERROR,
       {
@@ -494,7 +494,7 @@ export default [
       },
     ],
     "@typescript-eslint/no-mixed-enums": ERROR,
-    "@typescript-eslint/no-namespace": O,
+    "@typescript-eslint/no-namespace": OFF,
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": ERROR,
     "@typescript-eslint/no-non-null-asserted-optional-chain": ERROR,
     "@typescript-eslint/no-non-null-assertion": ERROR,
@@ -593,7 +593,7 @@ export default [
       ERROR,
       { onlyInlineLambdas: false },
     ],
-    "@typescript-eslint/prefer-readonly-parameter-types": O, // investigate
+    "@typescript-eslint/prefer-readonly-parameter-types": OFF, // investigate
     "@typescript-eslint/prefer-reduce-type-parameter": ERROR,
     "@typescript-eslint/prefer-regexp-exec": ERROR,
     "@typescript-eslint/prefer-return-this-type": ERROR,
@@ -640,7 +640,7 @@ export default [
         allowRegExp: false,
       }, // investigate: make stricter
     ],
-    "@typescript-eslint/sort-type-constituents": O, // investigate
+    "@typescript-eslint/sort-type-constituents": OFF, // investigate
     "@typescript-eslint/strict-boolean-expressions": [
       ERROR,
       {
@@ -670,7 +670,7 @@ export default [
         types: "never", /** always | never | prefer-import */
       },
     ],
-    "@typescript-eslint/typedef": O, // tsconfig: { noImplicitAny, strictPropertyInitialization }
+    "@typescript-eslint/typedef": OFF, // tsconfig: { noImplicitAny, strictPropertyInitialization }
     "@typescript-eslint/unbound-method": [
       ERROR,
       { ignoreStatic: false },
