@@ -8,7 +8,7 @@ const SvelteDisableExtend: IRules = {
   // "no-trailing-spaces": OFF, // DEPRECATED
   // replaced by stylistic rule... unsure if both can be used:
   // "@stylistic/no-trailing-spaces": OFF,
-  
+
 };
 
 export default SvelteDisableExtend;

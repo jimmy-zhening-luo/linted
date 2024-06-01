@@ -14,6 +14,7 @@ const SvelteEnableExtend: IRules = {
   // Only applies to HTML comments, which I don't intend to use.
   // http://sveltejs.github.io/eslint-plugin-svelte/rules/no-trailing-spaces/
   "svelte/no-trailing-spaces": OFF,
+
   /*
   "svelte/no-trailing-spaces": [
     ERROR,

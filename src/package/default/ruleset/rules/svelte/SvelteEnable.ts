@@ -1,7 +1,7 @@
 const ERROR = "error";
 const OFF = "off";
 const SvelteEnable: IRules = {
-  
+
   // Possible Errors
   // http://sveltejs.github.io/eslint-plugin-svelte/rules/#possible-errors
   "svelte/infinite-reactive-loop": ERROR,
@@ -16,9 +16,7 @@ const SvelteEnable: IRules = {
   "svelte/no-object-in-text-mustaches": ERROR,
   "svelte/no-reactive-reassign": [
     ERROR,
-    {
-      props: true,
-    },
+    { props: true },
   ],
   "svelte/no-shorthand-style-property-overrides": ERROR,
   "svelte/no-store-async": ERROR,
@@ -33,9 +31,7 @@ const SvelteEnable: IRules = {
   "svelte/require-store-reactive-access": ERROR,
   "svelte/valid-compile": [
     ERROR,
-    {
-      ignoreWarnings: false,
-    },
+    { ignoreWarnings: false },
   ],
   "svelte/valid-prop-names-in-kit-pages": ERROR,
 
@@ -77,18 +73,14 @@ const SvelteEnable: IRules = {
   "svelte/no-immutable-reactive-statements": ERROR,
   "svelte/no-inline-styles": [
     ERROR,
-    {
-      allowTransitions: false,
-    },
+    { allowTransitions: false },
   ],
   "svelte/no-reactive-functions": ERROR,
   "svelte/no-reactive-literals": ERROR,
   "svelte/no-svelte-internal": ERROR,
   "svelte/no-unused-class-name": [
     ERROR,
-    {
-      allowedClassNames: [],
-    },
+    { allowedClassNames: [] },
   ],
   "svelte/no-unused-svelte-ignore": ERROR,
   "svelte/no-useless-mustaches": [
@@ -175,22 +167,16 @@ const SvelteEnable: IRules = {
   "svelte/no-spaces-around-equal-signs-in-attribute": ERROR,
   "svelte/prefer-class-directive": [
     ERROR,
-    {
-      prefer: "empty",
-    },
+    { prefer: "empty" },
   ],
   "svelte/prefer-style-directive": ERROR,
   "svelte/shorthand-attribute": [
     ERROR,
-    {
-      prefer: "always",
-    },
+    { prefer: "always" },
   ],
   "svelte/shorthand-directive": [
     ERROR,
-    {
-      prefer: "always",
-    },
+    { prefer: "always" },
   ],
   "svelte/sort-attributes": OFF, // TBD
   "svelte/spaced-html-comment": [
@@ -206,9 +192,7 @@ const SvelteEnable: IRules = {
   // http://sveltejs.github.io/eslint-plugin-svelte/rules/#system
   "svelte/comment-directive": [
     ERROR,
-    {
-      reportUnusedDisableDirectives: true,
-    },
+    { reportUnusedDisableDirectives: true },
   ],
   "svelte/system": ERROR,
 };
