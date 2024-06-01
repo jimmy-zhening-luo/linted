@@ -133,10 +133,6 @@ export default class Lint {
             ? {}
             : {
                 svelte: [
-                  ((svelte.plugin as { configs: { "flat/all": [{ rules: IRules }, { rules: IRules }, { rules: IRules }] } }).configs["flat/all"][1] as { rules: IRules })
-                    .rules,
-                  ((svelte.plugin as { configs: { "flat/all": [{ rules: IRules }, { rules: IRules }, { rules: IRules }] } }).configs["flat/all"][2] as { rules: IRules })
-                    .rules,
                   ...SvelteRuleset,
                   overrideSvelte,
                 ],
