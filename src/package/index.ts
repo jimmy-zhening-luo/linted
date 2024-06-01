@@ -7,48 +7,7 @@ import JsRuleset from "./default/ruleset/JsRuleset.js";
 import TsJsRuleset from "./default/ruleset/TsJsRuleset.js";
 import SvelteTsJsRuleset from "./default/ruleset/SvelteTsJsRuleset.js";
 
-declare type Languages = {
-  js: JsOptions;
-  ts: TsOptions;
-  svelte?: SvelteOptions;
-};
-declare type LanguageIndex = Required<
-  Languages
->;
-declare type LanguageConfig<
-  L extends Language,
-> =
-  & LanguageIndex[
-    L
-  ][
-    "config"
-  ]
-  & Record<
-    "rules"
-    ,
-    IRules
-  >
-;
-declare type Rulesets =
-  & Record<
-    RequiredLanguage
-    ,
-    IRules[]
-  >
-  & Partial<
-    Record<
-      OptionalLanguage
-      ,
-      IRules[]
-    >
-  >
-;
-
-declare type RulesetIndex = Required<
-  Rulesets
->;
-
-export default class Configs {
+export default class Lint {
   protected readonly options: Languages;
   protected readonly rulesets: Rulesets;
 
@@ -77,66 +36,75 @@ export default class Configs {
       parser: unknown;
     },
   ) {
-    this
-      .options = {
-        js: new JsOptions(
-          { "@stylistic": stylistic },
-          ...files
-            .js
-            ?? [],
-        ),
-        ts: new TsOptions(
-          {
-            "@stylistic": stylistic,
-            "@typescript-eslint": plugin,
-          },
-          parser,
-          ...files
-            .ts
-            ?? [],
-        ),
-        ...typeof svelte === "undefined"
-          ? {}
-          : {
-              svelte: new SvelteOptions(
-                {
-                  "@stylistic": stylistic,
-                  "@typescript-eslint": plugin,
-                  svelte: svelte
-                    .plugin,
-                },
-                parser,
-                svelte
-                  .parser,
-                "svelte/svelte",
-                ...files
-                  .svelte
-                  ?? [],
-              ),
+    try {
+      this
+        .options = {
+          js: new JsOptions(
+            { "@stylistic": stylistic },
+            ...files
+              .js
+              ?? [],
+          ),
+          ts: new TsOptions(
+            {
+              "@stylistic": stylistic,
+              "@typescript-eslint": plugin,
             },
-      };
-    this.rulesets = {
-      js: [
-        ...JsRuleset,
-        overrideJs,
-      ],
-      ts: [
-        ...TsJsRuleset,
-        overrideTs,
-      ],
-      ...typeof svelte === "undefined"
-        ? {}
-        : {
-            svelte: [
-              ((svelte.plugin as { configs: { "flat/all": [{ rules: IRules }, { rules: IRules }, { rules: IRules }] } }).configs["flat/all"][1] as { rules: IRules })
-                .rules,
-              ((svelte.plugin as { configs: { "flat/all": [{ rules: IRules }, { rules: IRules }, { rules: IRules }] } }).configs["flat/all"][2] as { rules: IRules })
-                .rules,
-              ...SvelteTsJsRuleset,
-              overrideSvelte,
-            ],
-          },
-    };
+            parser,
+            ...files
+              .ts
+              ?? [],
+          ),
+          ...typeof svelte === "undefined"
+            ? {}
+            : {
+                svelte: new SvelteOptions(
+                  {
+                    "@stylistic": stylistic,
+                    "@typescript-eslint": plugin,
+                    svelte: svelte
+                      .plugin,
+                  },
+                  parser,
+                  svelte
+                    .parser,
+                  "svelte/svelte",
+                  ...files
+                    .svelte
+                    ?? [],
+                ),
+              },
+        };
+      this
+        .rulesets = {
+          js: [
+            ...JsRuleset,
+            overrideJs,
+          ],
+          ts: [
+            ...TsJsRuleset,
+            overrideTs,
+          ],
+          ...typeof svelte === "undefined"
+            ? {}
+            : {
+                svelte: [
+                  ((svelte.plugin as { configs: { "flat/all": [{ rules: IRules }, { rules: IRules }, { rules: IRules }] } }).configs["flat/all"][1] as { rules: IRules })
+                    .rules,
+                  ((svelte.plugin as { configs: { "flat/all": [{ rules: IRules }, { rules: IRules }, { rules: IRules }] } }).configs["flat/all"][2] as { rules: IRules })
+                    .rules,
+                  ...SvelteTsJsRuleset,
+                  overrideSvelte,
+                ],
+              },
+        };
+    }
+    catch (e) {
+      throw new Error(
+        `Lint: ctor`,
+        { cause: e },
+      );
+    }
   }
 
   public get configs(): Array<
@@ -157,18 +125,7 @@ export default class Configs {
         .getLanguageConfigs(
           "svelte",
         ),
-    ].map(
-      config =>
-        "processor" in config
-          ? config
-          : {
-              rules: config.rules,
-              files: config.files,
-              languageOptions: config.languageOptions,
-              linterOptions: config.linterOptions,
-              plugins: config.plugins,
-            },
-    );
+    ];
   }
 
   protected getLanguageConfigs<
@@ -186,30 +143,31 @@ export default class Configs {
     } = this;
 
     return [
-      ...language in options && language in rulesets
-        ? (
-            rulesets[
-              language
-            ] as RulesetIndex[
-              L
-            ]
-          )
-            .map(
-              rules => {
-                return {
-                  ...(
-                    options[
-                      language
-                    ] as LanguageIndex[
-                      L
-                    ]
-                  )
-                    .config,
-                  rules,
-                };
-              },
+      ...language in options
+        && language in rulesets
+          ? (
+              rulesets[
+                language
+              ] as RulesetIndex[
+                L
+              ]
             )
-        : [],
+              .map(
+                rules => {
+                  return {
+                    ...(
+                      options[
+                        language
+                      ] as LanguageIndex[
+                        L
+                      ]
+                    )
+                      .config,
+                    rules,
+                  };
+                },
+              )
+          : [],
     ];
   }
 }

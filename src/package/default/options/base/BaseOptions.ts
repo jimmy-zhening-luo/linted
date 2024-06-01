@@ -1,4 +1,4 @@
-export default abstract class AbstractOptions<
+export default abstract class BaseOptions<
   Plugin,
   Processor,
   Language = {},
@@ -12,7 +12,7 @@ export default abstract class AbstractOptions<
   >;
 
   constructor(
-    opts: AbstractOptions<
+    opts: BaseOptions<
       Plugin
       ,
       Processor

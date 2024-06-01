@@ -1,6 +1,6 @@
-import AbstractOptions from "./abstract/AbstractOptions.js";
+import BaseOptions from "./base/BaseOptions.js";
 
-export default class TsOptions extends AbstractOptions<
+export default class TsOptions extends BaseOptions<
   TsPlugin
   ,
   ""

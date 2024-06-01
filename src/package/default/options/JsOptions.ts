@@ -1,6 +1,6 @@
-import AbstractOptions from "./abstract/AbstractOptions.js";
+import BaseOptions from "./base/BaseOptions.js";
 
-export default class JsOptions extends AbstractOptions<
+export default class JsOptions extends BaseOptions<
   {},
   ""
 > {
