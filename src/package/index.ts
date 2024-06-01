@@ -7,6 +7,50 @@ import JsRuleset from "./default/ruleset/JsRuleset.js";
 import TsJsRuleset from "./default/ruleset/TsJsRuleset.js";
 import SvelteTsJsRuleset from "./default/ruleset/SvelteTsJsRuleset.js";
 
+declare type Languages = {
+  js: JsOptions;
+  ts: TsOptions;
+  svelte?: SvelteOptions;
+};
+
+declare type LanguageIndex = Required<
+  Languages
+>;
+
+declare type LanguageConfig<
+  L extends Language,
+> =
+  & LanguageIndex[
+    L
+  ][
+    "config"
+  ]
+  & Record<
+    "rules"
+    ,
+    IRules
+  >
+;
+
+declare type Rulesets =
+  & Record<
+    RequiredLanguage
+    ,
+    IRules[]
+  >
+  & Partial<
+    Record<
+      OptionalLanguage
+      ,
+      IRules[]
+    >
+  >
+;
+
+declare type RulesetIndex = Required<
+  Rulesets
+>;
+
 export default class Lint {
   protected readonly options: Languages;
   protected readonly rulesets: Rulesets;
