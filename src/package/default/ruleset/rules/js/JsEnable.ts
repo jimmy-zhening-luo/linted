@@ -1,6 +1,6 @@
 const ERROR = "error";
-const O = "off";
-const JsRules: IRules = {
+const OFF = "off";
+const JsEnable: IRules = {
 
   // Problems
   // [ https://eslint.org/docs/latest/rules/#possible-problems ]
@@ -40,14 +40,14 @@ const JsRules: IRules = {
   "no-dupe-else-if": ERROR,
   "no-dupe-keys": ERROR, // tsc
   "no-duplicate-case": ERROR,
-  "no-duplicate-imports": O, // buggy, breaks separation of TS type-only imports from value imports
+  "no-duplicate-imports": OFF, // buggy, breaks separation of TS type-only imports from value imports
   "no-empty-character-class": ERROR,
   "no-empty-pattern": [
     ERROR,
     { allowObjectPatternsAsParameters: true },
   ],
   "no-ex-assign": ERROR,
-  "no-fallthrough": O, // buggy
+  "no-fallthrough": OFF, // buggy
   "no-func-assign": ERROR, // tsc
   "no-import-assign": ERROR, // tsc (except Object.assign())
   "no-inner-declarations": [
@@ -155,10 +155,10 @@ const JsRules: IRules = {
     { requireReturnForObjectLiteral: true },
   ],
   "block-scoped-var": ERROR,
-  camelcase: O, // preference
-  "capitalized-comments": O, // preference
-  "class-methods-use-this": O, // preference -- TSLint
-  complexity: O, // preference
+  camelcase: OFF, // preference
+  "capitalized-comments": OFF, // preference
+  "class-methods-use-this": OFF, // preference -- TSLint
+  complexity: OFF, // preference
   "consistent-return": [
     ERROR,
     { treatUndefinedAsUnspecified: false },
@@ -168,7 +168,7 @@ const JsRules: IRules = {
     ERROR,
     "multi",
   ],
-  "default-case": O, // preference: don't care
+  "default-case": OFF, // preference: don't care
   "default-case-last": ERROR,
   "default-param-last": ERROR, // TSLint
   "dot-notation": [
@@ -179,14 +179,14 @@ const JsRules: IRules = {
     ERROR,
     "always",
   ],
-  "func-name-matching": O, // preference
-  "func-names": O, // preference
-  "func-style": O, // preference
-  "grouped-accessor-pairs": O, // preference -- buggy behavior (requires adjacency, not as described in documentation)
+  "func-name-matching": OFF, // preference
+  "func-names": OFF, // preference
+  "func-style": OFF, // preference
+  "grouped-accessor-pairs": OFF, // preference -- buggy behavior (requires adjacency, not as described in documentation)
   "guard-for-in": ERROR,
-  "id-denylist": O, // preference
-  "id-length": O, // preference
-  "id-match": O, // preference
+  "id-denylist": OFF, // preference
+  "id-length": OFF, // preference
+  "id-match": OFF, // preference
   "init-declarations": [
     ERROR,
     "always",
@@ -196,15 +196,15 @@ const JsRules: IRules = {
     "always",
     { enforceForIfStatements: true },
   ],
-  "max-classes-per-file": O, // preference
-  "max-depth": O, // preference
-  "max-lines": O, // preference
-  "max-lines-per-function": O, // preference
-  "max-nested-callbacks": O, // preference
-  "max-params": O, // preference -- TSLint:off: preference
-  "max-statements": O, // preference
-  "multiline-comment-style": O, // preference
-  "new-cap": O, // preference -- breaks Scriptable
+  "max-classes-per-file": OFF, // preference
+  "max-depth": OFF, // preference
+  "max-lines": OFF, // preference
+  "max-lines-per-function": OFF, // preference
+  "max-nested-callbacks": OFF, // preference
+  "max-params": OFF, // preference -- TSLint:off: preference
+  "max-statements": OFF, // preference
+  "multiline-comment-style": OFF, // preference
+  "new-cap": OFF, // preference -- breaks Scriptable
   "no-alert": ERROR,
   "no-array-constructor": ERROR, // TSLint
   "no-bitwise": [
@@ -216,11 +216,11 @@ const JsRules: IRules = {
   ],
   "no-caller": ERROR,
   "no-case-declarations": ERROR,
-  "no-console": O, // preference -- breaks Node.js
+  "no-console": OFF, // preference -- breaks Node.js
   "no-continue": ERROR,
   "no-delete-var": ERROR,
   "no-div-regex": ERROR,
-  "no-else-return": O, // preference
+  "no-else-return": OFF, // preference
   "no-empty": [
     ERROR,
     { allowEmptyCatch: false },
@@ -259,9 +259,9 @@ const JsRules: IRules = {
       allow: [], /**  "~" | "!!" | "+" | "- -" | "-" | "*"  */
     },
   ],
-  "no-implicit-globals": O, // investigate (breaks Scriptable? breaks Sveltekit?)
+  "no-implicit-globals": OFF, // investigate (breaks Scriptable? breaks Sveltekit?)
   "no-implied-eval": ERROR, // TSLint
-  "no-inline-comments": O, // preference
+  "no-inline-comments": OFF, // preference
   "no-invalid-this": [
     ERROR,
     { capIsConstructor: false },
@@ -269,10 +269,10 @@ const JsRules: IRules = {
   "no-iterator": ERROR,
   "no-label-var": ERROR,
   "no-lone-blocks": ERROR,
-  "no-lonely-if": O, // preference
+  "no-lonely-if": OFF, // preference
   "no-loop-func": ERROR, // TSLint
   "no-magic-numbers": [
-    O,
+    OFF,
     {
       ignore: [],
       ignoreArrayIndexes: true,
@@ -287,8 +287,8 @@ const JsRules: IRules = {
     { ignoreNonDeclaration: false },
   ],
   "no-multi-str": ERROR,
-  "no-negated-condition": O, // preference
-  "no-nested-ternary": O, // preference
+  "no-negated-condition": OFF, // preference
+  "no-nested-ternary": OFF, // preference
   "no-new": ERROR,
   "no-new-func": ERROR,
   "no-new-wrappers": ERROR,
@@ -313,12 +313,12 @@ const JsRules: IRules = {
     ERROR,
     { builtinGlobals: true },
   ], // tsc -- TSLint:off: tsc (let, const, -var)
-  "no-regex-spaces": O, // preference
-  "no-restricted-exports": O, // preference
-  "no-restricted-globals": O, // preference
-  "no-restricted-imports": O, // preference -- TSLint:off: preference
-  "no-restricted-properties": O, // preference
-  "no-restricted-syntax": O, // preference
+  "no-regex-spaces": OFF, // preference
+  "no-restricted-exports": OFF, // preference
+  "no-restricted-globals": OFF, // preference
+  "no-restricted-imports": OFF, // preference -- TSLint:off: preference
+  "no-restricted-properties": OFF, // preference
+  "no-restricted-syntax": OFF, // preference
   "no-return-assign": [
     ERROR,
     "always", // "always" | "except-parens" (disallow assignments unless enclosed in parens)
@@ -328,13 +328,13 @@ const JsRules: IRules = {
     ERROR,
     { allowInParentheses: true },
   ],
-  "no-shadow": O, // investigate -- TSLint:off: investigate
+  "no-shadow": OFF, // investigate -- TSLint:off: investigate
   "no-shadow-restricted-names": ERROR,
-  "no-ternary": O, // preference
+  "no-ternary": OFF, // preference
   "no-throw-literal": ERROR, // TSLint
   "no-undef-init": ERROR,
-  "no-undefined": O, // investigate (breaks Scriptable? breaks Sveltekit?)
-  "no-underscore-dangle": O, // preference
+  "no-undefined": OFF, // investigate (breaks Scriptable? breaks Sveltekit?)
+  "no-underscore-dangle": OFF, // preference
   "no-unneeded-ternary": [
     ERROR,
     { defaultAssignment: false },
@@ -372,7 +372,7 @@ const JsRules: IRules = {
     ERROR,
     { allowAsStatement: true },
   ],
-  "no-warning-comments": O, // preference
+  "no-warning-comments": OFF, // preference
   "no-with": ERROR,
   "object-shorthand": [
     ERROR,
@@ -447,11 +447,11 @@ const JsRules: IRules = {
   "require-await": ERROR, // TSLint
   "require-unicode-regexp": ERROR,
   "require-yield": ERROR,
-  "sort-imports": O, // preference
-  "sort-keys": O, // preference
-  "sort-vars": O, // preference
-  strict: O, // preference
-  "symbol-description": O, // preference
+  "sort-imports": OFF, // preference
+  "sort-keys": OFF, // preference
+  "sort-vars": OFF, // preference
+  strict: OFF, // preference
+  "symbol-description": OFF, // preference
   "vars-on-top": ERROR,
   yoda: [
     ERROR,
@@ -464,8 +464,8 @@ const JsRules: IRules = {
 
   // Layout & Formatting
   // [ https://eslint.org/docs/latest/rules/#layout--formatting ]
-  "line-comment-position": O, // preference
-  "unicode-bom": O, // preference: don't care
+  "line-comment-position": OFF, // preference
+  "unicode-bom": OFF, // preference: don't care
 };
 
-export default JsRules;
+export default JsEnable;

@@ -1,9 +1,9 @@
-import StylisticRules from "./rules/stylistic/StylisticRules.js";
-import JsRules from "./rules/js/JsRules.js";
+import StylisticEnable from "./rules/stylistic/StylisticEnable.js";
+import JsEnable from "./rules/js/JsEnable.js";
 
 const JsRuleset: IRules[] = [
-  StylisticRules,
-  JsRules,
+  StylisticEnable,
+  JsEnable,
 ];
 
 export default JsRuleset;

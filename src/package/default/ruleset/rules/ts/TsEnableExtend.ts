@@ -1,11 +1,11 @@
 const ERROR = "error";
-const O = "off";
-const TsEnableExtendRules: IRules = {
+const OFF = "off";
+const TsEnableExtend: IRules = {
 
   // ENABLE TS Extensions (STEP 2/2)
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
-  "@typescript-eslint/class-methods-use-this": O, // preference -- eslint:off
-  "@typescript-eslint/consistent-return": O, // tsconfig: noImplicitReturns
+  "@typescript-eslint/class-methods-use-this": OFF, // preference -- eslint:off
+  "@typescript-eslint/consistent-return": OFF, // tsconfig: noImplicitReturns
   "@typescript-eslint/default-param-last": ERROR,
   "@typescript-eslint/dot-notation": [
     ERROR,
@@ -22,9 +22,9 @@ const TsEnableExtendRules: IRules = {
     ERROR,
     "always",
   ],
-  "@typescript-eslint/max-params": O, // preference
+  "@typescript-eslint/max-params": OFF, // preference
   "@typescript-eslint/no-array-constructor": ERROR,
-  "@typescript-eslint/no-dupe-class-members": O, // tsc
+  "@typescript-eslint/no-dupe-class-members": OFF, // tsc
   "@typescript-eslint/no-empty-function": [
     ERROR,
     {
@@ -37,11 +37,11 @@ const TsEnableExtendRules: IRules = {
     }, // functions, arrowFunctions, generatorFunctions, methods, generatorMethods, getters, setters, constructors, asyncFunctions, asyncMethods; TS-ONLY: private-constructors, protected-constructors, decoratedFunctions, overrideMethods
   ],
   "@typescript-eslint/no-implied-eval": ERROR,
-  "@typescript-eslint/no-invalid-this": O, // tsconfig: { strict, noImplicitThis }
+  "@typescript-eslint/no-invalid-this": OFF, // tsconfig: { strict, noImplicitThis }
   "@typescript-eslint/no-loop-func": ERROR,
   "@typescript-eslint/no-loss-of-precision": ERROR,
   "@typescript-eslint/no-magic-numbers": [
-    O,
+    OFF,
     {
       ignore: [],
       ignoreArrayIndexes: true,
@@ -57,9 +57,9 @@ const TsEnableExtendRules: IRules = {
       ignoreTypeIndexes: true,
     },
   ],
-  "@typescript-eslint/no-redeclare": O, // tsc (let, const, -var)
-  "@typescript-eslint/no-restricted-imports": O, // preference
-  "@typescript-eslint/no-shadow": O, // investigate
+  "@typescript-eslint/no-redeclare": OFF, // tsc (let, const, -var)
+  "@typescript-eslint/no-restricted-imports": OFF, // preference
+  "@typescript-eslint/no-shadow": OFF, // investigate
   "@typescript-eslint/no-unused-expressions": [
     ERROR,
     {
@@ -126,4 +126,4 @@ const TsEnableExtendRules: IRules = {
   ],
 };
 
-export default TsEnableExtendRules;
+export default TsEnableExtend;

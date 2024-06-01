@@ -4,8 +4,8 @@ import JsOptions from "./default/options/JsOptions.js";
 import TsOptions from "./default/options/TsOptions.js";
 import SvelteOptions from "./default/options/SvelteOptions.js";
 import JsRuleset from "./default/ruleset/JsRuleset.js";
-import TsJsRuleset from "./default/ruleset/TsJsRuleset.js";
-import SvelteTsJsRuleset from "./default/ruleset/SvelteTsJsRuleset.js";
+import TsRuleset from "./default/ruleset/TsRuleset.js";
+import SvelteRuleset from "./default/ruleset/SvelteRuleset.js";
 
 declare type Languages = {
   js: JsOptions;
@@ -126,7 +126,7 @@ export default class Lint {
             overrideJs,
           ],
           ts: [
-            ...TsJsRuleset,
+            ...TsRuleset,
             overrideTs,
           ],
           ...typeof svelte === "undefined"
@@ -137,7 +137,7 @@ export default class Lint {
                     .rules,
                   ((svelte.plugin as { configs: { "flat/all": [{ rules: IRules }, { rules: IRules }, { rules: IRules }] } }).configs["flat/all"][2] as { rules: IRules })
                     .rules,
-                  ...SvelteTsJsRuleset,
+                  ...SvelteRuleset,
                   overrideSvelte,
                 ],
               },

@@ -1,6 +1,6 @@
 const ERROR = "error";
-const O = "off";
-const StylisticRules: IRules = {
+const OFF = "off";
+const StylisticEnable: IRules = {
 
   // https://eslint.style/rules
   "@stylistic/array-bracket-newline": [
@@ -266,7 +266,7 @@ const StylisticRules: IRules = {
     ERROR,
     { ignoreChainWithDepth: 1 },
   ],
-  "@stylistic/no-confusing-arrow": O,
+  "@stylistic/no-confusing-arrow": OFF,
   "@stylistic/no-extra-parens": [
     ERROR,
     "all",
@@ -283,7 +283,7 @@ const StylisticRules: IRules = {
   ],
   "@stylistic/no-extra-semi": ERROR,
   "@stylistic/no-floating-decimal": ERROR,
-  "@stylistic/no-mixed-operators": O,
+  "@stylistic/no-mixed-operators": OFF,
   "@stylistic/no-mixed-spaces-and-tabs": ERROR,
   "@stylistic/no-multi-spaces": [
     ERROR,
@@ -663,4 +663,4 @@ const StylisticRules: IRules = {
   ],
 };
 
-export default StylisticRules;
+export default StylisticEnable;

@@ -1,10 +1,10 @@
 const ERROR = "error";
-const O = "off";
-const TsEnableRules: IRules = {
+const OFF = "off";
+const TsEnable: IRules = {
 
   // ENABLE TSLint (TypeScript ONLY)
   // [ Reference: https://typescript-eslint.io/rules/?=xextension-xdeprecated#rules ]
-  "@typescript-eslint/adjacent-overload-signatures": O,
+  "@typescript-eslint/adjacent-overload-signatures": OFF,
   "@typescript-eslint/array-type": [
     ERROR,
     {
@@ -24,7 +24,7 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/ban-tslint-comment": ERROR,
-  "@typescript-eslint/ban-types": O,
+  "@typescript-eslint/ban-types": OFF,
   "@typescript-eslint/class-literal-property-style": [
     ERROR,
     "fields",
@@ -281,7 +281,7 @@ const TsEnableRules: IRules = {
     ERROR,
     "property",
   ],
-  "@typescript-eslint/naming-convention": O,
+  "@typescript-eslint/naming-convention": OFF,
   "@typescript-eslint/no-array-delete": ERROR,
   "@typescript-eslint/no-base-to-string": [
     ERROR,
@@ -341,7 +341,7 @@ const TsEnableRules: IRules = {
   ],
   "@typescript-eslint/no-for-in-array": ERROR,
   "@typescript-eslint/no-import-type-side-effects": ERROR,
-  "@typescript-eslint/no-inferrable-types": O,
+  "@typescript-eslint/no-inferrable-types": OFF,
   "@typescript-eslint/no-invalid-void-type": [
     ERROR,
     {
@@ -369,7 +369,7 @@ const TsEnableRules: IRules = {
     },
   ],
   "@typescript-eslint/no-mixed-enums": ERROR,
-  "@typescript-eslint/no-namespace": O,
+  "@typescript-eslint/no-namespace": OFF,
   "@typescript-eslint/no-non-null-asserted-nullish-coalescing": ERROR,
   "@typescript-eslint/no-non-null-asserted-optional-chain": ERROR,
   "@typescript-eslint/no-non-null-assertion": ERROR,
@@ -468,7 +468,7 @@ const TsEnableRules: IRules = {
     ERROR,
     { onlyInlineLambdas: false },
   ],
-  "@typescript-eslint/prefer-readonly-parameter-types": O, // investigate
+  "@typescript-eslint/prefer-readonly-parameter-types": OFF, // investigate
   "@typescript-eslint/prefer-reduce-type-parameter": ERROR,
   "@typescript-eslint/prefer-regexp-exec": ERROR,
   "@typescript-eslint/prefer-return-this-type": ERROR,
@@ -515,7 +515,7 @@ const TsEnableRules: IRules = {
       allowRegExp: false,
     }, // investigate: make stricter
   ],
-  "@typescript-eslint/sort-type-constituents": O, // investigate
+  "@typescript-eslint/sort-type-constituents": OFF, // investigate
   "@typescript-eslint/strict-boolean-expressions": [
     ERROR,
     {
@@ -545,7 +545,7 @@ const TsEnableRules: IRules = {
       types: "never", /** always | never | prefer-import */
     },
   ],
-  "@typescript-eslint/typedef": O, // tsconfig: { noImplicitAny, strictPropertyInitialization }
+  "@typescript-eslint/typedef": OFF, // tsconfig: { noImplicitAny, strictPropertyInitialization }
   "@typescript-eslint/unbound-method": [
     ERROR,
     { ignoreStatic: false },
@@ -557,4 +557,4 @@ const TsEnableRules: IRules = {
   "@typescript-eslint/use-unknown-in-catch-callback-variable": ERROR,
 };
 
-export default TsEnableRules;
+export default TsEnable;
