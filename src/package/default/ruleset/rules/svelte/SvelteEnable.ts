@@ -94,7 +94,7 @@ const SvelteEnable: IRules = {
       ignoreStringEscape: false,
     },
   ],
-  "svelte/svelte/prefer-destructured-store-props": ERROR,
+  "svelte/prefer-destructured-store-props": ERROR,
   "svelte/require-each-key": ERROR,
   "svelte/require-event-dispatcher-types": ERROR,
   "svelte/require-optimized-style-attribute": ERROR,
