@@ -25,7 +25,7 @@ Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible,
   - svelte-eslint-parser
 
 
-### v9 (under consideration)
+### v10 (under consideration)
 
 #### JSON
 
@@ -57,7 +57,7 @@ Jimmy’s highly-opinionated, unflinchingly-strict, yet overridable, extensible,
 - [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 
 
-### v8.2 (long-tail)
+### v11+ (long-tail)
 
 #### XML
 
