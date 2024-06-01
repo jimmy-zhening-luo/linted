@@ -1,1 +1,5 @@
-declare type TsPlugin = IPlugin<"@typescript-eslint", TsPluginBody>;
+declare type TsPlugin = Record<
+  "@typescript-eslint"
+  ,
+  TsPluginBody
+>;

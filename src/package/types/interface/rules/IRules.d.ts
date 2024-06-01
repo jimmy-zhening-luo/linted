@@ -1,5 +1,9 @@
 declare type IRules = Record<
-  string,
+  string
+  ,
   | RuleSeverity
-  | [RuleSeverity, ...unknown[]]
+  | [
+    RuleSeverity,
+    ...unknown[],
+  ]
 >;

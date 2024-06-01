@@ -1,1 +1,1 @@
-declare type SvelteProcessor = IProcessor<"svelte/svelte">;
+declare type SvelteProcessor = "svelte/svelte";

@@ -1,4 +1,8 @@
-declare type LanguageOptions<Opts> = Record<
-  "languageOptions",
-  EcmaLanguage & Opts
+declare type LanguageOptions<
+  Opts,
+> = Record<
+  "languageOptions"
+  ,
+  & EcmaLanguage
+  & Opts
 >;

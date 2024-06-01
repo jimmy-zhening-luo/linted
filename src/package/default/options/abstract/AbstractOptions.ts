@@ -1,19 +1,28 @@
 export default abstract class AbstractOptions<
-  Plugs = {},
-  LangOpts = {},
-  Pro extends string = "",
+  Plugin,
+  Processor,
+  Language = {},
 > {
-  public readonly config: IOptions<Plugs, LangOpts, Pro>;
+  public readonly config: IOptions<
+    Plugin
+    ,
+    Processor
+    ,
+    Language
+  >;
 
   constructor(
-    opts: Omit<IOptions<Plugs, LangOpts, Pro>, "linterOptions">,
+    opts: AbstractOptions<
+      Plugin
+      ,
+      Processor
+      ,
+      Language
+    >[
+      "config"
+    ],
   ) {
-    this.config = {
-      linterOptions: {
-        noInlineConfig: true,
-        reportUnusedDisableDirectives: true,
-      },
-      ...opts,
-    };
+    this
+      .config = opts;
   }
 }

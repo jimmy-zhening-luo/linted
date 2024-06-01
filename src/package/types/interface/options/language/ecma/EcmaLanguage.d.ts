@@ -1,4 +1,12 @@
-declare type EcmaLanguage = {
-  ecmaVersion: "latest";
-  sourceType: "module";
-};
+declare type EcmaLanguage =
+  & Record<
+    "ecmaVersion"
+    ,
+    "latest"
+  >
+  & Record<
+    "sourceType"
+    ,
+    "module"
+  >
+;

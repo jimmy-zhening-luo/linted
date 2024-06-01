@@ -1,1 +1,5 @@
-declare type StylisticPlugin = IPlugin<"@stylistic", StylisticPluginBody>;
+declare type StylisticPlugin = Record<
+  "@stylistic"
+  ,
+  StylisticPluginBody
+>;

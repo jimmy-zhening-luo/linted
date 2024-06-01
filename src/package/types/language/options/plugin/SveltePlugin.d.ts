@@ -1,1 +1,5 @@
-declare type SveltePlugin = IPlugin<"svelte", SveltePluginBody>;
+declare type SveltePlugin = Record<
+  "svelte"
+  ,
+  SveltePluginBody
+>;

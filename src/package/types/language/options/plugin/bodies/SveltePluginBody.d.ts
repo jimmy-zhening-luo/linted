@@ -1,1 +1,1 @@
-declare type SveltePluginBody = IPluginBody<"flat/all">;
+declare type SveltePluginBody = unknown;

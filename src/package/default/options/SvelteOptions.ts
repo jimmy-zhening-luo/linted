@@ -1,12 +1,18 @@
 import AbstractOptions from "./abstract/AbstractOptions.js";
 
 export default class SvelteOptions extends AbstractOptions<
-  SveltePlugin & TsPlugin,
-  SvelteLanguage,
+  & SveltePlugin
+  & TsPlugin
+  ,
   "svelte/svelte"
+  ,
+  SvelteLanguage
 > {
   constructor(
-    plugins: StylisticPlugin & SveltePlugin & TsPlugin,
+    plugins:
+      & StylisticPlugin
+      & SveltePlugin
+      & TsPlugin,
     tsParser: TsParser,
     svelteParser: SvelteParser,
     processor: SvelteProcessor,
@@ -17,6 +23,10 @@ export default class SvelteOptions extends AbstractOptions<
         processor,
         files,
         plugins,
+        linterOptions: {
+          noInlineConfig: true,
+          reportUnusedDisableDirectives: true,
+        },
         languageOptions: {
           ecmaVersion: "latest",
           sourceType: "module",

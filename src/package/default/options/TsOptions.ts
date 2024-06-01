@@ -1,19 +1,27 @@
 import AbstractOptions from "./abstract/AbstractOptions.js";
 
 export default class TsOptions extends AbstractOptions<
-  TsPlugin,
+  TsPlugin
+  ,
+  ""
+  ,
   TsLanguage
 > {
   constructor(
-    plugins: StylisticPlugin & TsPlugin,
+    plugins:
+      & StylisticPlugin
+      & TsPlugin,
     parser: TsParser,
     ...files: string[]
   ) {
     super(
       {
-        processor: null,
         files,
         plugins,
+        linterOptions: {
+          noInlineConfig: true,
+          reportUnusedDisableDirectives: true,
+        },
         languageOptions: {
           ecmaVersion: "latest",
           sourceType: "module",

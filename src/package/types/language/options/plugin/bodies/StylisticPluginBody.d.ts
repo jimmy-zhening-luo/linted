@@ -1,1 +1,1 @@
-declare type StylisticPluginBody = IPluginBody<"disable-legacy">;
+declare type StylisticPluginBody = unknown;
