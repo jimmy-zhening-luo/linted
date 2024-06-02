@@ -1,6 +1,6 @@
 {
   "name": "@jimbojet/lint",
-  "version": "10.1.1-dev.0",
+  "version": "10.1.1-rc.0",
   "description": "Jimmy's highly-opinionated config plugin for eslint + typescript-eslint + eslint-stylistic. Use it at your own peril.",
   "type": "module",
   "private": false,
