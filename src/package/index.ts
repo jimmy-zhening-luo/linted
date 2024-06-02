@@ -1,5 +1,5 @@
-import plugin from "@stylistic/eslint-plugin";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
+import stylistic from "@stylistic/eslint-plugin";
+import plugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 import JsOptions from "./default/options/JsOptions.js";
 import TsOptions from "./default/options/TsOptions.js";
@@ -57,8 +57,6 @@ export default class Lint {
   protected readonly rulesets: Rulesets;
 
   constructor(
-
-    //  stylistic: unknown,
     files: {
       js?: string[];
       ts?: string[];
@@ -86,15 +84,15 @@ export default class Lint {
       this
         .options = {
           js: new JsOptions(
-            { "@stylistic": plugin },
+            { "@stylistic": stylistic },
             ...files
               .js
               ?? [],
           ),
           ts: new TsOptions(
             {
-              "@stylistic": plugin,
-              "@typescript-eslint": tsPlugin,
+              "@stylistic": stylistic,
+              "@typescript-eslint": plugin,
             },
             parser,
             ...files
@@ -106,8 +104,8 @@ export default class Lint {
             : {
                 svelte: new SvelteOptions(
                   {
-                    "@stylistic": plugin,
-                    "@typescript-eslint": tsPlugin,
+                    "@stylistic": stylistic,
+                    "@typescript-eslint": plugin,
                     svelte: svelte
                       .plugin,
                   },
