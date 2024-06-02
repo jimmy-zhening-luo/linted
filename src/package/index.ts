@@ -2,6 +2,7 @@ import stylistic from "@stylistic/eslint-plugin";
 import plugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 import sveltePlugin from "eslint-plugin-svelte";
+import svelteParser from "svelte-eslint-parser";
 import JsOptions from "./default/options/JsOptions.js";
 import TsOptions from "./default/options/TsOptions.js";
 import SvelteOptions from "./default/options/SvelteOptions.js";
@@ -12,7 +13,7 @@ import SvelteRuleset from "./default/ruleset/SvelteRuleset.js";
 type Languages = {
   js: JsOptions;
   ts: TsOptions;
-  svelte?: SvelteOptions;
+  svelte: SvelteOptions;
 };
 type LanguageIndex = Required<
   Languages
@@ -56,9 +57,6 @@ export default class Lint {
       overrideTs?: IRules;
       overrideSvelte?: IRules;
     } = {},
-    svelte?: {
-      parser: unknown;
-    },
   ) {
     try {
       this
@@ -79,24 +77,19 @@ export default class Lint {
               .ts
               ?? [],
           ),
-          ...typeof svelte === "undefined"
-            ? {}
-            : {
-                svelte: new SvelteOptions(
-                  {
-                    "@stylistic": stylistic,
-                    "@typescript-eslint": plugin,
-                    svelte: sveltePlugin,
-                  },
-                  parser,
-                  svelte
-                    .parser,
-                  "svelte/svelte",
-                  ...files
-                    .svelte
-                    ?? [],
-                ),
-              },
+          svelte: new SvelteOptions(
+            {
+              "@stylistic": stylistic,
+              "@typescript-eslint": plugin,
+              svelte: sveltePlugin,
+            },
+            parser,
+            svelteParser,
+            "svelte/svelte",
+            ...files
+              .svelte
+              ?? [],
+          ),
         };
       this
         .rulesets = {
