@@ -64,38 +64,28 @@ Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack 
 
 - **Zero-Dependency:** No need to install 17 plugins and 12 parsers. Each language's latest (and best) plugin and parser are bundled and optimally configured to work together.
 
-- **Zero-Config:** No need to remember each plugin's random fucking `parserOptions` fields or whatever it's called. You won't have to deal with shit like this (lol @ Svelte):
+- **Zero-Config:** No need to remember each plugin's `parserOptions` fields. You won't have to *this* just to enable Svelte linting:
 
   ```javascript
     // Lint Svelte containing TypeScript
     plugins: {
-      "@stylistic": stylistic,    // W
-      "@typescript-eslint": ts,   // T
-      svelte,                     // F
+      "@stylistic": stylistic,
+      "@typescript-eslint": ts,
+      svelte,
     },
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
-      parser: svelteParser,       // OK
+      parser: svelteParser,
       parserOptions: {
-        parser: tsParser,         // Huh?
-
-        // Magically this is where you put
-        // parserOptions for the TYPESCRIPT
-        // parser, I dare you to figure THAT
-        // one out.
+        parser: tsParser,
         ecmaVersion: "latest",
         sourceType: "module",
         project: "tsconfig.json",
         extraFileExtensions: [".svelte"],
       },
     },
-    processor: "svelte/svelte"     // WOW
-    // You've got to be fucking kidding me
-    // Good thing I have eyes that can read
-    // documentation so I know to put this
-    // here.
-    // ...
+    processor: "svelte/svelte"
   ```
 
 
@@ -159,25 +149,37 @@ Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack 
 
 ## Rule Logic (Advanced)
 
-### TypeScript
+### Language Mapping
+
+Description TBD
+
+
+### Overrides
+
+Description TBD
+
+
+### Example
+
+#### TypeScript
 
 - TypeScript files are subject to both ESLint and TypeScript rules.
 
 - TypeScript overrides apply to TypeScript files but not JavaScript files.
 
-### Svelte
+#### Svelte
 
 Svelte files contain TypeScript and style blocks, while also containing native Svelte tags whose attributes may contain TypeScript or style. Talk about a linting clusterfuck.
 
-#### TypeScript blocks inside `.svelte` files
+##### TypeScript blocks inside `.svelte` files
 
 - TypeScript rules with appropriate Svelte overrides to deal with TypeScript semantics that only exist in Svelte land.
 
-- Any TypeScript overrides of TypeScript or base ESLint rules UNLESS those rules are hard-ignored (utterly incompatible) with Svelte, in which case you wouldn't notice the difference anyway, except for me saving your fucking linter from crashing, so don't complain about the undocumented behavior.
+- Any TypeScript overrides of TypeScript or base ESLint rules UNLESS those rules are incompatible with Svelte, in which case this since otherwise they would crash ESLint.
 
 - Any Svelte overrides of TypeScript or base ESLint rules.
 
-#### Svelte tags (possibly wiht attributes containing TypeScript)
+##### Svelte tags (possibly wiht attributes containing TypeScript)
 
 - Svelte rules.
 
