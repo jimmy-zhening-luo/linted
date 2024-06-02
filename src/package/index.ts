@@ -1,6 +1,8 @@
 import stylistic from "@stylistic/eslint-plugin";
 import plugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
+import sveltePlugin from "eslint-plugin-svelte";
+import svelteParser from "svelte-eslint-parser";
 import JsOptions from "./default/options/JsOptions.js";
 import TsOptions from "./default/options/TsOptions.js";
 import SvelteOptions from "./default/options/SvelteOptions.js";
@@ -8,17 +10,15 @@ import JsRuleset from "./default/ruleset/JsRuleset.js";
 import TsRuleset from "./default/ruleset/TsRuleset.js";
 import SvelteRuleset from "./default/ruleset/SvelteRuleset.js";
 
-declare type Languages = {
+type Languages = {
   js: JsOptions;
   ts: TsOptions;
-  svelte?: SvelteOptions;
+  svelte: SvelteOptions;
 };
-
-declare type LanguageIndex = Required<
+type LanguageIndex = Required<
   Languages
 >;
-
-declare type LanguageConfig<
+type LanguageConfig<
   L extends Language,
 > =
   & LanguageIndex[
@@ -32,24 +32,10 @@ declare type LanguageConfig<
     IRules
   >
 ;
-
-declare type Rulesets =
-  & Record<
-    RequiredLanguage
-    ,
-    IRules[]
-  >
-  & Partial<
-    Record<
-      OptionalLanguage
-      ,
-      IRules[]
-    >
-  >
-;
-
-declare type RulesetIndex = Required<
-  Rulesets
+type Rulesets = Record<
+  Language
+  ,
+  IRules[]
 >;
 
 export default class Lint {
@@ -61,11 +47,7 @@ export default class Lint {
       js?: string[];
       ts?: string[];
       svelte?: string[];
-    } = {
-      js: [],
-      ts: [],
-      svelte: [],
-    },
+    } = {},
     {
       overrideJs = {},
       overrideTs = {},
@@ -75,10 +57,6 @@ export default class Lint {
       overrideTs?: IRules;
       overrideSvelte?: IRules;
     } = {},
-    svelte?: {
-      plugin: unknown;
-      parser: unknown;
-    },
   ) {
     try {
       this
@@ -99,25 +77,19 @@ export default class Lint {
               .ts
               ?? [],
           ),
-          ...typeof svelte === "undefined"
-            ? {}
-            : {
-                svelte: new SvelteOptions(
-                  {
-                    "@stylistic": stylistic,
-                    "@typescript-eslint": plugin,
-                    svelte: svelte
-                      .plugin,
-                  },
-                  parser,
-                  svelte
-                    .parser,
-                  "svelte/svelte",
-                  ...files
-                    .svelte
-                    ?? [],
-                ),
-              },
+          svelte: new SvelteOptions(
+            {
+              "@stylistic": stylistic,
+              "@typescript-eslint": plugin,
+              svelte: sveltePlugin,
+            },
+            parser,
+            svelteParser,
+            "svelte/svelte",
+            ...files
+              .svelte
+              ?? [],
+          ),
         };
       this
         .rulesets = {
@@ -129,14 +101,10 @@ export default class Lint {
             ...TsRuleset,
             overrideTs,
           ],
-          ...typeof svelte === "undefined"
-            ? {}
-            : {
-                svelte: [
-                  ...SvelteRuleset,
-                  overrideSvelte,
-                ],
-              },
+          svelte: [
+            ...SvelteRuleset,
+            overrideSvelte,
+          ],
         };
     }
     catch (e) {
@@ -178,36 +146,31 @@ export default class Lint {
       >
     > {
     const {
-      rulesets,
       options,
+      rulesets,
     } = this;
-
-    return [
-      ...language in options
-      && language in rulesets
-        ? (
-            rulesets[
-              language
-            ] as RulesetIndex[
-              L
-            ]
-          )
-            .map(
-              rules => {
-                return {
-                  ...(
-                    options[
-                      language
-                    ] as LanguageIndex[
-                      L
-                    ]
-                  )
-                    .config,
-                  rules,
-                };
-              },
-            )
-        : [],
+    const option = options[
+      language
     ];
+    const ruleset = rulesets[
+      language
+    ];
+
+    return typeof option === "undefined"
+      || option
+        .config
+        .files
+        .length < 1
+      ? []
+      : ruleset
+        .map(
+          rules => {
+            return {
+              rules,
+              ...option
+                .config,
+            };
+          },
+        );
   }
 }
