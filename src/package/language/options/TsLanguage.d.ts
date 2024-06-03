@@ -1,5 +1,5 @@
 declare type TsLanguage = {
-  parser: TsParser;
+  parser: unknown;
   parserOptions:
     & EcmaLanguage
     & Record<

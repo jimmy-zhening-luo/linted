@@ -1,16 +1,16 @@
 import BaseOptions from "./base/BaseOptions.js";
 
-export default class TsOptions extends BaseOptions<
-  TsPlugin
+export default class JsonOptions extends BaseOptions<
+  JsonPlugin
   ,
   ""
   ,
-  TsLanguage
+  JsonLanguage
 > {
   constructor(
     plugins:
       & StylisticPlugin
-      & TsPlugin,
+      & JsonPlugin,
     parser: unknown,
     ...files: string[]
   ) {
@@ -26,11 +26,6 @@ export default class TsOptions extends BaseOptions<
           ecmaVersion: "latest",
           sourceType: "module",
           parser,
-          parserOptions: {
-            ecmaVersion: "latest",
-            sourceType: "module",
-            project: "tsconfig.json",
-          },
         },
       },
     );

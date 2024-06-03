@@ -13,8 +13,8 @@ export default class SvelteOptions extends BaseOptions<
       & StylisticPlugin
       & SveltePlugin
       & TsPlugin,
-    tsParser: TsParser,
-    svelteParser: SvelteParser,
+    tsParser: unknown,
+    svelteParser: unknown,
     processor: SvelteProcessor,
     ...files: string[]
   ) {

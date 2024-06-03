@@ -1,5 +1,5 @@
 declare type SvelteLanguage = {
-  parser: SvelteParser;
+  parser: unknown;
   parserOptions:
     & TsLanguage[
       "parserOptions"

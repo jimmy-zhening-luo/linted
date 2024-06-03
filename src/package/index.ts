@@ -1,28 +1,41 @@
 import stylistic from "@stylistic/eslint-plugin";
 import plugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
-import sveltePlugin from "eslint-plugin-svelte";
+import svelte from "eslint-plugin-svelte";
 import svelteParser from "svelte-eslint-parser";
-import JsOptions from "./default/options/JsOptions.js";
-import TsOptions from "./default/options/TsOptions.js";
-import SvelteOptions from "./default/options/SvelteOptions.js";
-import JsRuleset from "./default/ruleset/JsRuleset.js";
-import TsRuleset from "./default/ruleset/TsRuleset.js";
-import SvelteRuleset from "./default/ruleset/SvelteRuleset.js";
+import jsonc from "eslint-plugin-jsonc";
+import jsoncParser from "jsonc-eslint-parser";
+import {
+  JsOptions,
+  TsOptions,
+  SvelteOptions,
+  JsonOptions,
+} from "./default/Options.js";
+import {
+  JsRuleset,
+  TsRuleset,
+  SvelteRuleset,
+  JsonRuleset,
+  JsoncRuleset,
+  Json5Ruleset,
+} from "./default/Ruleset.js";
 
-type Languages = {
+declare type Options = {
   js: JsOptions;
   ts: TsOptions;
   svelte: SvelteOptions;
+  json: JsonOptions;
+  jsonc: JsonOptions;
+  json5: JsonOptions;
 };
-type LanguageIndex = Required<
-  Languages
->;
-type LanguageConfig<
-  L extends Language,
+
+declare type Languages = keyof Options;
+
+declare type Config<
+  Language extends Languages,
 > =
-  & LanguageIndex[
-    L
+  & Options[
+    Language
   ][
     "config"
   ]
@@ -32,46 +45,67 @@ type LanguageConfig<
     IRules
   >
 ;
-type Rulesets = Record<
-  Language
+
+declare type Rulesets = Record<
+  Languages
   ,
   IRules[]
 >;
 
+declare type Overrides = `override${
+  Capitalize<
+    Languages
+  >
+}`;
+
 export default class Lint {
-  protected readonly options: Languages;
+  protected readonly options: Options;
   protected readonly rulesets: Rulesets;
 
   constructor(
-    files: {
-      js?: string[];
-      ts?: string[];
-      svelte?: string[];
-    } = {},
+    files: Partial<
+      Record<
+        Languages
+        ,
+        string[]
+      >
+    > = {},
     {
       overrideJs = {},
       overrideTs = {},
       overrideSvelte = {},
-    }: {
-      overrideJs?: IRules;
-      overrideTs?: IRules;
-      overrideSvelte?: IRules;
-    } = {},
+      overrideJson = {},
+      overrideJsonc = {},
+      overrideJson5 = {},
+    }: Partial<
+      Record<
+        Overrides
+        ,
+        IRules
+      >
+    > = {},
   ) {
     try {
+      const jsPlugins = { "@stylistic": stylistic };
+      const tsPlugins = {
+        ...jsPlugins,
+        "@typescript-eslint": plugin,
+      };
+      const jsonPlugins = {
+        ...jsPlugins,
+        jsonc,
+      };
+
       this
         .options = {
           js: new JsOptions(
-            { "@stylistic": stylistic },
+            jsPlugins,
             ...files
               .js
               ?? [],
           ),
           ts: new TsOptions(
-            {
-              "@stylistic": stylistic,
-              "@typescript-eslint": plugin,
-            },
+            tsPlugins,
             parser,
             ...files
               .ts
@@ -79,15 +113,35 @@ export default class Lint {
           ),
           svelte: new SvelteOptions(
             {
-              "@stylistic": stylistic,
-              "@typescript-eslint": plugin,
-              svelte: sveltePlugin,
+              ...tsPlugins,
+              svelte,
             },
             parser,
             svelteParser,
             "svelte/svelte",
             ...files
               .svelte
+              ?? [],
+          ),
+          json: new JsonOptions(
+            jsonPlugins,
+            jsoncParser,
+            ...files
+              .json
+              ?? [],
+          ),
+          jsonc: new JsonOptions(
+            jsonPlugins,
+            jsoncParser,
+            ...files
+              .jsonc
+              ?? [],
+          ),
+          json5: new JsonOptions(
+            jsonPlugins,
+            jsoncParser,
+            ...files
+              .json5
               ?? [],
           ),
         };
@@ -105,6 +159,18 @@ export default class Lint {
             ...SvelteRuleset,
             overrideSvelte,
           ],
+          json: [
+            ...JsonRuleset,
+            overrideJson,
+          ],
+          jsonc: [
+            ...JsoncRuleset,
+            overrideJsonc,
+          ],
+          json5: [
+            ...Json5Ruleset,
+            overrideJson5,
+          ],
         };
     }
     catch (e) {
@@ -116,33 +182,37 @@ export default class Lint {
   }
 
   public get configs(): Array<
-    LanguageConfig<
-      Language
+    Config<
+      Languages
     >
   > {
-    return [
-      ...this
-        .getLanguageConfigs(
-          "js",
-        ),
-      ...this
-        .getLanguageConfigs(
-          "ts",
-        ),
-      ...this
-        .getLanguageConfigs(
-          "svelte",
-        ),
-    ];
+    const languages = [
+      "js",
+      "ts",
+      "svelte",
+      "json",
+      "jsonc",
+      "json5",
+    ] as const;
+
+    return languages
+      .map(
+        language =>
+          this
+            .getLanguageConfigs(
+              language,
+            ),
+      )
+      .flat();
   }
 
   protected getLanguageConfigs<
-    L extends Language,
+    Language extends Languages,
   >(
-    language: L,
+    language: Language,
   ): Array<
-      LanguageConfig<
-        L
+      Config<
+        Language
       >
     > {
     const {
