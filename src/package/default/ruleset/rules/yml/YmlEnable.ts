@@ -45,7 +45,7 @@ const YmlEnable: IRules = {
   "yml/block-sequence": [
     ERROR,
     {
-      singleline: NEVER,
+      singleline: ALWAYS,
       multiline: ALWAYS,
     },
   ],
