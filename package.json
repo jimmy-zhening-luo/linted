@@ -1,6 +1,6 @@
 {
   "name": "@jimbojet/lint",
-  "version": "10.2.0-rc.10",
+  "version": "10.2.0-rc.11",
   "description": "Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, Markdown, JSON/5/C, and sadly YAML.",
   "keywords": [
     "eslint",
