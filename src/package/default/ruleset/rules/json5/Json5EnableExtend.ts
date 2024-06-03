@@ -92,7 +92,7 @@ const Json5EnableExtend: IRules = {
   ],
   "jsonc/quote-props": [
     ERROR,
-    "as-needed",
+    ALWAYS,
     {
       keywords: true,
       unnecessary: true,
