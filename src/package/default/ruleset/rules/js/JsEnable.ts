@@ -5,6 +5,13 @@ const [
   "error",
   "off",
 ] as const;
+const [
+  ALWAYS,
+  NEVER,
+] = [
+  "always",
+  "never",
+] as const;
 const JsEnable: IRules = {
 
   // Problems
@@ -29,7 +36,7 @@ const JsEnable: IRules = {
   "no-compare-neg-zero": ERROR,
   "no-cond-assign": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "no-const-assign": ERROR, // tsc
   "no-constant-binary-expression": ERROR,
@@ -182,7 +189,7 @@ const JsEnable: IRules = {
   ], // TSLint
   eqeqeq: [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "func-name-matching": OFF, // preference
   "func-names": OFF, // preference
@@ -194,11 +201,11 @@ const JsEnable: IRules = {
   "id-match": OFF, // preference
   "init-declarations": [
     ERROR,
-    "always",
+    ALWAYS,
   ], // TSLint
   "logical-assignment-operators": [
     ERROR,
-    "always",
+    ALWAYS,
     { enforceForIfStatements: true },
   ],
   "max-classes-per-file": OFF, // preference
@@ -326,7 +333,7 @@ const JsEnable: IRules = {
   "no-restricted-syntax": OFF, // preference
   "no-return-assign": [
     ERROR,
-    "always", // "always" | "except-parens" (disallow assignments unless enclosed in parens)
+    ALWAYS, // ALWAYS | "except-parens" (disallow assignments unless enclosed in parens)
   ],
   "no-script-url": ERROR,
   "no-sequences": [
@@ -381,7 +388,7 @@ const JsEnable: IRules = {
   "no-with": ERROR,
   "object-shorthand": [
     ERROR,
-    "always",
+    ALWAYS,
     {
       avoidQuotes: true,
       ignoreConstructors: false,
@@ -391,15 +398,15 @@ const JsEnable: IRules = {
   "one-var": [
     ERROR,
     {
-      "var": "never",
-      let: "never",
-      "const": "never",
+      "var": NEVER,
+      let: NEVER,
+      "const": NEVER,
       separateRequires: true,
     },
   ],
   "operator-assignment": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "prefer-arrow-callback": [
     ERROR,
@@ -460,7 +467,7 @@ const JsEnable: IRules = {
   "vars-on-top": ERROR,
   yoda: [
     ERROR,
-    "never",
+    NEVER,
     {
       exceptRange: false,
       onlyEquality: false,

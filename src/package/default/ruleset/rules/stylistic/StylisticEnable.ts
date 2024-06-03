@@ -5,6 +5,13 @@ const [
   "error",
   "off",
 ] as const;
+const [
+  ALWAYS,
+  NEVER,
+] = [
+  "always",
+  "never",
+] as const;
 const StylisticEnable: IRules = {
 
   // https://eslint.style/rules
@@ -17,7 +24,7 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/array-bracket-spacing": [
     ERROR,
-    "never",
+    NEVER,
     {
       singleValue: false,
       objectsInArrays: false,
@@ -27,8 +34,8 @@ const StylisticEnable: IRules = {
   "@stylistic/array-element-newline": [
     ERROR,
     {
-      ArrayExpression: "always",
-      ArrayPattern: "always",
+      ArrayExpression: ALWAYS,
+      ArrayPattern: ALWAYS,
     },
   ],
   "@stylistic/arrow-parens": [
@@ -45,7 +52,7 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/block-spacing": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/brace-style": [
     ERROR,
@@ -84,7 +91,7 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/computed-property-spacing": [
     ERROR,
-    "never",
+    NEVER,
     { enforceForClassMembers: true },
   ],
   "@stylistic/dot-location": [
@@ -93,15 +100,15 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/eol-last": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/function-call-argument-newline": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/function-call-spacing": [
     ERROR,
-    "never",
+    NEVER,
   ],
 
   // Useless rule. See issue with my comment: https://github.com/eslint-community/eslint-stylistic/issues/290
@@ -205,17 +212,17 @@ const StylisticEnable: IRules = {
     {
       enforce: [
         {
-          blankLine: "never",
+          blankLine: NEVER,
           prev: "field",
           next: "field",
         },
         {
-          blankLine: "always",
+          blankLine: ALWAYS,
           prev: "field",
           next: "method",
         },
         {
-          blankLine: "always",
+          blankLine: ALWAYS,
           prev: "method",
           next: "*",
         },
@@ -261,11 +268,11 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/multiline-ternary": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/new-parens": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/newline-per-chained-call": [
     ERROR,
@@ -358,7 +365,7 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/object-curly-spacing": [
     ERROR,
-    "always",
+    ALWAYS,
     {
       arraysInObjects: true,
       objectsInObjects: true,
@@ -370,7 +377,7 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/one-var-declaration-per-line": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/operator-linebreak": [
     ERROR,
@@ -386,26 +393,26 @@ const StylisticEnable: IRules = {
   "@stylistic/padded-blocks": [
     ERROR,
     {
-      blocks: "never",
-      classes: "never",
-      switches: "never",
+      blocks: NEVER,
+      classes: NEVER,
+      switches: NEVER,
     },
     { allowSingleLineBlocks: true },
   ],
   "@stylistic/padding-line-between-statements": [
     ERROR,
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "directive",
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "directive",
       next: "directive",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: [
         "import",
         "cjs-import",
@@ -413,7 +420,7 @@ const StylisticEnable: IRules = {
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: [
         "import",
         "cjs-import",
@@ -424,7 +431,7 @@ const StylisticEnable: IRules = {
       ],
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: [
         "class",
         "interface",
@@ -444,12 +451,12 @@ const StylisticEnable: IRules = {
       next: "*",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "case",
       next: "*",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "case",
       next: [
         "case",
@@ -457,42 +464,42 @@ const StylisticEnable: IRules = {
       ],
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "default",
       next: "*",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "type",
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "type",
       next: "type",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "function",
       next: "*",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "function-overload",
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "function-overload",
       next: "function-overload",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "function-overload",
       next: "function",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: [
         "const",
         "let",
@@ -501,7 +508,7 @@ const StylisticEnable: IRules = {
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: [
         "const",
         "let",
@@ -514,17 +521,17 @@ const StylisticEnable: IRules = {
       ],
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "expression",
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "expression",
       next: "expression",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "*",
       next: [
         "throw",
@@ -534,7 +541,7 @@ const StylisticEnable: IRules = {
       ],
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "*",
       next: [
         "export",
@@ -542,7 +549,7 @@ const StylisticEnable: IRules = {
       ],
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: [
         "export",
         "cjs-export",
@@ -572,11 +579,11 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/rest-spread-spacing": [
     ERROR,
-    "never",
+    NEVER,
   ],
   "@stylistic/semi": [
     ERROR,
-    "always",
+    ALWAYS,
     {
       omitLastInOneLineBlock: false,
       omitLastInOneLineClassBody: false,
@@ -596,22 +603,22 @@ const StylisticEnable: IRules = {
   "@stylistic/space-before-blocks": [
     ERROR,
     {
-      functions: "always",
-      keywords: "always",
-      classes: "always",
+      functions: ALWAYS,
+      keywords: ALWAYS,
+      classes: ALWAYS,
     },
   ],
   "@stylistic/space-before-function-paren": [
     ERROR,
     {
-      anonymous: "always",
-      named: "never",
-      asyncArrow: "always",
+      anonymous: ALWAYS,
+      named: NEVER,
+      asyncArrow: ALWAYS,
     },
   ],
   "@stylistic/space-in-parens": [
     ERROR,
-    "never",
+    NEVER,
   ],
   "@stylistic/space-infix-ops": [
     ERROR,
@@ -627,7 +634,7 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/spaced-comment": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/switch-colon-spacing": [
     ERROR,
@@ -638,11 +645,11 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/template-curly-spacing": [
     ERROR,
-    "never",
+    NEVER,
   ],
   "@stylistic/template-tag-spacing": [
     ERROR,
-    "never",
+    NEVER,
   ],
   "@stylistic/type-annotation-spacing": [
     ERROR,

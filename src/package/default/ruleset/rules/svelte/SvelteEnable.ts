@@ -5,6 +5,13 @@ const [
   "error",
   "off",
 ] as const;
+const [
+  ALWAYS,
+  NEVER,
+] = [
+  "always",
+  "never",
+] as const;
 const SvelteEnable: IRules = {
 
   // Possible Errors
@@ -47,7 +54,7 @@ const SvelteEnable: IRules = {
     ERROR,
     {
       allowReferrer: false,
-      enforceDynamicLinks: "always",
+      enforceDynamicLinks: ALWAYS,
     },
   ],
 
@@ -119,9 +126,9 @@ const SvelteEnable: IRules = {
   "svelte/html-closing-bracket-spacing": [
     ERROR,
     {
-      startTag: "never",
-      endTag: "never",
-      selfClosingTag: "always",
+      startTag: NEVER,
+      endTag: NEVER,
+      selfClosingTag: ALWAYS,
     },
   ],
   "svelte/html-quotes": [
@@ -137,10 +144,10 @@ const SvelteEnable: IRules = {
   "svelte/html-self-closing": [
     ERROR,
     {
-      "void": "always", // or "never" or "ignore"
-      normal: "always", // or "never" or "ignore"
-      component: "always", // or "never" or "ignore"
-      svelte: "always", // or "never" or "ignore"
+      "void": ALWAYS, // or NEVER or "ignore"
+      normal: ALWAYS, // or NEVER or "ignore"
+      component: ALWAYS, // or NEVER or "ignore"
+      svelte: ALWAYS, // or NEVER or "ignore"
     },
   ],
   "svelte/indent": [
@@ -163,12 +170,12 @@ const SvelteEnable: IRules = {
   "svelte/mustache-spacing": [
     ERROR,
     {
-      textExpressions: "never", // or "always"
-      attributesAndProps: "never", // or "always"
-      directiveExpressions: "never", // or "always"
+      textExpressions: NEVER, // or ALWAYS
+      attributesAndProps: NEVER, // or ALWAYS
+      directiveExpressions: NEVER, // or ALWAYS
       tags: {
-        openingBrace: "never", // or "always"
-        closingBrace: "never", // or "always" or "always-after-expression"
+        openingBrace: NEVER, // or ALWAYS
+        closingBrace: NEVER, // or ALWAYS or "always-after-expression"
       },
     },
   ],
@@ -182,16 +189,16 @@ const SvelteEnable: IRules = {
   "svelte/prefer-style-directive": ERROR,
   "svelte/shorthand-attribute": [
     ERROR,
-    { prefer: "always" },
+    { prefer: ALWAYS },
   ],
   "svelte/shorthand-directive": [
     ERROR,
-    { prefer: "always" },
+    { prefer: ALWAYS },
   ],
   "svelte/sort-attributes": OFF, // TBD
   "svelte/spaced-html-comment": [
     ERROR,
-    "always", // or "never"
+    ALWAYS, // or NEVER
   ],
 
   // svelte-kit
