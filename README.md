@@ -197,6 +197,8 @@ Svelte files contain TypeScript and style blocks, while also containing native S
 
 - [JSON](https://github.com/ota-meshi/eslint-plugin-jsonc)
 
+- [JSON Custom Schema Validator](https://github.com/ota-meshi/eslint-plugin-json-schema-validator)
+
 #### Markdown
 
 - [Markdown](https://github.com/eslint/eslint-plugin-markdown)
