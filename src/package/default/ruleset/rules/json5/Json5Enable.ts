@@ -20,7 +20,7 @@ const Json5Enable: IRules = {
       snake_case: true,
       ignores: [
         "^([a-z]+:)+[a-z]+$", // npm scripts, e.g. lint:src
-        "^@{0,1}([a-z]+\\/)*[a-z]+$", // npm packages, e.g. @typescript-eslint/parser
+        "^@{0,1}([a-z-]+\\/)*[a-z-]+$", // npm packages, e.g. @typescript-eslint/parser (slightly overpermissive, allows `-` at beginning & end of nodes)
         "^\\*$", // wildcard, e.g. *
       ],
     },
