@@ -1,4 +1,4 @@
-const OFF = "off";
+const [OFF] = ["off"] as const;
 const SvelteDisableConflictJs: IRules = {
 
   // Recommended by Svelte base config:

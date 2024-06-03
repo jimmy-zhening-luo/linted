@@ -1,4 +1,4 @@
-const OFF = "off";
+const [OFF] = ["off"] as const;
 const SvelteDisableExtend: IRules = {
 
   // DISABLE ESLint: Svelte extensions

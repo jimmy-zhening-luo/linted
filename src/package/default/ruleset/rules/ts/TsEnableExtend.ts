@@ -1,5 +1,10 @@
-const ERROR = "error";
-const OFF = "off";
+const [
+  ERROR,
+  OFF,
+] = [
+  "error",
+  "off",
+] as const;
 const TsEnableExtend: IRules = {
 
   // ENABLE TS Extensions (STEP 2/2)

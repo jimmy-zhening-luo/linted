@@ -1,5 +1,10 @@
-const ERROR = "error";
-const OFF = "off";
+const [
+  ERROR,
+  OFF,
+] = [
+  "error",
+  "off",
+] as const;
 const TsEnable: IRules = {
 
   // ENABLE TSLint (TypeScript ONLY)

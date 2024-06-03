@@ -1,4 +1,4 @@
-const OFF = "off";
+const [OFF] = ["off"] as const;
 const TsDisableExtend: IRules = {
 
   // DISABLE ESLint -- TS Extensions (STEP 1/2)
