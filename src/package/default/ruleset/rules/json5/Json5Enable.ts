@@ -10,6 +10,9 @@ const Json5Enable: IRules = {
   // JSONC Only
   // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#jsonc-rules
   "jsonc/auto": OFF,
+
+  /*
+  // OK I just don't think this rule is very useful
   "jsonc/key-name-casing": [
     ERROR,
     {
@@ -22,9 +25,12 @@ const Json5Enable: IRules = {
         "^([a-z]+:)+[a-z]+$", // npm scripts, e.g. lint:src
         "^@{0,1}([a-z-]+\\/)*[a-z-]+$", // npm packages, e.g. @typescript-eslint/parser (slightly overpermissive, allows `-` at beginning & end of nodes)
         "^\\*$", // wildcard, e.g. *
+        "^\\/$", // root, e.g. /
       ],
     },
   ],
+  */
+  "jsonc/key-name-casing": OFF,
   "jsonc/no-bigint-literals": ERROR,
   "jsonc/no-binary-expression": ERROR,
   "jsonc/no-binary-numeric-literals": ERROR,
