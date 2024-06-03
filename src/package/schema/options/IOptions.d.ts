@@ -1,7 +1,7 @@
 declare type IOptions<
   Plugin,
   Processor,
-  Language = {},
+  LanguageOptions = {},
 > = literalful<
   Processor
 > extends never
@@ -12,8 +12,8 @@ declare type IOptions<
       & StylisticPlugin
       & Plugin
     >
-    & LanguageOptions<
-      Language
+    & ILanguageOptions<
+      LanguageOptions
     >
     )
   : (
@@ -23,8 +23,8 @@ declare type IOptions<
       & StylisticPlugin
       & Plugin
     >
-    & LanguageOptions<
-      Language
+    & ILanguageOptions<
+      LanguageOptions
     >
     & IProcessor<
       Processor

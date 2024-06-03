@@ -1,28 +1,15 @@
 export default abstract class BaseOptions<
   Plugin,
   Processor,
-  Language = {},
+  LanguageOptions = {},
 > {
-  public readonly config: IOptions<
-    Plugin
-    ,
-    Processor
-    ,
-    Language
-  >;
-
   constructor(
-    opts: BaseOptions<
+    public readonly body: IOptions<
       Plugin
       ,
       Processor
       ,
-      Language
-    >[
-      "config"
-    ],
-  ) {
-    this
-      .config = opts;
-  }
+      LanguageOptions
+    >,
+  ) {}
 }

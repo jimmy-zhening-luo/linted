@@ -4,6 +4,7 @@ import SvelteRuleset from "./ruleset/SvelteRuleset.js";
 import JsonRuleset from "./ruleset/JsonRuleset.js";
 import JsoncRuleset from "./ruleset/JsoncRuleset.js";
 import Json5Ruleset from "./ruleset/Json5Ruleset.js";
+import YmlRuleset from "./ruleset/YmlRuleset.js";
 
 export {
   JsRuleset,
@@ -12,4 +13,5 @@ export {
   JsonRuleset,
   JsoncRuleset,
   Json5Ruleset,
+  YmlRuleset,
 };

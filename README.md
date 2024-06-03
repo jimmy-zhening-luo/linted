@@ -1,18 +1,26 @@
-# @jimbojet/lint
+# [@jimbojet/lint](https://www.npmjs.com/package/@jimbojet/lint)
 
-Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON/5/C, and sadly YAML.
+Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, Markdown, JSON/5/C, and sadly YAML.
 
 ## Languages
 
-- TypeScript
+### Web
 
-- JavaScript
+- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):** [`eslint`](https://eslint.org) + [`@stylistic`](https://eslint.style)
 
-- Svelte
+- **[TypeScript](https://typescriptlang.org):** + [`@typescript-eslint`](https://typescript-eslint.io/)
+
+- **[Svelte](https://svelte.dev):** + [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/)
+
+### Data
+
+- **[JSON](https://json.org), [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments), [JSON5](https://json5.org/):** [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
+
+- **[YAML](https://www.redhat.com/en/topics/automation/what-is-yaml):** [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
 
 <br />
 
-*See [**Roadmap**](#roadmap) for upcoming language support.*
+*See language support **[roadmap](#roadmap).***
 
 ## Features
 
@@ -191,13 +199,11 @@ Svelte files contain TypeScript and style blocks, while also containing native S
 
 ## Roadmap
 
-### Next Major Release
+### v11
 
-#### JSON
+#### JSON Custom Schema Validation
 
-- [JSON](https://github.com/ota-meshi/eslint-plugin-jsonc)
-
-- [JSON Custom Schema Validator](https://github.com/ota-meshi/eslint-plugin-json-schema-validator)
+- [JSON Custom Schema Validation](https://github.com/ota-meshi/eslint-plugin-json-schema-validator)
 
 #### Markdown
 
@@ -207,22 +213,14 @@ Svelte files contain TypeScript and style blocks, while also containing native S
 
 - [HTML](https://github.com/BenoitZugmeyer/eslint-plugin-html)
 
-#### CSS
-
-- [CSS](https://ota-meshi.github.io/eslint-plugin-css/)
-
 #### Tailwind PostCSS
 
 - [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 
-
-### Backlog
+- [CSS](https://ota-meshi.github.io/eslint-plugin-css/)
 
 #### Jest
 
 - [Jest](https://github.com/jest-community/eslint-plugin-jest)
+
 - [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
-
-#### YAML (lol)
-
-- [YAML (apt name...)](https://github.com/ota-meshi/eslint-plugin-yml)

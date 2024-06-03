@@ -5,11 +5,14 @@ import svelte from "eslint-plugin-svelte";
 import svelteParser from "svelte-eslint-parser";
 import jsonc from "eslint-plugin-jsonc";
 import jsoncParser from "jsonc-eslint-parser";
+import yml from "eslint-plugin-yml";
+import ymlParser from "yaml-eslint-parser";
 import {
   JsOptions,
   TsOptions,
   SvelteOptions,
   JsonOptions,
+  YmlOptions,
 } from "./default/Options.js";
 import {
   JsRuleset,
@@ -18,6 +21,7 @@ import {
   JsonRuleset,
   JsoncRuleset,
   Json5Ruleset,
+  YmlRuleset,
 } from "./default/Ruleset.js";
 
 declare type Options = {
@@ -27,6 +31,7 @@ declare type Options = {
   json: JsonOptions;
   jsonc: JsonOptions;
   json5: JsonOptions;
+  yml: YmlOptions;
 };
 
 declare type Languages = keyof Options;
@@ -37,7 +42,7 @@ declare type Config<
   & Options[
     Language
   ][
-    "config"
+    "body"
   ]
   & Record<
     "rules"
@@ -77,6 +82,7 @@ export default class Lint {
       overrideJson = {},
       overrideJsonc = {},
       overrideJson5 = {},
+      overrideYml = {},
     }: Partial<
       Record<
         Overrides
@@ -144,6 +150,16 @@ export default class Lint {
               .json5
               ?? [],
           ),
+          yml: new YmlOptions(
+            {
+              ...jsPlugins,
+              yml,
+            },
+            ymlParser,
+            ...files
+              .yml
+              ?? [],
+          ),
         };
       this
         .rulesets = {
@@ -171,6 +187,10 @@ export default class Lint {
             ...Json5Ruleset,
             overrideJson5,
           ],
+          yml: [
+            ...YmlRuleset,
+            overrideYml,
+          ],
         };
     }
     catch (e) {
@@ -193,6 +213,7 @@ export default class Lint {
       "json",
       "jsonc",
       "json5",
+      "yml",
     ] as const;
 
     return languages
@@ -228,7 +249,7 @@ export default class Lint {
 
     return typeof option === "undefined"
       || option
-        .config
+        .body
         .files
         .length < 1
       ? []
@@ -238,7 +259,7 @@ export default class Lint {
             return {
               rules,
               ...option
-                .config,
+                .body,
             };
           },
         );
