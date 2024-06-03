@@ -14,9 +14,6 @@ const [
 ] as const;
 const YmlEnable: IRules = {
 
-  // https://redhat.com/en/topics/automation/what-is-yaml
-  // https://yaml.org
-
   // YAML Only
   // https://ota-meshi.github.io/eslint-plugin-yml/rules/#yaml-rules
   "yml/block-mapping-colon-indicator-newline": [

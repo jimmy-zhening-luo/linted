@@ -1,7 +1,9 @@
-const JsonRuleset: IRules[] = [];
+import JsoncRuleset from "./JsoncRuleset.js";
+import JsonEnable from "./rules/json/JsonEnable.js";
 
-// https://json.org
-// https://github.com/ota-meshi/eslint-plugin-jsonc/blob/master/lib/configs/flat/base.ts
-// https://ota-meshi.github.io/eslint-plugin-jsonc/rules/
+const JsonRuleset: IRules[] = [
+  ...JsoncRuleset,
+  JsonEnable,
+];
 
 export default JsonRuleset;
