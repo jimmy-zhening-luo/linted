@@ -1,4 +1,5 @@
 import BaseOptions from "./base/BaseOptions.js";
+import type JsOptions from "./JsOptions.js";
 
 export default class SvelteOptions extends BaseOptions<
   & SveltePlugin
@@ -6,7 +7,8 @@ export default class SvelteOptions extends BaseOptions<
   ,
   "svelte/svelte"
   ,
-  SvelteLanguage
+  & JsOptions["body"]["languageOptions"]
+  & SvelteLanguage
 > {
   constructor(
     plugins:

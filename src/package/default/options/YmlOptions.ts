@@ -22,7 +22,7 @@ export default class YmlOptions extends BaseOptions<
           noInlineConfig: true,
           reportUnusedDisableDirectives: true,
         },
-        languageOptions: ({ parser } as unknown as YmlOptions["body"]["languageOptions"]),
+        languageOptions: { parser },
 
       },
     );

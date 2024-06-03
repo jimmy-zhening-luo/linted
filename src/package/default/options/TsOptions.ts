@@ -1,11 +1,13 @@
 import BaseOptions from "./base/BaseOptions.js";
+import type JsOptions from "./JsOptions.js";
 
 export default class TsOptions extends BaseOptions<
   TsPlugin
   ,
   ""
   ,
-  TsLanguage
+  & JsOptions["body"]["languageOptions"]
+  & TsLanguage
 > {
   constructor(
     plugins:

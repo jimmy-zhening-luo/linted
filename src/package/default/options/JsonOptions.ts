@@ -22,7 +22,7 @@ export default class JsonOptions extends BaseOptions<
           noInlineConfig: true,
           reportUnusedDisableDirectives: true,
         },
-        languageOptions: ({ parser } as unknown as JsonOptions["body"]["languageOptions"]),
+        languageOptions: { parser },
       },
     );
   }

@@ -3,6 +3,5 @@ declare type ILanguageOptions<
 > = Record<
   "languageOptions"
   ,
-  & EcmaLanguage
-  & LanguageOptions
+  LanguageOptions
 >;
