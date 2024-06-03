@@ -64,7 +64,7 @@ const YmlEnable: IRules = {
       camelCase: true,
       PascalCase: false,
       SCREAMING_SNAKE_CASE: false,
-      "kebab-case": false,
+      "kebab-case": true,
       snake_case: false,
     },
   ],
