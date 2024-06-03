@@ -22,11 +22,7 @@ export default class JsonOptions extends BaseOptions<
           noInlineConfig: true,
           reportUnusedDisableDirectives: true,
         },
-        languageOptions: {
-          ecmaVersion: "latest",
-          sourceType: "module",
-          parser,
-        },
+        languageOptions: ({ parser } as unknown as JsonOptions["body"]["languageOptions"]),
       },
     );
   }

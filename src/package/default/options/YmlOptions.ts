@@ -22,11 +22,8 @@ export default class YmlOptions extends BaseOptions<
           noInlineConfig: true,
           reportUnusedDisableDirectives: true,
         },
-        languageOptions: {
-          ecmaVersion: "latest",
-          sourceType: "module",
-          parser,
-        },
+        languageOptions: ({ parser } as unknown as YmlOptions["body"]["languageOptions"]),
+
       },
     );
   }
