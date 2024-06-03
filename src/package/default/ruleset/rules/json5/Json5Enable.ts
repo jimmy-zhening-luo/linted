@@ -18,6 +18,7 @@ const Json5Enable: IRules = {
       SCREAMING_SNAKE_CASE: false,
       "kebab-case": false,
       snake_case: true,
+      ignores: ["^([a-z]+:)+[a-z]+$"], // package.json npm scripts, e.g. lint:src
     },
   ],
   "jsonc/no-bigint-literals": ERROR,
