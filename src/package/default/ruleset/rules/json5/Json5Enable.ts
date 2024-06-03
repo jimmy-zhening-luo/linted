@@ -18,7 +18,11 @@ const Json5Enable: IRules = {
       SCREAMING_SNAKE_CASE: false,
       "kebab-case": false,
       snake_case: true,
-      ignores: ["^([a-z]+:)+[a-z]+$"], // package.json npm scripts, e.g. lint:src
+      ignores: [
+        "^([a-z]+:)+[a-z]+$", // npm scripts, e.g. lint:src
+        "^@{0,1}([a-z]+\\/)*[a-z]+$", // npm packages, e.g. @typescript-eslint/parser
+        "^\\*$", // wildcard, e.g. *
+      ],
     },
   ],
   "jsonc/no-bigint-literals": ERROR,
