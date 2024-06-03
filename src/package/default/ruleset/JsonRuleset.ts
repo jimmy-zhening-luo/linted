@@ -1,9 +1,9 @@
 import JsoncRuleset from "./JsoncRuleset.js";
-import JsonEnable from "./rules/json/JsonEnable.js";
+import JsonUnsupported from "./rules/json/JsonUnsupported.js";
 
 const JsonRuleset: IRules[] = [
   ...JsoncRuleset,
-  JsonEnable,
+  JsonUnsupported,
 ];
 
 export default JsonRuleset;
