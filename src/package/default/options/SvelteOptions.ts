@@ -5,7 +5,7 @@ export default class SvelteOptions extends BaseOptions<
   & SveltePlugin
   & TsPlugin
   ,
-  "svelte/svelte"
+  SvelteProcessor
   ,
   & JsOptions["body"]["languageOptions"]
   & SvelteLanguage
@@ -17,12 +17,11 @@ export default class SvelteOptions extends BaseOptions<
       & TsPlugin,
     tsParser: unknown,
     svelteParser: unknown,
-    processor: SvelteProcessor,
     ...files: string[]
   ) {
     super(
       {
-        processor,
+        processor: "svelte/svelte",
         files,
         plugins,
         linterOptions: {

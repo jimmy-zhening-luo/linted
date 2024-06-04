@@ -1,17 +1,21 @@
 import BaseOptions from "./base/BaseOptions.js";
 
 export default class MdOptions extends BaseOptions<
-  PrettierPlugin,
-  ""
+  & PrettierPlugin
+  & MdPlugin
+  ,
+  MdProcessor
 > {
   constructor(
     plugins:
       & StylisticPlugin
-      & PrettierPlugin,
+      & PrettierPlugin
+      & MdPlugin,
     ...files: string[]
   ) {
     super(
       {
+        processor: "markdown/markdown",
         files,
         plugins,
         linterOptions: {

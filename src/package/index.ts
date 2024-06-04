@@ -8,6 +8,7 @@ import jsonc from "eslint-plugin-jsonc";
 import jsoncParser from "jsonc-eslint-parser";
 import yml from "eslint-plugin-yml";
 import ymlParser from "yaml-eslint-parser";
+import markdown from "eslint-plugin-markdown";
 import {
   JsOptions,
   TsOptions,
@@ -133,7 +134,6 @@ export default class Lint {
             },
             parser,
             svelteParser,
-            "svelte/svelte",
             ...files
               .svelte
               ?? [],
@@ -170,7 +170,10 @@ export default class Lint {
               ?? [],
           ),
           md: new MdOptions(
-            formatterPlugins,
+            {
+              ...formatterPlugins,
+              markdown,
+            },
             ...files
               .md
               ?? [],
