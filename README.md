@@ -96,12 +96,11 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
     processor: "svelte/svelte"
   ```
 
-
 ## Install
 
 1. Install [`eslint`](https://www.npmjs.com/package/eslint) and [`@jimbojet/lint`](https://www.npmjs.com/package/@jimbojet/lint)
 
-    ```
+    ```bash
     npm i -D eslint @jimbojet/lint
     ```
 
@@ -154,18 +153,15 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
         ];
         ```
 
-
 ## Rule Logic (Advanced)
 
 ### Language Mapping
 
 Description TBD
 
-
 ### Overrides
 
 Description TBD
-
 
 ### Example
 
@@ -194,8 +190,6 @@ Svelte files contain TypeScript and style blocks, while also containing native S
 - Same TypeScript logic as for TypeScript blocks, but the Svelte parser has some additional smarts when producing the AST, so only certain TypeScript rules will apply (I have no idea how this works, so take it up with the Svelte parser team).
 
 - Any Svelte overrides (including of TypeScript or base ESLint rules).
-
-
 
 ## Roadmap
 
