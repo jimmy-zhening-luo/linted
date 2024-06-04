@@ -1,5 +1,4 @@
 import stylistic from "@stylistic/eslint-plugin";
-import prettier from "eslint-plugin-prettier";
 import plugin from "@typescript-eslint/eslint-plugin";
 import parser from "@typescript-eslint/parser";
 import svelte from "eslint-plugin-svelte";
@@ -8,14 +7,12 @@ import jsonc from "eslint-plugin-jsonc";
 import jsoncParser from "jsonc-eslint-parser";
 import yml from "eslint-plugin-yml";
 import ymlParser from "yaml-eslint-parser";
-import markdown from "eslint-plugin-markdown";
 import {
   JsOptions,
   TsOptions,
   SvelteOptions,
   JsonOptions,
   YmlOptions,
-  MdOptions,
 } from "./default/Options.js";
 import {
   JsRuleset,
@@ -25,7 +22,6 @@ import {
   JsoncRuleset,
   Json5Ruleset,
   YmlRuleset,
-  MdRuleset,
 } from "./default/Ruleset.js";
 
 declare type Options = {
@@ -36,7 +32,6 @@ declare type Options = {
   jsonc: JsonOptions;
   json5: JsonOptions;
   yml: YmlOptions;
-  md: MdOptions;
 };
 
 declare type Languages = keyof Options;
@@ -88,7 +83,6 @@ export default class Lint {
       overrideJsonc = {},
       overrideJson5 = {},
       overrideYml = {},
-      overrideMd = {},
     }: Partial<
       Record<
         Overrides
@@ -106,10 +100,6 @@ export default class Lint {
       const jsonPlugins = {
         ...jsPlugins,
         jsonc,
-      };
-      const formatterPlugins = {
-        ...jsPlugins,
-        prettier: prettier as unknown,
       };
 
       this
@@ -169,15 +159,6 @@ export default class Lint {
               .yml
               ?? [],
           ),
-          md: new MdOptions(
-            {
-              ...formatterPlugins,
-              markdown,
-            },
-            ...files
-              .md
-              ?? [],
-          ),
         };
       this
         .rulesets = {
@@ -209,10 +190,6 @@ export default class Lint {
             ...YmlRuleset,
             overrideYml,
           ],
-          md: [
-            ...MdRuleset,
-            overrideMd,
-          ],
         };
     }
     catch (e) {
@@ -236,7 +213,6 @@ export default class Lint {
       "jsonc",
       "json5",
       "yml",
-      "md",
     ] as const;
 
     return languages
