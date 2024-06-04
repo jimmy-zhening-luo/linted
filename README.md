@@ -1,4 +1,4 @@
-# [@jimbojet/lint](https://www.npmjs.com/package/@jimbojet/lint)
+# [@jimbojet/lint](https://npmjs.com/package/@jimbojet/lint)
 
 Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON/5/C, and sadly YAML.
 
@@ -16,7 +16,7 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 
 - **[JSON](https://json.org), [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments), [JSON5](https://json5.org/):** [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
 
-- **[YAML](https://www.redhat.com/en/topics/automation/what-is-yaml):** [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
+- **[YAML](https://redhat.com/en/topics/automation/what-is-yaml):** [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
 
 <br />
 
@@ -98,7 +98,7 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 
 ## Install
 
-1. Install [`eslint`](https://www.npmjs.com/package/eslint) and [`@jimbojet/lint`](https://www.npmjs.com/package/@jimbojet/lint)
+1. Install [`eslint`](https://npmjs.com/package/eslint) and [`@jimbojet/lint`](https://npmjs.com/package/@jimbojet/lint)
 
     ```bash
     npm i -D eslint @jimbojet/lint
@@ -195,13 +195,13 @@ Svelte files contain TypeScript and style blocks, while also containing native S
 
 ### v11
 
-#### JSON Custom Schema Validation
-
-- [JSON Custom Schema Validation](https://github.com/ota-meshi/eslint-plugin-json-schema-validator)
-
 #### HTML
 
-- [HTML](https://github.com/BenoitZugmeyer/eslint-plugin-html)
+- [HTML](https://html-eslint.org/)
+
+- [HTML Script Block](https://github.com/BenoitZugmeyer/eslint-plugin-html)
+
+- HTML Style Block?
 
 #### Tailwind PostCSS
 
@@ -214,3 +214,7 @@ Svelte files contain TypeScript and style blocks, while also containing native S
 - [Jest](https://github.com/jest-community/eslint-plugin-jest)
 
 - [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
+
+#### JSON Custom Schema Validation
+
+- [JSON Custom Schema Validation](https://github.com/ota-meshi/eslint-plugin-json-schema-validator)
