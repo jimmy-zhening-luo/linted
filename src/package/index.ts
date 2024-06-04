@@ -108,8 +108,8 @@ export default class Lint {
       };
       const formatterPlugins = {
         ...jsPlugins,
-        prettier,
-      }
+        prettier: prettier as unknown,
+      };
 
       this
         .options = {
