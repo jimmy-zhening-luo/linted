@@ -62,42 +62,52 @@ const OPTIONS = {
     },
   },
   linterOptions: {
-    js: {
+    base: {
       noInlineConfig: true,
       reportUnusedDisableDirectives: true,
     },
+    get js() {
+      return OPTIONS
+        .linterOptions
+        .base;
+    },
     get ts() {
       return OPTIONS
         .linterOptions
-        .js;
+        .base;
     },
     get jsonc() {
       return OPTIONS
         .linterOptions
-        .js;
+        .base;
     },
     get json() {
       return OPTIONS
         .linterOptions
-        .js;
+        .base;
     },
   },
   processor: {
-    js: {},
+    base: {},
+    get js() {
+      return OPTIONS
+        .processor
+        .base;
+    },
     get ts() {
       return OPTIONS
         .processor
-        .js;
+        .base;
     },
     get jsonc() {
       return OPTIONS
         .processor
-        .js;
+        .base;
     },
     get json() {
       return OPTIONS
         .processor
-        .js;
+        .base;
     },
   },
 };
@@ -119,12 +129,12 @@ function flat(
             .plugins[
               language
             ],
-          linterOptions: OPTIONS
-            .linterOptions[
-              language
-            ],
           languageOptions: OPTIONS
             .languageOptions[
+              language
+            ],
+          linterOptions: OPTIONS
+            .linterOptions[
               language
             ],
           ...OPTIONS
