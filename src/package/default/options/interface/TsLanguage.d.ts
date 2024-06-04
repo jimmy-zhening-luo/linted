@@ -1,7 +1,7 @@
 declare type TsLanguage = {
   parser: unknown;
   parserOptions:
-    & EcmaLanguage
+    & JsLanguage
     & Record<
       "project"
       ,
