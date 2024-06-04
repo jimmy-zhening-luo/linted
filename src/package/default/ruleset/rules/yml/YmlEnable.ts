@@ -62,7 +62,7 @@ const YmlEnable: IRules = {
       PascalCase: false,
       SCREAMING_SNAKE_CASE: false,
       "kebab-case": true,
-      snake_case: false,
+      snake_case: true,
     },
   ],
   "yml/no-empty-document": ERROR,
