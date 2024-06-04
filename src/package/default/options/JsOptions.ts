@@ -3,7 +3,7 @@ import BaseOptions from "./base/BaseOptions.js";
 export default class JsOptions extends BaseOptions<
   {},
   "",
-  EcmaLanguage
+  JsLanguage
 > {
   constructor(
     plugins: StylisticPlugin,

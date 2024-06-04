@@ -1,4 +1,4 @@
-declare type EcmaLanguage =
+declare type JsLanguage =
   & Record<
     "ecmaVersion"
     ,
