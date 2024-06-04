@@ -2,9 +2,11 @@ const [ERROR] = ["error"] as const;
 const [
   ALWAYS,
   NEVER,
+  CONSISTENT,
 ] = [
   "always",
   "never",
+  "consistent",
 ] as const;
 const Json5EnableExtend: IRules = {
 
@@ -12,10 +14,7 @@ const Json5EnableExtend: IRules = {
   // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
   "jsonc/array-bracket-newline": [
     ERROR,
-    {
-      multiline: true,
-      minItems: null,
-    },
+    CONSISTENT,
   ],
   "jsonc/array-bracket-spacing": [
     ERROR,
