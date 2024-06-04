@@ -373,7 +373,7 @@ const StylisticEnable: IRules = {
   ],
   "@stylistic/object-property-newline": [
     ERROR,
-    { allowAllPropertiesOnSameLine: true },
+    { allowAllPropertiesOnSameLine: false },
   ],
   "@stylistic/one-var-declaration-per-line": [
     ERROR,
