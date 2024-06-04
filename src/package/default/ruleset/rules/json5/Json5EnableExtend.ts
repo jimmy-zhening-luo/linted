@@ -28,10 +28,7 @@ const Json5EnableExtend: IRules = {
   ],
   "jsonc/array-element-newline": [
     ERROR,
-    {
-      mutiline: true,
-      minItems: 2,
-    },
+    ALWAYS,
   ],
   "jsonc/comma-dangle": [
     ERROR,
