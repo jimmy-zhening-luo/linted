@@ -1,11 +1,13 @@
 import BaseOptions from "./base/BaseOptions.js";
 
 export default class MdOptions extends BaseOptions<
-  {},
+  PrettierPlugin,
   ""
 > {
   constructor(
-    plugins: PrettierPlugin,
+    plugins:
+      & StylisticPlugin
+      & PrettierPlugin,
     ...files: string[]
   ) {
     super(
