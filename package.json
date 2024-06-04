@@ -81,6 +81,7 @@
     "yaml-eslint-parser": "~1.2.3"
   },
   "devDependencies": {
+    "@types/eslint-plugin-markdown": "^2.0.2",
     "eslint": "~8.57.0",
     "typescript": "^5.4.5"
   }
