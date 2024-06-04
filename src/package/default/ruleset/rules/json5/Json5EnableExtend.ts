@@ -29,8 +29,8 @@ const Json5EnableExtend: IRules = {
   "jsonc/array-element-newline": [
     ERROR,
     {
-      ArrayExpression: ALWAYS,
-      ArrayPattern: ALWAYS,
+      mutiline: true,
+      minItems: 2,
     },
   ],
   "jsonc/comma-dangle": [
@@ -75,7 +75,7 @@ const Json5EnableExtend: IRules = {
     {
       multiline: true,
       minProperties: 2,
-      consistent: false,
+      consistent: true,
     },
   ],
   "jsonc/object-curly-spacing": [
@@ -88,16 +88,11 @@ const Json5EnableExtend: IRules = {
   ],
   "jsonc/object-property-newline": [
     ERROR,
-    { allowAllPropertiesOnSameLine: true },
+    { allowAllPropertiesOnSameLine: false },
   ],
   "jsonc/quote-props": [
     ERROR,
     ALWAYS,
-    {
-      keywords: true,
-      unnecessary: true,
-      numbers: false,
-    },
   ],
   "jsonc/quotes": [
     ERROR,
