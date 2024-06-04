@@ -1,6 +1,6 @@
 # [@jimbojet/lint](https://www.npmjs.com/package/@jimbojet/lint)
 
-Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, Markdown, JSON/5/C, and sadly YAML.
+Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON/5/C, and sadly YAML.
 
 ## Languages
 
@@ -173,7 +173,7 @@ Description TBD
 
 #### Svelte
 
-Svelte files contain TypeScript and style blocks, while also containing native Svelte tags whose attributes may contain TypeScript or style. Talk about a linting clusterfuck.
+Svelte files contain TypeScript and style blocks, while also containing native Svelte tags whose attributes may contain TypeScript or style.
 
 ##### TypeScript blocks inside `.svelte` files
 
@@ -198,10 +198,6 @@ Svelte files contain TypeScript and style blocks, while also containing native S
 #### JSON Custom Schema Validation
 
 - [JSON Custom Schema Validation](https://github.com/ota-meshi/eslint-plugin-json-schema-validator)
-
-#### Markdown
-
-- [Markdown](https://github.com/eslint/eslint-plugin-markdown)
 
 #### HTML
 
