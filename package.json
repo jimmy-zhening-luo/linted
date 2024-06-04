@@ -28,27 +28,28 @@
   "private": false,
   "main": "dist/package/index.js",
   "types": "dist/package/index.d.ts",
-  "files": [
-    "dist/package"
-  ],
+  "files": ["dist/package"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jimmy-zhening-luo/lint.git"
   },
   "author": "Jimmy Zhening Luo",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jimmy-zhening-luo/lint/issues"
-  },
+  "bugs": { "url": "https://github.com/jimmy-zhening-luo/lint/issues" },
   "homepage": "https://github.com/jimmy-zhening-luo/lint#readme",
   "scripts": {
     "es": "eslint --fix --cache --cache-strategy content -c eslint.config.js",
-    "lint": "npm run lint:config && npm run lint:src",
-    "lint:config": "npm run lint:config:js:project && npm run lint:config:js",
-    "lint:src": "npm run lint:src:ts",
-    "lint:config:js:project": "npm run es -- project/lint/**/*.config.js",
+    "lint": "npm run lint:config && npm run lint:src && npm run lint:ci",
+    "lint:config": "npm run lint:config:json && npm run lint:config:js && npm run lint:config:js:project && npm run lint:config:ts",
+    "lint:config:json": "",
     "lint:config:js": "npm run es -- *.config.js",
+    "lint:config:js:project": "npm run es -- project/lint/**/*.config.js",
+    "lint:config:ts": "",
+    "lint:src": "npm run lint:src:ts && npm run lint:src:svelte",
     "lint:src:ts": "npm run es -- src/**/*.ts",
+    "lint:src:svelte": "",
+    "lint:ci": "npm run lint:ci:yml",
+    "lint:ci:yml": "",
     "prebuild": "npm run lint",
     "build": "tsc",
     "pretest": "npm run build",
