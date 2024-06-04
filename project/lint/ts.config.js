@@ -1,9 +1,15 @@
-import js from "./js.config.js";
-import disable from "./ts.disable.config.js";
-import enable from "./ts.enable.config.js";
+import JsRuleset from "./js.config.js";
+import TsDisableCompile from "./ts/ts.disable.compile.config.js";
+import TsDisableExtend from "./ts/ts.disable.extend.config.js";
+import TsEnableExtend from "./ts/ts.enable.extend.config.js";
+import TsEnable from "./ts/ts.enable.config.js";
 
-export default [
-  ...js,
-  ...disable,
-  ...enable,
+const TsRuleset = [
+  ...JsRuleset,
+  TsDisableCompile,
+  TsDisableExtend,
+  TsEnableExtend,
+  TsEnable,
 ];
+
+export default TsRuleset;

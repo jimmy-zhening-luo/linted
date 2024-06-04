@@ -1,7 +1,18 @@
-const ERROR = "error";
-const OFF = "off";
-
-export default {
+const [
+  ERROR,
+  OFF,
+] = [
+  "error",
+  "off",
+];
+const [
+  ALWAYS,
+  NEVER,
+] = [
+  "always",
+  "never",
+];
+const StylisticEnable = {
 
   // https://eslint.style/rules
   "@stylistic/array-bracket-newline": [
@@ -13,7 +24,7 @@ export default {
   ],
   "@stylistic/array-bracket-spacing": [
     ERROR,
-    "never",
+    NEVER,
     {
       singleValue: false,
       objectsInArrays: false,
@@ -23,8 +34,8 @@ export default {
   "@stylistic/array-element-newline": [
     ERROR,
     {
-      ArrayExpression: "always",
-      ArrayPattern: "always",
+      ArrayExpression: ALWAYS,
+      ArrayPattern: ALWAYS,
     },
   ],
   "@stylistic/arrow-parens": [
@@ -41,7 +52,7 @@ export default {
   ],
   "@stylistic/block-spacing": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/brace-style": [
     ERROR,
@@ -80,7 +91,7 @@ export default {
   ],
   "@stylistic/computed-property-spacing": [
     ERROR,
-    "never",
+    NEVER,
     { enforceForClassMembers: true },
   ],
   "@stylistic/dot-location": [
@@ -89,15 +100,15 @@ export default {
   ],
   "@stylistic/eol-last": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/function-call-argument-newline": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/function-call-spacing": [
     ERROR,
-    "never",
+    NEVER,
   ],
 
   // Useless rule. See issue with my comment: https://github.com/eslint-community/eslint-stylistic/issues/290
@@ -201,17 +212,17 @@ export default {
     {
       enforce: [
         {
-          blankLine: "never",
+          blankLine: NEVER,
           prev: "field",
           next: "field",
         },
         {
-          blankLine: "always",
+          blankLine: ALWAYS,
           prev: "field",
           next: "method",
         },
         {
-          blankLine: "always",
+          blankLine: ALWAYS,
           prev: "method",
           next: "*",
         },
@@ -257,11 +268,11 @@ export default {
   ],
   "@stylistic/multiline-ternary": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/new-parens": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/newline-per-chained-call": [
     ERROR,
@@ -354,7 +365,7 @@ export default {
   ],
   "@stylistic/object-curly-spacing": [
     ERROR,
-    "always",
+    ALWAYS,
     {
       arraysInObjects: true,
       objectsInObjects: true,
@@ -362,11 +373,11 @@ export default {
   ],
   "@stylistic/object-property-newline": [
     ERROR,
-    { allowAllPropertiesOnSameLine: true },
+    { allowAllPropertiesOnSameLine: false },
   ],
   "@stylistic/one-var-declaration-per-line": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/operator-linebreak": [
     ERROR,
@@ -382,26 +393,26 @@ export default {
   "@stylistic/padded-blocks": [
     ERROR,
     {
-      blocks: "never",
-      classes: "never",
-      switches: "never",
+      blocks: NEVER,
+      classes: NEVER,
+      switches: NEVER,
     },
     { allowSingleLineBlocks: true },
   ],
   "@stylistic/padding-line-between-statements": [
     ERROR,
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "directive",
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "directive",
       next: "directive",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: [
         "import",
         "cjs-import",
@@ -409,7 +420,7 @@ export default {
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: [
         "import",
         "cjs-import",
@@ -420,7 +431,7 @@ export default {
       ],
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: [
         "class",
         "interface",
@@ -440,12 +451,12 @@ export default {
       next: "*",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "case",
       next: "*",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "case",
       next: [
         "case",
@@ -453,42 +464,42 @@ export default {
       ],
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "default",
       next: "*",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "type",
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "type",
       next: "type",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "function",
       next: "*",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "function-overload",
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "function-overload",
       next: "function-overload",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "function-overload",
       next: "function",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: [
         "const",
         "let",
@@ -497,7 +508,7 @@ export default {
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: [
         "const",
         "let",
@@ -510,17 +521,17 @@ export default {
       ],
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "expression",
       next: "*",
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: "expression",
       next: "expression",
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "*",
       next: [
         "throw",
@@ -530,7 +541,7 @@ export default {
       ],
     },
     {
-      blankLine: "always",
+      blankLine: ALWAYS,
       prev: "*",
       next: [
         "export",
@@ -538,7 +549,7 @@ export default {
       ],
     },
     {
-      blankLine: "never",
+      blankLine: NEVER,
       prev: [
         "export",
         "cjs-export",
@@ -568,11 +579,11 @@ export default {
   ],
   "@stylistic/rest-spread-spacing": [
     ERROR,
-    "never",
+    NEVER,
   ],
   "@stylistic/semi": [
     ERROR,
-    "always",
+    ALWAYS,
     {
       omitLastInOneLineBlock: false,
       omitLastInOneLineClassBody: false,
@@ -592,22 +603,22 @@ export default {
   "@stylistic/space-before-blocks": [
     ERROR,
     {
-      functions: "always",
-      keywords: "always",
-      classes: "always",
+      functions: ALWAYS,
+      keywords: ALWAYS,
+      classes: ALWAYS,
     },
   ],
   "@stylistic/space-before-function-paren": [
     ERROR,
     {
-      anonymous: "always",
-      named: "never",
-      asyncArrow: "always",
+      anonymous: ALWAYS,
+      named: NEVER,
+      asyncArrow: ALWAYS,
     },
   ],
   "@stylistic/space-in-parens": [
     ERROR,
-    "never",
+    NEVER,
   ],
   "@stylistic/space-infix-ops": [
     ERROR,
@@ -623,7 +634,7 @@ export default {
   ],
   "@stylistic/spaced-comment": [
     ERROR,
-    "always",
+    ALWAYS,
   ],
   "@stylistic/switch-colon-spacing": [
     ERROR,
@@ -634,11 +645,11 @@ export default {
   ],
   "@stylistic/template-curly-spacing": [
     ERROR,
-    "never",
+    NEVER,
   ],
   "@stylistic/template-tag-spacing": [
     ERROR,
-    "never",
+    NEVER,
   ],
   "@stylistic/type-annotation-spacing": [
     ERROR,
@@ -663,3 +674,5 @@ export default {
     },
   ],
 };
+
+export default StylisticEnable;
