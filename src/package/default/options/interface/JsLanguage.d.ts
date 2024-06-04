@@ -1,12 +1,4 @@
-declare type JsLanguage =
-  & Record<
-    "ecmaVersion"
-    ,
-    "latest"
-  >
-  & Record<
-    "sourceType"
-    ,
-    "module"
-  >
-;
+declare type JsLanguage = {
+  ecmaVersion: "latest";
+  sourceType: "module";
+};
