@@ -1,6 +1,4 @@
-declare type LinterOptions = Record<
-  "linterOptions"
-  ,
+declare type EsLinter = ILinterOptions<
   Record<
     | "noInlineConfig"
     | "reportUnusedDisableDirectives"

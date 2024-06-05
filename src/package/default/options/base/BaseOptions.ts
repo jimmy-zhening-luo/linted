@@ -5,6 +5,8 @@ export default abstract class BaseOptions<
 > {
   constructor(
     public readonly body: IOptions<
+      EsLinter
+      ,
       Plugin
       ,
       LanguageOptions

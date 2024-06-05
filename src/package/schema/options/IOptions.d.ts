@@ -1,4 +1,5 @@
 declare type IOptions<
+  LinterOptions,
   Plugin,
   LanguageOptions,
   Processor,
@@ -7,9 +8,11 @@ declare type IOptions<
 > extends never
   ? (
     & IFiles
-    & LinterOptions
+    & ILinterOptions<
+      LinterOptions
+    >
     & IPlugins<
-      & Plugin
+      Plugin
     >
     & ILanguageOptions<
       LanguageOptions
@@ -17,9 +20,11 @@ declare type IOptions<
     )
   : (
     & IFiles
-    & LinterOptions
+    & ILinterOptions<
+      LinterOptions
+    >
     & IPlugins<
-      & Plugin
+      Plugin
     >
     & ILanguageOptions<
       LanguageOptions
