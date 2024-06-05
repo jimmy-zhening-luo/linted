@@ -1,16 +1,8 @@
-import stylistic from "@stylistic/eslint-plugin";
-import plugin from "@typescript-eslint/eslint-plugin";
-import parser from "@typescript-eslint/parser";
-import svelte from "eslint-plugin-svelte";
-import svelteParser from "svelte-eslint-parser";
-import jsonc from "eslint-plugin-jsonc";
-import jsoncParser from "jsonc-eslint-parser";
-import yml from "eslint-plugin-yml";
-import ymlParser from "yaml-eslint-parser";
 import {
   JsOptions,
   TsOptions,
   SvelteOptions,
+  HtmlOptions,
   JsonOptions,
   YmlOptions,
 } from "./default/Options.js";
@@ -18,169 +10,233 @@ import {
   JsRuleset,
   TsRuleset,
   SvelteRuleset,
+  HtmlRuleset,
   JsoncRuleset,
   JsonRuleset,
   YmlRuleset,
 } from "./default/Ruleset.js";
+import stylistic from "@stylistic/eslint-plugin";
+import ts from "@typescript-eslint/eslint-plugin";
+import svelte from "eslint-plugin-svelte";
+import html from "@html-eslint/eslint-plugin";
+import jsonc from "eslint-plugin-jsonc";
+import yml from "eslint-plugin-yml";
+import tsParser from "@typescript-eslint/parser";
+import svelteParser from "svelte-eslint-parser";
+import htmlParser from "@html-eslint/parser";
+import jsoncParser from "jsonc-eslint-parser";
+import ymlParser from "yaml-eslint-parser";
 
-declare type Options = {
-  js: JsOptions;
-  ts: TsOptions;
-  svelte: SvelteOptions;
-  jsonc: JsonOptions;
-  json5: JsonOptions;
-  json: JsonOptions;
-  yml: YmlOptions;
-};
+declare type Language = keyof typeof OptionsConstructor;
 
-declare type Languages = keyof Options;
-
-declare type Config<
-  Language extends Languages,
-> =
-  & Options[
-    Language
-  ][
-    "body"
-  ]
-  & Record<
-    "rules"
-    ,
-    IRules
-  >
-;
-
-declare type Rulesets = Record<
-  Languages
+const OptionsConstructor = {
+  js: JsOptions,
+  ts: TsOptions,
+  svelte: SvelteOptions,
+  html: HtmlOptions,
+  jsonc: JsonOptions,
+  json5: JsonOptions,
+  json: JsonOptions,
+  yml: YmlOptions,
+} as const;
+const DefaultRulesets: Record<
+  Language
   ,
   IRules[]
->;
+> = {
+  js: JsRuleset,
+  ts: TsRuleset,
+  svelte: SvelteRuleset,
+  html: HtmlRuleset,
+  jsonc: JsoncRuleset,
+  json5: JsoncRuleset,
+  json: JsonRuleset,
+  yml: YmlRuleset,
+};
+const Plugin = {
+  js: { "@stylistic": stylistic },
+  ts: {
+    "@stylistic": stylistic,
+    "@typescript-eslint": ts,
+  },
+  svelte: {
+    "@stylistic": stylistic,
+    "@typescript-eslint": ts,
+    svelte,
+  },
+  html: { "@html-eslint": html },
+  jsonc: { jsonc },
+  json5: { jsonc },
+  json: { jsonc },
+  yml: { yml },
+} as const;
+const Parser = {
+  ts: tsParser,
+  svelte: svelteParser,
+  html: htmlParser,
+  jsonc: jsoncParser,
+  json5: jsoncParser,
+  json: jsoncParser,
+  yml: ymlParser,
+} as const;
 
-declare type Overrides = `override${
-  Capitalize<
-    Languages
-  >
-}`;
-
-export default class Lint {
-  protected readonly options: Options;
-  protected readonly rulesets: Rulesets;
+export default class {
+  protected readonly options: Lint
+    .Property
+    .Options;
+  protected readonly rulesets: Lint
+    .Property
+    .Rulesets;
 
   constructor(
-    files: Partial<
-      Record<
-        Languages
-        ,
-        string[]
-      >
-    > = {},
-    {
-      overrideJs = {},
-      overrideTs = {},
-      overrideSvelte = {},
-      overrideJson = {},
-      overrideJsonc = {},
-      overrideJson5 = {},
-      overrideYml = {},
-    }: Partial<
-      Record<
-        Overrides
-        ,
-        IRules
-      >
-    > = {},
+    files: Lint
+      .Parameter
+      .Files = {},
+    override: Lint
+      .Parameter
+      .Override = {},
   ) {
     try {
-      const jsPlugins = { "@stylistic": stylistic };
-      const tsPlugins = {
-        ...jsPlugins,
-        "@typescript-eslint": plugin,
-      };
-
       this
         .options = {
-          js: new JsOptions(
-            jsPlugins,
-            ...files
-              .js
-              ?? [],
-          ),
-          ts: new TsOptions(
-            tsPlugins,
-            parser,
-            ...files
-              .ts
-              ?? [],
-          ),
-          svelte: new SvelteOptions(
-            {
-              ...tsPlugins,
-              svelte,
-            },
-            svelteParser,
-            parser,
-            ...files
-              .svelte
-              ?? [],
-          ),
-          jsonc: new JsonOptions(
-            { jsonc },
-            jsoncParser,
-            ...files
-              .jsonc
-              ?? [],
-          ),
-          json5: new JsonOptions(
-            { jsonc },
-            jsoncParser,
-            ...files
-              .json5
-              ?? [],
-          ),
-          json: new JsonOptions(
-            { jsonc },
-            jsoncParser,
-            ...files
-              .json
-              ?? [],
-          ),
-          yml: new YmlOptions(
-            { yml },
-            ymlParser,
-            ...files
-              .yml
-              ?? [],
-          ),
+          js: new OptionsConstructor
+            .js(
+              Plugin
+                .js,
+              ...files
+                .js
+                ?? [],
+            ),
+          ts: new OptionsConstructor
+            .ts(
+              Plugin
+                .ts,
+              Parser
+                .ts,
+              ...files
+                .ts
+                ?? [],
+            ),
+          svelte: new OptionsConstructor
+            .svelte(
+              Plugin
+                .svelte,
+              Parser
+                .svelte,
+              Parser
+                .ts,
+              ...files
+                .svelte
+                ?? [],
+            ),
+          html: new OptionsConstructor
+            .html(
+              Plugin
+                .html,
+              Parser
+                .html,
+              ...files
+                .html
+                ?? [],
+            ),
+          jsonc: new OptionsConstructor
+            .jsonc(
+              Plugin
+                .jsonc,
+              Parser
+                .jsonc,
+              ...files
+                .jsonc
+                ?? [],
+            ),
+          json5: new OptionsConstructor
+            .json5(
+              Plugin
+                .json5,
+              Parser
+                .json5,
+              ...files
+                .json5
+                ?? [],
+            ),
+          json: new OptionsConstructor
+            .json(
+              Plugin
+                .json,
+              Parser
+                .json,
+              ...files
+                .json
+                ?? [],
+            ),
+          yml: new OptionsConstructor
+            .yml(
+              Plugin
+                .yml,
+              Parser
+                .yml,
+              ...files
+                .yml
+                ?? [],
+            ),
         };
       this
         .rulesets = {
           js: [
-            ...JsRuleset,
-            overrideJs,
+            ...DefaultRulesets
+              .js,
+            override
+              .overrideJs
+              ?? {},
           ],
           ts: [
-            ...TsRuleset,
-            overrideTs,
+            ...DefaultRulesets
+              .ts,
+            override
+              .overrideTs
+              ?? {},
           ],
           svelte: [
-            ...SvelteRuleset,
-            overrideSvelte,
+            ...DefaultRulesets
+              .svelte,
+            override
+              .overrideSvelte
+              ?? {},
+          ],
+          html: [
+            ...DefaultRulesets
+              .html,
+            override
+              .overrideHtml
+              ?? {},
           ],
           jsonc: [
-            ...JsoncRuleset,
-            overrideJsonc,
+            ...DefaultRulesets
+              .jsonc,
+            override
+              .overrideJsonc
+              ?? {},
           ],
           json5: [
-            ...JsoncRuleset,
-            overrideJson5,
+            ...DefaultRulesets
+              .json5,
+            override
+              .overrideJson5
+              ?? {},
           ],
           json: [
-            ...JsonRuleset,
-            overrideJson,
+            ...DefaultRulesets
+              .json,
+            override
+              .overrideJson
+              ?? {},
           ],
           yml: [
-            ...YmlRuleset,
-            overrideYml,
+            ...DefaultRulesets
+              .yml,
+            override
+              .overrideYml
+              ?? {},
           ],
         };
     }
@@ -192,15 +248,14 @@ export default class Lint {
     }
   }
 
-  public get configs(): Array<
-    Config<
-      Languages
-    >
+  public get configs(): Lint.FlatConfigs<
+    Language
   > {
     const languages = [
       "js",
       "ts",
       "svelte",
+      "html",
       "jsonc",
       "json5",
       "json",
@@ -219,13 +274,11 @@ export default class Lint {
   }
 
   protected getLanguageConfigs<
-    Language extends Languages,
+    L extends Language,
   >(
-    language: Language,
-  ): Array<
-      Config<
-        Language
-      >
+    language: L,
+  ): Lint.FlatConfigs<
+      L
     > {
     const {
       options,
@@ -254,5 +307,63 @@ export default class Lint {
             };
           },
         );
+  }
+}
+
+declare namespace Lint {
+  export namespace Property {
+    export type Options = Record<
+      Language
+      ,
+      InstanceType<
+      typeof OptionsConstructor[
+        Language
+      ]
+      >
+    >;
+    export type Rulesets = typeof DefaultRulesets;
+  }
+  export namespace Parameter {
+    export type Files = Partial<
+      Record<
+        Language
+        ,
+        string[]
+      >
+    >;
+    export type Override = Partial<
+      Record<
+        `override${
+          Capitalize<
+            Language
+          >
+        }`
+        ,
+        IRules
+      >
+    >;
+  }
+  export type FlatConfigs<
+    L extends Language,
+  > = Array<
+    FlatConfigs.Config<
+      L
+    >
+  >;
+  export namespace FlatConfigs {
+    export type Config<
+      L extends Language,
+    > =
+      & Record<
+        "rules"
+        ,
+        IRules
+      >
+      & Property
+        .Options[
+          L
+        ][
+          "body"
+        ];
   }
 }

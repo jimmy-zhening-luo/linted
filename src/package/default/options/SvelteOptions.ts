@@ -13,7 +13,7 @@ export default class SvelteOptions extends BaseOptions<
   constructor(
     plugins: SvelteOptions["body"]["plugins"],
     svelteParser: SvelteOptions["body"]["languageOptions"]["parser"],
-    parser: SvelteOptions["body"]["languageOptions"]["parserOptions"]["parser"],
+    tsParser: SvelteOptions["body"]["languageOptions"]["parserOptions"]["parser"],
     ...files: string[]
   ) {
     super(
@@ -34,7 +34,7 @@ export default class SvelteOptions extends BaseOptions<
             sourceType: "module",
             project: "tsconfig.json",
             extraFileExtensions: [".svelte"],
-            parser,
+            parser: tsParser,
           },
         },
       },
