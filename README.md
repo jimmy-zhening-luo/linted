@@ -71,7 +71,7 @@ No need to install 17 plugins and 12 parsers: each language's latest plugin is b
 
 ### Zero-Config
 
-No need to remember each plugin's `parserOptions`; you won't have to *this* just to enable Svelte linting:
+No need to remember each plugin's `parserOptions`; you won't have to do *this* just to enable Svelte linting:
 
   ```javascript
     // Lint TypeScript blocks in Svelte
