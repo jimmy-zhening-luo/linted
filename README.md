@@ -9,6 +9,7 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 - **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):** [`eslint`](https://eslint.org) + [`@stylistic`](https://eslint.style)
 - **[TypeScript](https://typescriptlang.org):** + [`@typescript-eslint`](https://typescript-eslint.io/)
 - **[Svelte](https://svelte.dev):** + [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/)
+- **[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):** + [`@html-eslint`](https://html-eslint.org/)
 
 ### Data
 
@@ -156,14 +157,6 @@ ___
 
 ### v11
 
-#### HTML
-
-- [HTML](https://html-eslint.org/)
-
-- [HTML Script Block](https://github.com/BenoitZugmeyer/eslint-plugin-html)
-
-- HTML Style Block?
-
 #### Tailwind PostCSS
 
 - [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
@@ -176,7 +169,13 @@ ___
 
 - [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
 
-#### JSON Custom Schema Validation
+#### HTML (Embedded)
+
+- [HTML Script Block](https://github.com/BenoitZugmeyer/eslint-plugin-html)
+
+- HTML Style Block?
+
+#### JSON (Custom Schema Validation)
 
 - [JSON Custom Schema Validation](https://github.com/ota-meshi/eslint-plugin-json-schema-validator)
 
