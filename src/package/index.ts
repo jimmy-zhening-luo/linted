@@ -204,9 +204,6 @@ export default class {
               ?? {},
           ],
           html: [
-            ...DefaultRulesets
-              .html,
-
             // Remove after tuning: @html-eslint shared config
             (
               Plugin
@@ -218,6 +215,8 @@ export default class {
               >
             )
               .rules,
+            ...DefaultRulesets
+              .html,
             override
               .overrideHtml
               ?? {},
