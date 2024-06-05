@@ -1,8 +1,6 @@
-declare type EsLinter = ILinterOptions<
-  Record<
-    | "noInlineConfig"
-    | "reportUnusedDisableDirectives"
-    ,
-    true
-  >
+declare type EsLinter = Record<
+  | "noInlineConfig"
+  | "reportUnusedDisableDirectives"
+  ,
+  true
 >;
