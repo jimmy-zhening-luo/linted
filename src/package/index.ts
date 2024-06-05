@@ -27,7 +27,18 @@ import htmlParser from "@html-eslint/parser";
 import jsoncParser from "jsonc-eslint-parser";
 import ymlParser from "yaml-eslint-parser";
 
-declare type Language = keyof typeof OptionsConstructor;
+const languages = [
+  "js",
+  "ts",
+  "svelte",
+  "html",
+  "jsonc",
+  "json5",
+  "json",
+  "yml",
+] as const;
+
+declare type Language = typeof languages[number];
 
 const OptionsConstructor = {
   js: JsOptions,
@@ -259,20 +270,9 @@ export default class {
     }
   }
 
-  public get configs(): Lint.FlatConfigs<
+  public get configs(): Lint.Output.FlatConfigs<
     Language
   > {
-    const languages = [
-      "js",
-      "ts",
-      "svelte",
-      "html",
-      "jsonc",
-      "json5",
-      "json",
-      "yml",
-    ] as const;
-
     return languages
       .map(
         language =>
@@ -288,7 +288,7 @@ export default class {
     L extends Language,
   >(
     language: L,
-  ): Lint.FlatConfigs<
+  ): Lint.Output.FlatConfigs<
       L
     > {
     const {
@@ -322,27 +322,49 @@ export default class {
 }
 
 declare namespace Lint {
-  export namespace Property {
-    export type Options = Record<
-      Language
-      ,
-      InstanceType<
-      typeof OptionsConstructor[
+  namespace Property {
+    type Options = Options.AllLanguages<
+      typeof OptionsConstructor
+    > extends false
+      ? never
+      : {
+          [L in keyof typeof OptionsConstructor]: InstanceType<
+            typeof OptionsConstructor[
+              L
+            ]
+          >
+        };
+
+    namespace Options {
+      type AllLanguages<
+        OP,
+      > = OP extends Record<
         Language
-      ]
+        ,
+        unknown
       >
-    >;
-    export type Rulesets = typeof DefaultRulesets;
+        ? Exclude<
+          keyof OP
+          ,
+          Language
+        > extends never
+          ? true
+          : false
+        : false;
+    }
+
+    type Rulesets = typeof DefaultRulesets;
   }
-  export namespace Parameter {
-    export type Files = Partial<
+
+  namespace Parameter {
+    type Files = Partial<
       Record<
         Language
         ,
         string[]
       >
     >;
-    export type Override = Partial<
+    type Override = Partial<
       Record<
         `override${
           Capitalize<
@@ -354,27 +376,30 @@ declare namespace Lint {
       >
     >;
   }
-  export type FlatConfigs<
-    L extends Language,
-  > = Array<
-    FlatConfigs.Config<
-      L
-    >
-  >;
-  export namespace FlatConfigs {
-    export type Config<
+
+  namespace Output {
+    type FlatConfigs<
       L extends Language,
-    > =
-      & Record<
-        "rules"
-        ,
-        IRules
+    > = Array<
+      FlatConfigs.Config<
+        L
       >
-      & Property
-        .Options[
+    >;
+
+    namespace FlatConfigs {
+      type Config<
+        L extends Language,
+      > =
+        & Record<
+          "rules"
+          ,
+          IRules
+        >
+        & Property.Options[
           L
         ][
           "body"
         ];
+    }
   }
 }
