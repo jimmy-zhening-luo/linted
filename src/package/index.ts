@@ -206,6 +206,18 @@ export default class {
           html: [
             ...DefaultRulesets
               .html,
+
+            // Remove after tuning: @html-eslint shared config
+            (
+              Plugin
+                .html["@html-eslint"]
+                .configs["flat/recommended"] as Record<
+                "rules"
+                ,
+                IRules
+              >
+            )
+              .rules,
             override
               .overrideHtml
               ?? {},
