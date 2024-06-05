@@ -18,9 +18,8 @@ import {
   JsRuleset,
   TsRuleset,
   SvelteRuleset,
-  JsonRuleset,
   JsoncRuleset,
-  Json5Ruleset,
+  JsonRuleset,
   YmlRuleset,
 } from "./default/Ruleset.js";
 
@@ -28,9 +27,9 @@ declare type Options = {
   js: JsOptions;
   ts: TsOptions;
   svelte: SvelteOptions;
-  json: JsonOptions;
   jsonc: JsonOptions;
   json5: JsonOptions;
+  json: JsonOptions;
   yml: YmlOptions;
 };
 
@@ -124,13 +123,6 @@ export default class Lint {
               .svelte
               ?? [],
           ),
-          json: new JsonOptions(
-            { jsonc },
-            jsoncParser,
-            ...files
-              .json
-              ?? [],
-          ),
           jsonc: new JsonOptions(
             { jsonc },
             jsoncParser,
@@ -143,6 +135,13 @@ export default class Lint {
             jsoncParser,
             ...files
               .json5
+              ?? [],
+          ),
+          json: new JsonOptions(
+            { jsonc },
+            jsoncParser,
+            ...files
+              .json
               ?? [],
           ),
           yml: new YmlOptions(
@@ -167,17 +166,17 @@ export default class Lint {
             ...SvelteRuleset,
             overrideSvelte,
           ],
-          json: [
-            ...JsonRuleset,
-            overrideJson,
-          ],
           jsonc: [
             ...JsoncRuleset,
             overrideJsonc,
           ],
           json5: [
-            ...Json5Ruleset,
+            ...JsoncRuleset,
             overrideJson5,
+          ],
+          json: [
+            ...JsonRuleset,
+            overrideJson,
           ],
           yml: [
             ...YmlRuleset,
@@ -202,9 +201,9 @@ export default class Lint {
       "js",
       "ts",
       "svelte",
-      "json",
       "jsonc",
       "json5",
+      "json",
       "yml",
     ] as const;
 

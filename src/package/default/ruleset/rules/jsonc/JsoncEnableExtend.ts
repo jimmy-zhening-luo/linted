@@ -8,7 +8,7 @@ const [
   "never",
   "consistent",
 ] as const;
-const Json5EnableExtend: IRules = {
+const JsoncEnableExtend: IRules = {
 
   // Extension - ENABLE
   // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
@@ -98,4 +98,4 @@ const Json5EnableExtend: IRules = {
   "jsonc/space-unary-ops": ERROR,
 };
 
-export default Json5EnableExtend;
+export default JsoncEnableExtend;

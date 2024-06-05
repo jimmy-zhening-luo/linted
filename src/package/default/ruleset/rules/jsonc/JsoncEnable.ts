@@ -5,7 +5,7 @@ const [
   "error",
   "off",
 ] as const;
-const Json5Enable: IRules = {
+const JsoncEnable: IRules = {
 
   // JSONC Only
   // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#jsonc-rules
@@ -54,4 +54,4 @@ const Json5Enable: IRules = {
   "jsonc/vue-custom-block/no-parsing-error": ERROR,
 };
 
-export default Json5Enable;
+export default JsoncEnable;

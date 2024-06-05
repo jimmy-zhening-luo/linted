@@ -1,5 +1,9 @@
-import Json5Ruleset from "./Json5Ruleset.js";
+import JsoncEnableExtend from "./rules/jsonc/JsoncEnableExtend.js";
+import JsoncEnable from "./rules/jsonc/JsoncEnable.js";
 
-const JsoncRuleset: IRules[] = [...Json5Ruleset];
+const JsoncRuleset: IRules[] = [
+  JsoncEnableExtend,
+  JsoncEnable,
+];
 
 export default JsoncRuleset;
