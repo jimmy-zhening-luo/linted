@@ -97,10 +97,6 @@ export default class Lint {
         ...jsPlugins,
         "@typescript-eslint": plugin,
       };
-      const jsonPlugins = {
-        ...jsPlugins,
-        jsonc,
-      };
 
       this
         .options = {
@@ -122,38 +118,35 @@ export default class Lint {
               ...tsPlugins,
               svelte,
             },
-            parser,
             svelteParser,
+            parser,
             ...files
               .svelte
               ?? [],
           ),
           json: new JsonOptions(
-            jsonPlugins,
+            { jsonc },
             jsoncParser,
             ...files
               .json
               ?? [],
           ),
           jsonc: new JsonOptions(
-            jsonPlugins,
+            { jsonc },
             jsoncParser,
             ...files
               .jsonc
               ?? [],
           ),
           json5: new JsonOptions(
-            jsonPlugins,
+            { jsonc },
             jsoncParser,
             ...files
               .json5
               ?? [],
           ),
           yml: new YmlOptions(
-            {
-              ...jsPlugins,
-              yml,
-            },
+            { yml },
             ymlParser,
             ...files
               .yml

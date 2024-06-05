@@ -3,15 +3,11 @@ import BaseOptions from "./base/BaseOptions.js";
 export default class YmlOptions extends BaseOptions<
   YmlPlugin
   ,
-  ""
-  ,
   YmlLanguage
 > {
   constructor(
-    plugins:
-      & StylisticPlugin
-      & YmlPlugin,
-    parser: unknown,
+    plugins: YmlOptions["body"]["plugins"],
+    parser: YmlOptions["body"]["languageOptions"]["parser"],
     ...files: string[]
   ) {
     super(

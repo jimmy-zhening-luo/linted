@@ -3,15 +3,11 @@ import BaseOptions from "./base/BaseOptions.js";
 export default class JsonOptions extends BaseOptions<
   JsonPlugin
   ,
-  ""
-  ,
   JsonLanguage
 > {
   constructor(
-    plugins:
-      & StylisticPlugin
-      & JsonPlugin,
-    parser: unknown,
+    plugins: JsonOptions["body"]["plugins"],
+    parser: JsonOptions["body"]["languageOptions"]["parser"],
     ...files: string[]
   ) {
     super(

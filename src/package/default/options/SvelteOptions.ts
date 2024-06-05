@@ -1,22 +1,19 @@
 import BaseOptions from "./base/BaseOptions.js";
-import type JsOptions from "./JsOptions.js";
+import type TsOptions from "./TsOptions.js";
 
 export default class SvelteOptions extends BaseOptions<
+  & TsOptions["body"]["plugins"]
   & SveltePlugin
-  & TsPlugin
+  ,
+  & TsOptions["body"]["languageOptions"]
+  & SvelteLanguage
   ,
   SvelteProcessor
-  ,
-  & JsOptions["body"]["languageOptions"]
-  & SvelteLanguage
 > {
   constructor(
-    plugins:
-      & StylisticPlugin
-      & SveltePlugin
-      & TsPlugin,
-    tsParser: unknown,
-    svelteParser: unknown,
+    plugins: SvelteOptions["body"]["plugins"],
+    svelteParser: SvelteOptions["body"]["languageOptions"]["parser"],
+    parser: SvelteOptions["body"]["languageOptions"]["parserOptions"]["parser"],
     ...files: string[]
   ) {
     super(
@@ -37,7 +34,7 @@ export default class SvelteOptions extends BaseOptions<
             sourceType: "module",
             project: "tsconfig.json",
             extraFileExtensions: [".svelte"],
-            parser: tsParser,
+            parser,
           },
         },
       },

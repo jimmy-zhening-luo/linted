@@ -3,6 +3,5 @@ declare type IPlugins<
 > = Record<
   "plugins"
   ,
-  & StylisticPlugin
-  & Plugin
+  Plugin
 >;
