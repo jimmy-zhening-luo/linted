@@ -1,7 +1,5 @@
 {
   "include": [
-    "project/**/*.config.js",
-    "*.config.js",
     "src/**/*.ts",
   ],
   "compilerOptions": {
