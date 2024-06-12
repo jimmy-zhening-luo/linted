@@ -41,7 +41,7 @@
   "homepage": "https://github.com/jimmy-zhening-luo/lint#readme",
   "scripts": {
     "es": "eslint --fix --cache --cache-strategy content -c eslint.config.js",
-    "lint": "npm run lint:cfg && npm run lint:src && npm run lint:ci",
+    "lint": "npm run lint:cfg && npm run lint:src",
     "lint:cfg": "npm run lint:cfg:pkg && npm run lint:cfg:tsc && npm run lint:cfg:linter",
     "lint:cfg:pkg": "npm run es -- package.json",
     "lint:cfg:tsc": "npm run es -- tsconfig.json",
@@ -49,8 +49,6 @@
     "lint:cfg:linter:proj": "npm run es -- project/**/*.config.js",
     "lint:src": "npm run lint:src:ts",
     "lint:src:ts": "npm run es -- src/**/*.ts",
-    "lint:ci": "npm run lint:ci:github",
-    "lint:ci:github": "",
     "prebuild": "npm run lint",
     "build": "tsc",
     "pretest": "npm run build",
