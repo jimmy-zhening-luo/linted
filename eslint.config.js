@@ -3,10 +3,10 @@ import ts from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import jsonc from "eslint-plugin-jsonc";
 import jsonParser from "jsonc-eslint-parser";
-import JsRuleset from "./project/lint/js.config.js";
-import TsRuleset from "./project/lint/ts.config.js";
-import JsoncRuleset from "./project/lint/jsonc.config.js";
-import JsonRuleset from "./project/lint/json.config.js";
+import JsRuleset from "./project/js.config.js";
+import TsRuleset from "./project/ts.config.js";
+import JsoncRuleset from "./project/jsonc.config.js";
+import JsonRuleset from "./project/json.config.js";
 
 const FILES = {
   js: [
