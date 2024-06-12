@@ -10,7 +10,7 @@ import JsonRuleset from "./project/json.config.js";
 
 const FILES = {
   js: [
-    "project/lint/**/*.config.js",
+    "project/**/*.config.js",
     "*.config.js",
   ],
   ts: ["src/**/*.ts"],
