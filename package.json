@@ -45,7 +45,7 @@
     "lint:config": "npm run lint:config:json && npm run lint:config:js && npm run lint:config:js:project && npm run lint:config:ts",
     "lint:config:json": "",
     "lint:config:js": "npm run es -- *.config.js",
-    "lint:config:js:project": "npm run es -- project/lint/**/*.config.js",
+    "lint:config:js:project": "npm run es -- project/**/*.config.js",
     "lint:config:ts": "",
     "lint:src": "npm run lint:src:ts && npm run lint:src:svelte",
     "lint:src:ts": "npm run es -- src/**/*.ts",
