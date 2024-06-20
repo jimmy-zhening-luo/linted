@@ -16,6 +16,10 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 - **[JSON](https://json.org), [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments), [JSON5](https://json5.org/):** [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
 - **[YAML](https://redhat.com/en/topics/automation/what-is-yaml):** [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
 
+### Test
+
+- **[Jest](https://jestjs.io):** [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest)
+
 <br />
 
 *See language support **[roadmap](#roadmap).***
@@ -162,12 +166,6 @@ ___
 - [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 
 - [CSS](https://ota-meshi.github.io/eslint-plugin-css/)
-
-#### Jest
-
-- [Jest](https://github.com/jest-community/eslint-plugin-jest)
-
-- [Jest (style)](https://github.com/dangreenisrael/eslint-plugin-jest-formatting)
 
 #### HTML (Embedded)
 
