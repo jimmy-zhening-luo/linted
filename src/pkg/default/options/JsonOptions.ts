@@ -5,7 +5,17 @@ export default class JsonOptions extends BaseOptions<
   ,
   JsonPlugin
   ,
-  JsonLanguage
+  true
+  ,
+  {}
+  ,
+  {}
+  ,
+  ""
+  ,
+  ""
+  ,
+  ""
 > {
   constructor(
     plugins: JsonOptions["body"]["plugins"],

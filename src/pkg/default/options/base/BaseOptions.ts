@@ -1,18 +1,33 @@
 export default abstract class BaseOptions<
   Name extends string,
-  Plugin,
-  LanguageOptions = {},
+  Plugins,
+  Parser = false,
+  ParserOptions = {},
+  Globals = {},
   Processor = "",
+  SourceType = "module",
+  EcmaVersion = "latest",
 > {
   constructor(
     public readonly body: IOptions<
       `jimbolint/${literalful<Name>}`
       ,
-      EsLinter
+      {
+        noInlineConfig: true;
+        reportUnusedDisableDirectives: "error";
+      }
       ,
-      Plugin
+      Plugins
       ,
-      LanguageOptions
+      EcmaVersion
+      ,
+      SourceType
+      ,
+      Parser
+      ,
+      ParserOptions
+      ,
+      Globals
       ,
       Processor
     >,

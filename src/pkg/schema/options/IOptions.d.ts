@@ -1,20 +1,34 @@
 declare type IOptions<
   Name,
   LinterOptions,
-  Plugin,
-  LanguageOptions,
+  Plugins,
+  Ecma,
+  Source,
+  Parser,
+  ParserOptions,
+  Globals,
   Processor,
 > =
-  & IName<Name>
   & IFiles
+  & IName<
+    Name
+  >
   & ILinterOptions<
     LinterOptions
   >
   & IPlugins<
-    Plugin
+    Plugins
   >
   & ILanguageOptions<
-    LanguageOptions
+    Ecma
+    ,
+    Source
+    ,
+    Parser
+    ,
+    ParserOptions
+    ,
+    Globals
   >
   & IProcessor<
     Processor

@@ -7,12 +7,14 @@ export default class TsOptions extends BaseOptions<
   & JsOptions["body"]["plugins"]
   & TsPlugin
   ,
+  true
+  ,
   & JsOptions["body"]["languageOptions"]
-  & TsLanguage
+  & { project: "tsconfig.json" }
 > {
   constructor(
     plugins: TsOptions["body"]["plugins"],
-    parser: TsOptions["body"]["languageOptions"]["parser"],
+    parser: unknown,
     ...files: string[]
   ) {
     super(

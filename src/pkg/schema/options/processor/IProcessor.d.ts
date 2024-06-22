@@ -1,11 +1,11 @@
 declare type IProcessor<
-  P,
+  Processor,
 > = literalful<
-  P
+  Processor
 > extends never
   ? {}
   : Record<
     "processor"
     ,
-    P
+    Processor
   >;

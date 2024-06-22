@@ -1,7 +1,7 @@
 declare type IPlugins<
-  Plugin,
+  Plugins,
 > = Record<
   "plugins"
   ,
-  Plugin
+  Plugins
 >;

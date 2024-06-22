@@ -5,7 +5,17 @@ export default class YmlOptions extends BaseOptions<
   ,
   YmlPlugin
   ,
-  YmlLanguage
+  true
+  ,
+  {}
+  ,
+  {}
+  ,
+  ""
+  ,
+  ""
+  ,
+  ""
 > {
   constructor(
     plugins: YmlOptions["body"]["plugins"],

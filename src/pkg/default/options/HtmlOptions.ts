@@ -5,7 +5,17 @@ export default class HtmlOptions extends BaseOptions<
   ,
   HtmlPlugin
   ,
-  HtmlLanguage
+  true
+  ,
+  {}
+  ,
+  {}
+  ,
+  ""
+  ,
+  ""
+  ,
+  ""
 > {
   constructor(
     plugins: HtmlOptions["body"]["plugins"],

@@ -7,10 +7,23 @@ export default class SvelteOptions extends BaseOptions<
   & TsOptions["body"]["plugins"]
   & SveltePlugin
   ,
-  & TsOptions["body"]["languageOptions"]
-  & SvelteLanguage
+  true
   ,
-  SvelteProcessor
+  & TsOptions["body"]["languageOptions"]["parserOptions"]
+  & Record<
+    "parser"
+    ,
+    unknown
+  >
+  & Record<
+    "extraFileExtensions"
+    ,
+    [".svelte"]
+  >
+  ,
+  {}
+  ,
+  "svelte/svelte"
 > {
   constructor(
     plugins: SvelteOptions["body"]["plugins"],

@@ -7,8 +7,15 @@ export default class JestOptions extends BaseOptions<
   & TsOptions["body"]["plugins"]
   & JestPlugin
   ,
-  & TsOptions["body"]["languageOptions"]
-  & JestLanguage
+  true
+  ,
+  & TsOptions["body"]["languageOptions"]["parserOptions"]
+  ,
+  Record<
+    "jest/globals"
+    ,
+    true
+  >
 > {
   constructor(
     plugins: JestOptions["body"]["plugins"],

@@ -1,9 +1,9 @@
 import BaseOptions from "./base/BaseOptions.js";
 
 export default class JsOptions extends BaseOptions<
-  "js",
-  StylisticPlugin,
-  JsLanguage
+  "js"
+  ,
+  StylisticPlugin
 > {
   constructor(
     plugins: JsOptions["body"]["plugins"],

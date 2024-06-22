@@ -1,7 +1,26 @@
 declare type ILanguageOptions<
-  LanguageOptions,
+  EcmaVersion,
+  SourceType,
+  Parser,
+  ParserOptions,
+  Globals,
 > = Record<
   "languageOptions"
   ,
-  LanguageOptions
->;
+  & ILanguageEcma<
+    EcmaVersion
+  >
+  & ILanguageSource<
+    SourceType
+  >
+  & ILanguageGlobals<
+    Globals
+  >
+  & ILanguageParser<
+    Parser
+  >
+  & ILanguageParserOptions<
+    ParserOptions
+  >
+>
+;
