@@ -104,18 +104,18 @@ const Parser = {
 } as const;
 
 export default class {
-  protected readonly options: Lint
+  protected readonly options: Class
     .Property
     .Options;
-  protected readonly rulesets: Lint
+  protected readonly rulesets: Class
     .Property
     .Rulesets;
 
   constructor(
-    files: Lint
+    files: Class
       .Parameter
       .Files = {},
-    override: Lint
+    override: Class
       .Parameter
       .Override = {},
   ) {
@@ -305,7 +305,7 @@ export default class {
     }
   }
 
-  public get configs(): Lint.Output.FlatConfigs<
+  public get configs(): Class.Output.FlatConfigs<
     Language
   > {
     return languages
@@ -323,7 +323,7 @@ export default class {
     L extends Language,
   >(
     language: L,
-  ): Lint.Output.FlatConfigs<
+  ): Class.Output.FlatConfigs<
       L
     > {
     const {
@@ -356,18 +356,14 @@ export default class {
   }
 }
 
-declare namespace Lint {
+declare namespace Class {
+
   namespace Property {
-    type Options = Options.AllLanguages<
-      typeof OptionsConstructor
-    > extends false
+    type Rulesets = typeof DefaultRulesets;
+    type Options = Options.AllLanguages<typeof OptionsConstructor> extends false
       ? never
       : {
-          [L in keyof typeof OptionsConstructor]: InstanceType<
-            typeof OptionsConstructor[
-              L
-            ]
-          >
+          [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
         };
 
     namespace Options {
@@ -387,8 +383,6 @@ declare namespace Lint {
           : false
         : false;
     }
-
-    type Rulesets = typeof DefaultRulesets;
   }
 
   namespace Parameter {
