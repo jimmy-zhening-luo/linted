@@ -6,6 +6,7 @@ import jsonc from "eslint-plugin-jsonc";
 import jsonParser from "jsonc-eslint-parser";
 import JsRuleset from "./project/js.config.js";
 import TsRuleset from "./project/ts.config.js";
+import JestRuleset from "./project/jest.config.js";
 import JsoncRuleset from "./project/jsonc.config.js";
 import JsonRuleset from "./project/json.config.js";
 
@@ -22,12 +23,7 @@ const FILES = {
 const RULESET = {
   js: JsRuleset,
   ts: TsRuleset,
-  get jest() {
-    return [
-      ...RULESET.ts,
-      jest.configs["flat/recommended"].rules,
-    ];
-  },
+  jest: JestRuleset,
   jsonc: JsoncRuleset,
   json: JsonRuleset,
 };

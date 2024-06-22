@@ -237,9 +237,10 @@ export default class {
               ?? {},
           ],
           jest: [
-            // Remove after tuning: jest shared config
             ...DefaultRulesets
-              .ts,
+              .jest,
+
+            // Remove after tuning: jest shared config
             Plugin
               .jest
               .jest
@@ -250,6 +251,9 @@ export default class {
               ?? {},
           ],
           html: [
+            ...DefaultRulesets
+              .html,
+
             // Remove after tuning: @html-eslint shared config
             (
               Plugin
@@ -261,8 +265,6 @@ export default class {
               >
             )
               .rules,
-            ...DefaultRulesets
-              .html,
             override
               .overrideHtml
               ?? {},
