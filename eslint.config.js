@@ -64,7 +64,7 @@ const OPTIONS = {
   linterOptions: {
     base: {
       noInlineConfig: true,
-      reportUnusedDisableDirectives: true,
+      reportUnusedDisableDirectives: "error",
     },
     get js() {
       return OPTIONS
