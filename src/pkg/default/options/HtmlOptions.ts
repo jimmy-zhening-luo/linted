@@ -16,7 +16,7 @@ export default class HtmlOptions extends BaseOptions<
         plugins,
         linterOptions: {
           noInlineConfig: true,
-          reportUnusedDisableDirectives: true,
+          reportUnusedDisableDirectives: "error",
         },
         languageOptions: { parser },
       },

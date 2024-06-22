@@ -19,7 +19,7 @@ export default class JestOptions extends BaseOptions<
         plugins,
         linterOptions: {
           noInlineConfig: true,
-          reportUnusedDisableDirectives: true,
+          reportUnusedDisableDirectives: "error",
         },
         languageOptions: {
           globals: { "jest/globals": true },

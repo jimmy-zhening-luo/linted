@@ -19,7 +19,7 @@ export default class TsOptions extends BaseOptions<
         plugins,
         linterOptions: {
           noInlineConfig: true,
-          reportUnusedDisableDirectives: true,
+          reportUnusedDisableDirectives: "error",
         },
         languageOptions: {
           ecmaVersion: "latest",

@@ -1,6 +1,4 @@
-declare type EsLinter = Record<
-  | "noInlineConfig"
-  | "reportUnusedDisableDirectives"
-  ,
-  true
->;
+declare type EsLinter = {
+  noInlineConfig: true;
+  reportUnusedDisableDirectives: "error";
+};
