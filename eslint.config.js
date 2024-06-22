@@ -1,6 +1,7 @@
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
+import jest from "eslint-plugin-jest";
 import jsonc from "eslint-plugin-jsonc";
 import jsonParser from "jsonc-eslint-parser";
 import JsRuleset from "./project/js.config.js";
@@ -14,12 +15,19 @@ const FILES = {
     "*.config.js",
   ],
   ts: ["src/**/*.ts"],
+  jest: ["src/**/*.spec.ts"],
   jsonc: ["tsconfig.json"],
   json: ["package.json"],
 };
 const RULESET = {
   js: JsRuleset,
   ts: TsRuleset,
+  get jest() {
+    return [
+      ...RULESET.ts,
+      jest.configs["flat/recommended"].rules,
+    ];
+  },
   jsonc: JsoncRuleset,
   json: JsonRuleset,
 };
@@ -30,6 +38,12 @@ const OPTIONS = {
       return {
         ...OPTIONS.plugins.js,
         "@typescript-eslint": ts,
+      };
+    },
+    get jest() {
+      return {
+        ...OPTIONS.plugins.ts,
+        jest,
       };
     },
     jsonc: { jsonc },
@@ -54,6 +68,12 @@ const OPTIONS = {
         },
       };
     },
+    get jest() {
+      return {
+        ...OPTIONS.languageOptions.ts,
+        globals: { "jest/globals": true },
+      };
+    },
     jsonc: { parser: jsonParser },
     get json() {
       return OPTIONS
@@ -72,6 +92,11 @@ const OPTIONS = {
         .base;
     },
     get ts() {
+      return OPTIONS
+        .linterOptions
+        .base;
+    },
+    get jest() {
       return OPTIONS
         .linterOptions
         .base;
@@ -95,6 +120,11 @@ const OPTIONS = {
         .base;
     },
     get ts() {
+      return OPTIONS
+        .processor
+        .base;
+    },
+    get jest() {
       return OPTIONS
         .processor
         .base;
@@ -149,6 +179,7 @@ function flat(
 const flatConfig = [
   "js",
   "ts",
+  "jest",
   "jsonc",
   "json",
 ]

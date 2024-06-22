@@ -54,7 +54,7 @@ const OptionsConstructor = {
   json5: JsonOptions,
   json: JsonOptions,
   yml: YmlOptions,
-} as const;
+} as const satisfies Record<Language, unknown>;
 const DefaultRulesets: Record<
   Language
   ,
@@ -360,29 +360,9 @@ declare namespace Class {
 
   namespace Property {
     type Rulesets = typeof DefaultRulesets;
-    type Options = Options.AllLanguages<typeof OptionsConstructor> extends false
-      ? never
-      : {
-          [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
-        };
-
-    namespace Options {
-      type AllLanguages<
-        OP,
-      > = OP extends Record<
-        Language
-        ,
-        unknown
-      >
-        ? Exclude<
-          keyof OP
-          ,
-          Language
-        > extends never
-          ? true
-          : false
-        : false;
-    }
+    type Options = {
+      [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
+    };
   }
 
   namespace Parameter {
