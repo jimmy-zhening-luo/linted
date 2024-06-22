@@ -1,6 +1,8 @@
 import BaseOptions from "./base/BaseOptions.js";
 
 export default class HtmlOptions extends BaseOptions<
+  "html"
+  ,
   HtmlPlugin
   ,
   HtmlLanguage
@@ -12,6 +14,7 @@ export default class HtmlOptions extends BaseOptions<
   ) {
     super(
       {
+        name: "jimbolint/html",
         files,
         plugins,
         linterOptions: {

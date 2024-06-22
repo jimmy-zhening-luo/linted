@@ -1,6 +1,8 @@
 import BaseOptions from "./base/BaseOptions.js";
 
 export default class JsonOptions extends BaseOptions<
+  "json"
+  ,
   JsonPlugin
   ,
   JsonLanguage
@@ -12,6 +14,7 @@ export default class JsonOptions extends BaseOptions<
   ) {
     super(
       {
+        name: "jimbolint/json",
         files,
         plugins,
         linterOptions: {

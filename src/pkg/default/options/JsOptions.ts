@@ -1,6 +1,7 @@
 import BaseOptions from "./base/BaseOptions.js";
 
 export default class JsOptions extends BaseOptions<
+  "js",
   StylisticPlugin,
   JsLanguage
 > {
@@ -10,6 +11,7 @@ export default class JsOptions extends BaseOptions<
   ) {
     super(
       {
+        name: "jimbolint/js",
         files,
         plugins,
         linterOptions: {

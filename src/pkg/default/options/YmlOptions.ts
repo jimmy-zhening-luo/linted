@@ -1,6 +1,8 @@
 import BaseOptions from "./base/BaseOptions.js";
 
 export default class YmlOptions extends BaseOptions<
+  "yml"
+  ,
   YmlPlugin
   ,
   YmlLanguage
@@ -12,6 +14,7 @@ export default class YmlOptions extends BaseOptions<
   ) {
     super(
       {
+        name: "jimbolint/yml",
         files,
         plugins,
         linterOptions: {

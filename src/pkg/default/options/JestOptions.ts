@@ -2,6 +2,8 @@ import BaseOptions from "./base/BaseOptions.js";
 import type TsOptions from "./TsOptions.js";
 
 export default class JestOptions extends BaseOptions<
+  "jest"
+  ,
   & TsOptions["body"]["plugins"]
   & JestPlugin
   ,
@@ -15,6 +17,7 @@ export default class JestOptions extends BaseOptions<
   ) {
     super(
       {
+        name: "jimbolint/jest",
         files,
         plugins,
         linterOptions: {

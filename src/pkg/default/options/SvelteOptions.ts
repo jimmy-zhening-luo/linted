@@ -2,6 +2,8 @@ import BaseOptions from "./base/BaseOptions.js";
 import type TsOptions from "./TsOptions.js";
 
 export default class SvelteOptions extends BaseOptions<
+  "svelte"
+  ,
   & TsOptions["body"]["plugins"]
   & SveltePlugin
   ,
@@ -18,6 +20,7 @@ export default class SvelteOptions extends BaseOptions<
   ) {
     super(
       {
+        name: "jimbolint/svelte",
         processor: "svelte/svelte",
         files,
         plugins,

@@ -2,6 +2,8 @@ import BaseOptions from "./base/BaseOptions.js";
 import type JsOptions from "./JsOptions.js";
 
 export default class TsOptions extends BaseOptions<
+  "ts"
+  ,
   & JsOptions["body"]["plugins"]
   & TsPlugin
   ,
@@ -15,6 +17,7 @@ export default class TsOptions extends BaseOptions<
   ) {
     super(
       {
+        name: "jimbolint/ts",
         files,
         plugins,
         linterOptions: {

@@ -1,36 +1,22 @@
 declare type IOptions<
+  Name,
   LinterOptions,
   Plugin,
   LanguageOptions,
   Processor,
-> = literalful<
-  Processor
-> extends never
-  ? (
-    & IFiles
-    & ILinterOptions<
-      LinterOptions
-    >
-    & IPlugins<
-      Plugin
-    >
-    & ILanguageOptions<
-      LanguageOptions
-    >
-    )
-  : (
-    & IFiles
-    & ILinterOptions<
-      LinterOptions
-    >
-    & IPlugins<
-      Plugin
-    >
-    & ILanguageOptions<
-      LanguageOptions
-    >
-    & IProcessor<
-      Processor
-    >
-    )
+> =
+  & IName<Name>
+  & IFiles
+  & ILinterOptions<
+    LinterOptions
+  >
+  & IPlugins<
+    Plugin
+  >
+  & ILanguageOptions<
+    LanguageOptions
+  >
+  & IProcessor<
+    Processor
+  >
 ;
