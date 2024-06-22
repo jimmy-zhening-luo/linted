@@ -238,13 +238,13 @@ export default class {
           ],
           jest: [
             // Remove after tuning: jest shared config
+            ...DefaultRulesets
+              .ts,
             Plugin
               .jest
               .jest
-              .configs["flat/style"]
+              .configs["flat/recommended"]
               .rules,
-            ...DefaultRulesets
-              .jest,
             override
               .overrideJest
               ?? {},

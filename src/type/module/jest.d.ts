@@ -1,6 +1,6 @@
 declare module "eslint-plugin-jest" {
   export const configs: Record<
-    "flat/style"
+    "flat/recommended"
     ,
     Record<
       "rules"
