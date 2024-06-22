@@ -2,6 +2,7 @@ import {
   JsOptions,
   TsOptions,
   SvelteOptions,
+  JestOptions,
   HtmlOptions,
   JsonOptions,
   YmlOptions,
@@ -10,6 +11,7 @@ import {
   JsRuleset,
   TsRuleset,
   SvelteRuleset,
+  JestRuleset,
   HtmlRuleset,
   JsoncRuleset,
   JsonRuleset,
@@ -18,6 +20,7 @@ import {
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
+import jest from "eslint-plugin-jest";
 import html from "@html-eslint/eslint-plugin";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
@@ -31,6 +34,7 @@ const languages = [
   "js",
   "ts",
   "svelte",
+  "jest",
   "html",
   "jsonc",
   "json5",
@@ -44,6 +48,7 @@ const OptionsConstructor = {
   js: JsOptions,
   ts: TsOptions,
   svelte: SvelteOptions,
+  jest: JestOptions,
   html: HtmlOptions,
   jsonc: JsonOptions,
   json5: JsonOptions,
@@ -58,6 +63,7 @@ const DefaultRulesets: Record<
   js: JsRuleset,
   ts: TsRuleset,
   svelte: SvelteRuleset,
+  jest: JestRuleset,
   html: HtmlRuleset,
   jsonc: JsoncRuleset,
   json5: JsoncRuleset,
@@ -75,6 +81,11 @@ const Plugin = {
     "@typescript-eslint": ts,
     svelte,
   },
+  jest: {
+    "@stylistic": stylistic,
+    "@typescript-eslint": ts,
+    jest,
+  },
   html: { "@html-eslint": html },
   jsonc: { jsonc },
   json5: { jsonc },
@@ -85,6 +96,7 @@ const Parser = {
   ts: tsParser,
   svelte: svelteParser,
   html: htmlParser,
+  jest: tsParser,
   jsonc: jsoncParser,
   json5: jsoncParser,
   json: jsoncParser,
@@ -138,6 +150,16 @@ export default class {
                 .ts,
               ...files
                 .svelte
+                ?? [],
+            ),
+          jest: new OptionsConstructor
+            .jest(
+              Plugin
+                .jest,
+              Parser
+                .jest,
+              ...files
+                .jest
                 ?? [],
             ),
           html: new OptionsConstructor
@@ -212,6 +234,13 @@ export default class {
               .svelte,
             override
               .overrideSvelte
+              ?? {},
+          ],
+          jest: [
+            ...DefaultRulesets
+              .jest,
+            override
+              .overrideJest
               ?? {},
           ],
           html: [
