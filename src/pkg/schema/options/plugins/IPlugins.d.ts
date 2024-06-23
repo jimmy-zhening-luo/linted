@@ -1,7 +1,15 @@
 declare type IPlugins<
   Plugins,
-> = Record<
-  "plugins"
+> = Plugins extends Record<
+  string
   ,
-  Plugins
->;
+  unknown
+>
+  ? {} extends Plugins
+      ? {}
+      : Record<
+        "plugins"
+        ,
+        Plugins
+      >
+  : {};

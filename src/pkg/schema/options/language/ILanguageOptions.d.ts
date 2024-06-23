@@ -22,5 +22,4 @@ declare type ILanguageOptions<
   & ILanguageParserOptions<
     ParserOptions
   >
->
-;
+>;

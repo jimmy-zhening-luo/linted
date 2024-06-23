@@ -2,8 +2,8 @@ declare type IOptions<
   Name,
   LinterOptions,
   Plugins,
-  Ecma,
-  Source,
+  EcmaVersion,
+  SourceType,
   Parser,
   ParserOptions,
   Globals,
@@ -20,9 +20,9 @@ declare type IOptions<
     Plugins
   >
   & ILanguageOptions<
-    Ecma
+    EcmaVersion
     ,
-    Source
+    SourceType
     ,
     Parser
     ,

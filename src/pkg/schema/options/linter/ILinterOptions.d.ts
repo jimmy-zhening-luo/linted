@@ -3,5 +3,18 @@ declare type ILinterOptions<
 > = Record<
   "linterOptions"
   ,
-  LinterOptions
+  LinterOptions extends {
+    noInlineConfig: boolean;
+    reportUnusedDisableDirectives:
+      | "error"
+      | "warn"
+      | "off"
+      | boolean
+    ;
+  }
+    ? LinterOptions
+    : {
+        noInlineConfig: true;
+        reportUnusedDisableDirectives: "error";
+      }
 >;

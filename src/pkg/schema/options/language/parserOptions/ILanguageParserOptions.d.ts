@@ -1,9 +1,15 @@
 declare type ILanguageParserOptions<
   ParserOptions,
-> = {} extends ParserOptions
-  ? {}
-  : Record<
-    "parserOptions"
-    ,
-    ParserOptions
-  >;
+> = ParserOptions extends Record<
+  string
+  ,
+  unknown
+>
+  ? {} extends ParserOptions
+      ? {}
+      : Record<
+        "parserOptions"
+        ,
+        ParserOptions
+      >
+  : {};

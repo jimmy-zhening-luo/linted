@@ -7,15 +7,15 @@ export default abstract class BaseOptions<
   Processor = "",
   SourceType = "module",
   EcmaVersion = "latest",
+  LinterOptions = {},
 > {
   constructor(
     public readonly body: IOptions<
-      `jimbolint/${literalful<Name>}`
+      `jimbolint/${literalful<
+        Name
+      >}`
       ,
-      {
-        noInlineConfig: true;
-        reportUnusedDisableDirectives: "error";
-      }
+      LinterOptions
       ,
       Plugins
       ,
