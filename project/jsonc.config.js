@@ -1,8 +1,8 @@
-import JsoncEnableExtend from "./jsonc/jsonc.enable.extend.config.js";
+import JsoncEnableExt from "./jsonc/jsonc.enable.ext.config.js";
 import JsoncEnable from "./jsonc/jsonc.enable.config.js";
 
 const JsoncRuleset = [
-  JsoncEnableExtend,
+  JsoncEnableExt,
   JsoncEnable,
 ];
 

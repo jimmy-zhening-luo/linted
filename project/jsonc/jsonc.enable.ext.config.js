@@ -1,14 +1,12 @@
-const [ERROR] = ["error"] as const;
-const [
+import {
+  ERROR,
   ALWAYS,
+
   NEVER,
   CONSISTENT,
-] = [
-  "always",
-  "never",
-  "consistent",
-] as const;
-const JsoncEnableExtend: IRules = {
+} from "../State.js";
+
+const JsoncEnableExt = {
 
   // Extension - ENABLE
   // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
@@ -98,4 +96,4 @@ const JsoncEnableExtend: IRules = {
   "jsonc/space-unary-ops": ERROR,
 };
 
-export default JsoncEnableExtend;
+export default JsoncEnableExt;

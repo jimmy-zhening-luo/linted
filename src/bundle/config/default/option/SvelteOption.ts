@@ -1,15 +1,15 @@
-import BaseOptions from "./base/BaseOptions.js";
-import type TsOptions from "./TsOptions.js";
+import Option from "./base/Option.js";
+import type TsOption from "./TsOption.js";
 
-export default class SvelteOptions extends BaseOptions<
+export default class SvelteOption extends Option<
   "svelte"
   ,
-  & TsOptions["body"]["plugins"]
+  & TsOption["body"]["plugins"]
   & SveltePlugin
   ,
   true
   ,
-  & TsOptions["body"]["languageOptions"]["parserOptions"]
+  & TsOption["body"]["languageOptions"]["parserOptions"]
   & Record<
     "parser"
     ,
@@ -26,14 +26,14 @@ export default class SvelteOptions extends BaseOptions<
   "svelte/svelte"
 > {
   constructor(
-    plugins: SvelteOptions["body"]["plugins"],
-    svelteParser: SvelteOptions["body"]["languageOptions"]["parser"],
-    tsParser: SvelteOptions["body"]["languageOptions"]["parserOptions"]["parser"],
+    plugins: SvelteOption["body"]["plugins"],
+    svelteParser: SvelteOption["body"]["languageOptions"]["parser"],
+    tsParser: SvelteOption["body"]["languageOptions"]["parserOptions"]["parser"],
     ...files: string[]
   ) {
     super(
       {
-        name: "jimbolint/svelte",
+        name: "linted/scope:svelte",
         processor: "svelte/svelte",
         files,
         plugins,

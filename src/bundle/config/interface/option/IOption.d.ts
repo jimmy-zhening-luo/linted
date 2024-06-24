@@ -1,5 +1,5 @@
-declare type IOptions<
-  Name,
+declare type IOption<
+  ScopedName,
   LinterOptions,
   Plugins,
   EcmaVersion,
@@ -11,7 +11,7 @@ declare type IOptions<
 > =
   & IFiles
   & IName<
-    Name
+    ScopedName
   >
   & ILinterOptions<
     LinterOptions

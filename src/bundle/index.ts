@@ -1,11 +1,12 @@
 import {
-  JsOptions,
-  TsOptions,
-  SvelteOptions,
-  JestOptions,
-  HtmlOptions,
-  JsonOptions,
-  YmlOptions,
+  JsOption,
+  TsOption,
+  SvelteOption,
+  JestOption,
+  HtmlOption,
+  JsoncOption,
+  JsonOption,
+  YmlOption,
 } from "./config/default/Options.js";
 import {
   JsRuleset,
@@ -16,7 +17,7 @@ import {
   JsoncRuleset,
   JsonRuleset,
   YmlRuleset,
-} from "./config/default/Ruleset.js";
+} from "./config/default/Rulesets.js";
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
@@ -29,44 +30,46 @@ import svelteParser from "svelte-eslint-parser";
 import htmlParser from "@html-eslint/parser";
 import jsoncParser from "jsonc-eslint-parser";
 import ymlParser from "yaml-eslint-parser";
+import type Ruleset from "./config/default/ruleset/base/Ruleset.js";
 
-const languages = [
+const scopes = [
   "js",
   "ts",
   "svelte",
   "jest",
   "html",
   "jsonc",
-  "json5",
   "json",
   "yml",
 ] as const;
 
-declare type Language = typeof languages[number];
+declare type Scopes = typeof scopes[number];
 
 const OptionsConstructor = {
-  js: JsOptions,
-  ts: TsOptions,
-  svelte: SvelteOptions,
-  jest: JestOptions,
-  html: HtmlOptions,
-  jsonc: JsonOptions,
-  json5: JsonOptions,
-  json: JsonOptions,
-  yml: YmlOptions,
-} as const satisfies Record<Language, unknown>;
-const DefaultRulesets: Record<
-  Language
+  js: JsOption,
+  ts: TsOption,
+  svelte: SvelteOption,
+  jest: JestOption,
+  html: HtmlOption,
+  jsonc: JsoncOption,
+  json: JsonOption,
+  yml: YmlOption,
+} as const satisfies Record<
+  Scopes
   ,
-  IRules[]
-> = {
+  unknown
+>;
+const Rulesets: {
+  [L in Scopes]: Ruleset<
+    L
+  >
+} = {
   js: JsRuleset,
   ts: TsRuleset,
   svelte: SvelteRuleset,
   jest: JestRuleset,
   html: HtmlRuleset,
   jsonc: JsoncRuleset,
-  json5: JsoncRuleset,
   json: JsonRuleset,
   yml: YmlRuleset,
 };
@@ -88,36 +91,54 @@ const Plugin = {
   },
   html: { "@html-eslint": html },
   jsonc: { jsonc },
-  json5: { jsonc },
   json: { jsonc },
   yml: { yml },
-} as const;
+} satisfies Record<
+  Scopes
+  ,
+  unknown
+>;
 const Parser = {
   ts: tsParser,
   svelte: svelteParser,
   html: htmlParser,
   jest: tsParser,
   jsonc: jsoncParser,
-  json5: jsoncParser,
   json: jsoncParser,
   yml: ymlParser,
-} as const;
+} satisfies Partial<
+  Record<
+    Scopes
+    ,
+    unknown
+  >
+>;
 
 export default class {
-  protected readonly options: Class
-    .Property
-    .Options;
-  protected readonly rulesets: Class
-    .Property
-    .Rulesets;
+  protected readonly options: {
+    [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
+  };
+  protected readonly rulesets: typeof Rulesets;
 
   constructor(
-    files: Class
-      .Parameter
-      .Files = {},
-    override: Class
-      .Parameter
-      .Override = {},
+    files: Partial<
+      Record<
+        Scopes
+        ,
+        string[]
+      >
+    > = {},
+    override: Partial<
+      Record<
+      `override${
+        Capitalize<
+          Scopes
+        >
+      }`
+        ,
+        RuleSpec
+      >
+    > = {},
   ) {
     try {
       this
@@ -182,16 +203,6 @@ export default class {
                 .jsonc
                 ?? [],
             ),
-          json5: new OptionsConstructor
-            .json5(
-              Plugin
-                .json5,
-              Parser
-                .json5,
-              ...files
-                .json5
-                ?? [],
-            ),
           json: new OptionsConstructor
             .json(
               Plugin
@@ -215,88 +226,73 @@ export default class {
         };
       this
         .rulesets = {
-          js: [
-            ...DefaultRulesets
-              .js,
-            override
-              .overrideJs
-              ?? {},
-          ],
-          ts: [
-            ...DefaultRulesets
-              .ts,
-            override
-              .overrideTs
-              ?? {},
-          ],
-          svelte: [
-            ...DefaultRulesets
-              .svelte,
-            override
-              .overrideSvelte
-              ?? {},
-          ],
-          jest: [
-            ...DefaultRulesets
-              .jest,
+          js: Rulesets
+            .js
+            .override(
+              override
+                .overrideJs,
+            ),
+          ts: Rulesets
+            .ts
+            .override(
+              override
+                .overrideTs,
+            ),
+          svelte: Rulesets
+            .svelte
+            .override(
+              override
+                .overrideSvelte,
+            ),
+          jest: Rulesets
+            .jest
+            .override(
 
-            // Remove after tuning: jest shared config
-            Plugin
-              .jest
-              .jest
-              .configs["flat/recommended"]
-              .rules,
-            override
-              .overrideJest
-              ?? {},
-          ],
-          html: [
-            ...DefaultRulesets
-              .html,
-
-            // Remove after tuning: @html-eslint shared config
-            (
+              // Remove after tuning: jest shared config
               Plugin
-                .html["@html-eslint"]
-                .configs["flat/recommended"] as Record<
-                "rules"
-                ,
-                IRules
-              >
-            )
-              .rules,
-            override
-              .overrideHtml
-              ?? {},
-          ],
-          jsonc: [
-            ...DefaultRulesets
-              .jsonc,
-            override
-              .overrideJsonc
-              ?? {},
-          ],
-          json5: [
-            ...DefaultRulesets
-              .json5,
-            override
-              .overrideJson5
-              ?? {},
-          ],
-          json: [
-            ...DefaultRulesets
-              .json,
-            override
-              .overrideJson
-              ?? {},
-          ],
-          yml: [
-            ...DefaultRulesets
-              .yml,
-            override
-              .overrideYml
-              ?? {},
-          ],
+                .jest
+                .jest
+                .configs["flat/recommended"]
+                .rules,
+              override
+                .overrideJest,
+            ),
+          html: Rulesets
+            .html
+            .override(
+
+              // Remove after tuning: @html-eslint shared config
+              (
+                Plugin
+                  .html["@html-eslint"]
+                  .configs["flat/recommended"] as Record<
+                  "rules"
+                  ,
+                  RuleSpec
+                >
+              )
+                .rules,
+              override
+                .overrideHtml,
+            ),
+          jsonc: Rulesets
+            .jsonc
+            .override(
+              override
+                .overrideJsonc,
+            ),
+          json: Rulesets
+            .json
+            .override(
+              override
+                .overrideJson,
+            ),
+          yml: Rulesets
+            .yml
+            .override(
+              override
+                .overrideYml,
+            ),
         };
     }
     catch (e) {
@@ -308,9 +304,9 @@ export default class {
   }
 
   public get configs(): Class.Output.FlatConfigs<
-    Language
+    Scopes
   > {
-    return languages
+    return scopes
       .map(
         language =>
           this
@@ -322,11 +318,11 @@ export default class {
   }
 
   protected getLanguageConfigs<
-    L extends Language,
+    Scope extends Scopes,
   >(
-    language: L,
+    language: Scope,
   ): Class.Output.FlatConfigs<
-      L
+      Scope
     > {
     const {
       options,
@@ -339,13 +335,13 @@ export default class {
       language
     ];
 
-    return typeof option === "undefined"
-      || option
-        .body
-        .files
-        .length < 1
+    return option
+      .body
+      .files
+      .length < 1
       ? []
       : ruleset
+        .flat
         .map(
           rules => {
             return {
@@ -359,38 +355,9 @@ export default class {
 }
 
 declare namespace Class {
-
-  namespace Property {
-    type Rulesets = typeof DefaultRulesets;
-    type Options = {
-      [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
-    };
-  }
-
-  namespace Parameter {
-    type Files = Partial<
-      Record<
-        Language
-        ,
-        string[]
-      >
-    >;
-    type Override = Partial<
-      Record<
-        `override${
-          Capitalize<
-            Language
-          >
-        }`
-        ,
-        IRules
-      >
-    >;
-  }
-
   namespace Output {
     type FlatConfigs<
-      L extends Language,
+      L extends Scopes,
     > = Array<
       FlatConfigs.Config<
         L
@@ -399,14 +366,16 @@ declare namespace Class {
 
     namespace FlatConfigs {
       type Config<
-        L extends Language,
+        L extends Scopes,
       > =
         & Record<
           "rules"
           ,
-          IRules
+          RuleSpec
         >
-        & Property.Options[
+        & {
+          [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
+        }[
           L
         ][
           "body"

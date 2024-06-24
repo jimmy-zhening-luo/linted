@@ -1,17 +1,20 @@
+import Ruleset from "./base/Ruleset.js";
 import TsRuleset from "./TsRuleset.js";
 import SvelteDisableConflictJs from "./rules/svelte/SvelteDisableConflictJs.js";
 import SvelteDisableConflictTs from "./rules/svelte/SvelteDisableConflictTs.js";
-import SvelteDisableExtend from "./rules/svelte/SvelteDisableExtend.js";
-import SvelteEnableExtend from "./rules/svelte/SvelteEnableExtend.js";
+import SvelteDisableExt from "./rules/svelte/SvelteDisableExt.js";
+import SvelteEnableExt from "./rules/svelte/SvelteEnableExt.js";
 import SvelteEnable from "./rules/svelte/SvelteEnable.js";
 
-const SvelteRuleset: IRules[] = [
-  ...TsRuleset,
+const SvelteRuleset = new Ruleset(
+  "svelte",
+  ...TsRuleset
+    .ruleset,
   SvelteDisableConflictJs,
   SvelteDisableConflictTs,
-  SvelteDisableExtend,
-  SvelteEnableExtend,
+  SvelteDisableExt,
+  SvelteEnableExt,
   SvelteEnable,
-];
+);
 
 export default SvelteRuleset;

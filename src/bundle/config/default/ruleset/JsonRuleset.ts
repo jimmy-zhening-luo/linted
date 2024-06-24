@@ -1,9 +1,12 @@
+import Ruleset from "./base/Ruleset.js";
 import JsoncRuleset from "./JsoncRuleset.js";
-import JsonUnsupported from "./rules/json/JsonUnsupported.js";
+import JsonUnsupport from "./rules/json/JsonUnsupport.js";
 
-const JsonRuleset: IRules[] = [
-  ...JsoncRuleset,
-  JsonUnsupported,
-];
+const JsonRuleset = new Ruleset(
+  "json",
+  ...JsoncRuleset
+    .ruleset,
+  JsonUnsupport,
+);
 
 export default JsonRuleset;

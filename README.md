@@ -1,6 +1,6 @@
 # [@jimbojet/lint](https://npmjs.com/package/@jimbojet/lint)
 
-Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON/5/C, and sadly YAML.
+Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON(C), and sadly YAML.
 
 ## Languages
 
@@ -13,7 +13,7 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 
 ### Data
 
-- **[JSON](https://json.org), [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments), [JSON5](https://json5.org/):** [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
+- **[JSON](https://json.org), [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments):** [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
 - **[YAML](https://redhat.com/en/topics/automation/what-is-yaml):** [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
 
 ### Test
@@ -128,7 +128,7 @@ No need to remember each plugin's `parserOptions`; you won't have to do *this* j
               // ...
             ],
 
-            // ...jest, html, css, jsonc, json5, json, yml
+            // ...jest, html, css, jsonc, json, yml
           },
           { // Optional: Override
             overrideJs: {
@@ -137,7 +137,7 @@ No need to remember each plugin's `parserOptions`; you won't have to do *this* j
 
             // ...overrideTs, overrideSvelte, overrideJest,
             //    overrideHtml, overrideCss, overrideJsonc,
-            //    overrideJson5, overrideJson, overrideYml
+            //    overrideJson, overrideYml
           },
         )
         ```
@@ -175,11 +175,11 @@ ___
 - Embedded CSS
 
 - Svelte Interaction TBD
-    - .svelte-embedded HTML (on top of Svelte HTML rules)
+  - .svelte-embedded HTML (on top of Svelte HTML rules)
 
-    - .html files in Svelte projects (e.g. title not required)
-    
-    - Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
+  - .html files in Svelte projects (e.g. title not required)
+
+  - Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
 
 #### JSON (Custom Schema Validation)
 
@@ -206,7 +206,6 @@ svelte
 jest
 html
 jsonc
-json5
 json
 yml
 ```
@@ -231,11 +230,9 @@ yml
 
 - html: .html
 
-- jsonc: .json [JSON], .json [JSONC/5]
+- jsonc: .json (JSON), .json (JSONC)
 
-- json5: .json [JSON], .json [JSONC/5]
-
-- json: .json [JSON]
+- json: .json (JSON)
 
 - yml: .y(a)ml
 

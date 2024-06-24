@@ -1,4 +1,5 @@
-const [OFF] = ["off"];
+import { OFF } from "../State.js";
+
 const TsDisableCompiler = {
 
   // ESLint DISABLE (TSC)

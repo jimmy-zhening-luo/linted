@@ -1,5 +1,6 @@
-const [OFF] = ["off"] as const;
-const TsDisableExtend: IRules = {
+import { OFF } from "../State.js";
+
+const TsDisableExt = {
 
   // DISABLE ESLint -- TS Extensions (STEP 1/2)
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
@@ -31,4 +32,4 @@ const TsDisableExtend: IRules = {
   "require-await": OFF,
 };
 
-export default TsDisableExtend;
+export default TsDisableExt;

@@ -1,9 +1,9 @@
-import BaseOptions from "./base/BaseOptions.js";
+import Option from "./base/Option.js";
 
-export default class HtmlOptions extends BaseOptions<
-  "html"
+export default class JsoncOption extends Option<
+  "jsonc"
   ,
-  HtmlPlugin
+  JsonPlugin
   ,
   true
   ,
@@ -18,13 +18,13 @@ export default class HtmlOptions extends BaseOptions<
   ""
 > {
   constructor(
-    plugins: HtmlOptions["body"]["plugins"],
-    parser: HtmlOptions["body"]["languageOptions"]["parser"],
+    plugins: JsoncOption["body"]["plugins"],
+    parser: JsoncOption["body"]["languageOptions"]["parser"],
     ...files: string[]
   ) {
     super(
       {
-        name: "jimbolint/html",
+        name: "linted/scope:jsonc",
         files,
         plugins,
         linterOptions: {

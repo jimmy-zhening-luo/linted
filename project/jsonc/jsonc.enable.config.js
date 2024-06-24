@@ -1,10 +1,8 @@
-const [
+import {
   ERROR,
   OFF,
-] = [
-  "error",
-  "off",
-];
+} from "../State.js";
+
 const JsoncEnable = {
 
   // JSONC Only

@@ -1,18 +1,18 @@
-export default abstract class BaseOptions<
-  Name extends string,
+export default class Option<
+  Scope extends string,
   Plugins,
   Parser = false,
   ParserOptions = {},
   Globals = {},
-  Processor = "",
+  Processor = never,
   SourceType = "module",
   EcmaVersion = "latest",
   LinterOptions = {},
 > {
   constructor(
-    public readonly body: IOptions<
-      `jimbolint/${literalful<
-        Name
+    public readonly body: IOption<
+      `linted/scope:${literalful<
+        Scope
       >}`
       ,
       LinterOptions

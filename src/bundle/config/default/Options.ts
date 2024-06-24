@@ -1,17 +1,19 @@
-import JsOptions from "./options/JsOptions.js";
-import TsOptions from "./options/TsOptions.js";
-import SvelteOptions from "./options/SvelteOptions.js";
-import JestOptions from "./options/JestOptions.js";
-import HtmlOptions from "./options/HtmlOptions.js";
-import JsonOptions from "./options/JsonOptions.js";
-import YmlOptions from "./options/YmlOptions.js";
+import JsOption from "./option/JsOption.js";
+import TsOption from "./option/TsOption.js";
+import SvelteOption from "./option/SvelteOption.js";
+import JestOption from "./option/JestOption.js";
+import HtmlOption from "./option/HtmlOption.js";
+import JsoncOption from "./option/JsoncOption.js";
+import JsonOption from "./option/JsonOption.js";
+import YmlOption from "./option/YmlOption.js";
 
 export {
-  JsOptions,
-  TsOptions,
-  SvelteOptions,
-  JestOptions,
-  HtmlOptions,
-  JsonOptions,
-  YmlOptions,
+  JsOption,
+  TsOption,
+  SvelteOption,
+  JestOption,
+  HtmlOption,
+  JsoncOption,
+  JsonOption,
+  YmlOption,
 };

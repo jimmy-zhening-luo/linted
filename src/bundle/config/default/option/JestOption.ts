@@ -1,25 +1,30 @@
-import BaseOptions from "./base/BaseOptions.js";
-import type JsOptions from "./JsOptions.js";
+import Option from "./base/Option.js";
+import type TsOption from "./TsOption.js";
 
-export default class TsOptions extends BaseOptions<
-  "ts"
+export default class JestOption extends Option<
+  "jest"
   ,
-  & JsOptions["body"]["plugins"]
-  & TsPlugin
+  & TsOption["body"]["plugins"]
+  & JestPlugin
   ,
   true
   ,
-  & JsOptions["body"]["languageOptions"]
-  & { project: "tsconfig.json" }
+  & TsOption["body"]["languageOptions"]["parserOptions"]
+  ,
+  Record<
+    "jest/globals"
+    ,
+    true
+  >
 > {
   constructor(
-    plugins: TsOptions["body"]["plugins"],
-    parser: unknown,
+    plugins: JestOption["body"]["plugins"],
+    parser: JestOption["body"]["languageOptions"]["parser"],
     ...files: string[]
   ) {
     super(
       {
-        name: "jimbolint/ts",
+        name: "linted/scope:jest",
         files,
         plugins,
         linterOptions: {
@@ -27,6 +32,7 @@ export default class TsOptions extends BaseOptions<
           reportUnusedDisableDirectives: "error",
         },
         languageOptions: {
+          globals: { "jest/globals": true },
           ecmaVersion: "latest",
           sourceType: "module",
           parser,

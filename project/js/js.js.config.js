@@ -1,17 +1,11 @@
-const [
+import {
   ERROR,
   OFF,
-] = [
-  "error",
-  "off",
-];
-const [
-  ALWAYS,
+
   NEVER,
-] = [
-  "always",
-  "never",
-];
+  ALWAYS,
+} from "../State.js";
+
 const JsEnable = {
 
   // Problems

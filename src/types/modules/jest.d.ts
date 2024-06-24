@@ -5,7 +5,7 @@ declare module "eslint-plugin-jest" {
     Record<
       "rules"
       ,
-      IRules
+      RuleSpec
     >
   >;
 }

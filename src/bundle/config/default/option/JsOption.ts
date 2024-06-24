@@ -1,17 +1,17 @@
-import BaseOptions from "./base/BaseOptions.js";
+import Option from "./base/Option.js";
 
-export default class JsOptions extends BaseOptions<
+export default class JsOption extends Option<
   "js"
   ,
   StylisticPlugin
 > {
   constructor(
-    plugins: JsOptions["body"]["plugins"],
+    plugins: JsOption["body"]["plugins"],
     ...files: string[]
   ) {
     super(
       {
-        name: "jimbolint/js",
+        name: "linted/scope:js",
         files,
         plugins,
         linterOptions: {

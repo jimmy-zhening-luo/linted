@@ -1,10 +1,8 @@
-const [
+import {
   ERROR,
   OFF,
-] = [
-  "error",
-  "off",
-];
+} from "../State.js";
+
 const TsEnable = {
 
   // ENABLE TSLint (TypeScript ONLY)
@@ -65,19 +63,7 @@ const TsEnable = {
       prefer: "type-imports",
     },
   ],
-  "@typescript-eslint/explicit-function-return-type": [
-    ERROR,
-    {
-      allowExpressions: false,
-      allowTypedFunctionExpressions: false,
-      allowHigherOrderFunctions: false,
-      allowDirectConstAssertionInArrowFunctions: false,
-      allowConciseArrowFunctionExpressionsStartingWithVoid: true,
-      allowFunctionsWithoutTypeParameters: true,
-      allowedNames: [],
-      allowIIFEs: false,
-    },
-  ],
+  "@typescript-eslint/explicit-function-return-type": OFF,
   "@typescript-eslint/explicit-member-accessibility": [
     ERROR,
     {
@@ -92,16 +78,7 @@ const TsEnable = {
       },
     },
   ],
-  "@typescript-eslint/explicit-module-boundary-types": [
-    ERROR,
-    {
-      allowArgumentsExplicitlyTypedAsAny: false,
-      allowDirectConstAssertionInArrowFunctions: false,
-      allowedNames: [],
-      allowHigherOrderFunctions: false,
-      allowTypedFunctionExpressions: false,
-    },
-  ],
+  "@typescript-eslint/explicit-module-boundary-types": OFF,
   "@typescript-eslint/member-ordering": [
     ERROR,
     {

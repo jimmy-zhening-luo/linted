@@ -1,5 +1,9 @@
-const [ERROR] = ["error"];
-const [NEVER] = ["never"];
+import {
+  ERROR,
+
+  NEVER,
+} from "../State.js";
+
 const JsonUnsupported = {
 
   // JSONC Only

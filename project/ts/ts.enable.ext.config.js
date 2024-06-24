@@ -1,11 +1,9 @@
-const [
+import {
   ERROR,
   OFF,
-] = [
-  "error",
-  "off",
-] as const;
-const TsEnableExtend: IRules = {
+} from "../State.js";
+
+const TsEnableExt = {
 
   // ENABLE TS Extensions (STEP 2/2)
   // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
@@ -131,4 +129,4 @@ const TsEnableExtend: IRules = {
   ],
 };
 
-export default TsEnableExtend;
+export default TsEnableExt;

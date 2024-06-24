@@ -1,9 +1,9 @@
-import BaseOptions from "./base/BaseOptions.js";
+import Option from "./base/Option.js";
 
-export default class YmlOptions extends BaseOptions<
-  "yml"
+export default class HtmlOption extends Option<
+  "html"
   ,
-  YmlPlugin
+  HtmlPlugin
   ,
   true
   ,
@@ -18,13 +18,13 @@ export default class YmlOptions extends BaseOptions<
   ""
 > {
   constructor(
-    plugins: YmlOptions["body"]["plugins"],
-    parser: YmlOptions["body"]["languageOptions"]["parser"],
+    plugins: HtmlOption["body"]["plugins"],
+    parser: HtmlOption["body"]["languageOptions"]["parser"],
     ...files: string[]
   ) {
     super(
       {
-        name: "jimbolint/yml",
+        name: "linted/scope:html",
         files,
         plugins,
         linterOptions: {
@@ -32,7 +32,6 @@ export default class YmlOptions extends BaseOptions<
           reportUnusedDisableDirectives: "error",
         },
         languageOptions: { parser },
-
       },
     );
   }

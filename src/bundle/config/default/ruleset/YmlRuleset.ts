@@ -1,9 +1,11 @@
-import YmlEnableExtend from "./rules/yml/YmlEnableExtend.js";
+import Ruleset from "./base/Ruleset.js";
+import YmlEnableExt from "./rules/yml/YmlEnableExt.js";
 import YmlEnable from "./rules/yml/YmlEnable.js";
 
-const YmlRuleset: IRules[] = [
-  YmlEnableExtend,
+const YmlRuleset = new Ruleset(
+  "yml",
+  YmlEnableExt,
   YmlEnable,
-];
+);
 
 export default YmlRuleset;
