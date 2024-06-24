@@ -6,7 +6,7 @@ import {
   HtmlOptions,
   JsonOptions,
   YmlOptions,
-} from "./default/Options.js";
+} from "./config/default/Options.js";
 import {
   JsRuleset,
   TsRuleset,
@@ -16,7 +16,7 @@ import {
   JsoncRuleset,
   JsonRuleset,
   YmlRuleset,
-} from "./default/Ruleset.js";
+} from "./config/default/Ruleset.js";
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
