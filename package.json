@@ -24,10 +24,10 @@
   ],
   "type": "module",
   "private": false,
-  "main": "dist/pkg/index.js",
-  "types": "dist/pkg/index.d.ts",
+  "main": "dist/bundle/index.js",
+  "types": "dist/bundle/index.d.ts",
   "files": [
-    "dist/pkg"
+    "dist/bundle"
   ],
   "repository": {
     "type": "git",
