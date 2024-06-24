@@ -28,8 +28,8 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 
 ### One-Arugment API
 
-- Files to lint
-- *Optional:* [override](#full-control-via-per-language-override) rules
+- Scope (i.e. file to lint)
+- *Optional:* [override](#full-control-via-per-scope-override) rules
 
 ### Two-Statement `eslint.config.js`
 
@@ -48,7 +48,7 @@ export default [
 ];
 ```
 
-### Full Control via *Per-Language* Override
+### Full Control via *Per-Scope* Override
 
 ```javascript
       // ...Scope (i.e. files to lint)
@@ -58,10 +58,11 @@ export default [
         // Turns it off in "ts" scope,
         // but NOT in "js" scope,
         // NOR in "svelte" scope.
-        "no-unused-vars": "off",
+        "no-unused-vars": "off", // JS base rule
+        // "@typescript-eslint/ ..., or TS plugin rule
       },
       overrideSvelte: {
-        // ...
+        // ... JS, TS, or Svelte plugin rules
       },
     },
   )
@@ -127,16 +128,16 @@ No need to remember each plugin's `parserOptions`; you won't have to do *this* j
               // ...
             ],
 
-            // ...html, css, json, jsonc, json5, yml
+            // ...jest, html, css, jsonc, json5, json, yml
           },
           { // Optional: Override
             overrideJs: {
               // ...same rule schema as ESLint
             },
 
-            // ...overrideTs, overrideSvelte, overrideHtml,
-            //    overrideCss, overrideJson, overrideJsonc,
-            //    overrideJson5, overrideYml
+            // ...overrideTs, overrideSvelte, overrideJest,
+            //    overrideHtml, overrideCss, overrideJsonc,
+            //    overrideJson5, overrideJson, overrideYml
           },
         )
         ```
@@ -167,11 +168,18 @@ ___
 
 - [CSS](https://ota-meshi.github.io/eslint-plugin-css/)
 
-#### HTML (Embedded)
+#### HTML Connectors
 
-- [HTML Script Block](https://github.com/BenoitZugmeyer/eslint-plugin-html)
+- [Embedded TypeScript](https://github.com/BenoitZugmeyer/eslint-plugin-html)
 
-- HTML Style Block?
+- Embedded CSS
+
+- Svelte Interaction TBD
+    - .svelte-embedded HTML (on top of Svelte HTML rules)
+
+    - .html files in Svelte projects (e.g. title not required)
+    
+    - Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
 
 #### JSON (Custom Schema Validation)
 
@@ -181,30 +189,68 @@ ___
 
 ## Rule Logic (Advanced)
 
-### Example
+### Scope
 
-#### TypeScript
+#### Precedence
 
-- TypeScript files are subject to both ESLint and TypeScript rules.
+- If a file matches more than one **scope** glob, the set of all scopes' rules are applied to the file.
 
-- TypeScript overrides apply to TypeScript files but not JavaScript files.
+- If any rule within that combined set is specified in more than one scope, then the highest-precedence scope's rule specification wins.
 
-#### Svelte
+Scope precedence (low to high):
 
-Svelte files contain TypeScript and style blocks, while also containing native Svelte tags whose attributes may contain TypeScript or style.
+```bash
+js
+ts
+svelte
+jest
+html
+jsonc
+json5
+json
+yml
+```
 
-##### TypeScript blocks inside `.svelte` files
+#### Default Rules
 
-- TypeScript rules with appropriate Svelte overrides to deal with TypeScript semantics that only exist in Svelte land.
+- Each scope maps to a unique language.
 
-- Any TypeScript overrides of TypeScript or base ESLint rules UNLESS those rules are incompatible with Svelte, in which case this since otherwise they would crash ESLint.
+- Each language has a set of default rules.
 
-- Any Svelte overrides of TypeScript or base ESLint rules.
+- A given language can be an extension of or depend on another language. For example, TypeScript extends JavaScript, while Svelte depends on TypeScript (which extends JavaScript). For such a language, its scope's default rules are aggregated with the default rules of extended or consumed languages, using the same precedence order as that of scope.
 
-##### Svelte tags (possibly wiht attributes containing TypeScript)
+##### Scope-Language Inclusion
 
-- Svelte rules.
+- js: .js
 
-- Same TypeScript logic as for TypeScript blocks, but the Svelte parser has some additional smarts when producing the AST, so only certain TypeScript rules will apply (I have no idea how this works, so take it up with the Svelte parser team).
+- ts: .js, .ts
 
-- Any Svelte overrides (including of TypeScript or base ESLint rules).
+- svelte: .js, .ts, .svelte
+
+- jest: .js, .ts, (.spec).ts
+
+- html: .html
+
+- jsonc: .json [JSON], .json [JSONC/5]
+
+- json5: .json [JSON], .json [JSONC/5]
+
+- json: .json [JSON]
+
+- yml: .y(a)ml
+
+### Override
+
+Overrides are per-**scope.**
+
+#### Example
+
+`overrideTs` rules apply to files that:
+
+- ✅ ONLY match scope `ts`.
+
+- ✅ match scope `ts` and any number of lower precedence scopes (e.g. `js`).
+
+`overrideJs` rules do **NOT** apply to files that:
+
+- ❌ match scope `ts` and at least one higher precedence scope (e.g. `svelte`), even if the higher precedence scope includes `ts` language default rules (e.g. `svelte` includes `ts` default rules, but NOT `overrideTs` rules).
