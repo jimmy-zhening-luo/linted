@@ -13,7 +13,7 @@ import JsonRuleset from "./project/json.config.js";
 const FILES = {
   js: [
     "project/**/*.config.js",
-    "*.config.js",
+    "eslint.config.js",
   ],
   ts: ["src/**/*.ts"],
   jest: ["src/**/*.spec.ts"],
