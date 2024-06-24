@@ -251,6 +251,6 @@ Overrides are per-**scope.**
 
 - ✅ match scope `ts` and any number of lower precedence scopes (e.g. `js`).
 
-`overrideJs` rules do **NOT** apply to files that:
+`overrideTs` rules do **NOT** apply to files that:
 
 - ❌ match scope `ts` and at least one higher precedence scope (e.g. `svelte`), even if the higher precedence scope includes `ts` language default rules (e.g. `svelte` includes `ts` default rules, but NOT `overrideTs` rules).
