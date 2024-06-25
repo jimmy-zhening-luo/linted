@@ -11,9 +11,11 @@ export default class Option<
 > {
   constructor(
     public readonly body: IOption<
-      `linted/scope:${literalful<
-        Scope
-      >}`
+      `linted/scope:${
+        literalful<
+          Scope
+        >
+      }`
       ,
       LinterOptions
       ,
