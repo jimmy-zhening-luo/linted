@@ -3,15 +3,15 @@ import Option from "./base/Option.js";
 export default class JsonOption extends Option<
   "json"
   ,
-  JsonPlugin
+  "jsonc"
   ,
   true
   ,
   {}
   ,
-  {}
+  never
   ,
-  ""
+  never
   ,
   ""
   ,

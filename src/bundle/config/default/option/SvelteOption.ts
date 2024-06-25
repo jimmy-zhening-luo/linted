@@ -4,8 +4,8 @@ import type TsOption from "./TsOption.js";
 export default class SvelteOption extends Option<
   "svelte"
   ,
-  & TsOption["body"]["plugins"]
-  & SveltePlugin
+  | "svelte"
+  | keyof TsOption["body"]["plugins"]
   ,
   true
   ,
@@ -21,7 +21,7 @@ export default class SvelteOption extends Option<
     [".svelte"]
   >
   ,
-  {}
+  never
   ,
   "svelte/svelte"
 > {

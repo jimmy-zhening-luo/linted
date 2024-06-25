@@ -3,15 +3,15 @@ import Option from "./base/Option.js";
 export default class YmlOption extends Option<
   "yml"
   ,
-  YmlPlugin
+  "yml"
   ,
   true
   ,
   {}
   ,
-  {}
+  never
   ,
-  ""
+  never
   ,
   ""
   ,

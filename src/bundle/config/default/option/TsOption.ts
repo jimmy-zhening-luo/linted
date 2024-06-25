@@ -4,8 +4,8 @@ import type JsOption from "./JsOption.js";
 export default class TsOption extends Option<
   "ts"
   ,
-  & JsOption["body"]["plugins"]
-  & TsPlugin
+  | "@typescript-eslint"
+  | keyof JsOption["body"]["plugins"]
   ,
   true
   ,

@@ -4,18 +4,14 @@ import type TsOption from "./TsOption.js";
 export default class JestOption extends Option<
   "jest"
   ,
-  & TsOption["body"]["plugins"]
-  & JestPlugin
+  | "jest"
+  | keyof TsOption["body"]["plugins"]
   ,
   true
   ,
   & TsOption["body"]["languageOptions"]["parserOptions"]
   ,
-  Record<
-    "jest/globals"
-    ,
-    true
-  >
+  "jest/globals"
 > {
   constructor(
     plugins: JestOption["body"]["plugins"],

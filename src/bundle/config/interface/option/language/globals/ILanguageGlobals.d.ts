@@ -1,15 +1,15 @@
 declare type ILanguageGlobals<
   Globals,
-> = Globals extends Record<
-  string
-  ,
-  true
->
-  ? {} extends Globals
-      ? {}
-      : Record<
-        "globals"
-        ,
-        Globals
-      >
-  : {};
+> = literalful<
+  Globals
+> extends never
+  ? {}
+  : Record<
+    "globals"
+    ,
+    Record<
+      Globals
+      ,
+      true
+    >
+  >;

@@ -5,11 +5,11 @@ declare type ILanguageParserOptions<
   ,
   unknown
 >
-  ? {} extends ParserOptions
-      ? {}
-      : Record<
-        "parserOptions"
-        ,
-        ParserOptions
-      >
+  ? keyof ParserOptions extends never
+    ? {}
+    : Record<
+      "parserOptions"
+      ,
+      ParserOptions
+    >
   : {};

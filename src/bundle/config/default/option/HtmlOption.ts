@@ -3,15 +3,15 @@ import Option from "./base/Option.js";
 export default class HtmlOption extends Option<
   "html"
   ,
-  HtmlPlugin
+  "@html-eslint"
   ,
   true
   ,
   {}
   ,
-  {}
+  never
   ,
-  ""
+  never
   ,
   ""
   ,

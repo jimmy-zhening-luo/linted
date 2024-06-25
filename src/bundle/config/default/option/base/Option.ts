@@ -3,7 +3,7 @@ export default class Option<
   Plugins,
   Parser = false,
   ParserOptions = {},
-  Globals = {},
+  Globals = never,
   Processor = never,
   SourceType = "module",
   EcmaVersion = "latest",
@@ -17,7 +17,9 @@ export default class Option<
       ,
       LinterOptions
       ,
-      Plugins
+      literalful<
+        Plugins
+      >
       ,
       EcmaVersion
       ,

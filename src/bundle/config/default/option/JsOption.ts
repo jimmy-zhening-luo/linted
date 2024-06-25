@@ -3,7 +3,7 @@ import Option from "./base/Option.js";
 export default class JsOption extends Option<
   "js"
   ,
-  StylisticPlugin
+  "@stylistic"
 > {
   constructor(
     plugins: JsOption["body"]["plugins"],
