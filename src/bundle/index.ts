@@ -1,3 +1,16 @@
+import stylistic from "@stylistic/eslint-plugin";
+import ts from "@typescript-eslint/eslint-plugin";
+import svelte from "eslint-plugin-svelte";
+import jest from "eslint-plugin-jest";
+import html from "@html-eslint/eslint-plugin";
+import jsonc from "eslint-plugin-jsonc";
+import yml from "eslint-plugin-yml";
+import tsParser from "@typescript-eslint/parser";
+import svelteParser from "svelte-eslint-parser";
+import htmlParser from "@html-eslint/parser";
+import jsoncParser from "jsonc-eslint-parser";
+import ymlParser from "yaml-eslint-parser";
+import type Ruleset from "./config/default/ruleset/base/Ruleset.js";
 import {
   JsOption,
   TsOption,
@@ -18,19 +31,6 @@ import {
   JsonRuleset,
   YmlRuleset,
 } from "./config/default/Rulesets.js";
-import stylistic from "@stylistic/eslint-plugin";
-import ts from "@typescript-eslint/eslint-plugin";
-import svelte from "eslint-plugin-svelte";
-import jest from "eslint-plugin-jest";
-import html from "@html-eslint/eslint-plugin";
-import jsonc from "eslint-plugin-jsonc";
-import yml from "eslint-plugin-yml";
-import tsParser from "@typescript-eslint/parser";
-import svelteParser from "svelte-eslint-parser";
-import htmlParser from "@html-eslint/parser";
-import jsoncParser from "jsonc-eslint-parser";
-import ymlParser from "yaml-eslint-parser";
-import type Ruleset from "./config/default/ruleset/base/Ruleset.js";
 
 const scopes = [
   "js",
