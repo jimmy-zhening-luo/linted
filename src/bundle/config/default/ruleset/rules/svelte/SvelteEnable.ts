@@ -5,6 +5,8 @@ import {
 
   NEVER,
   ALWAYS,
+  BELOW,
+  DOUBLE,
 } from "../State.js";
 
 const SvelteEnable = new Rules(
@@ -116,8 +118,8 @@ const SvelteEnable = new Rules(
     "svelte/first-attribute-linebreak": [
       ERROR,
       {
-        multiline: "below",
-        singleline: "below",
+        multiline: BELOW,
+        singleline: BELOW,
       },
     ],
     "svelte/html-closing-bracket-spacing": [
@@ -131,7 +133,7 @@ const SvelteEnable = new Rules(
     "svelte/html-quotes": [
       ERROR,
       {
-        prefer: "double",
+        prefer: DOUBLE,
         dynamic: {
           quoted: false,
           avoidInvalidUnquotedInHTML: true,

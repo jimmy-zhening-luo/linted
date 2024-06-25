@@ -4,6 +4,7 @@ import {
 
   NEVER,
   ALWAYS,
+  STRICT,
 } from "../State.js";
 
 const YmlEnableExt = new Rules(
@@ -49,7 +50,7 @@ const YmlEnableExt = new Rules(
       {
         beforeColon: false,
         afterColon: true,
-        mode: "strict",
+        mode: STRICT,
       },
     ],
     "yml/no-irregular-whitespace": [

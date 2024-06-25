@@ -5,6 +5,7 @@ import {
 
   NEVER,
   ALWAYS,
+  DOUBLE,
 } from "../State.js";
 
 const YmlEnable = new Rules(
@@ -75,7 +76,7 @@ const YmlEnable = new Rules(
     "yml/quotes": [
       ERROR,
       {
-        prefer: "double",
+        prefer: DOUBLE,
         avoidEscape: true,
       },
     ],

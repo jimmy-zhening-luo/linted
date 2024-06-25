@@ -5,6 +5,9 @@ import {
   NEVER,
   ALWAYS,
   CONSISTENT,
+  STRICT,
+  LAST,
+  DOUBLE,
 } from "../State.js";
 
 const JsoncEnableExt = new Rules(
@@ -36,7 +39,7 @@ const JsoncEnableExt = new Rules(
     ],
     "jsonc/comma-style": [
       ERROR,
-      "last",
+      LAST,
     ],
     "jsonc/indent": [
       ERROR,
@@ -47,7 +50,7 @@ const JsoncEnableExt = new Rules(
       {
         beforeColon: false,
         afterColon: true,
-        mode: "strict",
+        mode: STRICT,
       },
     ],
     "jsonc/no-dupe-keys": ERROR,
@@ -93,7 +96,7 @@ const JsoncEnableExt = new Rules(
     ],
     "jsonc/quotes": [
       ERROR,
-      "double",
+      DOUBLE,
       { avoidEscape: false },
     ],
     "jsonc/space-unary-ops": ERROR,

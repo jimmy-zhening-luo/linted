@@ -5,6 +5,8 @@ import {
 
   NEVER,
   ALWAYS,
+  AS_NEEDED,
+  ALL,
 } from "../State.js";
 
 const JsEnable = new Rules(
@@ -116,9 +118,9 @@ const JsEnable = new Rules(
     "no-unused-vars": [
       ERROR,
       {
-        vars: "all",
-        args: "all",
-        caughtErrors: "all",
+        vars: ALL,
+        args: ALL,
+        caughtErrors: ALL,
         ignoreRestSiblings: false,
       },
     ], // TSLint
@@ -160,7 +162,7 @@ const JsEnable = new Rules(
     ],
     "arrow-body-style": [
       ERROR,
-      "as-needed",
+      AS_NEEDED,
       { requireReturnForObjectLiteral: true },
     ],
     "block-scoped-var": ERROR,
@@ -415,7 +417,7 @@ const JsEnable = new Rules(
     "prefer-const": [
       ERROR,
       {
-        destructuring: "all",
+        destructuring: ALL,
         ignoreReadBeforeAssign: false,
       },
     ],
@@ -451,7 +453,7 @@ const JsEnable = new Rules(
     "prefer-template": ERROR,
     radix: [
       ERROR,
-      "as-needed",
+      AS_NEEDED,
     ],
     "require-await": ERROR, // TSLint
     "require-unicode-regexp": ERROR,

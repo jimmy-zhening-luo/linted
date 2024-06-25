@@ -2,6 +2,8 @@ import Rules from "../Rules.js";
 import {
   ERROR,
   OFF,
+
+  ALL,
 } from "../State.js";
 
 const TsEnableExt = new Rules(
@@ -78,9 +80,9 @@ const TsEnableExt = new Rules(
     "@typescript-eslint/no-unused-vars": [
       ERROR,
       {
-        vars: "all",
-        args: "all",
-        caughtErrors: "all",
+        vars: ALL,
+        args: ALL,
+        caughtErrors: ALL,
         ignoreRestSiblings: false,
       },
     ],

@@ -5,6 +5,16 @@ import {
 
   NEVER,
   ALWAYS,
+  AS_NEEDED,
+  STRICT,
+  ALL,
+  STAR,
+  FIRST,
+  LAST,
+  BEFORE,
+  AFTER,
+  BELOW,
+  DOUBLE,
 } from "../State.js";
 
 const StylisticEnable = new Rules(
@@ -37,7 +47,7 @@ const StylisticEnable = new Rules(
     ],
     "@stylistic/arrow-parens": [
       ERROR,
-      "as-needed",
+      AS_NEEDED,
       { requireForBlockBody: false },
     ],
     "@stylistic/arrow-spacing": [
@@ -69,7 +79,7 @@ const StylisticEnable = new Rules(
     ],
     "@stylistic/comma-style": [
       ERROR,
-      "last",
+      LAST,
       {
         exceptions: {
           ArrayExpression: false,
@@ -122,7 +132,7 @@ const StylisticEnable = new Rules(
     ],
     "@stylistic/implicit-arrow-linebreak": [
       ERROR,
-      "below",
+      BELOW,
     ],
     "@stylistic/indent": [
       ERROR,
@@ -131,9 +141,9 @@ const StylisticEnable = new Rules(
         ignoredNodes: [],
         SwitchCase: 1,
         VariableDeclarator: {
-          "var": "first",
-          let: "first",
-          "const": "first",
+          "var": FIRST,
+          let: FIRST,
+          "const": FIRST,
         },
         outerIIFEBody: 1,
         MemberExpression: 1,
@@ -164,7 +174,7 @@ const StylisticEnable = new Rules(
       {
         beforeColon: false,
         afterColon: true,
-        mode: "strict",
+        mode: STRICT,
       },
     ],
     "@stylistic/keyword-spacing": [
@@ -221,7 +231,7 @@ const StylisticEnable = new Rules(
           {
             blankLine: ALWAYS,
             prev: "method",
-            next: "*",
+            next: STAR,
           },
         ],
       },
@@ -278,7 +288,7 @@ const StylisticEnable = new Rules(
     "@stylistic/no-confusing-arrow": OFF,
     "@stylistic/no-extra-parens": [
       ERROR,
-      "all",
+      ALL,
       {
         conditionalAssign: true,
         returnAssign: true,
@@ -324,14 +334,14 @@ const StylisticEnable = new Rules(
     "@stylistic/no-whitespace-before-property": ERROR,
     "@stylistic/nonblock-statement-body-position": [
       ERROR,
-      "below",
+      BELOW,
       {
         overrides: {
-          "if": "below",
-          "else": "below",
-          "while": "below",
-          "do": "below",
-          "for": "below",
+          "if": BELOW,
+          "else": BELOW,
+          "while": BELOW,
+          "do": BELOW,
+          "for": BELOW,
         },
       },
     ],
@@ -378,12 +388,12 @@ const StylisticEnable = new Rules(
     ],
     "@stylistic/operator-linebreak": [
       ERROR,
-      "before",
+      BEFORE,
       {
         overrides: {
-          "=": "after",
-          "?": "before",
-          ":": "before",
+          "=": AFTER,
+          "?": BEFORE,
+          ":": BEFORE,
         },
       },
     ],
@@ -401,7 +411,7 @@ const StylisticEnable = new Rules(
       {
         blankLine: ALWAYS,
         prev: "directive",
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: NEVER,
@@ -414,7 +424,7 @@ const StylisticEnable = new Rules(
           "import",
           "cjs-import",
         ],
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: NEVER,
@@ -445,12 +455,12 @@ const StylisticEnable = new Rules(
           "debugger",
           "with",
         ],
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: ALWAYS,
         prev: "case",
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: ALWAYS,
@@ -463,12 +473,12 @@ const StylisticEnable = new Rules(
       {
         blankLine: ALWAYS,
         prev: "default",
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: ALWAYS,
         prev: "type",
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: NEVER,
@@ -478,12 +488,12 @@ const StylisticEnable = new Rules(
       {
         blankLine: ALWAYS,
         prev: "function",
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: ALWAYS,
         prev: "function-overload",
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: NEVER,
@@ -502,7 +512,7 @@ const StylisticEnable = new Rules(
           "let",
           "var",
         ],
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: NEVER,
@@ -520,7 +530,7 @@ const StylisticEnable = new Rules(
       {
         blankLine: ALWAYS,
         prev: "expression",
-        next: "*",
+        next: STAR,
       },
       {
         blankLine: NEVER,
@@ -529,7 +539,7 @@ const StylisticEnable = new Rules(
       },
       {
         blankLine: ALWAYS,
-        prev: "*",
+        prev: STAR,
         next: [
           "throw",
           "return",
@@ -539,7 +549,7 @@ const StylisticEnable = new Rules(
       },
       {
         blankLine: ALWAYS,
-        prev: "*",
+        prev: STAR,
         next: [
           "export",
           "cjs-export",
@@ -559,7 +569,7 @@ const StylisticEnable = new Rules(
     ],
     "@stylistic/quote-props": [
       ERROR,
-      "as-needed",
+      AS_NEEDED,
       {
         keywords: true,
         unnecessary: true,
@@ -568,7 +578,7 @@ const StylisticEnable = new Rules(
     ],
     "@stylistic/quotes": [
       ERROR,
-      "double",
+      DOUBLE,
       {
         avoidEscape: true,
         allowTemplateLiterals: true,
@@ -595,7 +605,7 @@ const StylisticEnable = new Rules(
     ],
     "@stylistic/semi-style": [
       ERROR,
-      "last",
+      LAST,
     ],
     "@stylistic/space-before-blocks": [
       ERROR,
