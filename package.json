@@ -22,26 +22,35 @@
     "json5",
     "yaml"
   ],
+  "license": "MIT",
   "type": "module",
   "private": false,
-  "main": "dist/bundle/index.js",
-  "types": "dist/bundle/index.d.ts",
-  "files": [
-    "dist/bundle"
-  ],
+  "config": {
+    "PACKAGE_JSON_VERSION": "1.0.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jimmy-zhening-luo/linted.git"
   },
-  "author": "Jimmy Zhening Luo",
-  "license": "MIT",
+  "homepage": "https://github.com/jimmy-zhening-luo/linted#readme",
   "bugs": {
     "url": "https://github.com/jimmy-zhening-luo/linted/issues"
   },
-  "homepage": "https://github.com/jimmy-zhening-luo/linted#readme",
+  "author": {
+    "name": "Jimmy Zhening Luo",
+    "email": "1450044+jimmy-zhening-luo@users.noreply.github.com",
+    "url": "https://jimm.my"
+  },
+  "files": [
+    "dist/bundle"
+  ],
+  "main": "dist/bundle/index.js",
+  "types": "dist/bundle/index.d.ts",
   "peerDependencies": {
     "eslint": "8"
   },
+  "peerDependenciesMeta": {},
+  "optionalDependencies": {},
   "dependencies": {
     "@html-eslint/eslint-plugin": "~0.25.0",
     "@html-eslint/parser": "~0.25.0",
