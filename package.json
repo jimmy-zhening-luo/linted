@@ -31,14 +31,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jimmy-zhening-luo/lint.git"
+    "url": "git+https://github.com/jimmy-zhening-luo/linted.git"
   },
   "author": "Jimmy Zhening Luo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jimmy-zhening-luo/lint/issues"
+    "url": "https://github.com/jimmy-zhening-luo/linted/issues"
   },
-  "homepage": "https://github.com/jimmy-zhening-luo/lint#readme",
+  "homepage": "https://github.com/jimmy-zhening-luo/linted#readme",
   "peerDependencies": {
     "eslint": "8"
   },
