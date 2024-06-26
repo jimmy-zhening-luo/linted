@@ -4,11 +4,9 @@ import tsParser from "@typescript-eslint/parser";
 import jest from "eslint-plugin-jest";
 import jsonc from "eslint-plugin-jsonc";
 import jsonParser from "jsonc-eslint-parser";
-import JsRuleset from "./project/JsRuleset.js";
-import TsRuleset from "./project/TsRuleset.js";
-import JestRuleset from "./project/JestRuleset.js";
-import JsoncRuleset from "./project/JsoncRuleset.js";
-import JsonRuleset from "./project/JsonRuleset.js";
+import yml from "eslint-plugin-yml";
+import ymlParser from "yaml-eslint-parser";
+import Rulesets from "./project/Rulesets.js";
 
 const FILES = {
   js: [
@@ -19,15 +17,25 @@ const FILES = {
   jest: ["src/**/*.spec.ts"],
   jsonc: ["tsconfig.json"],
   json: ["package.json"],
+  yml: [".markdownlint.yml"],
 };
 const RULESET = {
-  js: JsRuleset,
-  ts: TsRuleset,
-  jest: JestRuleset,
-  jsonc: JsoncRuleset,
-  json: JsonRuleset,
+  js: Rulesets.JsRuleset,
+  ts: Rulesets.TsRuleset,
+  jest: Rulesets.JestRuleset,
+  jsonc: Rulesets.JsoncRuleset,
+  json: Rulesets.JsonRuleset,
+  yml: Rulesets.YmlRuleset,
 };
 const OPTIONS = {
+  name: {
+    js: "js",
+    ts: "ts",
+    jest: "jest",
+    jsonc: "jsonc",
+    json: "json",
+    yml: "yml",
+  },
   plugins: {
     js: { "@stylistic": stylistic },
     get ts() {
@@ -48,6 +56,7 @@ const OPTIONS = {
         .plugins
         .jsonc;
     },
+    yml: { yml },
   },
   languageOptions: {
     js: {
@@ -76,6 +85,7 @@ const OPTIONS = {
         .languageOptions
         .jsonc;
     },
+    yml: { parser: ymlParser },
   },
   linterOptions: {
     base: {
@@ -107,6 +117,11 @@ const OPTIONS = {
         .linterOptions
         .base;
     },
+    get yml() {
+      return OPTIONS
+        .linterOptions
+        .base;
+    },
   },
   processor: {
     base: {},
@@ -131,6 +146,11 @@ const OPTIONS = {
         .base;
     },
     get json() {
+      return OPTIONS
+        .processor
+        .base;
+    },
+    get yml() {
       return OPTIONS
         .processor
         .base;
@@ -178,6 +198,7 @@ const flatConfig = [
   "jest",
   "jsonc",
   "json",
+  "yml",
 ]
   .map(
     language =>

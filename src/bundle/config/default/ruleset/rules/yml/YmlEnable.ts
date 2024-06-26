@@ -53,16 +53,7 @@ const YmlEnable = new Rule(
         indicatorValueIndent: 2,
       },
     ],
-    "yml/key-name-casing": [
-      ERROR,
-      {
-        camelCase: true,
-        PascalCase: false,
-        SCREAMING_SNAKE_CASE: false,
-        "kebab-case": true,
-        snake_case: true,
-      },
-    ],
+    "yml/key-name-casing": OFF,
     "yml/no-empty-document": ERROR,
     "yml/no-empty-key": ERROR,
     "yml/no-empty-mapping-value": ERROR,
