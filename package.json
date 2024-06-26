@@ -26,7 +26,7 @@
   "type": "module",
   "private": false,
   "config": {
-    "PACKAGE_JSON_VERSION": "1.0.1"
+    "PACKAGE_JSON_VERSION": "1.1.0"
   },
   "repository": {
     "type": "git",
