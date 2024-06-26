@@ -1,4 +1,4 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
@@ -8,7 +8,7 @@ import {
   DOUBLE,
 } from "../State.js";
 
-const YmlEnable = new Rules(
+const YmlEnable = new Rule(
   "enable",
   {
 

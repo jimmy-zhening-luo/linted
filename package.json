@@ -67,7 +67,7 @@
     "es": "eslint --fix --cache --cache-strategy content -c eslint.config.js",
     "lint": "npm run lint:cfg && npm run lint:project && npm run lint:src",
     "lint:cfg": "npm run es -- package.json tsconfig.json eslint.config.js",
-    "lint:project": "npm run es -- project/**/*.config.js",
+    "lint:project": "npm run es -- project/**/*.js",
     "lint:src": "npm run es -- src/**/*.ts",
     "prebuild": "npm run lint",
     "build": "tsc",

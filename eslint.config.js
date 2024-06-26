@@ -4,16 +4,16 @@ import tsParser from "@typescript-eslint/parser";
 import jest from "eslint-plugin-jest";
 import jsonc from "eslint-plugin-jsonc";
 import jsonParser from "jsonc-eslint-parser";
-import JsRuleset from "./project/js.config.js";
-import TsRuleset from "./project/ts.config.js";
-import JestRuleset from "./project/jest.config.js";
-import JsoncRuleset from "./project/jsonc.config.js";
-import JsonRuleset from "./project/json.config.js";
+import JsRuleset from "./project/JsRuleset.js";
+import TsRuleset from "./project/TsRuleset.js";
+import JestRuleset from "./project/JestRuleset.js";
+import JsoncRuleset from "./project/JsoncRuleset.js";
+import JsonRuleset from "./project/JsonRuleset.js";
 
 const FILES = {
   js: [
     "eslint.config.js",
-    "project/**/*.config.js",
+    "project/**/*.js",
   ],
   ts: ["src/**/*.ts"],
   jest: ["src/**/*.spec.ts"],

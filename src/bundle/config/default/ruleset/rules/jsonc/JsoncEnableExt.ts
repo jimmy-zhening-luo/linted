@@ -1,4 +1,4 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
 
@@ -10,7 +10,7 @@ import {
   DOUBLE,
 } from "../State.js";
 
-const JsoncEnableExt = new Rules(
+const JsoncEnableExt = new Rule(
   "enable-ext",
   {
 

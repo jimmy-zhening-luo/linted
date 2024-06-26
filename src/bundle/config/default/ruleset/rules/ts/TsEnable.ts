@@ -1,10 +1,12 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
+
+  NEVER,
 } from "../State.js";
 
-const TsEnable = new Rules(
+const TsEnable = new Rule(
   "enable",
   {
 
@@ -47,7 +49,7 @@ const TsEnable = new Rules(
       ERROR,
       {
         assertionStyle: "as",
-        objectLiteralTypeAssertions: "never",
+        objectLiteralTypeAssertions: NEVER,
       },
     ],
     "@typescript-eslint/consistent-type-definitions": [
@@ -459,7 +461,7 @@ const TsEnable = new Rules(
     "@typescript-eslint/prefer-return-this-type": ERROR,
     "@typescript-eslint/prefer-string-starts-ends-with": [
       ERROR,
-      { allowSingleElementEquality: "never" },
+      { allowSingleElementEquality: NEVER },
     ],
     "@typescript-eslint/prefer-ts-expect-error": ERROR,
     "@typescript-eslint/promise-function-async": [
@@ -525,9 +527,9 @@ const TsEnable = new Rules(
     "@typescript-eslint/triple-slash-reference": [
       ERROR,
       {
-        lib: "never", /** always | never */
-        path: "never", /** always | never */
-        types: "never", /** always | never | prefer-import */
+        lib: NEVER, /** always | never */
+        path: NEVER, /** always | never */
+        types: NEVER, /** always | never | prefer-import */
       },
     ],
     "@typescript-eslint/typedef": OFF, // tsconfig: { noImplicitAny, strictPropertyInitialization }

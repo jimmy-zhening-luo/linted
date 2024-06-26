@@ -1,4 +1,4 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
@@ -9,7 +9,7 @@ import {
   DOUBLE,
 } from "../State.js";
 
-const SvelteEnable = new Rules(
+const SvelteEnable = new Rule(
   "enable",
   {
 

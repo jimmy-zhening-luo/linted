@@ -1,4 +1,4 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
@@ -17,7 +17,7 @@ import {
   DOUBLE,
 } from "../State.js";
 
-const StylisticEnable = new Rules(
+const StylisticEnable = new Rule(
   "enable",
   {
 

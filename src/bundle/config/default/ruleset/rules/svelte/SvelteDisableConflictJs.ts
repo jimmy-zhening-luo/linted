@@ -1,7 +1,7 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import { OFF } from "../State.js";
 
-const SvelteDisableConflictJs = new Rules(
+const SvelteDisableConflictJs = new Rule(
   "disable-conflict-js",
   {
 

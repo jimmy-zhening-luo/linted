@@ -1,36 +1,16 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
 } from "../State.js";
 
-const JsoncEnable = new Rules(
+const JsoncEnable = new Rule(
   "enable",
   {
 
     // JSONC Only
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#jsonc-rules
     "jsonc/auto": OFF,
-
-    /*
-  // OK I just don't think this rule is very useful
-  "jsonc/key-name-casing": [
-    ERROR,
-    {
-      camelCase: true,
-      PascalCase: false,
-      SCREAMING_SNAKE_CASE: false,
-      "kebab-case": false,
-      snake_case: true,
-      ignores: [
-        "^([a-z]+:)+[a-z]+$", // npm scripts, e.g. lint:src
-        "^@{0,1}([a-z-]+\\/)*[a-z-]+$", // npm packages, e.g. @typescript-eslint/parser (slightly overpermissive, allows `-` at beginning & end of nodes)
-        "^\\*$", // wildcard, e.g. *
-        "^\\/$", // root, e.g. /
-      ],
-    },
-  ],
-  */
     "jsonc/key-name-casing": OFF,
     "jsonc/no-bigint-literals": ERROR,
     "jsonc/no-binary-expression": ERROR,

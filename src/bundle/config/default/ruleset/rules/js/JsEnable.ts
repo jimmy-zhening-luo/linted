@@ -1,4 +1,4 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
@@ -7,9 +7,11 @@ import {
   ALWAYS,
   AS_NEEDED,
   ALL,
+  MULTI,
+  BOTH,
 } from "../State.js";
 
-const JsEnable = new Rules(
+const JsEnable = new Rule(
   "enable",
   {
 
@@ -63,7 +65,7 @@ const JsEnable = new Rules(
     "no-import-assign": ERROR, // tsc (except Object.assign())
     "no-inner-declarations": [
       ERROR,
-      "both",
+      BOTH,
     ],
     "no-invalid-regexp": [
       ERROR,
@@ -177,7 +179,7 @@ const JsEnable = new Rules(
     "consistent-this": [ERROR],
     curly: [
       ERROR,
-      "multi",
+      MULTI,
     ],
     "default-case": OFF, // preference: don't care
     "default-case-last": ERROR,

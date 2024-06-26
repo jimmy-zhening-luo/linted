@@ -7,7 +7,6 @@ export default class Option<
   Processor = never,
   SourceType = "module",
   EcmaVersion = "latest",
-  LinterOptions = {},
 > {
   constructor(
     public readonly body: IOption<
@@ -17,7 +16,9 @@ export default class Option<
         >
       }`
       ,
-      LinterOptions
+      never
+      ,
+      never
       ,
       literalful<
         Plugins

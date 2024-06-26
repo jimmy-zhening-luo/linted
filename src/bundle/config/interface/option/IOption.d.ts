@@ -1,6 +1,7 @@
 declare type IOption<
-  ScopedName,
-  LinterOptions,
+  Name,
+  NoInlineConfig,
+  ReportUnusedDisableDirectives,
   Plugins,
   EcmaVersion,
   SourceType,
@@ -10,16 +11,18 @@ declare type IOption<
   Processor,
 > =
   & IFiles
-  & IName<
-    ScopedName
+  & IOName<
+    Name
   >
-  & ILinterOptions<
-    LinterOptions
+  & IOLinter<
+    NoInlineConfig
+    ,
+    ReportUnusedDisableDirectives
   >
-  & IPlugins<
+  & IOPlugins<
     Plugins
   >
-  & ILanguageOptions<
+  & IOLanguage<
     EcmaVersion
     ,
     SourceType
@@ -30,7 +33,7 @@ declare type IOption<
     ,
     Globals
   >
-  & IProcessor<
+  & IOProcessor<
     Processor
   >
 ;

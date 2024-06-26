@@ -1,16 +1,16 @@
-import Rules from "../rules/Rules.js";
+import Rule from "../rules/Rule.js";
 
 export default class Ruleset<
   Language extends string,
 > {
-  public readonly ruleset: readonly Rules[];
-  public overrides: Rules[] = [];
+  public readonly ruleset: readonly Rule[];
+  public overrides: Rule[] = [];
 
   constructor(
     protected readonly language: literalful<
       Language
     >,
-    ...ruleset: readonly Rules[]
+    ...ruleset: readonly Rule[]
   ) {
     this
       .ruleset = [...ruleset];
@@ -43,7 +43,7 @@ export default class Ruleset<
   }
 
   public override(
-    ...overrides: Array<undefined | RuleSpec>
+    ...overrides: Array<undefined | IRule>
   ) {
     this
       .overrides
@@ -55,7 +55,7 @@ export default class Ruleset<
           )
           .map(
             override =>
-              new Rules(
+              new Rule(
                 "override",
                 override,
               ),

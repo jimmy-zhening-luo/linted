@@ -136,7 +136,7 @@ export default class {
         >
       }`
         ,
-        RuleSpec
+        IRule
       >
     > = {},
   ) {
@@ -247,31 +247,12 @@ export default class {
           jest: Rulesets
             .jest
             .override(
-
-              // Remove after tuning: jest shared config
-              Plugin
-                .jest
-                .jest
-                .configs["flat/recommended"]
-                .rules,
               override
                 .overrideJest,
             ),
           html: Rulesets
             .html
             .override(
-
-              // Remove after tuning: @html-eslint shared config
-              (
-                Plugin
-                  .html["@html-eslint"]
-                  .configs["flat/recommended"] as Record<
-                  "rules"
-                  ,
-                  RuleSpec
-                >
-              )
-                .rules,
               override
                 .overrideHtml,
             ),
@@ -371,7 +352,7 @@ declare namespace Class {
         & Record<
           "rules"
           ,
-          RuleSpec
+          IRule
         >
         & {
           [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>

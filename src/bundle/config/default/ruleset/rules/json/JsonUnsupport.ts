@@ -1,12 +1,12 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
 
   NEVER,
 } from "../State.js";
 
-const JsonUnsupport = new Rules(
-  "unsupported",
+const JsonUnsupport = new Rule(
+  "unsupport",
   {
 
     // JSONC Only

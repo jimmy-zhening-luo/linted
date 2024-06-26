@@ -1,7 +1,7 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import { OFF } from "../State.js";
 
-const TsDisableExt = new Rules(
+const TsDisableExt = new Rule(
   "disable-ext",
   {
 

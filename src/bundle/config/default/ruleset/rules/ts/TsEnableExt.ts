@@ -1,4 +1,4 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
@@ -6,7 +6,7 @@ import {
   ALL,
 } from "../State.js";
 
-const TsEnableExt = new Rules(
+const TsEnableExt = new Rule(
   "enable-ext",
   {
 

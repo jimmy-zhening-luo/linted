@@ -1,4 +1,4 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
   ERROR,
 
@@ -7,7 +7,7 @@ import {
   STRICT,
 } from "../State.js";
 
-const YmlEnableExt = new Rules(
+const YmlEnableExt = new Rule(
   "enable-ext",
   {
 

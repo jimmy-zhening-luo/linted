@@ -1,10 +1,11 @@
-import Rules from "../Rules.js";
+import Rule from "../Rule.js";
 import {
+  BOTH,
   ERROR,
   OFF,
 } from "../State.js";
 
-const SvelteEnableExt = new Rules(
+const SvelteEnableExt = new Rule(
   "enable-ext",
   {
 
@@ -14,7 +15,7 @@ const SvelteEnableExt = new Rules(
     // Same options as in JsEnable
     "svelte/no-inner-declarations": [
       ERROR,
-      "both",
+      BOTH,
     ],
 
     // Only applies to HTML comments, which I don't intend to use.
