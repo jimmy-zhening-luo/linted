@@ -28,7 +28,7 @@ const YmlEnableExt = {
   ],
   "yml/flow-sequence-bracket-newline": [
     ERROR,
-    { // yml documentation incorrect: https://ota-meshi.github.io/eslint-plugin-yml/rules/flow-sequence-bracket-newline.html
+    {
       multiline: true,
       minItems: null,
     },
@@ -59,7 +59,7 @@ const YmlEnableExt = {
   ],
   "yml/no-multiple-empty-lines": [
     ERROR,
-    { // yml documentation bug "nothing" under options but inherits: https://ota-meshi.github.io/eslint-plugin-yml/rules/no-multiple-empty-lines.html
+    {
       max: 1,
       maxEOF: 1,
       maxBOF: 0,

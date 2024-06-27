@@ -53,14 +53,14 @@ const JsEnable = new Rule(
     "no-dupe-else-if": ERROR,
     "no-dupe-keys": ERROR, // tsc
     "no-duplicate-case": ERROR,
-    "no-duplicate-imports": OFF, // buggy, breaks separation of TS type-only imports from value imports
+    "no-duplicate-imports": OFF, // BUG: breaks separation of TS type-only imports from value imports
     "no-empty-character-class": ERROR,
     "no-empty-pattern": [
       ERROR,
       { allowObjectPatternsAsParameters: true },
     ],
     "no-ex-assign": ERROR,
-    "no-fallthrough": OFF, // buggy
+    "no-fallthrough": OFF, // BUG:
     "no-func-assign": ERROR, // tsc
     "no-import-assign": ERROR, // tsc (except Object.assign())
     "no-inner-declarations": [
@@ -195,7 +195,7 @@ const JsEnable = new Rule(
     "func-name-matching": OFF, // preference
     "func-names": OFF, // preference
     "func-style": OFF, // preference
-    "grouped-accessor-pairs": OFF, // preference -- buggy behavior (requires adjacency, not as described in documentation)
+    "grouped-accessor-pairs": OFF, // preference -- BUG: requires adjacency, not as described in documentation
     "guard-for-in": ERROR,
     "id-denylist": OFF, // preference
     "id-length": OFF, // preference
