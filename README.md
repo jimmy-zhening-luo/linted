@@ -100,6 +100,28 @@ No need to remember each plugin's `parserOptions`; you won't have to do *this* j
     processor: "svelte/svelte"
   ```
 
+## Limitation
+
+If linting `TypeScript` files, [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) must be disabled.
+
+- This compromise was required to enable linting `jest` files.
+- Installing `jest` even without the linter seems to break strict `TypeScript` projects (needs verification).
+- Issue [#30](https://github.com/jimmy-zhening-luo/linted/issues/30) tracks investigating if feasible to enable `jest` linting without disabling `skipLibCheck`.
+
+### `tsconfig.json`
+
+```jsonc
+{
+  "compilerOptions": {
+    "skipLibCheck": false,
+  },
+}
+```
+
+### `tsc` CLI
+
+`tsc --skipLibCheck`
+
 ## Install
 
 1. Install [`eslint`](https://npmjs.com/package/eslint) and [`linted`](https://npmjs.com/package/linted)
