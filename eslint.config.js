@@ -17,7 +17,7 @@ const FILES = {
   jest: ["src/**/*.spec.ts"],
   jsonc: ["tsconfig.json"],
   json: ["package.json"],
-  yml: [".markdownlint.yml"],
+  yml: [],
 };
 const RULESET = {
   js: Rulesets.JsRuleset,
@@ -200,6 +200,14 @@ const flatConfig = [
   "json",
   "yml",
 ]
+  .filter(
+    language =>
+      language in FILES
+      && FILES[
+        language
+      ]
+        .length > 0,
+  )
   .map(
     language =>
       flat(
