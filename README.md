@@ -28,7 +28,7 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 
 ### One-Arugment API
 
-- Scope (i.e. file to lint)
+- Scope (i.e. files to lint)
 - *Optional:* [override](#full-control-via-per-scope-override) rules
 
 ### Two-Statement `eslint.config.js`
@@ -105,7 +105,7 @@ No need to remember each plugin's `parserOptions`; you won't have to do *this* j
 1. Install [`eslint`](https://npmjs.com/package/eslint) and [`linted`](https://npmjs.com/package/linted)
 
     ```bash
-    npm i -D eslint linted
+    npm i -D eslint@^8.57 linted@^12.1
     ```
 
 1. Create `eslint.config.js` in your root directory.
