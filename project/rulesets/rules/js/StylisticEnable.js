@@ -115,10 +115,9 @@ const StylisticEnable = {
     NEVER,
   ],
 
-  // Useless rule. See issue with my comment: https://github.com/eslint-community/eslint-stylistic/issues/290
   "@stylistic/function-paren-newline": [
     ERROR,
-    "multiline-arguments",
+    "multiline-arguments", // BUG: https://github.com/eslint-stylistic/eslint-stylistic/issues/290
   ],
   "@stylistic/generator-star-spacing": [
     ERROR,
