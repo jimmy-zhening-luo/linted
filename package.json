@@ -80,11 +80,11 @@
     "typescript": "^5.5.2"
   },
   "scripts": {
-    "es": "eslint --fix --cache --cache-strategy content -c eslint.config.js",
-    "lint": "npm run lint:cfg && npm run lint:project && npm run lint:src",
-    "lint:cfg": "npm run es -- package.json tsconfig.json eslint.config.js",
-    "lint:project": "npm run es -- project/**/*.js",
-    "lint:src": "npm run es -- src/**/*.ts",
+    "e": "eslint -c eslint.config.js --cache --fix",
+    "lint": "(npm run lint:project) && (npm run lint:cfg) && (npm run lint:src) && (npm run --if-present lint:ci) && (npm run --if-present lint:svelte)",
+    "lint:project": "npm run e -- project/**/*.js",
+    "lint:cfg": "npm run e -- package.json tsconfig.json eslint.config.js",
+    "lint:src": "npm run e -- src/**/*.ts",
     "prebuild": "npm run lint",
     "build": "tsc",
     "pretest": "npm run build",

@@ -225,8 +225,8 @@ Scope precedence (low to high):
 js
 ts
 svelte
-jest
 html
+jest
 jsonc
 json
 yml

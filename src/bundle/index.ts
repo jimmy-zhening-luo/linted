@@ -1,8 +1,8 @@
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
-import jest from "eslint-plugin-jest";
 import html from "@html-eslint/eslint-plugin";
+import jest from "eslint-plugin-jest";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
 import tsParser from "@typescript-eslint/parser";
@@ -15,8 +15,8 @@ import {
   JsOption,
   TsOption,
   SvelteOption,
-  JestOption,
   HtmlOption,
+  JestOption,
   JsoncOption,
   JsonOption,
   YmlOption,
@@ -25,8 +25,8 @@ import {
   JsRuleset,
   TsRuleset,
   SvelteRuleset,
-  JestRuleset,
   HtmlRuleset,
+  JestRuleset,
   JsoncRuleset,
   JsonRuleset,
   YmlRuleset,
@@ -36,8 +36,8 @@ const scopes = [
   "js",
   "ts",
   "svelte",
-  "jest",
   "html",
+  "jest",
   "jsonc",
   "json",
   "yml",
@@ -49,8 +49,8 @@ const OptionsConstructor = {
   js: JsOption,
   ts: TsOption,
   svelte: SvelteOption,
-  jest: JestOption,
   html: HtmlOption,
+  jest: JestOption,
   jsonc: JsoncOption,
   json: JsonOption,
   yml: YmlOption,
@@ -67,8 +67,8 @@ const Rulesets: {
   js: JsRuleset,
   ts: TsRuleset,
   svelte: SvelteRuleset,
-  jest: JestRuleset,
   html: HtmlRuleset,
+  jest: JestRuleset,
   jsonc: JsoncRuleset,
   json: JsonRuleset,
   yml: YmlRuleset,
@@ -84,12 +84,12 @@ const Plugin = {
     "@typescript-eslint": ts,
     svelte,
   },
+  html: { "@html-eslint": html },
   jest: {
     "@stylistic": stylistic,
     "@typescript-eslint": ts,
     jest,
   },
-  html: { "@html-eslint": html },
   jsonc: { jsonc },
   json: { jsonc },
   yml: { yml },
@@ -173,16 +173,6 @@ export default class {
                 .svelte
                 ?? [],
             ),
-          jest: new OptionsConstructor
-            .jest(
-              Plugin
-                .jest,
-              Parser
-                .jest,
-              ...files
-                .jest
-                ?? [],
-            ),
           html: new OptionsConstructor
             .html(
               Plugin
@@ -191,6 +181,16 @@ export default class {
                 .html,
               ...files
                 .html
+                ?? [],
+            ),
+          jest: new OptionsConstructor
+            .jest(
+              Plugin
+                .jest,
+              Parser
+                .jest,
+              ...files
+                .jest
                 ?? [],
             ),
           jsonc: new OptionsConstructor
@@ -244,17 +244,17 @@ export default class {
               override
                 .overrideSvelte,
             ),
-          jest: Rulesets
-            .jest
-            .override(
-              override
-                .overrideJest,
-            ),
           html: Rulesets
             .html
             .override(
               override
                 .overrideHtml,
+            ),
+          jest: Rulesets
+            .jest
+            .override(
+              override
+                .overrideJest,
             ),
           jsonc: Rulesets
             .jsonc
