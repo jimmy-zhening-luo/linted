@@ -89,7 +89,6 @@
     "build": "tsc",
     "pretest": "npm run build",
     "test": "exit 0",
-    "prepublishOnly": "npm run test",
-    "dev": "npm test"
+    "prepublishOnly": "npm run test"
   }
 }
