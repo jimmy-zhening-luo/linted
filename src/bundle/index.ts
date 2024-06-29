@@ -19,7 +19,7 @@ import {
   JestOption,
   JsoncOption,
   JsonOption,
-  YmlOption
+  YmlOption,
 } from "./config/default/Options.js";
 import {
   JsRuleset,
