@@ -117,11 +117,7 @@ const Parser = {
 declare type FlatConfig<
   L extends Scopes,
 > =
-  & Record<
-    "rules"
-    ,
-    IRule
-  >
+  & IRules
   & InstanceType<typeof OptionsConstructor[L]>["body"]
 ;
 
