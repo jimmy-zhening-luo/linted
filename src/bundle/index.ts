@@ -116,7 +116,13 @@ const Parser = {
 
 export default class {
   protected readonly options: {
-    [S in Scopes]: InstanceType<typeof OptionsConstructor[S]>
+    [S in Scopes]: InstanceType<
+      typeof OptionsConstructor[
+        S
+      ]
+    >[
+      "body"
+    ];
   };
   protected readonly rulesets: typeof Rulesets;
 
@@ -150,7 +156,8 @@ export default class {
               ...files
                 .js
                 ?? [],
-            ),
+            )
+            .body,
           ts: new OptionsConstructor
             .ts(
               Plugin
@@ -160,7 +167,8 @@ export default class {
               ...files
                 .ts
                 ?? [],
-            ),
+            )
+            .body,
           svelte: new OptionsConstructor
             .svelte(
               Plugin
@@ -172,7 +180,8 @@ export default class {
               ...files
                 .svelte
                 ?? [],
-            ),
+            )
+            .body,
           html: new OptionsConstructor
             .html(
               Plugin
@@ -182,7 +191,8 @@ export default class {
               ...files
                 .html
                 ?? [],
-            ),
+            )
+            .body,
           jest: new OptionsConstructor
             .jest(
               Plugin
@@ -202,7 +212,8 @@ export default class {
               ...files
                 .jsonc
                 ?? [],
-            ),
+            )
+            .body,
           json: new OptionsConstructor
             .json(
               Plugin
@@ -212,7 +223,8 @@ export default class {
               ...files
                 .json
                 ?? [],
-            ),
+            )
+            .body,
           yml: new OptionsConstructor
             .yml(
               Plugin
@@ -222,7 +234,8 @@ export default class {
               ...files
                 .yml
                 ?? [],
-            ),
+            )
+            .body,
         };
       this
         .rulesets = {
@@ -286,13 +299,7 @@ export default class {
 
   public get configs(): Array<
     & IRules
-    & InstanceType<
-      typeof OptionsConstructor[
-        Scopes
-      ]
-    >[
-      "body"
-    ]
+    & this["options"][Scopes]
   > {
     return scopes
       .map(
@@ -311,13 +318,7 @@ export default class {
     scope: S,
   ): Array<
     & IRules
-    & InstanceType<
-      typeof OptionsConstructor[
-        S
-      ]
-    >[
-      "body"
-    ]
+    & this["options"][S]
     > {
     const {
       options,
@@ -331,7 +332,6 @@ export default class {
     ];
 
     return option
-      .body
       .files
       .length < 1
       ? []
@@ -341,8 +341,7 @@ export default class {
           rules => {
             return {
               rules,
-              ...option
-                .body,
+              ...option,
             };
           },
         );
