@@ -114,6 +114,22 @@ const Parser = {
   >
 >;
 
+declare type FlatConfig<
+  L extends Scopes,
+> =
+  & Record<
+    "rules"
+    ,
+    IRule
+  >
+  & {
+    [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
+  }[
+    L
+  ][
+    "body"
+  ];
+
 export default class {
   protected readonly options: {
     [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
@@ -284,8 +300,10 @@ export default class {
     }
   }
 
-  public get configs(): Class.Output.FlatConfigs<
-    Scopes
+  public get configs(): Array<
+    FlatConfig<
+      Scopes
+    >
   > {
     return scopes
       .map(
@@ -302,8 +320,10 @@ export default class {
     Scope extends Scopes,
   >(
     language: Scope,
-  ): Class.Output.FlatConfigs<
-      Scope
+  ): Array<
+      FlatConfig<
+        Scope
+      >
     > {
     const {
       options,
@@ -332,35 +352,5 @@ export default class {
             };
           },
         );
-  }
-}
-
-declare namespace Class {
-  namespace Output {
-    type FlatConfigs<
-      L extends Scopes,
-    > = Array<
-      FlatConfigs.Config<
-        L
-      >
-    >;
-
-    namespace FlatConfigs {
-      type Config<
-        L extends Scopes,
-      > =
-        & Record<
-          "rules"
-          ,
-          IRule
-        >
-        & {
-          [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
-        }[
-          L
-        ][
-          "body"
-        ];
-    }
   }
 }
