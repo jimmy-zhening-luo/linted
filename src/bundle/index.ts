@@ -60,8 +60,8 @@ const OptionsConstructor = {
   unknown
 >;
 const Rulesets: {
-  [L in Scopes]: Ruleset<
-    L
+  [S in Scopes]: Ruleset<
+    S
   >
 } = {
   js: JsRuleset,
@@ -114,16 +114,9 @@ const Parser = {
   >
 >;
 
-declare type FlatConfig<
-  L extends Scopes,
-> =
-  & IRules
-  & InstanceType<typeof OptionsConstructor[L]>["body"]
-;
-
 export default class {
   protected readonly options: {
-    [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
+    [S in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[S]>
   };
   protected readonly rulesets: typeof Rulesets;
 
@@ -292,39 +285,49 @@ export default class {
   }
 
   public get configs(): Array<
-    FlatConfig<
-      Scopes
-    >
+    & IRules
+    & InstanceType<
+      typeof OptionsConstructor[
+        Scopes
+      ]
+    >[
+      "body"
+    ]
   > {
     return scopes
       .map(
-        language =>
+        scope =>
           this
             .getLanguageConfigs(
-              language,
+              scope,
             ),
       )
       .flat();
   }
 
   protected getLanguageConfigs<
-    Scope extends Scopes,
+    S extends Scopes,
   >(
-    language: Scope,
+    scope: S,
   ): Array<
-      FlatConfig<
-        Scope
-      >
-    > {
+    & IRules
+    & InstanceType<
+      typeof OptionsConstructor[
+        S
+      ]
+    >[
+      "body"
+    ]
+  > {
     const {
       options,
       rulesets,
     } = this;
     const option = options[
-      language
+      scope
     ];
     const ruleset = rulesets[
-      language
+      scope
     ];
 
     return option
