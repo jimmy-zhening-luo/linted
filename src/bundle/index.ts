@@ -202,7 +202,8 @@ export default class {
               ...files
                 .jest
                 ?? [],
-            ),
+            )
+            .body,
           jsonc: new OptionsConstructor
             .jsonc(
               Plugin
