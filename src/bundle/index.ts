@@ -318,7 +318,7 @@ export default class {
     >[
       "body"
     ]
-  > {
+    > {
     const {
       options,
       rulesets,
