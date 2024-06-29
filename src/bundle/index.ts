@@ -115,7 +115,7 @@ const Parser = {
 >;
 
 export default class {
-  protected readonly options: {
+  public readonly options: {
     [S in Scopes]: InstanceType<
       typeof OptionsConstructor[
         S
@@ -124,7 +124,7 @@ export default class {
       "body"
     ];
   };
-  protected readonly rulesets: typeof Rulesets;
+  public readonly rulesets: typeof Rulesets;
 
   constructor(
     files: Partial<
