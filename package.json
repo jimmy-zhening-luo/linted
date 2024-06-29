@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "eslint": "~8.57.0",
-    "linted": "~12.3.0",
+    "linted": "~13.0.0",
     "typescript": "^5.5.2"
   },
   "scripts": {
