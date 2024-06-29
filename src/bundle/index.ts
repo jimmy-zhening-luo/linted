@@ -116,7 +116,7 @@ const Parser = {
 
 export default class {
   protected readonly options: {
-    [S in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[S]>
+    [S in Scopes]: InstanceType<typeof OptionsConstructor[S]>
   };
   protected readonly rulesets: typeof Rulesets;
 
