@@ -1,37 +1,3 @@
-import stylistic from "@stylistic/eslint-plugin";
-import ts from "@typescript-eslint/eslint-plugin";
-import svelte from "eslint-plugin-svelte";
-import html from "@html-eslint/eslint-plugin";
-import jest from "eslint-plugin-jest";
-import jsonc from "eslint-plugin-jsonc";
-import yml from "eslint-plugin-yml";
-import tsParser from "@typescript-eslint/parser";
-import svelteParser from "svelte-eslint-parser";
-import htmlParser from "@html-eslint/parser";
-import jsoncParser from "jsonc-eslint-parser";
-import ymlParser from "yaml-eslint-parser";
-import type Ruleset from "./config/default/ruleset/base/Ruleset.js";
-import {
-  JsOption,
-  TsOption,
-  SvelteOption,
-  HtmlOption,
-  JestOption,
-  JsoncOption,
-  JsonOption,
-  YmlOption,
-} from "./config/default/Options.js";
-import {
-  JsRuleset,
-  TsRuleset,
-  SvelteRuleset,
-  HtmlRuleset,
-  JestRuleset,
-  JsoncRuleset,
-  JsonRuleset,
-  YmlRuleset,
-} from "./config/default/Rulesets.js";
-
 const scopes = [
   "js",
   "ts",
@@ -44,6 +10,17 @@ const scopes = [
 ] as const;
 
 declare type Scopes = typeof scopes[number];
+
+import {
+  JsOption,
+  TsOption,
+  SvelteOption,
+  HtmlOption,
+  JestOption,
+  JsoncOption,
+  JsonOption,
+  YmlOption,
+} from "./config/default/Options.js";
 
 const OptionsConstructor = {
   js: JsOption,
@@ -59,6 +36,19 @@ const OptionsConstructor = {
   ,
   unknown
 >;
+
+import type Ruleset from "./config/default/ruleset/base/Ruleset.js";
+import {
+  JsRuleset,
+  TsRuleset,
+  SvelteRuleset,
+  HtmlRuleset,
+  JestRuleset,
+  JsoncRuleset,
+  JsonRuleset,
+  YmlRuleset,
+} from "./config/default/Rulesets.js";
+
 const Rulesets: {
   [S in Scopes]: Ruleset<
     S
@@ -73,6 +63,15 @@ const Rulesets: {
   json: JsonRuleset,
   yml: YmlRuleset,
 };
+
+import stylistic from "@stylistic/eslint-plugin";
+import ts from "@typescript-eslint/eslint-plugin";
+import svelte from "eslint-plugin-svelte";
+import html from "@html-eslint/eslint-plugin";
+import jest from "eslint-plugin-jest";
+import jsonc from "eslint-plugin-jsonc";
+import yml from "eslint-plugin-yml";
+
 const Plugin = {
   js: { "@stylistic": stylistic },
   ts: {
@@ -98,6 +97,13 @@ const Plugin = {
   ,
   unknown
 >;
+
+import tsParser from "@typescript-eslint/parser";
+import svelteParser from "svelte-eslint-parser";
+import htmlParser from "@html-eslint/parser";
+import jsoncParser from "jsonc-eslint-parser";
+import ymlParser from "yaml-eslint-parser";
+
 const Parser = {
   ts: tsParser,
   svelte: svelteParser,
@@ -114,237 +120,195 @@ const Parser = {
   >
 >;
 
-export default class {
-  public readonly options: {
-    [S in Scopes]: InstanceType<
-      typeof OptionsConstructor[
-        S
-      ]
-    >[
-      "body"
-    ];
-  };
-  public readonly rulesets: typeof Rulesets;
+declare type Options = {
+  [S in Scopes]: InstanceType<
+    typeof OptionsConstructor[S]
+  >["body"]
+};
 
-  constructor(
-    files: Partial<
-      Record<
-        Scopes
-        ,
-        string[]
-      >
-    > = {},
-    override: Partial<
-      Record<
+export default function (
+  files: Partial<
+    Record<
+      Scopes
+      ,
+      string[]
+    >
+  > = {},
+  override: Partial<
+    Record<
       `override${
-        Capitalize<
-          Scopes
-        >
+        Capitalize<Scopes>
       }`
-        ,
-        IRule
-      >
-    > = {},
-  ) {
-    try {
-      this
-        .options = {
-          js: new OptionsConstructor
-            .js(
-              Plugin
-                .js,
-              ...files
-                .js
-                ?? [],
-            )
-            .body,
-          ts: new OptionsConstructor
-            .ts(
-              Plugin
-                .ts,
-              Parser
-                .ts,
-              ...files
-                .ts
-                ?? [],
-            )
-            .body,
-          svelte: new OptionsConstructor
-            .svelte(
-              Plugin
-                .svelte,
-              Parser
-                .svelte,
-              Parser
-                .ts,
-              ...files
-                .svelte
-                ?? [],
-            )
-            .body,
-          html: new OptionsConstructor
-            .html(
-              Plugin
-                .html,
-              Parser
-                .html,
-              ...files
-                .html
-                ?? [],
-            )
-            .body,
-          jest: new OptionsConstructor
-            .jest(
-              Plugin
-                .jest,
-              Parser
-                .jest,
-              ...files
-                .jest
-                ?? [],
-            )
-            .body,
-          jsonc: new OptionsConstructor
-            .jsonc(
-              Plugin
-                .jsonc,
-              Parser
-                .jsonc,
-              ...files
-                .jsonc
-                ?? [],
-            )
-            .body,
-          json: new OptionsConstructor
-            .json(
-              Plugin
-                .json,
-              Parser
-                .json,
-              ...files
-                .json
-                ?? [],
-            )
-            .body,
-          yml: new OptionsConstructor
-            .yml(
-              Plugin
-                .yml,
-              Parser
-                .yml,
-              ...files
-                .yml
-                ?? [],
-            )
-            .body,
-        };
-      this
-        .rulesets = {
-          js: Rulesets
-            .js
-            .override(
-              override
-                .overrideJs,
-            ),
-          ts: Rulesets
-            .ts
-            .override(
-              override
-                .overrideTs,
-            ),
-          svelte: Rulesets
-            .svelte
-            .override(
-              override
-                .overrideSvelte,
-            ),
-          html: Rulesets
-            .html
-            .override(
-              override
-                .overrideHtml,
-            ),
-          jest: Rulesets
-            .jest
-            .override(
-              override
-                .overrideJest,
-            ),
-          jsonc: Rulesets
-            .jsonc
-            .override(
-              override
-                .overrideJsonc,
-            ),
-          json: Rulesets
-            .json
-            .override(
-              override
-                .overrideJson,
-            ),
-          yml: Rulesets
-            .yml
-            .override(
-              override
-                .overrideYml,
-            ),
-        };
-    }
-    catch (e) {
-      throw new Error(
-        `Lint: ctor`,
-        { cause: e },
-      );
-    }
-  }
-
-  public get configs(): Array<
-    & IRules
-    & this["options"][Scopes]
+      ,
+      IRule
+    >
+  > = {},
+): Array<
+  & IRules
+  & Options[Scopes]
   > {
+  try {
+    const options: Options = {
+      js: new OptionsConstructor
+        .js(
+          Plugin
+            .js,
+          ...files
+            .js
+            ?? [],
+        )
+        .body,
+      ts: new OptionsConstructor
+        .ts(
+          Plugin
+            .ts,
+          Parser
+            .ts,
+          ...files
+            .ts
+            ?? [],
+        )
+        .body,
+      svelte: new OptionsConstructor
+        .svelte(
+          Plugin
+            .svelte,
+          Parser
+            .svelte,
+          Parser
+            .ts,
+          ...files
+            .svelte
+            ?? [],
+        )
+        .body,
+      html: new OptionsConstructor
+        .html(
+          Plugin
+            .html,
+          Parser
+            .html,
+          ...files
+            .html
+            ?? [],
+        )
+        .body,
+      jest: new OptionsConstructor
+        .jest(
+          Plugin
+            .jest,
+          Parser
+            .jest,
+          ...files
+            .jest
+            ?? [],
+        )
+        .body,
+      jsonc: new OptionsConstructor
+        .jsonc(
+          Plugin
+            .jsonc,
+          Parser
+            .jsonc,
+          ...files
+            .jsonc
+            ?? [],
+        )
+        .body,
+      json: new OptionsConstructor
+        .json(
+          Plugin
+            .json,
+          Parser
+            .json,
+          ...files
+            .json
+            ?? [],
+        )
+        .body,
+      yml: new OptionsConstructor
+        .yml(
+          Plugin
+            .yml,
+          Parser
+            .yml,
+          ...files
+            .yml
+            ?? [],
+        )
+        .body,
+    };
+    const rulesets: typeof Rulesets = {
+      js: Rulesets
+        .js
+        .override(
+          override
+            .overrideJs,
+        ),
+      ts: Rulesets
+        .ts
+        .override(
+          override
+            .overrideTs,
+        ),
+      svelte: Rulesets
+        .svelte
+        .override(
+          override
+            .overrideSvelte,
+        ),
+      html: Rulesets
+        .html
+        .override(
+          override
+            .overrideHtml,
+        ),
+      jest: Rulesets
+        .jest
+        .override(
+          override
+            .overrideJest,
+        ),
+      jsonc: Rulesets
+        .jsonc
+        .override(
+          override
+            .overrideJsonc,
+        ),
+      json: Rulesets
+        .json
+        .override(
+          override
+            .overrideJson,
+        ),
+      yml: Rulesets
+        .yml
+        .override(
+          override
+            .overrideYml,
+        ),
+    };
+
     return scopes
       .map(
         scope =>
-          this
-            .getLanguageConfigs(
-              scope,
-            ),
+          options[scope].files.length > 0
+            ? rulesets[scope].flat.map(
+              rules => {
+                return {
+                  rules,
+                  ...options[scope],
+                };
+              },
+            )
+            : [],
       )
       .flat();
   }
-
-  protected getLanguageConfigs<
-    S extends Scopes,
-  >(
-    scope: S,
-  ): Array<
-    & IRules
-    & this["options"][S]
-    > {
-    const {
-      options,
-      rulesets,
-    } = this;
-    const option = options[
-      scope
-    ];
-    const ruleset = rulesets[
-      scope
-    ];
-
-    return option
-      .files
-      .length < 1
-      ? []
-      : ruleset
-        .flat
-        .map(
-          rules => {
-            return {
-              rules,
-              ...option,
-            };
-          },
-        );
+  catch (e) {
+    throw new Error(
+      `linted(): Caught exception.`,
+      { cause: e },
+    );
   }
 }
