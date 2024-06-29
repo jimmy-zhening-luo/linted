@@ -122,13 +122,8 @@ declare type FlatConfig<
     ,
     IRule
   >
-  & {
-    [L in keyof typeof OptionsConstructor]: InstanceType<typeof OptionsConstructor[L]>
-  }[
-    L
-  ][
-    "body"
-  ];
+  & InstanceType<typeof OptionsConstructor[L]>["body"]
+;
 
 export default class {
   protected readonly options: {
