@@ -1,4 +1,4 @@
-# [linted](https://npmjs.com/package/linted)
+# [linted](https://npmjs.com/package/linted) v13
 
 Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON(C), and sadly YAML.
 
@@ -36,38 +36,40 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 ```javascript
 import linted from "linted";
 
-export default [
-  ...new linted(
-    { // Scope (i.e. files to lint)
-      js: ["*.config.js"],
-      ts: ["*.config.ts", "src/**/*.ts"],
-      svelte: ["src/**/*.svelte"],
-    },
-  )
-    .configs,
-];
+export default new linted(
+  { // Scope (i.e. files to lint)
+    js: [
+      "eslint.config.js",
+      "svelte.config.js",
+    ],
+    ts: [
+      "src/**/*.ts",
+      "vite.config.ts",
+    ],
+    svelte: ["src/**/*.svelte"],
+    // ...
+  },
+);
 ```
 
 ### Full Control via *Per-Scope* Override
 
 ```javascript
-      // ...Scope (i.e. files to lint)
+    // ...Scope (i.e. files to lint)
+  },
+  { // Optional: Override
+    overrideTs: {
+      // Turns it off in "ts" scope,
+      // but NOT in "js" scope,
+      // NOR in "svelte" scope.
+      "no-unused-vars": "off", // JS base rule
+      // "@typescript-eslint/ ..., or TS plugin rule
     },
-    { // Optional: Override
-      overrideTs: {
-        // Turns it off in "ts" scope,
-        // but NOT in "js" scope,
-        // NOR in "svelte" scope.
-        "no-unused-vars": "off", // JS base rule
-        // "@typescript-eslint/ ..., or TS plugin rule
-      },
-      overrideSvelte: {
-        // ... JS, TS, or Svelte plugin rules
-      },
+    overrideSvelte: {
+      // ... JS, TS, or Svelte plugin rules
     },
-  )
-    .configs,
-];
+  },
+);
 ```
 
 ### Zero-Dependency
@@ -127,22 +129,24 @@ If linting `TypeScript` files, [`skipLibCheck`](https://www.typescriptlang.org/t
 1. Install [`eslint`](https://npmjs.com/package/eslint) and [`linted`](https://npmjs.com/package/linted)
 
     ```bash
-    npm i -D eslint@^8.57 linted@^12.1
+    npm i -D eslint@^8.57 linted@^13
     ```
 
 1. Create `eslint.config.js` in your root directory.
 
 1. In `eslint.config.js`:
-    - Import `linted`.
+    - Import `function` `linted`.
 
         ```javascript
         import linted from "linted";
         ```
 
-    - Create a new instance of `linted`, with arguments:
+    - Export `linted` with arguments:
 
         ```javascript
-        new linted(
+        import linted from "linted";
+
+        export default linted(
           { // Scope (i.e. files to lint)
             js: ["*.config.js"], // glob pattern array
             ts: ["*.config.ts", "src/**/*.ts"],
@@ -161,21 +165,7 @@ If linting `TypeScript` files, [`skipLibCheck`](https://www.typescriptlang.org/t
             //    overrideHtml, overrideCss, overrideJsonc,
             //    overrideJson, overrideYml
           },
-        )
-        ```
-
-    - Export member `configs` from the new instance of `linted`, which is ESLint's flat config. *e.g.*
-
-        ```javascript
-        import linted from "linted";
-
-        export default [
-          ...new linted(
-            // ...
-          )
-            .configs,
-        ];
-
+        );
         ```
 
 ___
@@ -248,9 +238,9 @@ yml
 
 - svelte: .js, .ts, .svelte
 
-- jest: .js, .ts, (.spec).ts
-
 - html: .html
+
+- jest: .js, .ts, (.spec).ts
 
 - jsonc: .json (JSON), .json (JSONC)
 
