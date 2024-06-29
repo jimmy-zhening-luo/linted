@@ -82,8 +82,7 @@
   },
   "scripts": {
     "e": "eslint -c eslint.config.js --cache --fix",
-    "lint": "(npm run lint:project) && (npm run lint:cfg) && (npm run lint:src) && (npm run --if-present lint:ci) && (npm run --if-present lint:svelte)",
-    "lint:project": "npm run e -- project/**/*.js",
+    "lint": "(npm run lint:cfg) && (npm run lint:src) && (npm run --if-present lint:ci) && (npm run --if-present lint:svelte)",
     "lint:cfg": "npm run e -- package.json tsconfig.json eslint.config.js",
     "lint:src": "npm run e -- src/**/*.ts",
     "prebuild": "npm run lint",
