@@ -36,7 +36,7 @@ Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, a
 ```javascript
 import linted from "linted";
 
-export default new linted(
+export default linted(
   { // Scope (i.e. files to lint)
     js: [
       "eslint.config.js",
