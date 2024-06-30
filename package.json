@@ -25,7 +25,7 @@
   "type": "module",
   "private": false,
   "config": {
-    "PACKAGE_JSON_VERSION": "20.1.0"
+    "PACKAGE_JSON_VERSION": "20.2.0"
   },
   "repository": {
     "type": "git",
@@ -78,7 +78,7 @@
   "devDependencies": {
     "eslint": "~8.57.0",
     "jest": "^29.7.0",
-    "linted": "~13.0.5",
+    "linted": "~13.0.6",
     "typescript": "^5.5.2"
   },
   "jest": {
@@ -92,7 +92,7 @@
     "lint": "(npm run lint:cfg) && (npm run lint:src) && (npm run --if-present lint:ci) && (npm run --if-present lint:svelte)",
     "lint:cfg": "npm run e -- package.json tsconfig.json eslint.config.js",
     "lint:src": "npm run e -- src/**/*.ts",
-    "prebuild": "npm run lint",
+    "prebuild": "(npm run --if-present check) && (npm run lint)",
     "build": "tsc",
     "pretest": "npm run build",
     "test": "(npm run test:jest) || (exit 0)",
