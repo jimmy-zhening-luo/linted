@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "eslint": "~8.57.0",
-    "linted": "~13.0.10",
+    "linted": "~13.0.11",
     "typescript": "^5.5.2"
   },
   "jest": {
