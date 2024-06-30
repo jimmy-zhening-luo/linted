@@ -104,11 +104,10 @@ No need to remember each plugin's `parserOptions`; you won't have to do *this* j
 
 ## Limitation
 
-If linting `TypeScript` files, [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) must be disabled.
+If linting `TypeScript` files, [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) must be set to `true`.
 
 - This compromise was required to enable linting `jest` files.
-- Installing `jest` even without the linter seems to break strict `TypeScript` projects (needs verification).
-- Issue [#30](https://github.com/jimmy-zhening-luo/linted/issues/30) tracks investigating if feasible to enable `jest` linting without disabling `skipLibCheck`.
+- TypeScript's official `.tsconfig` `strict` template has `skipLibCheck: true`, so `linted` views accepts skipping library check as acceptable for overall type safety.
 
 ### `tsconfig.json`
 
