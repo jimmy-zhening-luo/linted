@@ -1,11 +1,12 @@
 import Ruleset from "./base/Ruleset.js";
-import JsoncEnableExt from "./rules/jsonc/JsoncEnableExt.js";
-import JsoncEnable from "./rules/jsonc/JsoncEnable.js";
+import JsonRuleset from "./JsonRuleset.js";
+import JsoncOverride from "./rules/jsonc/JsoncOverride.js";
 
 const JsoncRuleset = new Ruleset(
   "jsonc",
-  JsoncEnableExt,
-  JsoncEnable,
+  ...JsonRuleset
+    .ruleset,
+  JsoncOverride,
 );
 
 export default JsoncRuleset;

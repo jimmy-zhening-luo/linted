@@ -4,18 +4,18 @@ import {
   OFF,
 } from "../State.js";
 
-const JsoncEnable = new Rule(
+const JsonEnable = new Rule(
   "enable",
   {
 
-    // JSONC Only
+    // Plugin-Only
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#jsonc-rules
     "jsonc/auto": OFF,
     "jsonc/key-name-casing": OFF,
     "jsonc/no-bigint-literals": ERROR,
     "jsonc/no-binary-expression": ERROR,
     "jsonc/no-binary-numeric-literals": ERROR,
-    "jsonc/no-comments": OFF, // override in JSON
+    "jsonc/no-comments": ERROR, // comments are NOT allowed in JSON
     "jsonc/no-escape-sequence-in-identifier": ERROR,
     "jsonc/no-hexadecimal-numeric-literals": ERROR,
     "jsonc/no-infinity": ERROR,
@@ -36,4 +36,4 @@ const JsoncEnable = new Rule(
   },
 );
 
-export default JsoncEnable;
+export default JsonEnable;

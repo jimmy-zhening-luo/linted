@@ -10,11 +10,11 @@ import {
   DOUBLE,
 } from "../State.js";
 
-const JsoncEnableExt = new Rule(
+const JsonEnableExt = new Rule(
   "enable-ext",
   {
 
-    // Extension - ENABLE
+    // ESLint Extension
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
     "jsonc/array-bracket-newline": [
       ERROR,
@@ -35,7 +35,7 @@ const JsoncEnableExt = new Rule(
     ],
     "jsonc/comma-dangle": [
       ERROR,
-      "always-multiline",
+      NEVER, // trailing commas are NOT allowed in JSON
     ],
     "jsonc/comma-style": [
       ERROR,
@@ -103,4 +103,4 @@ const JsoncEnableExt = new Rule(
   },
 );
 
-export default JsoncEnableExt;
+export default JsonEnableExt;

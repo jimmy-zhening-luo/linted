@@ -4,8 +4,8 @@ const scopes = [
   "svelte",
   "html",
   "jest",
-  "jsonc",
   "json",
+  "jsonc",
   "yml",
 ] as const;
 
@@ -24,8 +24,8 @@ const defaultScope: Record<
   svelte: ["src/**/*.svelte"],
   html: ["src/**/*.html"],
   jest: ["src/**/*.spec.ts"],
+  json: ["*.json"],
   jsonc: ["tsconfig.json"],
-  json: ["package.json"],
   yml: [".github/workflows/*.yml"],
 };
 
@@ -35,8 +35,8 @@ import {
   SvelteOption,
   HtmlOption,
   JestOption,
-  JsoncOption,
   JsonOption,
+  JsoncOption,
   YmlOption,
 } from "./config/default/Options.js";
 
@@ -46,8 +46,8 @@ const OptionsConstructor = {
   svelte: SvelteOption,
   html: HtmlOption,
   jest: JestOption,
-  jsonc: JsoncOption,
   json: JsonOption,
+  jsonc: JsoncOption,
   yml: YmlOption,
 } as const satisfies Record<
   Scopes
@@ -62,8 +62,8 @@ import {
   SvelteRuleset,
   HtmlRuleset,
   JestRuleset,
-  JsoncRuleset,
   JsonRuleset,
+  JsoncRuleset,
   YmlRuleset,
 } from "./config/default/Rulesets.js";
 
@@ -77,8 +77,8 @@ const Rulesets: {
   svelte: SvelteRuleset,
   html: HtmlRuleset,
   jest: JestRuleset,
-  jsonc: JsoncRuleset,
   json: JsonRuleset,
+  jsonc: JsoncRuleset,
   yml: YmlRuleset,
 };
 
@@ -107,8 +107,8 @@ const Plugin = {
     "@typescript-eslint": ts,
     jest,
   },
-  jsonc: { jsonc },
   json: { jsonc },
+  jsonc: { jsonc },
   yml: { yml },
 } satisfies Record<
   Scopes
@@ -127,8 +127,8 @@ const Parser = {
   svelte: svelteParser,
   html: htmlParser,
   jest: tsParser,
-  jsonc: jsoncParser,
   json: jsoncParser,
+  jsonc: jsoncParser,
   yml: ymlParser,
 } satisfies Partial<
   Record<
@@ -232,19 +232,6 @@ export default function (
             ?? [],
         )
         .body,
-      jsonc: new OptionsConstructor
-        .jsonc(
-          Plugin
-            .jsonc,
-          Parser
-            .jsonc,
-          ...defaultScope
-            .jsonc,
-          ...scope
-            .jsonc
-            ?? [],
-        )
-        .body,
       json: new OptionsConstructor
         .json(
           Plugin
@@ -255,6 +242,19 @@ export default function (
             .json,
           ...scope
             .json
+            ?? [],
+        )
+        .body,
+      jsonc: new OptionsConstructor
+        .jsonc(
+          Plugin
+            .jsonc,
+          Parser
+            .jsonc,
+          ...defaultScope
+            .jsonc,
+          ...scope
+            .jsonc
             ?? [],
         )
         .body,
@@ -303,17 +303,17 @@ export default function (
           override
             .overrideJest,
         ),
-      jsonc: Rulesets
-        .jsonc
-        .override(
-          override
-            .overrideJsonc,
-        ),
       json: Rulesets
         .json
         .override(
           override
             .overrideJson,
+        ),
+      jsonc: Rulesets
+        .jsonc
+        .override(
+          override
+            .overrideJsonc,
         ),
       yml: Rulesets
         .yml
