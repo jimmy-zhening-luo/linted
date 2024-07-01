@@ -1,35 +1,43 @@
 # [`linted`](https://npmjs.com/package/linted) v13
 
-Zero-config [**ESLint**](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON(C), and sadly YAML.
+Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON(C), and sadly YAML.
+
+1. [Languages](#languages)
+1. [Features](#features)
+1. [Limitation](#limitation)
+1. [Install](#install)
+1. [Roadmap](#roadmap)
+1. [Rule Logic (Advanced)](#rule-logic-advanced)
 
 ## Languages
 
 ### Web
 
-- **[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):** [`eslint`](https://eslint.org) + [`@stylistic`](https://eslint.style)
-- **[TypeScript](https://typescriptlang.org):** + [`@typescript-eslint`](https://typescript-eslint.io/)
-- **[Svelte](https://svelte.dev):** + [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/)
-- **[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):** [`@html-eslint`](https://html-eslint.org/)
+- __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__ [`eslint`](https://eslint.org) + [`@stylistic`](https://eslint.style)
+- __[TypeScript](https://typescriptlang.org):__ + [`@typescript-eslint`](https://typescript-eslint.io/)
+- __[Svelte](https://svelte.dev):__ + [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/)
+- __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):__ [`@html-eslint`](https://html-eslint.org/)
 
 ### Data
 
-- **[JSON](https://json.org), [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments):** [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
-- **[YAML](https://redhat.com/en/topics/automation/what-is-yaml):** [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
+- __[JSON](https://json.org), [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments):__ [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
+- __[YAML](https://redhat.com/en/topics/automation/what-is-yaml):__ [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
 
 ### Test
 
-- **[Jest](https://jestjs.io):** [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest)
+- __[Jest](https://jestjs.io):__ [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest)
 
-<br />
-
-*See language support **[roadmap](#roadmap).***
+\
+_See language support __[roadmap](#roadmap).___
 
 ## Features
 
 ### One-Arugment API
 
+#### _or..._
+
 - Scope (i.e. files to lint)
-- *Optional:* [override](#full-control-via-per-scope-override) rules
+- _Optional:_ [override](#full-control-via-per-scope-override) rules
 
 ### Two-Statement `eslint.config.js`
 
@@ -52,7 +60,7 @@ export default linted(
 );
 ```
 
-### Full Control via *Per-Scope* Override
+### Full Control via _Per-Scope_ Override
 
 ```javascript
     // ...Scope (i.e. files to lint)
@@ -78,7 +86,7 @@ No need to install 17 plugins and 12 parsers: each language's latest plugin is b
 
 ### Zero-Config
 
-No need to remember each plugin's `parserOptions`; you won't have to do *this* just to enable Svelte linting:
+No need to remember each plugin's `parserOptions`; you won't have to do _this_ just to enable Svelte linting:
 
   ```javascript
     // lint TypeScript blocks in Svelte
@@ -204,7 +212,7 @@ ___
 
 #### Precedence
 
-- If a file matches more than one **scope** glob, the set of all scopes' rules are applied to the file.
+- If a file matches more than one __scope__ glob, the set of all scopes' rules are applied to the file.
 
 - If any rule within that combined set is specified in more than one scope, then the highest-precedence scope's rule specification wins.
 
@@ -219,6 +227,26 @@ jest
 jsonc
 json
 yml
+```
+
+#### Default Files
+
+Files specified in `scope` are appended to the following default files:
+
+```javascript
+  {
+    js: ["*.config.js"],
+    ts: [
+      "src/**/*.ts",
+      "*.config.ts",
+    ],
+    svelte: ["src/**/*.svelte"],
+    html: ["src/**/*.html"],
+    jest: ["src/**/*.spec.ts"],
+    jsonc: ["tsconfig.json"],
+    json: ["package.json"],
+    yml: [".github/workflows/*.yml"],
+  },
 ```
 
 #### Default Rules
@@ -249,7 +277,7 @@ yml
 
 ### Override
 
-Overrides are per-**scope.**
+Overrides are per-__scope.__
 
 #### Example
 
@@ -259,6 +287,6 @@ Overrides are per-**scope.**
 
 - ✅ match scope `ts` and any number of lower precedence scopes (e.g. `js`).
 
-`overrideTs` rules do **NOT** apply to files that:
+`overrideTs` rules do __NOT__ apply to files that:
 
 - ❌ match scope `ts` and at least one higher precedence scope (e.g. `svelte`), even if the higher precedence scope includes `ts` language default rules (e.g. `svelte` includes `ts` default rules, but NOT `overrideTs` rules).
