@@ -161,16 +161,16 @@ If linting `TypeScript` files, [`skipLibCheck`](https://www.typescriptlang.org/t
               // ...
             ],
 
-            // ...jest, html, css, jsonc, json, yml
+            // ...html, jest, json, jsonc, yml
           },
           { // Optional: Override
             overrideJs: {
               // ...same rule schema as ESLint
             },
 
-            // ...overrideTs, overrideSvelte, overrideJest,
-            //    overrideHtml, overrideCss, overrideJsonc,
-            //    overrideJson, overrideYml
+            // ...overrideTs, overrideSvelte, overrideHtml,
+            //    overrideJest, overrideJson, overrideJsonC,
+            //    overrideYml
           },
         );
         ```
@@ -224,8 +224,8 @@ ts
 svelte
 html
 jest
-jsonc
 json
+jsonc
 yml
 ```
 
@@ -243,8 +243,8 @@ Files specified in `scope` are appended to the following default files:
     svelte: ["src/**/*.svelte"],
     html: ["src/**/*.html"],
     jest: ["src/**/*.spec.ts"],
-    jsonc: ["tsconfig.json"],
     json: ["package.json"],
+    jsonc: ["tsconfig.json"],
     yml: [".github/workflows/*.yml"],
   },
 ```
@@ -269,9 +269,9 @@ Files specified in `scope` are appended to the following default files:
 
 - jest: .js, .ts, (.spec).ts
 
-- jsonc: .json (JSON), .json (JSONC)
-
 - json: .json (JSON)
+
+- jsonc: .json (JSON), .json (JSONC)
 
 - yml: .y(a)ml
 
