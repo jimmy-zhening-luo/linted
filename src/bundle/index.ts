@@ -11,6 +11,24 @@ const scopes = [
 
 declare type Scopes = typeof scopes[number];
 
+const defaultScope: Record<
+  Scopes
+  ,
+  string[]
+> = {
+  js: ["*.config.js"],
+  ts: [
+    "src/**/*.ts",
+    "*.config.ts",
+  ],
+  svelte: ["src/**/*.svelte"],
+  html: ["src/**/*.html"],
+  jest: ["src/**/*.spec.ts"],
+  jsonc: ["tsconfig.json"],
+  json: ["package.json"],
+  yml: [".github/workflows/*.yml"],
+};
+
 import {
   JsOption,
   TsOption,
@@ -127,7 +145,7 @@ declare type Options = {
 };
 
 export default function (
-  files: Partial<
+  scope: Partial<
     Record<
       Scopes
       ,
@@ -153,7 +171,9 @@ export default function (
         .js(
           Plugin
             .js,
-          ...files
+          ...defaultScope
+            .js,
+          ...scope
             .js
             ?? [],
         )
@@ -164,7 +184,9 @@ export default function (
             .ts,
           Parser
             .ts,
-          ...files
+          ...defaultScope
+            .ts,
+          ...scope
             .ts
             ?? [],
         )
@@ -177,7 +199,9 @@ export default function (
             .svelte,
           Parser
             .ts,
-          ...files
+          ...defaultScope
+            .svelte,
+          ...scope
             .svelte
             ?? [],
         )
@@ -188,7 +212,9 @@ export default function (
             .html,
           Parser
             .html,
-          ...files
+          ...defaultScope
+            .html,
+          ...scope
             .html
             ?? [],
         )
@@ -199,7 +225,9 @@ export default function (
             .jest,
           Parser
             .jest,
-          ...files
+          ...defaultScope
+            .jest,
+          ...scope
             .jest
             ?? [],
         )
@@ -210,7 +238,9 @@ export default function (
             .jsonc,
           Parser
             .jsonc,
-          ...files
+          ...defaultScope
+            .jsonc,
+          ...scope
             .jsonc
             ?? [],
         )
@@ -221,7 +251,9 @@ export default function (
             .json,
           Parser
             .json,
-          ...files
+          ...defaultScope
+            .json,
+          ...scope
             .json
             ?? [],
         )
@@ -232,7 +264,9 @@ export default function (
             .yml,
           Parser
             .yml,
-          ...files
+          ...defaultScope
+            .yml,
+          ...scope
             .yml
             ?? [],
         )
