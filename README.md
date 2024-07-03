@@ -223,21 +223,21 @@ ___
 
 Each `scope` maps to a unique `language`:
 
-- **`js`:** `JavaScript`
+- __`js`:__ `JavaScript`
 
-- **`ts`:** `TypeScript`
+- __`ts`:__ `TypeScript`
 
-- **`svelte`:** `Svelte`
+- __`svelte`:__ `Svelte`
 
-- **`html`:** `HTML`
+- __`html`:__ `HTML`
 
-- **`jest`:** `Jest`
+- __`jest`:__ `Jest`
 
-- **`json`:** `JSON`
+- __`json`:__ `JSON`
 
-- **`jsonc`:** `JSONC`
+- __`jsonc`:__ `JSONC`
 
-- **`yml`:** `YAML`
+- __`yml`:__ `YAML`
 
 ### Rules
 
@@ -245,7 +245,7 @@ Each `scope` supports:
 
 - all base ESLint rules
 
-- all rules from its `language`'s [**plugins**](#languages)
+- all rules from its `language`'s [__plugins__](#languages)
 
 #### Default Rules
 
@@ -263,21 +263,21 @@ For example:
 
 For such a `language`, its `scope`'s default rules are aggregated with the default rules of extended or consumed `language`s by `scope` precedence:
 
-- **`js`:** `js`
+- __`js`:__ `js`
 
-- **`ts`:** `js` < `ts`
+- __`ts`:__ `js` < `ts`
 
-- **`svelte`:** `js` < `ts` < `svelte`
+- __`svelte`:__ `js` < `ts` < `svelte`
 
-- **`html`:** `html`
+- __`html`:__ `html`
 
-- **`jest`:** `js` < `ts` < `jest`
+- __`jest`:__ `js` < `ts` < `jest`
 
-- **`json`:** `json`
+- __`json`:__ `json`
 
-- **`jsonc`:** `json` < `jsonc`
+- __`jsonc`:__ `json` < `jsonc`
 
-- **`yml`:** `yml`
+- __`yml`:__ `yml`
 
 ### Files
 
