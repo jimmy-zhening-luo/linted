@@ -1,3 +1,5 @@
+import type { Scopes } from "./_scopes.js";
+import type Ruleset from "./ruleset/base/Ruleset.js";
 import JsRuleset from "./ruleset/JsRuleset.js";
 import TsRuleset from "./ruleset/TsRuleset.js";
 import SvelteRuleset from "./ruleset/SvelteRuleset.js";
@@ -7,13 +9,17 @@ import JsonRuleset from "./ruleset/JsonRuleset.js";
 import JsoncRuleset from "./ruleset/JsoncRuleset.js";
 import YmlRuleset from "./ruleset/YmlRuleset.js";
 
-export {
-  JsRuleset,
-  TsRuleset,
-  SvelteRuleset,
-  HtmlRuleset,
-  JestRuleset,
-  JsonRuleset,
-  JsoncRuleset,
-  YmlRuleset,
+export default {
+  js: JsRuleset,
+  ts: TsRuleset,
+  svelte: SvelteRuleset,
+  html: HtmlRuleset,
+  jest: JestRuleset,
+  json: JsonRuleset,
+  jsonc: JsoncRuleset,
+  yml: YmlRuleset,
+} satisfies {
+  [S in Scopes]: Ruleset<
+    S
+  >
 };

@@ -1,87 +1,8 @@
-const scopes = [
-  "js",
-  "ts",
-  "svelte",
-  "html",
-  "jest",
-  "json",
-  "jsonc",
-  "yml",
-] as const;
-
-declare type Scopes = typeof scopes[number];
-
-const defaultScope: Record<
-  Scopes
-  ,
-  string[]
-> = {
-  js: ["*.config.js"],
-  ts: [
-    "src/**/*.ts",
-    "*.config.ts",
-  ],
-  svelte: ["src/**/*.svelte"],
-  html: ["src/**/*.html"],
-  jest: ["src/**/*.spec.ts"],
-  json: ["*.json"],
-  jsonc: ["tsconfig.json"],
-  yml: [".github/workflows/*.yml"],
-};
-
-import {
-  JsOption,
-  TsOption,
-  SvelteOption,
-  HtmlOption,
-  JestOption,
-  JsonOption,
-  JsoncOption,
-  YmlOption,
-} from "./config/default/Options.js";
-
-const OptionsConstructor = {
-  js: JsOption,
-  ts: TsOption,
-  svelte: SvelteOption,
-  html: HtmlOption,
-  jest: JestOption,
-  json: JsonOption,
-  jsonc: JsoncOption,
-  yml: YmlOption,
-} as const satisfies Record<
-  Scopes
-  ,
-  unknown
->;
-
-import type Ruleset from "./config/default/ruleset/base/Ruleset.js";
-import {
-  JsRuleset,
-  TsRuleset,
-  SvelteRuleset,
-  HtmlRuleset,
-  JestRuleset,
-  JsonRuleset,
-  JsoncRuleset,
-  YmlRuleset,
-} from "./config/default/Rulesets.js";
-
-const Rulesets: {
-  [S in Scopes]: Ruleset<
-    S
-  >
-} = {
-  js: JsRuleset,
-  ts: TsRuleset,
-  svelte: SvelteRuleset,
-  html: HtmlRuleset,
-  jest: JestRuleset,
-  json: JsonRuleset,
-  jsonc: JsoncRuleset,
-  yml: YmlRuleset,
-};
-
+import type { Scopes } from "./config/default/_scopes.js";
+import scopes from "./config/default/_scopes.js";
+import files from "./config/default/_files.js";
+import Rulesets from "./config/default/_rulesets.js";
+import OptionsConstructor from "./config/default/_options.js";
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
@@ -171,7 +92,7 @@ export default function (
         .js(
           Plugin
             .js,
-          ...defaultScope
+          ...files
             .js,
           ...scope
             .js
@@ -184,7 +105,7 @@ export default function (
             .ts,
           Parser
             .ts,
-          ...defaultScope
+          ...files
             .ts,
           ...scope
             .ts
@@ -199,7 +120,7 @@ export default function (
             .svelte,
           Parser
             .ts,
-          ...defaultScope
+          ...files
             .svelte,
           ...scope
             .svelte
@@ -212,7 +133,7 @@ export default function (
             .html,
           Parser
             .html,
-          ...defaultScope
+          ...files
             .html,
           ...scope
             .html
@@ -225,7 +146,7 @@ export default function (
             .jest,
           Parser
             .jest,
-          ...defaultScope
+          ...files
             .jest,
           ...scope
             .jest
@@ -238,7 +159,7 @@ export default function (
             .json,
           Parser
             .json,
-          ...defaultScope
+          ...files
             .json,
           ...scope
             .json
@@ -251,7 +172,7 @@ export default function (
             .jsonc,
           Parser
             .jsonc,
-          ...defaultScope
+          ...files
             .jsonc,
           ...scope
             .jsonc
@@ -264,7 +185,7 @@ export default function (
             .yml,
           Parser
             .yml,
-          ...defaultScope
+          ...files
             .yml,
           ...scope
             .yml
