@@ -110,7 +110,7 @@ No need to remember each plugin's `parserOptions`; you won't have to do _this_ j
 
 ## Limitation
 
-In `TypeScript` projects, [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) must be `true`.
+In __TypeScript__ projects, [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) must be `true`.
 
 ### Why?
 
@@ -146,7 +146,7 @@ By default, `skipLibCheck` is `false`. To set it to `true`:
 1. Install [`eslint`](https://npmjs.com/package/eslint) and [`linted`](https://npmjs.com/package/linted).
 
     ```bash
-    npm i -D eslint@^8.57 linted@^13
+    npm i -D eslint@^8.57 linted
     ```
 
 1. Create `eslint.config.js` in your project root.
