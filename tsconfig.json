@@ -1,9 +1,10 @@
 {
   "display": "@jimbojet/tsc",
-  "_version": "5.5.4",
+  "_version": "5.5.5",
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": [
     "src/**/*.ts",
+    "*.config.ts",
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
