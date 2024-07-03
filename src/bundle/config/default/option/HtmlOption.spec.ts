@@ -1,6 +1,6 @@
 import HtmlOption from "./HtmlOption.js";
 
-const FakePlugin = { cool: "beans" };
+const FakePlugin = { configs: "beans" };
 const FakeParser = { parse: "me" };
 
 describe(

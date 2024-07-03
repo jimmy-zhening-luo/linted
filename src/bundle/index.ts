@@ -1,96 +1,36 @@
 import type { Scopes } from "./config/default/scopes.js";
 import scopes from "./config/default/scopes.js";
 import files from "./config/default/files.js";
-import Rulesets from "./config/default/rulesets.js";
-import OptionsConstructor from "./config/default/options.js";
-import stylistic from "@stylistic/eslint-plugin";
-import ts from "@typescript-eslint/eslint-plugin";
-import svelte from "eslint-plugin-svelte";
-import html from "@html-eslint/eslint-plugin";
-import jest from "eslint-plugin-jest";
-import jsonc from "eslint-plugin-jsonc";
-import yml from "eslint-plugin-yml";
-
-const Plugin = {
-  js: { "@stylistic": stylistic },
-  ts: {
-    "@stylistic": stylistic,
-    "@typescript-eslint": ts,
-  },
-  svelte: {
-    "@stylistic": stylistic,
-    "@typescript-eslint": ts,
-    svelte,
-  },
-  html: { "@html-eslint": html },
-  jest: {
-    "@stylistic": stylistic,
-    "@typescript-eslint": ts,
-    jest,
-  },
-  json: { jsonc },
-  jsonc: { jsonc },
-  yml: { yml },
-} satisfies Record<
-  Scopes
-  ,
-  unknown
->;
-
-import tsParser from "@typescript-eslint/parser";
-import svelteParser from "svelte-eslint-parser";
-import htmlParser from "@html-eslint/parser";
-import jsoncParser from "jsonc-eslint-parser";
-import ymlParser from "yaml-eslint-parser";
-
-const Parser = {
-  ts: tsParser,
-  svelte: svelteParser,
-  html: htmlParser,
-  jest: tsParser,
-  json: jsoncParser,
-  jsonc: jsoncParser,
-  yml: ymlParser,
-} satisfies Partial<
-  Record<
-    Scopes
-    ,
-    unknown
-  >
->;
-
-declare type Options = {
-  [S in Scopes]: InstanceType<
-    typeof OptionsConstructor[S]
-  >["body"]
-};
+import rulesets from "./config/default/rulesets.js";
+import options from "./config/default/options.js";
+import plugins from "./config/default/plugins.js";
+import parsers from "./config/default/parsers.js";
 
 export default function (
   scope: Partial<
-    Record<
-      Scopes
-      ,
-      string[]
-    >
+    typeof files
   > = {},
   override: Partial<
     Record<
       `override${
-        Capitalize<Scopes>
+        Capitalize<
+          Scopes
+        >
       }`
       ,
       IRule
     >
   > = {},
-): Array<
-  & IRules
-  & Options[Scopes]
-  > {
+): IConfig[] {
   try {
-    const options: Options = {
-      js: new OptionsConstructor
+    const instantiatedOptions: {
+      [S in Scopes]: InstanceType<
+        typeof options[S]
+      >["body"]
+    } = {
+      js: new options
         .js(
-          Plugin
+          plugins
             .js,
           ...files
             .js,
@@ -99,11 +39,11 @@ export default function (
             ?? [],
         )
         .body,
-      ts: new OptionsConstructor
+      ts: new options
         .ts(
-          Plugin
+          plugins
             .ts,
-          Parser
+          parsers
             .ts,
           ...files
             .ts,
@@ -112,13 +52,13 @@ export default function (
             ?? [],
         )
         .body,
-      svelte: new OptionsConstructor
+      svelte: new options
         .svelte(
-          Plugin
+          plugins
             .svelte,
-          Parser
+          parsers
             .svelte,
-          Parser
+          parsers
             .ts,
           ...files
             .svelte,
@@ -127,11 +67,11 @@ export default function (
             ?? [],
         )
         .body,
-      html: new OptionsConstructor
+      html: new options
         .html(
-          Plugin
+          plugins
             .html,
-          Parser
+          parsers
             .html,
           ...files
             .html,
@@ -140,11 +80,11 @@ export default function (
             ?? [],
         )
         .body,
-      jest: new OptionsConstructor
+      jest: new options
         .jest(
-          Plugin
+          plugins
             .jest,
-          Parser
+          parsers
             .jest,
           ...files
             .jest,
@@ -153,11 +93,11 @@ export default function (
             ?? [],
         )
         .body,
-      json: new OptionsConstructor
+      json: new options
         .json(
-          Plugin
+          plugins
             .json,
-          Parser
+          parsers
             .json,
           ...files
             .json,
@@ -166,11 +106,11 @@ export default function (
             ?? [],
         )
         .body,
-      jsonc: new OptionsConstructor
+      jsonc: new options
         .jsonc(
-          Plugin
+          plugins
             .jsonc,
-          Parser
+          parsers
             .jsonc,
           ...files
             .jsonc,
@@ -179,11 +119,11 @@ export default function (
             ?? [],
         )
         .body,
-      yml: new OptionsConstructor
+      yml: new options
         .yml(
-          Plugin
+          plugins
             .yml,
-          Parser
+          parsers
             .yml,
           ...files
             .yml,
@@ -193,50 +133,50 @@ export default function (
         )
         .body,
     };
-    const rulesets: typeof Rulesets = {
-      js: Rulesets
+    const overridenRulesets: typeof rulesets = {
+      js: rulesets
         .js
         .override(
           override
             .overrideJs,
         ),
-      ts: Rulesets
+      ts: rulesets
         .ts
         .override(
           override
             .overrideTs,
         ),
-      svelte: Rulesets
+      svelte: rulesets
         .svelte
         .override(
           override
             .overrideSvelte,
         ),
-      html: Rulesets
+      html: rulesets
         .html
         .override(
           override
             .overrideHtml,
         ),
-      jest: Rulesets
+      jest: rulesets
         .jest
         .override(
           override
             .overrideJest,
         ),
-      json: Rulesets
+      json: rulesets
         .json
         .override(
           override
             .overrideJson,
         ),
-      jsonc: Rulesets
+      jsonc: rulesets
         .jsonc
         .override(
           override
             .overrideJsonc,
         ),
-      yml: Rulesets
+      yml: rulesets
         .yml
         .override(
           override
@@ -247,12 +187,12 @@ export default function (
     return scopes
       .map(
         scope =>
-          options[scope].files.length > 0
-            ? rulesets[scope].flat.map(
+          instantiatedOptions[scope].files.length > 0
+            ? overridenRulesets[scope].flat.map(
               rules => {
                 return {
                   rules,
-                  ...options[scope],
+                  ...instantiatedOptions[scope],
                 };
               },
             )

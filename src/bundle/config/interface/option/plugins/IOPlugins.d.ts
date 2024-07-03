@@ -10,6 +10,10 @@ declare type IOPlugins<
     Record<
       Plugins
       ,
-      unknown
+      Record<
+        "configs"
+        ,
+        unknown
+      >
     >
   >;
