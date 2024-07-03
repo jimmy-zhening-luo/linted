@@ -1,4 +1,4 @@
-# [`linted`](https://npmjs.com/package/linted) v13
+# [`linted`](https://npmjs.com/package/linted)
 
 Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON(C), and sadly YAML.
 
