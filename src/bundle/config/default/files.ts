@@ -1,4 +1,4 @@
-import type { Scopes } from "./_scopes.js";
+import type { Scopes } from "./scopes.js";
 
 export default {
   js: ["*.config.js"],

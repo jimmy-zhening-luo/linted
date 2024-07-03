@@ -1,4 +1,4 @@
-import type { Scopes } from "./_scopes.js";
+import type { Scopes } from "./scopes.js";
 import type Ruleset from "./ruleset/base/Ruleset.js";
 import JsRuleset from "./ruleset/JsRuleset.js";
 import TsRuleset from "./ruleset/TsRuleset.js";

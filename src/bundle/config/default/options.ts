@@ -1,4 +1,4 @@
-import type { Scopes } from "./_scopes.js";
+import type { Scopes } from "./scopes.js";
 import JsOption from "./option/JsOption.js";
 import TsOption from "./option/TsOption.js";
 import SvelteOption from "./option/SvelteOption.js";

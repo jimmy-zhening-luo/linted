@@ -1,8 +1,8 @@
-import type { Scopes } from "./config/default/_scopes.js";
-import scopes from "./config/default/_scopes.js";
-import files from "./config/default/_files.js";
-import Rulesets from "./config/default/_rulesets.js";
-import OptionsConstructor from "./config/default/_options.js";
+import type { Scopes } from "./config/default/scopes.js";
+import scopes from "./config/default/scopes.js";
+import files from "./config/default/files.js";
+import Rulesets from "./config/default/rulesets.js";
+import OptionsConstructor from "./config/default/options.js";
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
