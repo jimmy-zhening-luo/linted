@@ -1,6 +1,6 @@
 {
   "name": "linted",
-  "version": "14.1.2-rc.6",
+  "version": "14.1.2-rc.7",
   "description": "Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON(C), and sadly YAML.",
   "keywords": [
     "eslint",
