@@ -34,8 +34,8 @@ _See language support __[roadmap](#roadmap).___
 
 ### One-Arugment API
 
-- Scope (i.e. files to lint)
-- _Optional:_ [override](#full-control-via-per-scope-override) rules
+- Files to lint ([`glob patterns`](code.visualstudio.com/docs/editor/glob-patterns))
+- _Optional:_ Rule [overrides](#full-control-via-per-scope-override)
 
 ### Two-Statement `eslint.config.js`
 
@@ -43,17 +43,25 @@ _See language support __[roadmap](#roadmap).___
 import linted from "linted";
 
 export default linted(
-  { // Scope (i.e. files to lint)
-    js: [
-      "eslint.config.js",
-      "svelte.config.js",
-    ],
+
+  // Files to lint
+  {
+
+    // skip linting all files in .git
+    gitignore: false,
+
+    // global ignores
+    ignores: ["package-lock.json"],
+
+    // scoped includes
+    js: ["eslint.config.js"],
     ts: [
       "src/**/*.ts",
       "vite.config.ts",
     ],
     svelte: ["src/**/*.svelte"],
-    // ...
+
+    // ...html, jest, json, jsonc, yml,
   },
 );
 ```
@@ -61,19 +69,31 @@ export default linted(
 ### Full Control via _Per-Scope_ Override
 
 ```javascript
-    // ...Scope (i.e. files to lint)
+export default linted(
+
+  // Files to lint
+  {
+    // ...
   },
-  { // Optional: Override
+
+  // Optional: Rule overrides
+  {
+
+    // Override rules in `ts` scope,
+    // but NOT in `js` scope,
+    // NOR in `svelte` scope.
     overrideTs: {
-      // Turns it off in "ts" scope,
-      // but NOT in "js" scope,
-      // NOR in "svelte" scope.
-      "no-unused-vars": "off", // JS base rule
-      // "@typescript-eslint/ ..., or TS plugin rule
+
+      // ESLint base rule
+      "no-unused-vars": "off",
+
+      // TypeScript plugin rule
+      "@typescript-eslint/indent": "warn",
     },
-    overrideSvelte: {
-      // ... JS, TS, or Svelte plugin rules
-    },
+
+    // ...overrideTs, overrideSvelte, overrideHtml,
+    //    overrideJest, overrideJson, overrideJsonc,
+    //    overrideYml,
   },
 );
 ```
@@ -86,7 +106,7 @@ No need to install 17 plugins and 12 parsers: each language's latest plugin is b
 
 No need to remember each plugin's `parserOptions`; you won't have to do _this_ just to enable Svelte linting:
 
-  ```javascript
+```javascript
     // lint TypeScript blocks in Svelte
     plugins: {
       "@stylistic": stylistic,
@@ -105,8 +125,8 @@ No need to remember each plugin's `parserOptions`; you won't have to do _this_ j
         extraFileExtensions: [".svelte"],
       },
     },
-    processor: "svelte/svelte"
-  ```
+    processor: "svelte/svelte",
+```
 
 ## Limitation
 
@@ -137,9 +157,11 @@ By default, `skipLibCheck` is `false`. To set it to `true`:
 }
 ```
 
-#### _...or_ `tsc` CLI
+#### _...or_ `tsc` CLI option
 
-`tsc --skipLibCheck`
+```bash
+tsc --skipLibCheck
+``` 
 
 ## Install
 
@@ -158,20 +180,14 @@ By default, `skipLibCheck` is `false`. To set it to `true`:
         import linted from "linted";
         ```
 
-    - Export `linted` with optional arguments:
+    - Export `linted` with optional [arguments](#one-argument-api):
 
         ```javascript
         import linted from "linted";
 
         export default linted(
-          { // Scope (i.e. files to lint)
-            js: ["*.config.js"], // glob pattern array
-            ts: ["*.config.ts", "src/**/*.ts"],
-            svelte: [
-              // ...
-            ],
-
-            // ...html, jest, json, jsonc, yml
+          {
+            // ...
           },
           { // Optional: Override
             overrideJs: {
@@ -281,23 +297,48 @@ For such a `language`, its `scope`'s default rules are aggregated with the defau
 
 ### Files
 
+#### Global Ignores
+
+By default, `linted` ignores all files in `.gitignore`.
+
+
 #### Default Files
 
 Files specified in `scope` are appended to the following default files:
 
 ```javascript
   {
-    js: ["*.config.js"],
-    ts: [
-      "src/**/*.ts",
-      "*.config.ts",
+    js: [
+      "{src,static}/**/*.{js,mjs,cjs}",
+      "*.{js,mjs,cjs}",
     ],
-    svelte: ["src/**/*.svelte"],
-    html: ["src/**/*.html"],
-    jest: ["src/**/*.spec.ts"],
-    json: ["package.json"],
-    jsonc: ["tsconfig.json"],
-    yml: [".github/workflows/*.yml"],
+    ts: [
+      "{src,static}/**/*.{ts,mts,cts}",
+      "*.{ts,mts,cts}",
+    ],
+    svelte: ["{src,static}/**/*.svelte"],
+    html: [
+      "{src,static}/**/*.html",
+      "*.html",
+    ],
+    jest: [
+      "{src,static}/**/*.spec.{ts,mts,cts}",
+      "{src,static}/**/*.spec.{js,mjs,cjs}",
+    ],
+    json: [
+      "{src,static}/**/*.json",
+      "*.json",
+    ],
+    jsonc: [
+      "tsconfig.json",
+      "{src,static}/**/*.jsonc",
+      "*.jsonc",
+    ],
+    yml: [
+      ".github/workflows/*.{yml,yaml}",
+      "{src,static}/**/*.{yml,yaml}",
+      "*.{yml,yaml}",
+    ],
   },
 ```
 
