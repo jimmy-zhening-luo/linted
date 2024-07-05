@@ -27,6 +27,10 @@ Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, a
 - __[JSON](https://json.org) & [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments):__ [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
 - __[YAML](https://redhat.com/en/topics/automation/what-is-yaml):__ [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
 
+### Text
+
+- __[GitHub Flavored Markdown](https://github.github.com/gfm/) & [CommonMark](https://commonmark.org):__ [`eslint-plugin-markdownlint`](https://gitlab.com/pawelbbdrozd/eslint-plugin-markdownlint/-/blob/main/README.md)
+
 \
 _See language support __[roadmap](#roadmap).___
 
@@ -47,8 +51,7 @@ export default linted(
   // Files to lint
   {
 
-    // skip linting all files in .git
-    gitignore: false,
+    gitignore: true, /* skip linting all files in .git
 
     // global ignores
     ignores: ["package-lock.json"],
