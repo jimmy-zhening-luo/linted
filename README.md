@@ -47,16 +47,16 @@ _See language support __[roadmap](#roadmap).___
 import linted from "linted";
 
 export default linted(
-
-  // Files to lint
+  /** Files to lint */
   {
+    /* Global Ignores */
+    gitignore: true, /* (default value) skip linting all files ignored by git (default) */
+    ignores: [
+      "**/*/package-lock.json", // package-lock.json will always be skipped.
+      // additional glob patterns will extend this array
+    ], /* global list of files to skip linting even if included in some scope */
 
-    gitignore: true, /* skip linting all files in .git
-
-    // global ignores
-    ignores: ["package-lock.json"],
-
-    // scoped includes
+    /* Scoped Includes */
     js: ["eslint.config.js"],
     ts: [
       "src/**/*.ts",
@@ -73,25 +73,20 @@ export default linted(
 
 ```javascript
 export default linted(
-
-  // Files to lint
+  /** Files to lint */
   {
     // ...
   },
 
   // Optional: Rule overrides
   {
-
-    // Override rules in `ts` scope,
-    // but NOT in `js` scope,
-    // NOR in `svelte` scope.
     overrideTs: {
-
-      // ESLint base rule
-      "no-unused-vars": "off",
-
-      // TypeScript plugin rule
-      "@typescript-eslint/indent": "warn",
+      /* Override rules in `ts` scope,
+       * but NOT in `js` scope,
+       * NOR in `svelte` scope.
+       */
+      "no-unused-vars": "off", // example: ESLint base rule
+      "@typescript-eslint/indent": "warn", // TypeScript plugin rule
     },
 
     // ...overrideTs, overrideSvelte, overrideHtml,
@@ -143,7 +138,6 @@ This compromise was required to bundle `jest` and `eslint-plugin-jest` into `lin
 
 `linted` will never remove this limitation until the following conditions are all false:
 
-- `jest` poorly supports `ESModule` resolution, so it breaks any modern TypeScript build despite being the gold standard for JavaScript tests.
 - TypeScript maintains a number of official project templates, all of which (including `strictest`) have `skipLibCheck: true`.
 
 ### Enable `skipLibCheck`
@@ -189,18 +183,7 @@ tsc --skipLibCheck
         import linted from "linted";
 
         export default linted(
-          {
-            // ...
-          },
-          { // Optional: Override
-            overrideJs: {
-              // ...same rule schema as ESLint
-            },
-
-            // ...overrideTs, overrideSvelte, overrideHtml,
-            //    overrideJest, overrideJson, overrideJsonC,
-            //    overrideYml
-          },
+          // ...
         );
         ```
 
@@ -302,10 +285,19 @@ For such a `language`, its `scope`'s default rules are aggregated with the defau
 
 #### Global Ignores
 
-By default, `linted` ignores all files in `.gitignore`.
+##### `.gitignore`
 
+By default, `linted` ignores all files in `.gitignore`. This behavior can be disabled.
 
-#### Default Files
+##### `package-lock.json`
+
+`**/*.package-lock.json` is always skipped. *This cannot be overriden.*
+
+##### `ignores`
+
+Additional glob patterns supplied if matched by a file will skip linting that file, even if a scope pattern matches the file.
+
+#### Scoped Includes
 
 Files specified in `scope` are appended to the following default files:
 
