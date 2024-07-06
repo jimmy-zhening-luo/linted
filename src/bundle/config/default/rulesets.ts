@@ -8,6 +8,7 @@ import JestRuleset from "./ruleset/JestRuleset.js";
 import JsonRuleset from "./ruleset/JsonRuleset.js";
 import JsoncRuleset from "./ruleset/JsoncRuleset.js";
 import YmlRuleset from "./ruleset/YmlRuleset.js";
+import MdRuleset from "./ruleset/MdRuleset.js";
 
 export default {
   js: JsRuleset,
@@ -18,6 +19,7 @@ export default {
   json: JsonRuleset,
   jsonc: JsoncRuleset,
   yml: YmlRuleset,
+  md: MdRuleset,
 } satisfies {
   [S in Scopes]: Ruleset<
     S

@@ -11,6 +11,7 @@ const scopes = [
   "json",
   "jsonc",
   "yml",
+  "md",
 ] as const;
 
 export default scopes;

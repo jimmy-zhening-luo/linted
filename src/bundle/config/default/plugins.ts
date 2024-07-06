@@ -6,6 +6,7 @@ import html from "@html-eslint/eslint-plugin";
 import jest from "eslint-plugin-jest";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
+import markdownlint from "eslint-plugin-markdownlint";
 
 export default {
   js: { "@stylistic": stylistic },
@@ -27,6 +28,7 @@ export default {
   json: { jsonc },
   jsonc: { jsonc },
   yml: { yml },
+  md: { markdownlint },
 } satisfies Record<
   Scopes
   ,

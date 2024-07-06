@@ -9,9 +9,10 @@ export default {
   svelte: ["src/**/*.svelte"],
   html: ["src/**/*.html"],
   jest: ["src/**/*.spec.ts"],
-  json: ["*.json"],
+  json: ["**/*.json"],
   jsonc: ["tsconfig.json"],
   yml: [".github/workflows/*.yml"],
+  md: ["**/*.md"],
 } satisfies Record<
   Scopes
   ,

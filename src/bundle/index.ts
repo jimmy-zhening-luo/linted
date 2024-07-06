@@ -132,6 +132,18 @@ export default function (
             ?? [],
         )
         .body,
+      md: new options
+        .md(
+          plugins
+            .md,
+          parsers
+            .md,
+          ...files
+            .md,
+          ...scope
+            .md
+            ?? [],
+        ),
     };
     const overridenRulesets: typeof rulesets = {
       js: rulesets
@@ -181,6 +193,12 @@ export default function (
         .override(
           override
             .overrideYml,
+        ),
+      md: rulesets
+        .md
+        .override(
+          override
+            .overrideMd,
         ),
     };
 
