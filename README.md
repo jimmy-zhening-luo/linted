@@ -36,66 +36,6 @@ _See language support __[roadmap](#roadmap).___
 
 ## Features
 
-### One-Arugment API
-
-- Files to lint ([`glob patterns`](code.visualstudio.com/docs/editor/glob-patterns))
-- _Optional:_ Rule [overrides](#full-control-via-per-scope-override)
-
-### Two-Statement `eslint.config.js`
-
-```javascript
-import linted from "linted";
-
-export default linted(
-  /** Files to lint */
-  {
-    /* Global Ignores */
-    gitignore: true, /* (default value) skip linting all files ignored by git (default) */
-    ignores: [
-      "**/*/package-lock.json", // package-lock.json will always be skipped.
-      // additional glob patterns will extend this array
-    ], /* global list of files to skip linting even if included in some scope */
-
-    /* Scoped Includes */
-    js: ["eslint.config.js"],
-    ts: [
-      "src/**/*.ts",
-      "vite.config.ts",
-    ],
-    svelte: ["src/**/*.svelte"],
-
-    // ...html, jest, json, jsonc, yml,
-  },
-);
-```
-
-### Full Control via _Per-Scope_ Override
-
-```javascript
-export default linted(
-  /** Files to lint */
-  {
-    // ...
-  },
-
-  // Optional: Rule overrides
-  {
-    overrideTs: {
-      /* Override rules in `ts` scope,
-       * but NOT in `js` scope,
-       * NOR in `svelte` scope.
-       */
-      "no-unused-vars": "off", // example: ESLint base rule
-      "@typescript-eslint/indent": "warn", // TypeScript plugin rule
-    },
-
-    // ...overrideTs, overrideSvelte, overrideHtml,
-    //    overrideJest, overrideJson, overrideJsonc,
-    //    overrideYml,
-  },
-);
-```
-
 ### Zero-Dependency
 
 No need to install 17 plugins and 12 parsers: each language's latest plugin is bundled and configured.
@@ -124,6 +64,90 @@ No need to remember each plugin's `parserOptions`; you won't have to do _this_ j
       },
     },
     processor: "svelte/svelte",
+```
+
+### Zero-Arugment API
+
+```javascript
+linted();
+```
+
+### Two-Statement `eslint.config.js`
+
+```javascript
+import linted from "linted";
+
+export default linted();
+```
+
+### Total Control via Optional Arguments
+
+- `includes` (scoped [`glob patterns`](code.visualstudio.com/docs/editor/glob-patterns))
+- `ignores` (global [`glob patterns`](code.visualstudio.com/docs/editor/glob-patterns) and other options)
+- `overrides` (scoped rule statements)
+
+#### `includes` _(Scoped)_
+
+```javascript
+import linted from "linted";
+
+linted(
+  {
+    /** includes **/
+    js: [
+      "scripts/**/*/.{js,mjs}",
+      "*.config.js",
+    ], /* example: array of glob patterns to lint using JavaScript rules */
+    ts: [
+      "src/**/*.ts",
+      "*.config.ts",
+    ],
+
+    // svelte: [],
+    // html: [],
+
+    /* ...jest, json, jsonc, yml, md, */
+  },
+)
+```
+
+#### `ignores` _(Global)_
+
+```javascript
+import linted from "linted";
+
+linted(
+  { /** includes **/ },
+  {
+    /** ignores **/
+    gitignore: true, /* (default) never lint any git-ignored file */
+    ignoreArtifacts: true, /* (default) never lint "**/*/package-lock.json" */
+    global: [], /* array of glob patterns to never lint */
+  },
+)
+```
+
+#### `overrides` _(Scoped)_
+
+```javascript
+linted(
+  { /** includes **/ },
+  { /** ignores **/ },
+  {
+    /** overrides **/
+    overrideJs: {}, /* js rule overrides */
+    overrideTs: {
+      /* Overrides apply to `ts` scope,
+       * but NOT to `js` scope,
+       * NOR to `svelte` scope.
+       */
+      "no-unused-vars": "off", /* example: ESLint base rule */
+      "@typescript-eslint/indent": "warn", /* example: TypeScript plugin rule */
+    }, /* js rule overrides */
+
+    /* ...overrideTs, overrideSvelte, overrideHtml, overrideJest, overrideJson, overrideJsonc, overrideYml, */
+  },
+)
 ```
 
 ## Limitation
@@ -354,6 +378,8 @@ jest
 json
 jsonc
 yml
+md
+ignores (global)
 ```
 
 ### Override
