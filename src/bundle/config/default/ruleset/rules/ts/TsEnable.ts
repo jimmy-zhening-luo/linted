@@ -16,7 +16,7 @@ const TsEnable = new Rule(
     "@typescript-eslint/array-type": [
       ERROR,
       {
-        "default": "array-simple",
+        "default": "array",
         readonly: "array",
       },
     ],
