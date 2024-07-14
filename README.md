@@ -1,6 +1,6 @@
 # [`linted`](https://npmjs.com/package/linted)
 
-Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON(C), and sadly YAML.
+Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Mocha, JSON(C), and sadly YAML.
 
 1. [Languages](#languages)
 1. [Features](#features)
@@ -8,6 +8,8 @@ Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, a
 1. [Install](#install)
 1. [Roadmap](#roadmap)
 1. [Rule Logic (Advanced)](#rule-logic-advanced)
+
+v14.1 is in progress, in the meantime this readme is totally inaccurate.
 
 ## Languages
 
@@ -17,10 +19,6 @@ Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, a
 - __[TypeScript](https://typescriptlang.org):__ _...JavaScript_ + [`@typescript-eslint`](https://typescript-eslint.io/)
 - __[Svelte](https://svelte.dev):__ _...TypeScript_ + [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/)
 - __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):__ [`@html-eslint`](https://html-eslint.org/)
-
-### Test
-
-- __[Jest](https://jestjs.io):__ _...TypeScript_ + [`eslint-plugin-jest`](https://github.com/jest-community/eslint-plugin-jest)
 
 ### Data
 
@@ -80,7 +78,7 @@ import linted from "linted";
 export default linted();
 ```
 
-### Total Control via Optional Arguments
+### (WIP for v14.1, currently inaccurate) Total Control via Optional Arguments
 
 - `includes` (scoped [`glob patterns`](code.visualstudio.com/docs/editor/glob-patterns))
 - `ignores` (global [`glob patterns`](code.visualstudio.com/docs/editor/glob-patterns) and other options)
@@ -106,7 +104,7 @@ linted(
     // svelte: [],
     // html: [],
 
-    /* ...jest, json, jsonc, yml, md, */
+    /* ...json, jsonc, yml, */
   },
 )
 ```
@@ -145,7 +143,7 @@ linted(
       "@typescript-eslint/indent": "warn", /* example: TypeScript plugin rule */
     }, /* js rule overrides */
 
-    /* ...overrideTs, overrideSvelte, overrideHtml, overrideJest, overrideJson, overrideJsonc, overrideYml, */
+    /* ...overrideTs, overrideSvelte, overrideHtml, overrideJson, overrideJsonc, overrideYml, */
   },
 )
 ```
@@ -153,16 +151,6 @@ linted(
 ## Limitation
 
 In __TypeScript__ projects, [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) must be `true`.
-
-### Why?
-
-This compromise was required to bundle `jest` and `eslint-plugin-jest` into `linted`.
-
-### Won't Fix
-
-`linted` will never remove this limitation until the following conditions are all false:
-
-- TypeScript maintains a number of official project templates, all of which (including `strictest`) have `skipLibCheck: true`.
 
 ### Enable `skipLibCheck`
 
@@ -182,7 +170,7 @@ By default, `skipLibCheck` is `false`. To set it to `true`:
 
 ```bash
 tsc --skipLibCheck
-``` 
+```
 
 ## Install
 
@@ -216,6 +204,10 @@ ___
 ## Roadmap
 
 ### v11
+
+#### Mocha
+
+- Mocha
 
 #### Tailwind PostCSS
 
@@ -257,8 +249,6 @@ Each `scope` maps to a unique `language`:
 
 - __`html`:__ `HTML`
 
-- __`jest`:__ `Jest`
-
 - __`json`:__ `JSON`
 
 - __`jsonc`:__ `JSONC`
@@ -297,8 +287,6 @@ For such a `language`, its `scope`'s default rules are aggregated with the defau
 
 - __`html`:__ `html`
 
-- __`jest`:__ `js` < `ts` < `jest`
-
 - __`json`:__ `json`
 
 - __`jsonc`:__ `json` < `jsonc`
@@ -315,7 +303,7 @@ By default, `linted` ignores all files in `.gitignore`. This behavior can be dis
 
 ##### `package-lock.json`
 
-`**/*.package-lock.json` is always skipped. *This cannot be overriden.*
+`**/*.package-lock.json` is always skipped. _This cannot be overriden._
 
 ##### `ignores`
 
@@ -339,10 +327,6 @@ Files specified in `scope` are appended to the following default files:
     html: [
       "{src,static}/**/*.html",
       "*.html",
-    ],
-    jest: [
-      "{src,static}/**/*.spec.{ts,mts,cts}",
-      "{src,static}/**/*.spec.{js,mjs,cjs}",
     ],
     json: [
       "{src,static}/**/*.json",
@@ -374,11 +358,9 @@ js
 ts
 svelte
 html
-jest
 json
 jsonc
 yml
-md
 ignores (global)
 ```
 

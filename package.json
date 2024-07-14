@@ -1,7 +1,7 @@
 {
   "name": "linted",
   "version": "14.1.2-rc.14",
-  "description": "Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Jest, JSON(C), and sadly YAML.",
+  "description": "Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Mocha, JSON(C), and sadly YAML.",
   "keywords": [
     "eslint",
     "eslint-config",
@@ -15,8 +15,8 @@
     "sveltekit",
     "html",
     "css",
+    "mocha",
     "tailwindcss",
-    "jest",
     "json",
     "jsonc",
     "yaml"
@@ -50,9 +50,6 @@
     "typescript": ">=5.5"
   },
   "peerDependenciesMeta": {
-    "jest": {
-      "optional": true
-    },
     "typescript": {
       "optional": true
     }
@@ -62,17 +59,13 @@
     "@html-eslint/eslint-plugin": "~0.25.0",
     "@html-eslint/parser": "~0.25.0",
     "@stylistic/eslint-plugin": "~2.3.0",
-    "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "~7.15.0",
     "@typescript-eslint/parser": "~7.15.0",
-    "cross-env": "^7.0.3",
-    "eslint-plugin-jest": "~28.6.0",
     "eslint-plugin-jsonc": "~2.16.0",
     "eslint-plugin-markdownlint": "~0.6.0",
     "eslint-plugin-svelte": "~2.41.0",
     "eslint-plugin-yml": "~1.14.0",
     "jsonc-eslint-parser": "~2.4.0",
-    "markdownlint": "~0.34.0",
     "svelte": "^4.2.18",
     "svelte-eslint-parser": "~0.39.2",
     "yaml-eslint-parser": "~1.2.3"
@@ -82,12 +75,6 @@
     "linted": "~14.1.1",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.5.3"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/src/"
-    ]
   },
   "scripts": {
     "build": "run-s \"build:{1}:*\" lint:built  --  ts",
