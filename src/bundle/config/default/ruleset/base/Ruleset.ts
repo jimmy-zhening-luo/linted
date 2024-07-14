@@ -43,7 +43,7 @@ export default class Ruleset<
   }
 
   public override(
-    ...overrides: Array<undefined | IRule>
+    ...overrides: (undefined | IRule)[]
   ) {
     this
       .overrides
