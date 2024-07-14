@@ -3,7 +3,7 @@ import Option from "./base/Option.js";
 export default class MdOption extends Option<
   "md"
   ,
-  "markdownlint"
+  "yml"
   ,
   true
   ,

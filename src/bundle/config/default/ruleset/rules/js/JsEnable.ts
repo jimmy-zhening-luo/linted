@@ -15,7 +15,7 @@ const JsEnable = new Rule(
   "enable",
   {
 
-    // Problems
+    /* #region Problems */
     // [ https://eslint.org/docs/latest/rules/#possible-problems ]
     "array-callback-return": [
       ERROR,
@@ -39,6 +39,10 @@ const JsEnable = new Rule(
       ERROR,
       ALWAYS,
     ],
+
+    /* #endregion */
+
+    /* #region Gunner */
     "no-const-assign": ERROR, // tsc
     "no-constant-binary-expression": ERROR,
     "no-constant-condition": [

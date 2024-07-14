@@ -4,21 +4,17 @@ import TsOption from "./option/TsOption.js";
 import SvelteOption from "./option/SvelteOption.js";
 import HtmlOption from "./option/HtmlOption.js";
 import JsonOption from "./option/JsonOption.js";
-import JestOption from "./option/JestOption.js";
 import JsoncOption from "./option/JsoncOption.js";
 import YmlOption from "./option/YmlOption.js";
-import MdOption from "./option/MdOption.js";
 
 export default {
   js: JsOption,
   ts: TsOption,
   svelte: SvelteOption,
   html: HtmlOption,
-  jest: JestOption,
   json: JsonOption,
   jsonc: JsoncOption,
   yml: YmlOption,
-  md: MdOption,
 } satisfies Record<
   Scopes
   ,

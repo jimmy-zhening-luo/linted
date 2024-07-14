@@ -80,19 +80,6 @@ export default function (
             ?? [],
         )
         .body,
-      jest: new options
-        .jest(
-          plugins
-            .jest,
-          parsers
-            .jest,
-          ...files
-            .jest,
-          ...scope
-            .jest
-            ?? [],
-        )
-        .body,
       json: new options
         .json(
           plugins
@@ -132,18 +119,6 @@ export default function (
             ?? [],
         )
         .body,
-      md: new options
-        .md(
-          plugins
-            .md,
-          parsers
-            .md,
-          ...files
-            .md,
-          ...scope
-            .md
-            ?? [],
-        ),
     };
     const overridenRulesets: typeof rulesets = {
       js: rulesets
@@ -170,12 +145,6 @@ export default function (
           override
             .overrideHtml,
         ),
-      jest: rulesets
-        .jest
-        .override(
-          override
-            .overrideJest,
-        ),
       json: rulesets
         .json
         .override(
@@ -193,12 +162,6 @@ export default function (
         .override(
           override
             .overrideYml,
-        ),
-      md: rulesets
-        .md
-        .override(
-          override
-            .overrideMd,
         ),
     };
 

@@ -3,32 +3,40 @@ import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
 import html from "@html-eslint/eslint-plugin";
-import jest from "eslint-plugin-jest";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
-import markdownlint from "eslint-plugin-markdownlint";
 
-export default {
+const Plugins = {
   js: { "@stylistic": stylistic },
   ts: {
     "@stylistic": stylistic,
-    "@typescript-eslint": ts,
+    "@typescript-eslint": ts as unknown as Record<
+      string
+      ,
+      Record<
+        "configs"
+        ,
+        unknown
+      >
+    >,
   },
   svelte: {
     "@stylistic": stylistic,
-    "@typescript-eslint": ts,
+    "@typescript-eslint": ts as unknown as Record<
+      string
+      ,
+      Record<
+        "configs"
+        ,
+        unknown
+      >
+    >,
     svelte,
   },
   html: { "@html-eslint": html },
-  jest: {
-    "@stylistic": stylistic,
-    "@typescript-eslint": ts,
-    jest,
-  },
   json: { jsonc },
   jsonc: { jsonc },
   yml: { yml },
-  md: { markdownlint },
 } satisfies Record<
   Scopes
   ,
@@ -42,3 +50,5 @@ export default {
     >
   >
 >;
+
+export default Plugins;

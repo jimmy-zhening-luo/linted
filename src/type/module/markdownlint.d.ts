@@ -10,4 +10,12 @@ declare module "eslint-plugin-markdownlint" {
   >;
 }
 
-declare module "eslint-plugin-markdownlint/parser" {}
+declare module "eslint-plugin-markdownlint/parser" {
+  export const parseForESLint: (
+    code: string
+  )=> {
+    ast: unknown;
+    parserServices: unknown;
+    visitorKeys: unknown;
+  };
+}

@@ -7,11 +7,9 @@ const scopes = [
   "ts",
   "svelte",
   "html",
-  "jest",
   "json",
   "jsonc",
   "yml",
-  "md",
 ] as const;
 
 export default scopes;
