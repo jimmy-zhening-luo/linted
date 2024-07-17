@@ -398,7 +398,6 @@ const TsEnable = new Rule(
         allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       },
     ],
-    "@typescript-eslint/no-unnecessary-parameter-property-assignment": ERROR,
     "@typescript-eslint/no-unnecessary-qualifier": ERROR,
     "@typescript-eslint/no-unnecessary-template-expression": ERROR,
     "@typescript-eslint/no-unnecessary-type-arguments": ERROR,
