@@ -24,7 +24,7 @@ const TsEnable = new Rule(
     "@typescript-eslint/ban-ts-comment": [
       ERROR,
       {
-        "ts-check": true,
+        "ts-check": false,
         "ts-expect-error": true,
         "ts-ignore": true,
         "ts-nocheck": true,
@@ -32,14 +32,14 @@ const TsEnable = new Rule(
       },
     ],
     "@typescript-eslint/ban-tslint-comment": ERROR,
-    "@typescript-eslint/ban-types": OFF,
+    "@typescript-eslint/ban-types": ERROR,
     "@typescript-eslint/class-literal-property-style": [
       ERROR,
       "fields",
     ],
     "@typescript-eslint/consistent-generic-constructors": [
       ERROR,
-      "type-annotation",
+      "constructor",
     ],
     "@typescript-eslint/consistent-indexed-object-style": [
       ERROR,
@@ -52,10 +52,7 @@ const TsEnable = new Rule(
         objectLiteralTypeAssertions: NEVER,
       },
     ],
-    "@typescript-eslint/consistent-type-definitions": [
-      ERROR,
-      "type",
-    ],
+    "@typescript-eslint/consistent-type-definitions": OFF,
     "@typescript-eslint/consistent-type-exports": [
       ERROR,
       { fixMixedExportsWithInlineTypeSpecifier: false },
@@ -302,10 +299,19 @@ const TsEnable = new Rule(
       ERROR,
       { allowSingleExtends: true },
     ],
+    "@typescript-eslint/no-empty-object-type": [
+      ERROR,
+      {
+        allowInterfaces: NEVER,
+        allowObjectTypes: NEVER,
+
+        // allowWithName: /regex/,
+      },
+    ],
     "@typescript-eslint/no-explicit-any": [
       ERROR,
       {
-        fixToUnknown: false,
+        fixToUnknown: true,
         ignoreRestArgs: false,
       },
     ],
@@ -328,7 +334,13 @@ const TsEnable = new Rule(
     ],
     "@typescript-eslint/no-for-in-array": ERROR,
     "@typescript-eslint/no-import-type-side-effects": ERROR,
-    "@typescript-eslint/no-inferrable-types": OFF,
+    "@typescript-eslint/no-inferrable-types": [
+      ERROR,
+      {
+        ignoreParameters: false,
+        ignoreProperties: false,
+      },
+    ],
     "@typescript-eslint/no-invalid-void-type": [
       ERROR,
       {
@@ -386,13 +398,16 @@ const TsEnable = new Rule(
         allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       },
     ],
+    "@typescript-eslint/no-unnecessary-parameter-property-assignment": ERROR,
     "@typescript-eslint/no-unnecessary-qualifier": ERROR,
+    "@typescript-eslint/no-unnecessary-template-expression": ERROR,
     "@typescript-eslint/no-unnecessary-type-arguments": ERROR,
     "@typescript-eslint/no-unnecessary-type-assertion": [
       ERROR,
       { typesToIgnore: [] },
     ],
     "@typescript-eslint/no-unnecessary-type-constraint": ERROR,
+    "@typescript-eslint/no-unnecessary-type-parameters": ERROR,
     "@typescript-eslint/no-unsafe-argument": ERROR,
     "@typescript-eslint/no-unsafe-assignment": ERROR,
     "@typescript-eslint/no-unsafe-call": ERROR,
@@ -402,12 +417,8 @@ const TsEnable = new Rule(
     "@typescript-eslint/no-unsafe-return": ERROR,
     "@typescript-eslint/no-unsafe-unary-minus": ERROR,
     "@typescript-eslint/no-useless-empty-export": ERROR,
-    "@typescript-eslint/no-useless-template-literals": ERROR,
-    "@typescript-eslint/no-var-requires": [
-      ERROR,
-      { allow: [] },
-    ],
-    "@typescript-eslint/non-nullable-type-assertion-style": ERROR,
+    "@typescript-eslint/no-var-requires": OFF,
+    "@typescript-eslint/non-nullable-type-assertion-style": OFF,
     "@typescript-eslint/parameter-properties": [
       ERROR,
       { prefer: "parameter-property" /**  "parameter-property" | "class-property"  */ },
@@ -455,7 +466,15 @@ const TsEnable = new Rule(
       ERROR,
       { onlyInlineLambdas: false },
     ],
-    "@typescript-eslint/prefer-readonly-parameter-types": OFF, // investigate
+    "@typescript-eslint/prefer-readonly-parameter-types": [
+      ERROR,
+      {
+        allow: [],
+        checkParameterProperties: true,
+        ignoreInferredTypes: true,
+        treatMethodsAsReadonly: true,
+      },
+    ],
     "@typescript-eslint/prefer-reduce-type-parameter": ERROR,
     "@typescript-eslint/prefer-regexp-exec": ERROR,
     "@typescript-eslint/prefer-return-this-type": ERROR,
@@ -496,13 +515,12 @@ const TsEnable = new Rule(
         allowAny: true,
         allowArray: true,
         allowBoolean: true,
-        allowNullish: true,
+        allowNullish: false,
         allowNumber: true,
         allowNever: false,
         allowRegExp: false,
       }, // investigate: make stricter
     ],
-    "@typescript-eslint/sort-type-constituents": OFF, // investigate
     "@typescript-eslint/strict-boolean-expressions": [
       ERROR,
       {

@@ -48,23 +48,7 @@ const TsEnableExt = new Rule(
     "@typescript-eslint/no-invalid-this": OFF, // tsconfig: { strict, noImplicitThis }
     "@typescript-eslint/no-loop-func": ERROR,
     "@typescript-eslint/no-loss-of-precision": ERROR,
-    "@typescript-eslint/no-magic-numbers": [
-      OFF,
-      {
-        ignore: [],
-        ignoreArrayIndexes: true,
-        ignoreDefaultValues: true,
-        ignoreClassFieldInitialValues: true,
-        enforceConst: true,
-        detectObjects: false,
-
-        // TS-only
-        ignoreEnums: true,
-        ignoreNumericLiteralTypes: true,
-        ignoreReadonlyClassProperties: true,
-        ignoreTypeIndexes: true,
-      },
-    ],
+    "@typescript-eslint/no-magic-numbers": OFF,
     "@typescript-eslint/no-redeclare": OFF, // tsc (let, const, -var)
     "@typescript-eslint/no-restricted-imports": OFF, // preference
     "@typescript-eslint/no-shadow": OFF, // investigate
@@ -94,7 +78,7 @@ const TsEnableExt = new Rule(
         variables: true,
         allowNamedExports: false,
         enums: true,
-        typedefs: true, // questionable
+        typedefs: false, // changed 14.2.2 (still questionable)
         ignoreTypeReferences: true,
       },
     ],
