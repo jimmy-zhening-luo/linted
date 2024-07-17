@@ -464,15 +464,7 @@ const TsEnable = new Rule(
       ERROR,
       { onlyInlineLambdas: false },
     ],
-    "@typescript-eslint/prefer-readonly-parameter-types": [
-      ERROR,
-      {
-        allow: [],
-        checkParameterProperties: true,
-        ignoreInferredTypes: true,
-        treatMethodsAsReadonly: true,
-      },
-    ],
+    "@typescript-eslint/prefer-readonly-parameter-types": OFF, // preference - WAY too restrictive
     "@typescript-eslint/prefer-reduce-type-parameter": ERROR,
     "@typescript-eslint/prefer-regexp-exec": ERROR,
     "@typescript-eslint/prefer-return-this-type": ERROR,
