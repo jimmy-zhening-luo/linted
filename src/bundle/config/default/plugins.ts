@@ -10,27 +10,11 @@ const Plugins = {
   js: { "@stylistic": stylistic },
   ts: {
     "@stylistic": stylistic,
-    "@typescript-eslint": ts as unknown as Record<
-      string
-      ,
-      Record<
-        "configs"
-        ,
-        unknown
-      >
-    >,
+    "@typescript-eslint": ts as unknown as { configs: unknown },
   },
   svelte: {
     "@stylistic": stylistic,
-    "@typescript-eslint": ts as unknown as Record<
-      string
-      ,
-      Record<
-        "configs"
-        ,
-        unknown
-      >
-    >,
+    "@typescript-eslint": ts as unknown as { configs: unknown },
     svelte,
   },
   html: { "@html-eslint": html },
@@ -38,16 +22,10 @@ const Plugins = {
   jsonc: { jsonc },
   yml: { yml },
 } satisfies Record<
-  Scopes
-  ,
+  Scopes,
   Record<
-    string
-    ,
-    Record<
-      "configs"
-      ,
-      unknown
-    >
+    string,
+    { configs: unknown }
   >
 >;
 

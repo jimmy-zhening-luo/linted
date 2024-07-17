@@ -1,19 +1,3 @@
-declare type IOPlugins<
-  Plugins,
-> = literalful<
-  Plugins
-> extends never
+declare type IOPlugins<PluginId extends string> = literalful<PluginId> extends never
   ? never
-  : Record<
-    "plugins"
-    ,
-    Record<
-      Plugins
-      ,
-      Record<
-        "configs"
-        ,
-        unknown
-      >
-    >
-  >;
+  : { plugins: Record<literalful<PluginId>, { configs: unknown }> };

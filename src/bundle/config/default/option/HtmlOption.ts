@@ -1,21 +1,14 @@
 import Option from "./base/Option.js";
 
 export default class HtmlOption extends Option<
-  "html"
-  ,
-  "@html-eslint"
-  ,
-  true
-  ,
-  {}
-  ,
+  "html",
+  "@html-eslint",
+  true,
+  never,
+  never,
+  never,
+  never,
   never
-  ,
-  never
-  ,
-  ""
-  ,
-  ""
 > {
   constructor(
     plugins: HtmlOption["body"]["plugins"],

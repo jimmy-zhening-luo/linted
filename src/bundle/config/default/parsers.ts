@@ -12,10 +12,4 @@ export default {
   json: jsonc,
   jsonc,
   yml,
-} satisfies Partial<
-  Record<
-    Scopes
-    ,
-    unknown
-  >
->;
+} satisfies Particord<Scopes, unknown>;

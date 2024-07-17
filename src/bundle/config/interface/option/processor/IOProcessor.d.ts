@@ -1,11 +1,3 @@
-declare type IOProcessor<
-  Processor,
-> = literalful<
-  Processor
-> extends never
-  ? {}
-  : Record<
-    "processor"
-    ,
-    Processor
-  >;
+declare type IOProcessor<ProcessorId extends string> = literalful<ProcessorId> extends never
+  ? object
+  : { processor: literalful<ProcessorId> };

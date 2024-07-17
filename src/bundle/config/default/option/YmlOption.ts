@@ -1,21 +1,14 @@
 import Option from "./base/Option.js";
 
 export default class YmlOption extends Option<
-  "yml"
-  ,
-  "yml"
-  ,
-  true
-  ,
-  {}
-  ,
+  "yml",
+  "yml",
+  true,
+  never,
+  never,
+  never,
+  never,
   never
-  ,
-  never
-  ,
-  ""
-  ,
-  ""
 > {
   constructor(
     plugins: YmlOption["body"]["plugins"],

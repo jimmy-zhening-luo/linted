@@ -7,8 +7,7 @@ import TsEnable from "./rules/ts/TsEnable.js";
 
 const TsRuleset = new Ruleset(
   "ts",
-  ...JsRuleset
-    .ruleset,
+  ...JsRuleset.ruleset,
   TsDisableCompiler,
   TsDisableExt,
   TsEnableExt,

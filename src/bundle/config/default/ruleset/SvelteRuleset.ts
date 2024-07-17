@@ -8,8 +8,7 @@ import SvelteEnable from "./rules/svelte/SvelteEnable.js";
 
 const SvelteRuleset = new Ruleset(
   "svelte",
-  ...TsRuleset
-    .ruleset,
+  ...TsRuleset.ruleset,
   SvelteDisableConflictJs,
   SvelteDisableConflictTs,
   SvelteDisableExt,

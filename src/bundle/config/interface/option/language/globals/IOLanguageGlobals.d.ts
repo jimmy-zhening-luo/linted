@@ -1,15 +1,3 @@
-declare type IOLanguageGlobals<
-  Globals,
-> = literalful<
-  Globals
-> extends never
-  ? {}
-  : Record<
-    "globals"
-    ,
-    Record<
-      Globals
-      ,
-      true
-    >
-  >;
+declare type IOLanguageGlobals<GlobalTypes extends string> = literalful<GlobalTypes> extends never
+  ? object
+  : { globals: Record<literalful<GlobalTypes>, true> };

@@ -1,4 +1,4 @@
-declare type IConfig = {
+declare interface IConfig {
   rules: IRule;
   files: string[];
   name: `linted/scope:${string}`;
@@ -12,26 +12,10 @@ declare type IConfig = {
       | "script"
     ;
     ecmaVersion?: "latest";
-    globals?: Record<
-      string
-      ,
-      true
-    >;
+    globals?: Record<string, true>;
     parser?: unknown;
-    parserOptions?: Record<
-      string
-      ,
-      unknown
-    >;
+    parserOptions?: Record<string, unknown>;
   };
-  plugins: Record<
-    Plugins
-    ,
-    Record<
-      "configs"
-      ,
-      unknown
-    >
-  >;
+  plugins: Record<Plugins, Record<"configs", unknown>>;
   processor?: string;
-};
+}

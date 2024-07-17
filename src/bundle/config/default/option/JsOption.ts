@@ -1,8 +1,7 @@
 import Option from "./base/Option.js";
 
 export default class JsOption extends Option<
-  "js"
-  ,
+  "js",
   "@stylistic"
 > {
   constructor(

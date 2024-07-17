@@ -11,8 +11,4 @@ export default {
   json: ["**/*.json"],
   jsonc: ["tsconfig.json"],
   yml: [".github/workflows/*.yml"],
-} satisfies Record<
-  Scopes
-  ,
-  string[]
->;
+} satisfies Record<Scopes, string[]>;

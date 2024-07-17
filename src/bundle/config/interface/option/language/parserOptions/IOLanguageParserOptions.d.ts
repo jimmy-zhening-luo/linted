@@ -1,15 +1,5 @@
-declare type IOLanguageParserOptions<
-  ParserOptions,
-> = ParserOptions extends Record<
-  string
-  ,
-  unknown
->
-  ? keyof ParserOptions extends never
-    ? {}
-    : Record<
-      "parserOptions"
-      ,
-      ParserOptions
-    >
-  : {};
+declare type IOLanguageParserOptions<ParserOptions extends object> = Interface<ParserOptions> extends never
+  ? object
+  : Keys<ParserOptions> extends never
+    ? object
+    : { parserOptions: Interface<ParserOptions> };

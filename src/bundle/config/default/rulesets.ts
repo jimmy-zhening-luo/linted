@@ -16,8 +16,4 @@ export default {
   json: JsonRuleset,
   jsonc: JsoncRuleset,
   yml: YmlRuleset,
-} satisfies {
-  [S in Scopes]: Ruleset<
-    S
-  >
-};
+} satisfies { [S in Scopes]: Ruleset<S> };

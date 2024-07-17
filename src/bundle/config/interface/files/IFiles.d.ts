@@ -1,5 +1,1 @@
-declare type IFiles = Record<
-  "files"
-  ,
-  string[]
->;
+declare interface IFiles { files: string[] }

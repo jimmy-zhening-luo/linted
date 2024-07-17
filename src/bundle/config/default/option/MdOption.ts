@@ -1,21 +1,14 @@
 import Option from "./base/Option.js";
 
 export default class MdOption extends Option<
-  "md"
-  ,
-  "yml"
-  ,
-  true
-  ,
-  {}
-  ,
+  "md",
+  "yml",
+  true,
+  never,
+  never,
+  never,
+  never,
   never
-  ,
-  never
-  ,
-  ""
-  ,
-  ""
 > {
   constructor(
     plugins: MdOption["body"]["plugins"],

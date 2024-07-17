@@ -4,8 +4,7 @@ import JsoncOverride from "./rules/jsonc/JsoncOverride.js";
 
 const JsoncRuleset = new Ruleset(
   "jsonc",
-  ...JsonRuleset
-    .ruleset,
+  ...JsonRuleset.ruleset,
   JsoncOverride,
 );
 

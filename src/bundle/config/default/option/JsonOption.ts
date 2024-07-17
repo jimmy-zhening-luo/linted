@@ -1,21 +1,14 @@
 import Option from "./base/Option.js";
 
 export default class JsonOption extends Option<
-  "json"
-  ,
-  "jsonc"
-  ,
-  true
-  ,
-  {}
-  ,
+  "json",
+  "jsonc",
+  true,
+  never,
+  never,
+  never,
+  never,
   never
-  ,
-  never
-  ,
-  ""
-  ,
-  ""
 > {
   constructor(
     plugins: JsonOption["body"]["plugins"],

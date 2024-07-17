@@ -1,9 +1,3 @@
-declare type IOLanguageParser<
-  Parser,
-> = Parser extends true
-  ? Record<
-    "parser"
-    ,
-    unknown
-  >
-  : {};
+declare type IOLanguageParser<UseParser extends boolean> = True<UseParser> extends never
+  ? object
+  : { parser: unknown };

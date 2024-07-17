@@ -1,9 +1,1 @@
-declare type IRule = Record<
-  string
-  ,
-  | RuleSeverity
-  | [
-    RuleSeverity,
-    ...unknown[],
-  ]
->;
+type IRule = Record<string, RuleSeverity | [RuleSeverity, ...unknown[]]>;

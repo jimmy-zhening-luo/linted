@@ -1,11 +1,3 @@
-declare type IOName<
-  Name,
-> = literalful<
-  Name
-> extends never
+declare type IOName<Name extends string> = literalful<Name> extends never
   ? never
-  : Record<
-    "name"
-    ,
-    Name
-  >;
+  : { name: literalful<Name> };

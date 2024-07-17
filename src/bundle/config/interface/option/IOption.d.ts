@@ -1,39 +1,25 @@
 declare type IOption<
-  Name,
-  NoInlineConfig,
-  ReportUnusedDisableDirectives,
-  Plugins,
-  EcmaVersion,
-  SourceType,
-  Parser,
-  ParserOptions,
-  Globals,
-  Processor,
+  Name extends string,
+  NoInline extends boolean,
+  ReportUnused extends boolean | IOLinter.States,
+  PluginId extends string,
+  Ecma extends number | IOLanguageEcma.Ecma,
+  Source extends IOLanguageSource.Source,
+  UseParser extends boolean,
+  ParserOptions extends object,
+  GlobalTypes extends string,
+  ProcessorId extends string,
 > =
   & IFiles
-  & IOName<
-    Name
-  >
-  & IOLinter<
-    NoInlineConfig
-    ,
-    ReportUnusedDisableDirectives
-  >
-  & IOPlugins<
-    Plugins
-  >
+  & IOName<Name>
+  & IOLinter<NoInline, ReportUnused>
+  & IOPlugins<PluginId>
   & IOLanguage<
-    EcmaVersion
-    ,
-    SourceType
-    ,
-    Parser
-    ,
-    ParserOptions
-    ,
-    Globals
+    Ecma,
+    Source,
+    UseParser,
+    ParserOptions,
+    GlobalTypes
   >
-  & IOProcessor<
-    Processor
-  >
+  & IOProcessor<ProcessorId>
 ;

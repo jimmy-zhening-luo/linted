@@ -15,8 +15,4 @@ export default {
   json: JsonOption,
   jsonc: JsoncOption,
   yml: YmlOption,
-} satisfies Record<
-  Scopes
-  ,
-  unknown
->;
+} satisfies Record<Scopes, unknown>;

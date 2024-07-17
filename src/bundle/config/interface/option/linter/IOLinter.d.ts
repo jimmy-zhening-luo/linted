@@ -1,25 +1,26 @@
 declare type IOLinter<
-  NoInlineConfig,
-  ReportUnusedDisableDirectives,
-> = Record<
-  "linterOptions"
-  ,
-  {
-    noInlineConfig: never extends NoInlineConfig
-      ? true
-      : NoInlineConfig extends false
+  NoInline extends boolean,
+  ReportUnused extends
+  | boolean
+  | IOLinter.States,
+> = {
+  linterOptions: {
+    noInlineConfig: True<NoInline> extends never
+      ? false
+      : True<NoInline>;
+    reportUnusedDisableDirectives: True<ReportUnused> extends never
+      ? literalful<ReportUnused> extends never
         ? false
-        : true
-    ;
-    reportUnusedDisableDirectives: never extends ReportUnusedDisableDirectives
-      ? "error"
-      : ReportUnusedDisableDirectives extends
-      | "error"
-      | "warn"
-      | "off"
-      | boolean
-        ? ReportUnusedDisableDirectives
-        : "error"
-    ;
-  }
->;
+        : literalful<ReportUnused> extends IOLinter.States
+          ? literalful<ReportUnused>
+          : false
+      : True<ReportUnused>;
+  };
+};
+
+declare namespace IOLinter {
+  export type States =
+    | "error"
+    | "warn"
+    | "off";
+}

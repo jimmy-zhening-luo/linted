@@ -2,27 +2,15 @@ import Option from "./base/Option.js";
 import type TsOption from "./TsOption.js";
 
 export default class SvelteOption extends Option<
-  "svelte"
-  ,
+  "svelte",
   | "svelte"
   | keyof TsOption["body"]["plugins"]
   ,
-  true
-  ,
+  true,
   & TsOption["body"]["languageOptions"]["parserOptions"]
-  & Record<
-    "parser"
-    ,
-    unknown
-  >
-  & Record<
-    "extraFileExtensions"
-    ,
-    [".svelte"]
-  >
-  ,
-  never
-  ,
+  & { parser: unknown }
+  & { extraFileExtensions: [".svelte"] },
+  never,
   "svelte/svelte"
 > {
   constructor(

@@ -1,5 +1,1 @@
-declare type IRules = Record<
-  "rules"
-  ,
-  IRule
->;
+declare interface IRules { rules: IRule }
