@@ -9,11 +9,13 @@ declare type IOLinter<
       ? false
       : True<NoInline>;
     reportUnusedDisableDirectives: True<ReportUnused> extends never
-      ? literalful<ReportUnused> extends never
-        ? false
-        : literalful<ReportUnused> extends IOLinter.States
-          ? literalful<ReportUnused>
-          : false
+      ? ReportUnused extends string
+        ? literalful<ReportUnused> extends never
+          ? false
+          : literalful<ReportUnused> extends IOLinter.States
+            ? literalful<ReportUnused>
+            : false
+        : false
       : True<ReportUnused>;
   };
 };
