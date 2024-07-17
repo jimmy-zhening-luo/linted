@@ -442,7 +442,7 @@ const JsEnable = new Rule(
       { enforceForRenamedProperties: true },
     ], // TSLint
     "prefer-exponentiation-operator": ERROR,
-    "prefer-named-capture-group": ERROR,
+    "prefer-named-capture-group": OFF,
     "prefer-numeric-literals": ERROR,
     "prefer-object-has-own": ERROR,
     "prefer-object-spread": ERROR,
