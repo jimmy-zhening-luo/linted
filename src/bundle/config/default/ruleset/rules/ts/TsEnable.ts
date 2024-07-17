@@ -406,7 +406,6 @@ const TsEnable = new Rule(
       { typesToIgnore: [] },
     ],
     "@typescript-eslint/no-unnecessary-type-constraint": ERROR,
-    "@typescript-eslint/no-unnecessary-type-parameters": ERROR,
     "@typescript-eslint/no-unsafe-argument": ERROR,
     "@typescript-eslint/no-unsafe-assignment": ERROR,
     "@typescript-eslint/no-unsafe-call": ERROR,
