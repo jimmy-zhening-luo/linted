@@ -40,11 +40,8 @@
     "email": "1450044+jimmy-zhening-luo@users.noreply.github.com",
     "url": "https://jimm.my"
   },
-  "files": [
-    "dist/bundle"
-  ],
-  "main": "dist/bundle/index.js",
-  "types": "dist/bundle/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "peerDependencies": {
     "eslint": "^8.57",
     "typescript": ">=5.5"
