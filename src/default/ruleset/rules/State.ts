@@ -14,6 +14,7 @@ const BEFORE = "before";
 const AFTER = "after";
 const ABOVE = "above";
 const BELOW = "below";
+const BESIDE = "beside";
 const SINGLE = "single";
 const DOUBLE = "double";
 const MULTI = "multi";

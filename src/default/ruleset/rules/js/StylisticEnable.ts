@@ -9,11 +9,11 @@ import {
   STRICT,
   ALL,
   STAR,
-  FIRST,
   LAST,
   BEFORE,
   AFTER,
   BELOW,
+  BESIDE,
   DOUBLE,
 } from "../State.js";
 
@@ -139,7 +139,7 @@ const StylisticEnable = new Rule(
     ],
     "@stylistic/implicit-arrow-linebreak": [
       ERROR,
-      "beside",
+      BESIDE,
     ],
     "@stylistic/indent": [
       ERROR,
