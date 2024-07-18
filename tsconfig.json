@@ -4,7 +4,8 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": [
     "src/**/*.ts",
-    "types/**/*.d.ts",
+    "interface/**/*.d.ts",
+    "dependency/**/*.d.ts",
     "*.config.ts",
   ],
   "compilerOptions": {
