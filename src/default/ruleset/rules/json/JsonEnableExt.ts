@@ -1,7 +1,6 @@
 import Rule from "../Rule.js";
 import {
   ERROR,
-
   NEVER,
   ALWAYS,
   CONSISTENT,
@@ -9,12 +8,12 @@ import {
   LAST,
   DOUBLE,
 } from "../State.js";
+import { EnableEXT } from "../Id.js";
 
 const JsonEnableExt = new Rule(
-  "enable-ext",
+  EnableEXT,
   {
 
-    // ESLint Extension
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
     "jsonc/array-bracket-newline": [
       ERROR,

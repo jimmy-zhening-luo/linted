@@ -4,8 +4,6 @@ import { OFF } from "../State.js";
 const TsDisableCompiler = new Rule(
   "disable-compiler",
   {
-
-    // ESLint DISABLE (TSC)
     "constructor-super": OFF,
     "no-const-assign": OFF,
     "no-dupe-args": OFF,

@@ -2,18 +2,18 @@ import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
-
   ALL,
+  ALWAYS,
 } from "../State.js";
+import { EnableEXT } from "../Id.js";
 
 const TsEnableExt = new Rule(
-  "enable-ext",
+  EnableEXT,
   {
 
-    // ENABLE TS Extensions (STEP 2/2)
-    // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
-    "@typescript-eslint/class-methods-use-this": OFF, // preference -- eslint:off
-    "@typescript-eslint/consistent-return": OFF, // tsconfig: noImplicitReturns
+    // https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
+    "@typescript-eslint/class-methods-use-this": OFF, /* preference -- eslint:off */
+    "@typescript-eslint/consistent-return": OFF, /* tsconfig: noImplicitReturns */
     "@typescript-eslint/default-param-last": ERROR,
     "@typescript-eslint/dot-notation": [
       ERROR,
@@ -28,11 +28,11 @@ const TsEnableExt = new Rule(
     ],
     "@typescript-eslint/init-declarations": [
       ERROR,
-      "always",
+      ALWAYS,
     ],
-    "@typescript-eslint/max-params": OFF, // preference
+    "@typescript-eslint/max-params": OFF, /* preference */
     "@typescript-eslint/no-array-constructor": ERROR,
-    "@typescript-eslint/no-dupe-class-members": OFF, // tsc
+    "@typescript-eslint/no-dupe-class-members": OFF, /* tsc */
     "@typescript-eslint/no-empty-function": [
       ERROR,
       {
@@ -45,13 +45,13 @@ const TsEnableExt = new Rule(
       }, // functions, arrowFunctions, generatorFunctions, methods, generatorMethods, getters, setters, constructors, asyncFunctions, asyncMethods; TS-ONLY: private-constructors, protected-constructors, decoratedFunctions, overrideMethods
     ],
     "@typescript-eslint/no-implied-eval": ERROR,
-    "@typescript-eslint/no-invalid-this": OFF, // tsconfig: { strict, noImplicitThis }
+    "@typescript-eslint/no-invalid-this": OFF, /* tsconfig: { strict, noImplicitThis } */
     "@typescript-eslint/no-loop-func": ERROR,
     "@typescript-eslint/no-loss-of-precision": ERROR,
     "@typescript-eslint/no-magic-numbers": OFF,
-    "@typescript-eslint/no-redeclare": OFF, // tsc (let, const, -var)
-    "@typescript-eslint/no-restricted-imports": OFF, // preference
-    "@typescript-eslint/no-shadow": OFF, // investigate
+    "@typescript-eslint/no-redeclare": OFF, /* tsc (let, const, -var) */
+    "@typescript-eslint/no-restricted-imports": OFF, /* preference */
+    "@typescript-eslint/no-shadow": OFF, /* investigate */
     "@typescript-eslint/no-unused-expressions": [
       ERROR,
       {
@@ -78,7 +78,7 @@ const TsEnableExt = new Rule(
         variables: true,
         allowNamedExports: false,
         enums: true,
-        typedefs: false, // changed 14.2.2 (still questionable)
+        typedefs: false, /* changed 14.2.2 (still questionable) */
         ignoreTypeReferences: true,
       },
     ],

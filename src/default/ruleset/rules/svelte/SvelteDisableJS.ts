@@ -2,7 +2,7 @@ import Rule from "../Rule.js";
 import { OFF } from "../State.js";
 
 const SvelteDisableConflictJs = new Rule(
-  "disable-conflict-js",
+  "disable-js",
   {
 
     // Recommended by Svelte base config:

@@ -11,8 +11,8 @@ export default class Ruleset<Language extends string> {
     this.ruleset = [...ruleset];
   }
 
-  public get name() {
-    return `language:${this.language}` as const;
+  public get id() {
+    return `ruleset:${this.language}` as const;
   }
 
   public get flat() {

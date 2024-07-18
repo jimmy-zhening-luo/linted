@@ -2,16 +2,15 @@ import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
-
   NEVER,
 } from "../State.js";
+import { Enable } from "../Id.js";
 
 const TsEnable = new Rule(
-  "enable",
+  Enable,
   {
 
-    // ENABLE TSLint (TypeScript ONLY)
-    // [ Reference: https://typescript-eslint.io/rules/?=xextension-xdeprecated#rules ]
+    // https://typescript-eslint.io/rules/?=xextension-xdeprecated#rules ]
     "@typescript-eslint/adjacent-overload-signatures": OFF,
     "@typescript-eslint/array-type": [
       ERROR,
@@ -419,7 +418,7 @@ const TsEnable = new Rule(
     "@typescript-eslint/non-nullable-type-assertion-style": OFF,
     "@typescript-eslint/parameter-properties": [
       ERROR,
-      { prefer: "parameter-property" /**  "parameter-property" | "class-property"  */ },
+      { prefer: "parameter-property" /*  "parameter-property" | "class-property"  */ },
     ],
     "@typescript-eslint/prefer-as-const": ERROR,
     "@typescript-eslint/prefer-enum-initializers": ERROR,
@@ -446,7 +445,7 @@ const TsEnable = new Rule(
           string: false,
         },
       },
-    ], // requires tsconfig: strictNullChecks
+    ], /* requires tsconfig: strictNullChecks */
     "@typescript-eslint/prefer-optional-chain": [
       ERROR,
       {
@@ -464,7 +463,7 @@ const TsEnable = new Rule(
       ERROR,
       { onlyInlineLambdas: false },
     ],
-    "@typescript-eslint/prefer-readonly-parameter-types": OFF, // preference - WAY too restrictive
+    "@typescript-eslint/prefer-readonly-parameter-types": OFF, /* preference - WAY too restrictive */
     "@typescript-eslint/prefer-reduce-type-parameter": ERROR,
     "@typescript-eslint/prefer-regexp-exec": ERROR,
     "@typescript-eslint/prefer-return-this-type": ERROR,
@@ -509,7 +508,7 @@ const TsEnable = new Rule(
         allowNumber: true,
         allowNever: false,
         allowRegExp: false,
-      }, // investigate: make stricter
+      }, /* investigate: make stricter */
     ],
     "@typescript-eslint/strict-boolean-expressions": [
       ERROR,
@@ -524,7 +523,7 @@ const TsEnable = new Rule(
         allowNullableObject: false,
         allowNullableString: false,
       },
-    ], // requires tsconfig: strictNullChecks
+    ], /* requires tsconfig: strictNullChecks */
     "@typescript-eslint/switch-exhaustiveness-check": [
       ERROR,
       {
@@ -540,7 +539,7 @@ const TsEnable = new Rule(
         types: NEVER, /** always | never | prefer-import */
       },
     ],
-    "@typescript-eslint/typedef": OFF, // tsconfig: { noImplicitAny, strictPropertyInitialization }
+    "@typescript-eslint/typedef": OFF, /* tsconfig: { noImplicitAny, strictPropertyInitialization } */
     "@typescript-eslint/unbound-method": [
       ERROR,
       { ignoreStatic: false },

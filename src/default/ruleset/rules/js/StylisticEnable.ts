@@ -2,9 +2,9 @@ import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
-
   NEVER,
   ALWAYS,
+  ALWAYS_MULTILINE,
   AS_NEEDED,
   STRICT,
   ALL,
@@ -14,11 +14,12 @@ import {
   AFTER,
   BELOW,
   BESIDE,
+  INSIDE,
   DOUBLE,
 } from "../State.js";
 
 const StylisticEnable = new Rule(
-  "enable",
+  "stylistic",
   {
 
     // https://eslint.style/rules
@@ -76,7 +77,7 @@ const StylisticEnable = new Rule(
     ],
     "@stylistic/comma-dangle": [
       ERROR,
-      "always-multiline",
+      ALWAYS_MULTILINE,
     ],
     "@stylistic/comma-spacing": [
       ERROR,
@@ -677,7 +678,7 @@ const StylisticEnable = new Rule(
     "@stylistic/type-named-tuple-spacing": ERROR,
     "@stylistic/wrap-iife": [
       ERROR,
-      "inside",
+      INSIDE,
       { functionPrototypeMethods: true },
     ],
     "@stylistic/wrap-regex": ERROR,

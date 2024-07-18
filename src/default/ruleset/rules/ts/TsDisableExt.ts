@@ -1,12 +1,12 @@
 import Rule from "../Rule.js";
 import { OFF } from "../State.js";
+import { DisableEXT } from "../Id.js";
 
 const TsDisableExt = new Rule(
-  "disable-ext",
+  DisableEXT,
   {
 
-    // DISABLE ESLint -- TS Extensions (STEP 1/2)
-    // [ Reference: https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
+    // https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
     "class-methods-use-this": OFF,
     "consistent-return": OFF,
     "default-param-last": OFF,
@@ -23,9 +23,9 @@ const TsDisableExt = new Rule(
     "no-magic-numbers": OFF,
     "no-redeclare": OFF,
     "no-restricted-imports": OFF,
-    "no-return-await": OFF, // DEPRECATED -- @typescript-eslint/return-await
+    "no-return-await": OFF, /* DEPRECATED -- @typescript-eslint/return-await */
     "no-shadow": OFF,
-    "no-throw-literal": OFF, // @typescript-eslint/only-throw-error
+    "no-throw-literal": OFF, /* @typescript-eslint/only-throw-error */
     "no-unused-expressions": OFF,
     "no-unused-vars": OFF,
     "no-use-before-define": OFF,

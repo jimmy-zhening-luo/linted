@@ -2,7 +2,6 @@ import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
-
   NEVER,
   ALWAYS,
   AS_NEEDED,
@@ -10,9 +9,10 @@ import {
   MULTI,
   BOTH,
 } from "../State.js";
+import { Enable } from "../Id.js";
 
 const JsEnable = new Rule(
-  "enable",
+  Enable,
   {
 
     /* #region Problems */

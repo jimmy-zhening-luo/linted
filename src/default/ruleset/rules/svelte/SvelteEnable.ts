@@ -2,15 +2,15 @@ import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
-
   NEVER,
   ALWAYS,
   BELOW,
   DOUBLE,
 } from "../State.js";
+import { Enable } from "../Id.js";
 
 const SvelteEnable = new Rule(
-  "enable",
+  Enable,
   {
 
     // Possible Errors

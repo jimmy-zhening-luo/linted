@@ -1,17 +1,16 @@
 import Rule from "../Rule.js";
 import {
   ERROR,
-
   NEVER,
   ALWAYS,
   STRICT,
 } from "../State.js";
+import { EnableEXT } from "../Id.js";
 
 const YmlEnableExt = new Rule(
-  "enable-ext",
+  EnableEXT,
   {
 
-    // Extension - ENABLE
     // https://ota-meshi.github.io/eslint-plugin-yml/rules/#extension-rules
     "yml/flow-mapping-curly-newline": [
       ERROR,

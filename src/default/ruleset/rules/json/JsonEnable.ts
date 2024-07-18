@@ -3,12 +3,12 @@ import {
   ERROR,
   OFF,
 } from "../State.js";
+import { Enable } from "../Id.js";
 
 const JsonEnable = new Rule(
-  "enable",
+  Enable,
   {
 
-    // Plugin-Only
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#jsonc-rules
     "jsonc/auto": OFF,
     "jsonc/key-name-casing": OFF,

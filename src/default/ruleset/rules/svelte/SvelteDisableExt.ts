@@ -1,11 +1,11 @@
 import Rule from "../Rule.js";
 import { OFF } from "../State.js";
+import { DisableEXT } from "../Id.js";
 
 const SvelteDisableExt = new Rule(
-  "disable-ext",
+  DisableEXT,
   {
 
-    // DISABLE ESLint: Svelte extensions
     // http://sveltejs.github.io/eslint-plugin-svelte/rules/#extension-rules
     "no-inner-declarations": OFF, // also disabled in SvelteDisableConflictJs per Svelte base config
 

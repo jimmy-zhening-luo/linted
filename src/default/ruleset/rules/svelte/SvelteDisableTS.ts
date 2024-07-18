@@ -2,7 +2,7 @@ import Rule from "../Rule.js";
 import { OFF } from "../State.js";
 
 const SvelteDisableConflictTs = new Rule(
-  "disable-conflict-ts",
+  "disable-ts",
   { "@typescript-eslint/no-unused-vars": OFF },
 );
 

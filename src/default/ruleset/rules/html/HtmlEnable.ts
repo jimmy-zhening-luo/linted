@@ -1,8 +1,9 @@
 import Rule from "../Rule.js";
 import { OFF } from "../State.js";
+import { Enable } from "../Id.js";
 
 const HtmlEnable = new Rule(
-  "enable",
+  Enable,
   { "@html-eslint/require-title": OFF },
 );
 

@@ -2,17 +2,16 @@ import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
-
   NEVER,
   ALWAYS,
   DOUBLE,
 } from "../State.js";
+import { Enable } from "../Id.js";
 
 const YmlEnable = new Rule(
-  "enable",
+  Enable,
   {
 
-    // YAML Only
     // https://ota-meshi.github.io/eslint-plugin-yml/rules/#yaml-rules
     "yml/block-mapping-colon-indicator-newline": [
       ERROR,

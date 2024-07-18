@@ -3,12 +3,12 @@ import {
   ERROR,
   OFF,
 } from "../State.js";
+import { Enable } from "../Id.js";
 
 const MdEnable = new Rule(
-  "enable",
+  Enable,
   {
 
-    // Markdown Only
     // https://github.com/DavidAnson/markdownlint/blob/main/doc/md001.md
     "markdownlint/md003": [
       ERROR,
