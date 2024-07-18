@@ -1,10 +1,10 @@
-import type { Scopes } from "./config/default/scopes.js";
-import scopes from "./config/default/scopes.js";
-import files from "./config/default/files.js";
-import rulesets from "./config/default/rulesets.js";
-import options from "./config/default/options.js";
-import plugins from "./config/default/plugins.js";
-import parsers from "./config/default/parsers.js";
+import type { Scopes } from "./default/scopes.js";
+import scopes from "./default/scopes.js";
+import files from "./default/files.js";
+import rulesets from "./default/rulesets.js";
+import options from "./default/options.js";
+import plugins from "./default/plugins.js";
+import parsers from "./default/parsers.js";
 
 export default function (
   scope: Partial<
