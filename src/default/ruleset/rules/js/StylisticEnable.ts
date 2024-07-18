@@ -41,8 +41,16 @@ const StylisticEnable = new Rule(
     "@stylistic/array-element-newline": [
       ERROR,
       {
-        ArrayExpression: ALWAYS,
-        ArrayPattern: ALWAYS,
+        ArrayExpression: {
+          consistent: true,
+          multiline: true,
+          minItems: 3,
+        },
+        ArrayPattern: {
+          consistent: true,
+          multiline: true,
+          minItems: 4,
+        },
       },
     ],
     "@stylistic/arrow-parens": [
@@ -131,7 +139,7 @@ const StylisticEnable = new Rule(
     ],
     "@stylistic/implicit-arrow-linebreak": [
       ERROR,
-      BELOW,
+      "beside",
     ],
     "@stylistic/indent": [
       ERROR,
@@ -140,11 +148,11 @@ const StylisticEnable = new Rule(
         ignoredNodes: [],
         SwitchCase: 1,
         VariableDeclarator: {
-          "var": FIRST,
-          let: FIRST,
-          "const": FIRST,
+          "var": 1,
+          let: 1,
+          "const": 1,
         },
-        outerIIFEBody: 1,
+        outerIIFEBody: 0,
         MemberExpression: 1,
         FunctionDeclaration: {
           parameters: 1,
@@ -184,6 +192,7 @@ const StylisticEnable = new Rule(
         overrides: {},
       },
     ],
+    "@stylistic/line-comment-position": OFF,
     "@stylistic/lines-around-comment": [
       ERROR,
       {
@@ -244,7 +253,7 @@ const StylisticEnable = new Rule(
     "@stylistic/max-len": [
       ERROR,
       {
-        code: 120,
+        code: 150,
         tabWidth: 2,
         ignoreComments: true,
         ignoreTrailingComments: true,
