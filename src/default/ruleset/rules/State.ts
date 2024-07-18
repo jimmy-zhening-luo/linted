@@ -24,7 +24,6 @@ export {
   ERROR,
   WARN,
   OFF,
-
   NEVER,
   ALWAYS,
   CONSISTENT,
@@ -38,6 +37,7 @@ export {
   AFTER,
   ABOVE,
   BELOW,
+  BESIDE,
   SINGLE,
   DOUBLE,
   MULTI,
