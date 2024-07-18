@@ -16,6 +16,6 @@ declare interface IConfig {
     parser?: unknown;
     parserOptions?: Record<string, unknown>;
   };
-  plugins: Record<Plugins, Record<"configs", unknown>>;
+  plugins: Record<string, Record<"configs", unknown>>;
   processor?: string;
 }

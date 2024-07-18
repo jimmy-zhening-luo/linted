@@ -1,10 +1,15 @@
-declare type IOLanguageEcma<Ecma extends number | IOLanguageEcma.Ecma> = Numbered<Ecma> extends never
-  ? literalful<Ecma> extends never
+declare type IOLanguageEcma<Ecma extends number | IOLanguageEcma.Ecma> = [Ecma] extends [number]
+  ? Numbered<Ecma> extends never
     ? object
-    : literalful<Ecma> extends IOLanguageEcma.Ecma
-      ? { ecmaVersion: literalful<Ecma> }
-      : object
-  : { ecmaVersion: Numbered<Ecma> };
+    : { ecmaVersion: Numbered<Ecma> }
+
+  : [Ecma] extends [string]
+      ? literalful<Ecma> extends never
+        ? object
+        : literalful<Ecma> extends IOLanguageEcma.Ecma
+          ? { ecmaVersion: literalful<Ecma> }
+          : object
+      : object;
 
 declare namespace IOLanguageEcma {
   export type Ecma =
