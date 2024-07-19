@@ -4,8 +4,8 @@ import {
   NEVER,
   ALWAYS,
   STRICT,
-} from "../State.js";
-import { EnableEXT } from "../Id.js";
+} from "../state.js";
+import { EnableEXT } from "../id.js";
 
 const YmlEnableExt = new Rule(
   EnableEXT,

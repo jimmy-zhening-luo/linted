@@ -1,6 +1,6 @@
 import html from "@html-eslint/eslint-plugin";
 import Rule from "../Rule.js";
-import { Recommended } from "../Id.js";
+import { Recommended } from "../id.js";
 
 const HtmlRecommended = new Rule(
   Recommended,

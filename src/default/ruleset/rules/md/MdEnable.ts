@@ -2,8 +2,8 @@ import Rule from "../Rule.js";
 import {
   ERROR,
   OFF,
-} from "../State.js";
-import { Enable } from "../Id.js";
+} from "../state.js";
+import { Enable } from "../id.js";
 
 const MdEnable = new Rule(
   Enable,

@@ -16,7 +16,7 @@ import {
   BESIDE,
   INSIDE,
   DOUBLE,
-} from "../State.js";
+} from "../state.js";
 
 const StylisticEnable = new Rule(
   "stylistic",

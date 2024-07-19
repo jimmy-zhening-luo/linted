@@ -7,8 +7,8 @@ import {
   STRICT,
   LAST,
   DOUBLE,
-} from "../State.js";
-import { EnableEXT } from "../Id.js";
+} from "../state.js";
+import { EnableEXT } from "../id.js";
 
 const JsonEnableExt = new Rule(
   EnableEXT,

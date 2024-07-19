@@ -6,8 +6,8 @@ import {
   ALWAYS,
   BELOW,
   DOUBLE,
-} from "../State.js";
-import { Enable } from "../Id.js";
+} from "../state.js";
+import { Enable } from "../id.js";
 
 const SvelteEnable = new Rule(
   Enable,

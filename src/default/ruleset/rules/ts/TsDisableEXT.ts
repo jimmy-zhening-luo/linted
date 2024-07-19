@@ -1,6 +1,6 @@
 import Rule from "../Rule.js";
-import { OFF } from "../State.js";
-import { DisableEXT } from "../Id.js";
+import { OFF } from "../state.js";
+import { DisableEXT } from "../id.js";
 
 const TsDisableExt = new Rule(
   DisableEXT,

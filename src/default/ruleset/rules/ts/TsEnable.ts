@@ -3,8 +3,8 @@ import {
   ERROR,
   OFF,
   NEVER,
-} from "../State.js";
-import { Enable } from "../Id.js";
+} from "../state.js";
+import { Enable } from "../id.js";
 
 const TsEnable = new Rule(
   Enable,

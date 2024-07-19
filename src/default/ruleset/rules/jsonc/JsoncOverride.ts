@@ -3,8 +3,8 @@ import {
   ERROR,
   OFF,
   ALWAYS_MULTILINE,
-} from "../State.js";
-import { Override } from "../Id.js";
+} from "../state.js";
+import { Override } from "../id.js";
 
 const JsoncOverride = new Rule(
   Override,

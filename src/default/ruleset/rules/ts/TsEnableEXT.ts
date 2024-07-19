@@ -4,8 +4,8 @@ import {
   OFF,
   ALL,
   ALWAYS,
-} from "../State.js";
-import { EnableEXT } from "../Id.js";
+} from "../state.js";
+import { EnableEXT } from "../id.js";
 
 const TsEnableExt = new Rule(
   EnableEXT,

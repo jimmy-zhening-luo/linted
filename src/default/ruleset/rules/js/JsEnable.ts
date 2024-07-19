@@ -8,8 +8,8 @@ import {
   ALL,
   MULTI,
   BOTH,
-} from "../State.js";
-import { Enable } from "../Id.js";
+} from "../state.js";
+import { Enable } from "../id.js";
 
 const JsEnable = new Rule(
   Enable,

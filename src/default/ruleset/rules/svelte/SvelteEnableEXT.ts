@@ -3,8 +3,8 @@ import {
   ERROR,
   OFF,
   BOTH,
-} from "../State.js";
-import { EnableEXT } from "../Id.js";
+} from "../state.js";
+import { EnableEXT } from "../id.js";
 
 const SvelteEnableExt = new Rule(
   EnableEXT,

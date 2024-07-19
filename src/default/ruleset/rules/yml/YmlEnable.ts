@@ -5,8 +5,8 @@ import {
   NEVER,
   ALWAYS,
   DOUBLE,
-} from "../State.js";
-import { Enable } from "../Id.js";
+} from "../state.js";
+import { Enable } from "../id.js";
 
 const YmlEnable = new Rule(
   Enable,

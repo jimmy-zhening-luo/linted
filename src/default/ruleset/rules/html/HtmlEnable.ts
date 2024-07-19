@@ -1,6 +1,6 @@
 import Rule from "../Rule.js";
-import { OFF } from "../State.js";
-import { Enable } from "../Id.js";
+import { OFF } from "../state.js";
+import { Enable } from "../id.js";
 
 const HtmlEnable = new Rule(
   Enable,
