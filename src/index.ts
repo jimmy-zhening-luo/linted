@@ -167,17 +167,16 @@ export default function (
 
     return scopes
       .map(
-        scope =>
-          instantiatedOptions[scope].files.length > 0
-            ? overridenRulesets[scope].flat.map(
-              rules => {
-                return {
-                  rules,
-                  ...instantiatedOptions[scope],
-                };
-              },
-            )
-            : [],
+        scope => instantiatedOptions[scope].files.length > 0
+          ? overridenRulesets[scope].flat.map(
+            rules => {
+              return {
+                rules,
+                ...instantiatedOptions[scope],
+              };
+            },
+          )
+          : [],
       )
       .flat();
   }

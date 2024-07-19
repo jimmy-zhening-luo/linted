@@ -18,12 +18,10 @@ export default class Ruleset<Language extends string> {
   public get flat() {
     return [
       ...this.ruleset.map(
-        rules =>
-          rules.rules,
+        rules => rules.rules,
       ),
       ...this.overrides.map(
-        rules =>
-          rules.rules,
+        rules => rules.rules,
       ),
     ];
   }
@@ -32,15 +30,13 @@ export default class Ruleset<Language extends string> {
     this.overrides.push(
       ...overrides
         .filter(
-          override =>
-            typeof override !== "undefined",
+          override => typeof override !== "undefined",
         )
         .map(
-          override =>
-            new Rule(
-              "override",
-              override,
-            ),
+          override => new Rule(
+            "override",
+            override,
+          ),
         ),
     );
 
