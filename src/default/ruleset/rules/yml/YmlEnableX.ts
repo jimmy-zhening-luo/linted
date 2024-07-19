@@ -5,10 +5,10 @@ import {
   ALWAYS,
   STRICT,
 } from "../state.js";
-import { EnableEXT } from "../id.js";
+import { EnableX } from "../id.js";
 
-const YmlEnableExt = new Rule(
-  EnableEXT,
+const YmlEnableX = new Rule(
+  EnableX,
   {
 
     // https://ota-meshi.github.io/eslint-plugin-yml/rules/#extension-rules
@@ -74,4 +74,4 @@ const YmlEnableExt = new Rule(
   },
 );
 
-export default YmlEnableExt;
+export default YmlEnableX;

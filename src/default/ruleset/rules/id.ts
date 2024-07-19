@@ -1,14 +1,14 @@
 const Disable = "disable";
-const DisableEXT = "disable-ext";
-const EnableEXT = "enable-ext";
+const DisableX = "disable-extend";
+const EnableX = "enable-extend";
 const Enable = "enable";
 const Override = "override";
 const Recommended = "recommended";
 
 export {
   Disable,
-  DisableEXT,
-  EnableEXT,
+  DisableX,
+  EnableX,
   Enable,
   Override,
   Recommended,

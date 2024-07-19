@@ -1,9 +1,9 @@
 import Rule from "../Rule.js";
 import { OFF } from "../state.js";
-import { DisableEXT } from "../id.js";
+import { DisableX } from "../id.js";
 
-const SvelteDisableExt = new Rule(
-  DisableEXT,
+const SvelteDisableX = new Rule(
+  DisableX,
   {
 
     // http://sveltejs.github.io/eslint-plugin-svelte/rules/#extension-rules
@@ -14,4 +14,4 @@ const SvelteDisableExt = new Rule(
   },
 );
 
-export default SvelteDisableExt;
+export default SvelteDisableX;

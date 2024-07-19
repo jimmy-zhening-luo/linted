@@ -5,10 +5,10 @@ import {
   ALL,
   ALWAYS,
 } from "../state.js";
-import { EnableEXT } from "../id.js";
+import { EnableX } from "../id.js";
 
-const TsEnableExt = new Rule(
-  EnableEXT,
+const TsEnableX = new Rule(
+  EnableX,
   {
 
     // https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
@@ -119,4 +119,4 @@ const TsEnableExt = new Rule(
   },
 );
 
-export default TsEnableExt;
+export default TsEnableX;

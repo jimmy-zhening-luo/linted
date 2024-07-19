@@ -1,9 +1,9 @@
 import Rule from "../Rule.js";
 import { OFF } from "../state.js";
-import { DisableEXT } from "../id.js";
+import { DisableX } from "../id.js";
 
-const TsDisableExt = new Rule(
-  DisableEXT,
+const TsDisableX = new Rule(
+  DisableX,
   {
 
     // https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
@@ -36,4 +36,4 @@ const TsDisableExt = new Rule(
   },
 );
 
-export default TsDisableExt;
+export default TsDisableX;

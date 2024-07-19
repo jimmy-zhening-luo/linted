@@ -1,10 +1,10 @@
 import Ruleset from "./base/Ruleset.js";
-import JsonEnableExt from "./rules/json/JsonEnableEXT.js";
+import JsonEnableX from "./rules/json/JsonEnableX.js";
 import JsonEnable from "./rules/json/JsonEnable.js";
 
 const JsonRuleset = new Ruleset(
   "json",
-  JsonEnableExt,
+  JsonEnableX,
   JsonEnable,
 );
 

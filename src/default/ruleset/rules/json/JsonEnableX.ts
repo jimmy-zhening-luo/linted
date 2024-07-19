@@ -8,10 +8,10 @@ import {
   LAST,
   DOUBLE,
 } from "../state.js";
-import { EnableEXT } from "../id.js";
+import { EnableX } from "../id.js";
 
-const JsonEnableExt = new Rule(
-  EnableEXT,
+const JsonEnableX = new Rule(
+  EnableX,
   {
 
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
@@ -102,4 +102,4 @@ const JsonEnableExt = new Rule(
   },
 );
 
-export default JsonEnableExt;
+export default JsonEnableX;

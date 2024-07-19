@@ -2,8 +2,8 @@ import Ruleset from "./base/Ruleset.js";
 import TsRuleset from "./TsRuleset.js";
 import SvelteDisableJS from "./rules/svelte/SvelteDisableJS.js";
 import SvelteDisableTS from "./rules/svelte/SvelteDisableTS.js";
-import SvelteDisableExt from "./rules/svelte/SvelteDisableEXT.js";
-import SvelteEnableExt from "./rules/svelte/SvelteEnableEXT.js";
+import SvelteDisableX from "./rules/svelte/SvelteDisableX.js";
+import SvelteEnableX from "./rules/svelte/SvelteEnableX.js";
 import SvelteEnable from "./rules/svelte/SvelteEnable.js";
 
 const SvelteRuleset = new Ruleset(
@@ -11,8 +11,8 @@ const SvelteRuleset = new Ruleset(
   ...TsRuleset.ruleset,
   SvelteDisableJS,
   SvelteDisableTS,
-  SvelteDisableExt,
-  SvelteEnableExt,
+  SvelteDisableX,
+  SvelteEnableX,
   SvelteEnable,
 );
 
