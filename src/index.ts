@@ -24,7 +24,7 @@ export default function (
     for (const scope in files)
       files[scope] = [
         ...files[scope],
-        ...includes[scope],
+        ...includes[scope] ?? [],
       ];
 
     return core(
