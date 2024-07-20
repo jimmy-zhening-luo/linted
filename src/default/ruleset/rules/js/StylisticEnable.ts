@@ -282,17 +282,18 @@ const StylisticEnable = new Rule(
         multilineDetection: "brackets",
       },
     ],
+    "@stylistic/multiline-comment-style": OFF,
     "@stylistic/multiline-ternary": [
       ERROR,
-      ALWAYS,
+      ALWAYS_MULTILINE,
     ],
     "@stylistic/new-parens": [
       ERROR,
-      ALWAYS,
+      NEVER,
     ],
     "@stylistic/newline-per-chained-call": [
       ERROR,
-      { ignoreChainWithDepth: 1 },
+      { ignoreChainWithDepth: 2 },
     ],
     "@stylistic/no-confusing-arrow": OFF,
     "@stylistic/no-extra-parens": [
