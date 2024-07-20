@@ -7,7 +7,7 @@ import type { Scopes } from "@eslinted/core";
 import type { Rule } from "@eslinted/core";
 
 export default function (
-  scope: Partial<typeof files> = {},
+  includes: Partial<typeof files> = {},
   override: Partial<Record<`override${Capitalize<Scopes>}`, Rule["rules"]>> = {},
 ) {
   try {
@@ -20,41 +20,17 @@ export default function (
       jsonc: rulesets.jsonc.override(override.overrideJsonc),
       yml: rulesets.yml.override(override.overrideYml),
     };
-    const combinedFiles = {
-      js: [
-        ...files.js,
-        ...scope.js ?? [],
-      ],
-      ts: [
-        ...files.ts,
-        ...scope.ts ?? [],
-      ],
-      svelte: [
-        ...files.svelte,
-        ...scope.svelte ?? [],
-      ],
-      html: [
-        ...files.html,
-        ...scope.html ?? [],
-      ],
-      json: [
-        ...files.json,
-        ...scope.json ?? [],
-      ],
-      jsonc: [
-        ...files.jsonc,
-        ...scope.jsonc ?? [],
-      ],
-      yml: [
-        ...files.yml,
-        ...scope.yml ?? [],
-      ],
-    };
+
+    for (const scope in files)
+      files[scope] = [
+        ...files[scope],
+        ...includes[scope],
+      ];
 
     return core(
       plugins,
       parsers,
-      combinedFiles,
+      files,
       overridenRulesets,
     );
   }
