@@ -1,4 +1,4 @@
-import type { Scopes } from "./scopes.js";
+import type { Scopes } from "@eslinted/core";
 import ts from "@typescript-eslint/parser";
 import svelte from "svelte-eslint-parser";
 import html from "@html-eslint/parser";

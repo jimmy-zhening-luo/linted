@@ -1,4 +1,4 @@
-import type { Scopes } from "./scopes.js";
+import type { Scopes } from "@eslinted/core";
 
 export default {
   js: ["*.config.js"],
