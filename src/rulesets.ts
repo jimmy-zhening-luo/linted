@@ -1,10 +1,10 @@
-import JsRuleset from "./ruleset/JsRuleset.js";
-import TsRuleset from "./ruleset/TsRuleset.js";
-import SvelteRuleset from "./ruleset/SvelteRuleset.js";
-import HtmlRuleset from "./ruleset/HtmlRuleset.js";
-import JsonRuleset from "./ruleset/JsonRuleset.js";
-import JsoncRuleset from "./ruleset/JsoncRuleset.js";
-import YmlRuleset from "./ruleset/YmlRuleset.js";
+import JsRuleset from "./rulesets/JsRuleset.js";
+import TsRuleset from "./rulesets/TsRuleset.js";
+import SvelteRuleset from "./rulesets/SvelteRuleset.js";
+import HtmlRuleset from "./rulesets/HtmlRuleset.js";
+import JsonRuleset from "./rulesets/JsonRuleset.js";
+import JsoncRuleset from "./rulesets/JsoncRuleset.js";
+import YmlRuleset from "./rulesets/YmlRuleset.js";
 
 const rulesets = {
   js: JsRuleset,

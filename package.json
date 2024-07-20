@@ -52,7 +52,7 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "~0.0.1-rc.6",
+    "@eslinted/core": "~0.0.1",
     "@html-eslint/eslint-plugin": "~0.25.0",
     "@html-eslint/parser": "~0.25.0",
     "@stylistic/eslint-plugin": "~2.3.0",

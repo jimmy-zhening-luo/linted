@@ -3,12 +3,13 @@ import files from "./files.js";
 import parsers from "./parsers.js";
 import plugins from "./plugins.js";
 import rulesets from "./rulesets.js";
-import type { Scopes } from "./scopes.js";
+import type { Scopes } from "@eslinted/core";
+import type { Rule } from "@eslinted/core";
 
 export default function (
   scope: Partial<typeof files> = {},
-  override: Particord<`override${Capitalize<Scopes>}`, IRule> = {},
-): IConfig[] {
+  override: Partial<Record<`override${Capitalize<Scopes>}`, Rule["rules"]>> = {},
+) {
   try {
     const overridenRulesets: typeof rulesets = {
       js: rulesets.js.override(override.overrideJs),
