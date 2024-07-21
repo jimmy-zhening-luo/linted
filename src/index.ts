@@ -1,5 +1,5 @@
 import core from "@eslinted/core";
-import files from "./files.js";
+import defaults from "./defaults.js";
 import parsers from "./parsers.js";
 import plugins from "./plugins.js";
 import rulesets from "./rulesets.js";
@@ -7,7 +7,7 @@ import type { Scopes } from "@eslinted/core";
 import type { Rule } from "@eslinted/core";
 
 export default function (
-  includes: Partial<typeof files> = {},
+  includes: Partial<typeof defaults> = {},
   override: Partial<Record<`override${Capitalize<Scopes>}`, Rule["rules"]>> = {},
 ) {
   try {
@@ -21,16 +21,21 @@ export default function (
       yml: rulesets.yml.override(override.overrideYml),
     };
 
-    for (const scope in files)
-      files[scope] = [
-        ...files[scope],
-        ...includes[scope] ?? [],
-      ];
+    for (const scope in defaults)
+      if (Object.hasOwn(
+        defaults,
+        scope,
+      ))
+        defaults[scope as Scopes] = [
+          ...defaults[scope as Scopes],
+          ...includes[scope as Scopes] ?? [],
+        ];
 
     return core(
       plugins,
       parsers,
-      files,
+      defaults,
+      includes,
       overridenRulesets,
     );
   }
