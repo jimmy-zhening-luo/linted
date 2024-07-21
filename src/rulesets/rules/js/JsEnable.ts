@@ -43,7 +43,7 @@ const JsEnable = new Rule(
     "no-constant-binary-expression": ERROR,
     "no-constant-condition": [
       ERROR,
-      { checkLoops: ALL },
+      { checkLoops: true }, /* BUG: incorrect option description (claims "all" is ok): https://eslint.org/docs/latest/rules/no-constant-condition */
     ],
     "no-constructor-return": ERROR,
     "no-control-regex": ERROR,
