@@ -1,4 +1,4 @@
-import type { Scopes } from "@eslinted/core";
+import type { Scope } from "@eslinted/core";
 import stylistic from "@stylistic/eslint-plugin";
 import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
@@ -6,7 +6,7 @@ import html from "@html-eslint/eslint-plugin";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
 
-const Plugins = {
+export default {
   js: { "@stylistic": stylistic },
   ts: {
     "@stylistic": stylistic,
@@ -21,12 +21,4 @@ const Plugins = {
   json: { jsonc },
   jsonc: { jsonc },
   yml: { yml },
-} satisfies Record<
-  Scopes,
-  Record<
-    string,
-    { configs: unknown }
-  >
->;
-
-export default Plugins;
+} as const satisfies Record<Scope, Record<string, { configs: unknown }>>;

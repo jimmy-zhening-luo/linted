@@ -1,4 +1,4 @@
-import type { Scopes } from "@eslinted/core";
+import type { Scope } from "@eslinted/core";
 import ts from "@typescript-eslint/parser";
 import svelte from "svelte-eslint-parser";
 import html from "@html-eslint/parser";
@@ -12,4 +12,4 @@ export default {
   json: jsonc,
   jsonc,
   yml,
-} satisfies Partial<Record<Scopes, unknown>>;
+} as const satisfies Partial<Record<Scope, unknown>>;
