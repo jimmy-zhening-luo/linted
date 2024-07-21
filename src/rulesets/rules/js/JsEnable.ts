@@ -7,6 +7,7 @@ import {
   AS_NEEDED,
   CONSECUTIVE,
   ALL,
+  MULTI,
   BOTH,
 } from "../state.js";
 import { Enable } from "../id.js";
@@ -181,7 +182,7 @@ const JsEnable = new Rule(
     "consistent-this": ERROR,
     curly: [
       ERROR,
-      "multi-or-nest",
+      MULTI,
     ],
     "default-case": OFF, /* preference: don't care */
     "default-case-last": ERROR,
