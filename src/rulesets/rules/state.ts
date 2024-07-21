@@ -6,6 +6,7 @@ const ALWAYS = "always";
 const ALWAYS_MULTILINE = "always-multiline";
 const MULTILINE = "multiline";
 const CONSISTENT = "consistent";
+const CONSECUTIVE = "consecutive";
 const AS_NEEDED = "as-needed";
 const STRICT = "strict";
 const ANY = "any";
@@ -34,6 +35,7 @@ export {
   ALWAYS_MULTILINE,
   MULTILINE,
   CONSISTENT,
+  CONSECUTIVE,
   AS_NEEDED,
   STRICT,
   ANY,

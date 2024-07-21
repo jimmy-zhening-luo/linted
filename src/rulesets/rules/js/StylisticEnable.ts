@@ -360,23 +360,23 @@ const StylisticEnable = new Rule(
       {
         ObjectExpression: {
           multiline: true,
-          minProperties: 2,
-          consistent: false,
+          minProperties: 3,
+          consistent: true,
         },
         ObjectPattern: {
           multiline: true,
-          minProperties: 2,
-          consistent: false,
+          minProperties: 3,
+          consistent: true,
         },
         ImportDeclaration: {
           multiline: true,
-          minProperties: 2,
-          consistent: false,
+          minProperties: 3,
+          consistent: true,
         },
         ExportDeclaration: {
           multiline: true,
-          minProperties: 2,
-          consistent: false,
+          minProperties: 3,
+          consistent: true,
         },
       },
     ],
@@ -390,7 +390,7 @@ const StylisticEnable = new Rule(
     ],
     "@stylistic/object-property-newline": [
       ERROR,
-      { allowAllPropertiesOnSameLine: false },
+      { allowAllPropertiesOnSameLine: true },
     ],
     "@stylistic/one-var-declaration-per-line": [
       ERROR,
@@ -399,13 +399,7 @@ const StylisticEnable = new Rule(
     "@stylistic/operator-linebreak": [
       ERROR,
       BEFORE,
-      {
-        overrides: {
-          "=": AFTER,
-          "?": BEFORE,
-          ":": BEFORE,
-        },
-      },
+      { overrides: { "=": AFTER } },
     ],
     "@stylistic/padded-blocks": [
       ERROR,
@@ -686,8 +680,8 @@ const StylisticEnable = new Rule(
     "@stylistic/yield-star-spacing": [
       ERROR,
       {
-        before: true,
-        after: false,
+        before: false,
+        after: true,
       },
     ],
   },
