@@ -1,14 +1,22 @@
 import type { Scope } from "@eslinted/core";
 
 export default {
-  js: ["*.config.js"],
+  js: ["**/*.config.js"],
   ts: [
+    "**/*.config.ts",
     "src/**/*.ts",
-    "*.config.ts",
+    "types/**/*.d.ts",
   ],
   svelte: ["src/**/*.svelte"],
   html: ["src/**/*.html"],
   json: ["**/*.json"],
-  jsonc: ["tsconfig.json"],
-  yml: [".github/workflows/*.yml"],
+  jsonc: [
+    "**/*.jsonc",
+    "**/tsconfig.json",
+  ],
+  yml: [
+    "**/*.yml",
+    "**/*.yaml",
+    ".github/workflows/*.yml",
+  ],
 } as const satisfies Record<Scope, string[]>;
