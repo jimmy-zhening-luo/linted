@@ -1,9 +1,9 @@
-const Disable = "disable";
-const DisableX = "disable-extend";
-const EnableX = "enable-extend";
-const Enable = "enable";
-const Override = "override";
-const Recommended = "recommended";
+const Disable = "disable",
+  DisableX = "disable-extend",
+  EnableX = "enable-extend",
+  Enable = "enable",
+  Override = "override",
+  Recommended = "recommended";
 
 export {
   Disable,
