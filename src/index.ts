@@ -8,25 +8,16 @@ import type { Rule } from "@eslinted/core";
 
 export default function (
   includes: Partial<typeof defaults> = {},
-  override: Partial<Record<`override${Capitalize<Scopes>}`, Rule["rules"]>> = {},
+  overrides: Partial<Record<Scopes, Rule["rules"]>> = {},
 ) {
   try {
-    const overridenRulesets: typeof rulesets = {
-      js: rulesets.js.override(override.overrideJs),
-      ts: rulesets.ts.override(override.overrideTs),
-      svelte: rulesets.svelte.override(override.overrideSvelte),
-      html: rulesets.html.override(override.overrideHtml),
-      json: rulesets.json.override(override.overrideJson),
-      jsonc: rulesets.jsonc.override(override.overrideJsonc),
-      yml: rulesets.yml.override(override.overrideYml),
-    };
-
     return core(
       plugins,
       parsers,
       defaults,
       includes,
-      overridenRulesets,
+      rulesets,
+      overrides,
     );
   }
   catch (e) {
