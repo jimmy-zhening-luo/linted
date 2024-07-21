@@ -21,16 +21,6 @@ export default function (
       yml: rulesets.yml.override(override.overrideYml),
     };
 
-    for (const scope in defaults)
-      if (Object.hasOwn(
-        defaults,
-        scope,
-      ))
-        defaults[scope as Scopes] = [
-          ...defaults[scope as Scopes],
-          ...includes[scope as Scopes] ?? [],
-        ];
-
     return core(
       plugins,
       parsers,
