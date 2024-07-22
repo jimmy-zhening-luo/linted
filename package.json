@@ -60,8 +60,8 @@
     "@html-eslint/eslint-plugin": "~0.25.0",
     "@html-eslint/parser": "~0.25.0",
     "@stylistic/eslint-plugin": "~2.3.0",
-    "@typescript-eslint/eslint-plugin": "~7.15.0",
-    "@typescript-eslint/parser": "~7.15.0",
+    "@typescript-eslint/eslint-plugin": "~7.17.0",
+    "@typescript-eslint/parser": "~7.17.0",
     "eslint-plugin-jsonc": "~2.16.0",
     "eslint-plugin-markdownlint": "~0.6.0",
     "eslint-plugin-svelte": "~2.41.0",
@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "eslint": "~8.57.0",
-    "linted": "~15.2.8",
+    "linted": "~15.3.0-rc.2",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.5.3"
   },
