@@ -22,28 +22,16 @@
     "yaml"
   ],
   "license": "MIT",
-  "type": "module",
   "private": false,
-  "config": {
-    "PACKAGE_JSON_VERSION": "20.10.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jimmy-zhening-luo/linted.git"
-  },
+  "repository": "github:jimmy-zhening-luo/linted",
   "homepage": "https://github.com/jimmy-zhening-luo/linted#readme",
-  "bugs": {
-    "url": "https://github.com/jimmy-zhening-luo/linted/issues"
-  },
-  "author": {
-    "name": "Jimmy Zhening Luo",
-    "email": "1450044+jimmy-zhening-luo@users.noreply.github.com",
-    "url": "https://jimm.my"
-  },
+  "bugs": "https://github.com/jimmy-zhening-luo/linted/issues",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {
-    "node": ">=20.15.0"
+    "node": ">=20.15.0",
+    "npm": ">=10.7.0"
   },
   "peerDependencies": {
     "eslint": "^8.57",
@@ -54,6 +42,7 @@
       "optional": true
     }
   },
+  "optionalDependencies": {},
   "dependencies": {
     "@eslinted/core": "~0.8.0",
     "@html-eslint/eslint-plugin": "~0.25.0",
@@ -72,9 +61,9 @@
   },
   "devDependencies": {
     "eslint": "~8.57.0",
-    "linted": "~15.4.5-rc.2",
+    "linted": "~15.4.5",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   },
   "scripts": {
     "build": "run-s \"build:{1}:*\" lint:built  --  ts",
@@ -95,5 +84,9 @@
     "prepublishOnly": "npm test",
     "predeploy": "npm test",
     "deploy": ""
-  }
+  },
+  "config": {
+    "PACKAGE_JSON": "20.12.0"
+  },
+  "author": "Jimmy Zhening Luo <1450044+jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
 }
