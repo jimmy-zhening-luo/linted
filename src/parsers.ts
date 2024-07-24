@@ -6,10 +6,11 @@ import jsonc from "jsonc-eslint-parser";
 import yml from "yaml-eslint-parser";
 
 export default {
-  ts,
-  svelte,
-  html,
-  json: jsonc,
-  jsonc,
-  yml,
+  js: [],
+  ts: [ts],
+  svelte: [svelte, ts],
+  html: [html],
+  json: [jsonc],
+  jsonc: [jsonc],
+  yml: [yml],
 } as const satisfies Partial<Record<Scope, unknown>>;
