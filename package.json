@@ -44,7 +44,7 @@
   },
   "optionalDependencies": {},
   "dependencies": {
-    "@eslinted/core": "~0.9.0-rc.5",
+    "@eslinted/core": "~0.8.1",
     "@html-eslint/eslint-plugin": "~0.25.0",
     "@html-eslint/parser": "~0.25.0",
     "@stylistic/eslint-plugin": "~2.3.0",
