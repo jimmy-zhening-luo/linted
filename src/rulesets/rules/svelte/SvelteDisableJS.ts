@@ -1,7 +1,7 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import { OFF } from "../state.js";
 
-const SvelteDisableConflictJs = new Rule(
+export default [
   "disable-js",
   {
 
@@ -10,6 +10,4 @@ const SvelteDisableConflictJs = new Rule(
     "no-inner-declarations": OFF, // ESLint Core
     "no-self-assign": OFF, // ESLint Core
   },
-);
-
-export default SvelteDisableConflictJs;
+] as const satisfies Input.RuleRecord;

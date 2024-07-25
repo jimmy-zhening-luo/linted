@@ -1,5 +1,5 @@
 import type { Scope } from "@eslinted/core";
-import type { Ruleset } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import JsRuleset from "./rulesets/JsRuleset.js";
 import TsRuleset from "./rulesets/TsRuleset.js";
 import SvelteRuleset from "./rulesets/SvelteRuleset.js";
@@ -16,4 +16,4 @@ export default {
   json: JsonRuleset,
   jsonc: JsoncRuleset,
   yml: YmlRuleset,
-} as const satisfies { [S in Scope]: Ruleset<S> };
+} as const satisfies Record<Scope, readonly Input.RuleRecord[]>;

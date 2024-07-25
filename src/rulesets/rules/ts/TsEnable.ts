@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
@@ -6,7 +6,7 @@ import {
 } from "../state.js";
 import { Enable } from "../id.js";
 
-const TsEnable = new Rule(
+export default [
   Enable,
   {
 
@@ -550,6 +550,4 @@ const TsEnable = new Rule(
     ],
     "@typescript-eslint/use-unknown-in-catch-callback-variable": ERROR,
   },
-);
-
-export default TsEnable;
+] as const satisfies Input.RuleRecord;

@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   NEVER,
@@ -10,7 +10,7 @@ import {
 } from "../state.js";
 import { EnableX } from "../id.js";
 
-const JsonEnableX = new Rule(
+export default [
   EnableX,
   {
 
@@ -100,6 +100,4 @@ const JsonEnableX = new Rule(
     ],
     "jsonc/space-unary-ops": ERROR,
   },
-);
-
-export default JsonEnableX;
+] as const satisfies Input.RuleRecord;

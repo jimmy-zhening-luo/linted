@@ -1,11 +1,8 @@
-import { Ruleset } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import YmlEnableX from "./rules/yml/YmlEnableX.js";
 import YmlEnable from "./rules/yml/YmlEnable.js";
 
-const YmlRuleset = new Ruleset(
-  "yml",
+export default [
   YmlEnableX,
   YmlEnable,
-);
-
-export default YmlRuleset;
+] as const satisfies readonly Input.RuleRecord[];

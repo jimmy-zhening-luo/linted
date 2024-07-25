@@ -1,9 +1,7 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import { OFF } from "../state.js";
 
-const SvelteDisableConflictTs = new Rule(
+export default [
   "disable-ts",
   { "@typescript-eslint/no-unused-vars": OFF },
-);
-
-export default SvelteDisableConflictTs;
+] as const satisfies Input.RuleRecord;

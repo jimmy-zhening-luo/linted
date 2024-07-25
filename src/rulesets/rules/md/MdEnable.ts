@@ -1,11 +1,11 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
 } from "../state.js";
 import { Enable } from "../id.js";
 
-const MdEnable = new Rule(
+export default [
   Enable,
   {
 
@@ -65,6 +65,4 @@ const MdEnable = new Rule(
       { style: "leading_and_trailing" },
     ],
   },
-);
-
-export default MdEnable;
+] as const satisfies Input.RuleRecord;

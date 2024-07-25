@@ -1,8 +1,8 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import { OFF } from "../state.js";
 import { DisableX } from "../id.js";
 
-const TsDisableX = new Rule(
+export default [
   DisableX,
   {
 
@@ -34,6 +34,4 @@ const TsDisableX = new Rule(
     "prefer-promise-reject-errors": OFF,
     "require-await": OFF,
   },
-);
-
-export default TsDisableX;
+] as const satisfies Input.RuleRecord;

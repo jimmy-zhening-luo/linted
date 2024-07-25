@@ -1,11 +1,8 @@
-import { Ruleset } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import JsonEnableX from "./rules/json/JsonEnableX.js";
 import JsonEnable from "./rules/json/JsonEnable.js";
 
-const JsonRuleset = new Ruleset(
-  "json",
+export default [
   JsonEnableX,
   JsonEnable,
-);
-
-export default JsonRuleset;
+] as const satisfies readonly Input.RuleRecord[];

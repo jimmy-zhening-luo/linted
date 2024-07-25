@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
@@ -12,7 +12,7 @@ import {
 } from "../state.js";
 import { Enable } from "../id.js";
 
-const JsEnable = new Rule(
+export default [
   Enable,
   {
 
@@ -476,6 +476,4 @@ const JsEnable = new Rule(
 
     // #endregion
   },
-);
-
-export default JsEnable;
+] as const satisfies Input.RuleRecord;

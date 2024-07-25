@@ -1,11 +1,8 @@
-import { Ruleset } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import JsonRuleset from "./JsonRuleset.js";
 import JsoncOverride from "./rules/jsonc/JsoncOverride.js";
 
-const JsoncRuleset = new Ruleset(
-  "jsonc",
-  ...JsonRuleset.ruleset,
+export default [
+  ...JsonRuleset,
   JsoncOverride,
-);
-
-export default JsoncRuleset;
+] as const satisfies readonly Input.RuleRecord[];

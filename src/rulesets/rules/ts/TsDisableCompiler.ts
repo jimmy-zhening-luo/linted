@@ -1,7 +1,7 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import { OFF } from "../state.js";
 
-const TsDisableCompiler = new Rule(
+export default [
   "disable-compiler",
   {
     "constructor-super": OFF,
@@ -19,6 +19,4 @@ const TsDisableCompiler = new Rule(
     "consistent-return": OFF,
     "no-redeclare": OFF,
   },
-);
-
-export default TsDisableCompiler;
+] as const satisfies Input.RuleRecord;

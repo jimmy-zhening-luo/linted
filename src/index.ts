@@ -4,11 +4,11 @@ import parsers from "./parsers.js";
 import plugins from "./plugins.js";
 import rulesets from "./rulesets.js";
 import type { Scope } from "@eslinted/core";
-import type { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 
 export default function (
   includes: Partial<typeof defaults> = {},
-  overrides: Partial<Record<Scope, Rule["rules"]>> = {},
+  overrides: Partial<Record<Scope, Input.RuleRecord[1]>> = {},
 ) {
   try {
     return core(

@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
@@ -18,7 +18,7 @@ import {
   DOUBLE,
 } from "../state.js";
 
-const StylisticEnable = new Rule(
+export default [
   "stylistic",
   {
 
@@ -685,6 +685,4 @@ const StylisticEnable = new Rule(
       },
     ],
   },
-);
-
-export default StylisticEnable;
+] as const satisfies Input.RuleRecord;

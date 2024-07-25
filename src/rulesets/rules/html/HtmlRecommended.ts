@@ -1,10 +1,8 @@
 import html from "@html-eslint/eslint-plugin";
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import { Recommended } from "../id.js";
 
-const HtmlRecommended = new Rule(
+export default [
   Recommended,
-  (html.configs["flat/recommended"] as Record<"rules", Rule["rules"]>).rules, // Remove shared config once manually configured
-);
-
-export default HtmlRecommended;
+  (html.configs["flat/recommended"] as Record<"rules", Input.RuleRecord[1]>).rules, // Remove shared config once manually configured
+] as const satisfies Input.RuleRecord;

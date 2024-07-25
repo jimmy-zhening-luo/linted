@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
@@ -6,7 +6,7 @@ import {
 } from "../state.js";
 import { Override } from "../id.js";
 
-const JsoncOverride = new Rule(
+export default [
   Override,
   {
 
@@ -17,6 +17,4 @@ const JsoncOverride = new Rule(
       ALWAYS_MULTILINE, // trailing commas are allowed in JSONC
     ],
   },
-);
-
-export default JsoncOverride;
+] as const satisfies Input.RuleRecord;

@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
@@ -9,7 +9,7 @@ import {
 } from "../state.js";
 import { Enable } from "../id.js";
 
-const SvelteEnable = new Rule(
+export default [
   Enable,
   {
 
@@ -212,6 +212,4 @@ const SvelteEnable = new Rule(
     ],
     "svelte/system": ERROR,
   },
-);
-
-export default SvelteEnable;
+] as const satisfies Input.RuleRecord;

@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
@@ -8,7 +8,7 @@ import {
 } from "../state.js";
 import { Enable } from "../id.js";
 
-const YmlEnable = new Rule(
+export default [
   Enable,
   {
 
@@ -75,6 +75,4 @@ const YmlEnable = new Rule(
     "yml/sort-sequence-values": OFF,
     "yml/vue-custom-block/no-parsing-error": ERROR,
   },
-);
-
-export default YmlEnable;
+] as const satisfies Input.RuleRecord;

@@ -1,8 +1,8 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import { OFF } from "../state.js";
 import { DisableX } from "../id.js";
 
-const SvelteDisableX = new Rule(
+export default [
   DisableX,
   {
 
@@ -12,6 +12,4 @@ const SvelteDisableX = new Rule(
     // "@stylistic/no-trailing-spaces": OFF,
 
   },
-);
-
-export default SvelteDisableX;
+] as const satisfies Input.RuleRecord;

@@ -1,11 +1,11 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
 } from "../state.js";
 import { Enable } from "../id.js";
 
-const JsonEnable = new Rule(
+export default [
   Enable,
   {
 
@@ -34,6 +34,4 @@ const JsonEnable = new Rule(
     "jsonc/valid-json-number": ERROR,
     "jsonc/vue-custom-block/no-parsing-error": ERROR,
   },
-);
-
-export default JsonEnable;
+] as const satisfies Input.RuleRecord;

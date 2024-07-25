@@ -1,11 +1,8 @@
-import { Ruleset } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import StylisticEnable from "./rules/js/StylisticEnable.js";
 import JsEnable from "./rules/js/JsEnable.js";
 
-const JsRuleset = new Ruleset(
-  "js",
+export default [
   StylisticEnable,
   JsEnable,
-);
-
-export default JsRuleset;
+] as const satisfies readonly Input.RuleRecord[];

@@ -1,4 +1,4 @@
-import { Ruleset } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import TsRuleset from "./TsRuleset.js";
 import SvelteDisableJS from "./rules/svelte/SvelteDisableJS.js";
 import SvelteDisableTS from "./rules/svelte/SvelteDisableTS.js";
@@ -6,14 +6,11 @@ import SvelteDisableX from "./rules/svelte/SvelteDisableX.js";
 import SvelteEnableX from "./rules/svelte/SvelteEnableX.js";
 import SvelteEnable from "./rules/svelte/SvelteEnable.js";
 
-const SvelteRuleset = new Ruleset(
-  "svelte",
-  ...TsRuleset.ruleset,
+export default [
+  ...TsRuleset,
   SvelteDisableJS,
   SvelteDisableTS,
   SvelteDisableX,
   SvelteEnableX,
   SvelteEnable,
-);
-
-export default SvelteRuleset;
+] as const satisfies readonly Input.RuleRecord[];

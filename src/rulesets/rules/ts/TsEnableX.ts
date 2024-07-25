@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
@@ -7,7 +7,7 @@ import {
 } from "../state.js";
 import { EnableX } from "../id.js";
 
-const TsEnableX = new Rule(
+export default [
   EnableX,
   {
 
@@ -117,6 +117,4 @@ const TsEnableX = new Rule(
       "in-try-catch",
     ],
   },
-);
-
-export default TsEnableX;
+] as const satisfies Input.RuleRecord;

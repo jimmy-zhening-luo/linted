@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   NEVER,
@@ -7,7 +7,7 @@ import {
 } from "../state.js";
 import { EnableX } from "../id.js";
 
-const YmlEnableX = new Rule(
+export default [
   EnableX,
   {
 
@@ -72,6 +72,4 @@ const YmlEnableX = new Rule(
       ALWAYS,
     ],
   },
-);
-
-export default YmlEnableX;
+] as const satisfies Input.RuleRecord;

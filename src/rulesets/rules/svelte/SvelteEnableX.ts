@@ -1,4 +1,4 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import {
   ERROR,
   OFF,
@@ -6,7 +6,7 @@ import {
 } from "../state.js";
 import { EnableX } from "../id.js";
 
-const SvelteEnableX = new Rule(
+export default [
   EnableX,
   {
 
@@ -17,6 +17,4 @@ const SvelteEnableX = new Rule(
     ], /* Same options as in JsEnable */
     "svelte/no-trailing-spaces": OFF, /* Only applies to HTML comments, which I don't intend to use: http://sveltejs.github.io/eslint-plugin-svelte/rules/no-trailing-spaces/ */
   },
-);
-
-export default SvelteEnableX;
+] as const satisfies Input.RuleRecord;

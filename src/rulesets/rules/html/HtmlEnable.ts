@@ -1,10 +1,8 @@
-import { Rule } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import { OFF } from "../state.js";
 import { Enable } from "../id.js";
 
-const HtmlEnable = new Rule(
+export default [
   Enable,
   { "@html-eslint/require-title": OFF },
-);
-
-export default HtmlEnable;
+] as const satisfies Input.RuleRecord;
