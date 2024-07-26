@@ -1,7 +1,7 @@
 import core, { type Boundary } from "@eslinted/core";
-import plugins from "./plugins/_Plugins.js";
-import parsers from "./parsers/_Parsers.js";
-import base from "./files/_Base.js";
+import plugins from "./plugins/Plugins.js";
+import parsers from "./parsers/Parsers.js";
+import base from "./files/Base.js";
 import preset from "./rules/Preset.js";
 
 export default function (
