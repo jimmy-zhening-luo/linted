@@ -1,5 +1,5 @@
-import type { Input } from "@eslinted/core";
-import { ERROR } from "../severity.js";
+import type { Boundary } from "@eslinted/core";
+import { ERROR } from "../level.js";
 import {
   NEVER,
   ALWAYS,
@@ -72,4 +72,4 @@ export default [
       ALWAYS,
     ],
   },
-] as const satisfies Input.Rules.Entry;
+] as const satisfies Boundary.Input.Rules.Preset.Entry;

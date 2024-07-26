@@ -1,4 +1,4 @@
-import type { Input } from "@eslinted/core";
+import type { Boundary } from "@eslinted/core";
 import JsRuleset from "./JsRule.js";
 import TsDisableCompiler from "./objects/ts/TsDisableCompiler.js";
 import TsDisableX from "./objects/ts/TsDisableX.js";
@@ -11,4 +11,4 @@ export default [
   TsDisableX,
   TsEnableX,
   TsEnable,
-] as const satisfies readonly Input.Rules.Entry[];
+] as const satisfies readonly Boundary.Input.Rules.Preset.Entry[];

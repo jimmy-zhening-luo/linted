@@ -1,5 +1,5 @@
-import type { Input } from "@eslinted/core";
-import { ERROR, OFF } from "../severity.js";
+import type { Boundary } from "@eslinted/core";
+import { ERROR, OFF } from "../level.js";
 import {
 } from "../state.js";
 import { Enable } from "../id.js";
@@ -33,4 +33,4 @@ export default [
     "jsonc/valid-json-number": ERROR,
     "jsonc/vue-custom-block/no-parsing-error": ERROR,
   },
-] as const satisfies Input.Rules.Entry;
+] as const satisfies Boundary.Input.Rules.Preset.Entry;

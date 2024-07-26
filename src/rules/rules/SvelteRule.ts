@@ -1,4 +1,4 @@
-import type { Input } from "@eslinted/core";
+import type { Boundary } from "@eslinted/core";
 import TsRuleset from "./TsRule.js";
 import SvelteDisableJS from "./objects/svelte/SvelteDisableJS.js";
 import SvelteDisableTS from "./objects/svelte/SvelteDisableTS.js";
@@ -13,4 +13,4 @@ export default [
   SvelteDisableX,
   SvelteEnableX,
   SvelteEnable,
-] as const satisfies readonly Input.Rules.Entry[];
+] as const satisfies readonly Boundary.Input.Rules.Preset.Entry[];

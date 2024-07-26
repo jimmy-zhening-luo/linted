@@ -1,5 +1,5 @@
-import type { Input } from "@eslinted/core";
-import { OFF } from "../severity.js";
+import type { Boundary } from "@eslinted/core";
+import { OFF } from "../level.js";
 import { DisableX } from "../id.js";
 
 export default [
@@ -34,4 +34,4 @@ export default [
     "prefer-promise-reject-errors": OFF,
     "require-await": OFF,
   },
-] as const satisfies Input.Rules.Entry;
+] as const satisfies Boundary.Input.Rules.Preset.Entry;

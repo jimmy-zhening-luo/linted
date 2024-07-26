@@ -1,4 +1,4 @@
-import type { Scope } from "@eslinted/core";
+import type { Boundary } from "@eslinted/core";
 
 export default {
   js: ["**/*.config.js"],
@@ -19,4 +19,4 @@ export default {
     "**/*.yaml",
     ".github/workflows/*.yml",
   ],
-} as const satisfies Record<Scope, string[]>;
+} as const satisfies Boundary.Input.Files.Base;

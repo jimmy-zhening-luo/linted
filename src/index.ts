@@ -1,21 +1,25 @@
-import core, { type Input } from "@eslinted/core";
+import core, { type Boundary } from "@eslinted/core";
 import plugins from "./plugins/plugins.js";
 import parsers from "./parsers/parsers.js";
 import base from "./files/base.js";
-import rules from "./rules/rules.js";
+import preset from "./rules/rules.js";
 
 export default function (
-  includes: Partial<typeof base> = {},
-  overrides: Input.Overrides = {},
+  includes: Boundary.Input.Files.Includes = {},
+  overrides: Boundary.Input.Rules.Overrides = {},
 ) {
   try {
     return core(
       plugins,
       parsers,
-      base,
-      includes,
-      rules,
-      overrides,
+      {
+        base,
+        includes,
+      },
+      {
+        preset,
+        overrides,
+      },
     );
   }
   catch (e) {

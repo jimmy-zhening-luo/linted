@@ -1,5 +1,5 @@
-import type { Input } from "@eslinted/core";
-import { ERROR, OFF } from "../severity.js";
+import type { Boundary } from "@eslinted/core";
+import { ERROR, OFF } from "../level.js";
 import {
   BOTH,
 } from "../state.js";
@@ -16,4 +16,4 @@ export default [
     ], /* Same options as in JsEnable */
     "svelte/no-trailing-spaces": OFF, /* Only applies to HTML comments, which I don't intend to use: http://sveltejs.github.io/eslint-plugin-svelte/rules/no-trailing-spaces/ */
   },
-] as const satisfies Input.Rules.Entry;
+] as const satisfies Boundary.Input.Rules.Preset.Entry;

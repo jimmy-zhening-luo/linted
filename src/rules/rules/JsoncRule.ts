@@ -1,8 +1,8 @@
-import type { Input } from "@eslinted/core";
+import type { Boundary } from "@eslinted/core";
 import JsonRuleset from "./JsonRule.js";
 import JsoncOverride from "./objects/jsonc/JsoncOverride.js";
 
 export default [
   ...JsonRuleset,
   JsoncOverride,
-] as const satisfies readonly Input.Rules.Entry[];
+] as const satisfies readonly Boundary.Input.Rules.Preset.Entry[];

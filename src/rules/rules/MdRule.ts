@@ -1,4 +1,4 @@
-import type { Input } from "@eslinted/core";
+import type { Boundary } from "@eslinted/core";
 import MdEnable from "./objects/md/MdEnable.js";
 
-export default [MdEnable] as const satisfies readonly Input.Rules.Entry[];
+export default [MdEnable] as const satisfies readonly Boundary.Input.Rules.Preset.Entry[];

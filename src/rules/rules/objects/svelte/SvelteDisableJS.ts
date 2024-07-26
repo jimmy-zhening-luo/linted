@@ -1,5 +1,5 @@
-import type { Input } from "@eslinted/core";
-import { OFF } from "../severity.js";
+import type { Boundary } from "@eslinted/core";
+import { OFF } from "../level.js";
 
 export default [
   "disable-js",
@@ -10,4 +10,4 @@ export default [
     "no-inner-declarations": OFF, // ESLint Core
     "no-self-assign": OFF, // ESLint Core
   },
-] as const satisfies Input.Rules.Entry;
+] as const satisfies Boundary.Input.Rules.Preset.Entry;

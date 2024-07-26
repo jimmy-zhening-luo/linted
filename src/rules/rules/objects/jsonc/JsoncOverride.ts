@@ -1,5 +1,5 @@
-import type { Input } from "@eslinted/core";
-import { ERROR, OFF } from "../severity.js";
+import type { Boundary } from "@eslinted/core";
+import { ERROR, OFF } from "../level.js";
 import {
   ALWAYS_MULTILINE,
 } from "../state.js";
@@ -16,4 +16,4 @@ export default [
       ALWAYS_MULTILINE, // trailing commas are allowed in JSONC
     ],
   },
-] as const satisfies Input.Rules.Entry;
+] as const satisfies Boundary.Input.Rules.Preset.Entry;

@@ -1,5 +1,5 @@
-import type { Input } from "@eslinted/core";
-import { ERROR, OFF } from "../severity.js";
+import type { Boundary } from "@eslinted/core";
+import { ERROR, OFF } from "../level.js";
 import {
   NEVER,
 } from "../state.js";
@@ -549,4 +549,4 @@ export default [
     ],
     "@typescript-eslint/use-unknown-in-catch-callback-variable": ERROR,
   },
-] as const satisfies Input.Rules.Entry;
+] as const satisfies Boundary.Input.Rules.Preset.Entry;
