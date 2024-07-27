@@ -8,7 +8,8 @@ export default [
   Enable,
   {
 
-    // https://github.com/DavidAnson/markdownlint/blob/main/doc/md001.md
+    // Rules 1-50 supported by this shit plugin: https://gitlab.com/pawelbbdrozd/eslint-plugin-markdownlint/-/tree/main/lib/rules?ref_type=heads
+    // Rules 1-56 supported by this good plugin: https://github.com/DavidAnson/markdownlint/blob/main/doc/md001.md
     "markdownlint/md003": [
       ERROR,
       { style: "atx" },
@@ -58,10 +59,6 @@ export default [
     "markdownlint/md050": [
       ERROR,
       { style: "underscore" },
-    ],
-    "markdownlint/md055": [
-      ERROR,
-      { style: "leading_and_trailing" },
     ],
   },
 ] as const satisfies RuleEntry;
