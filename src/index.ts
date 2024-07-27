@@ -1,8 +1,6 @@
 import core, { type Boundary } from "@eslinted/core";
-import plugins from "./plugins/Plugins.js";
-import parsers from "./parsers/Parsers.js";
-import base from "./files/Base.js";
-import preset from "./rules/Preset.js";
+import { plugins, parsers } from "./imports/index.js";
+import { base, preset } from "./statics/index.js";
 
 export default function (
   includes: Boundary.Input.Files.Includes = {},

@@ -5,7 +5,6 @@
   "include": [
     "*.config.ts",
     "src/**/*.ts",
-    "types/**/*.d.ts",
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
