@@ -8,7 +8,7 @@ export default {
     "types/**/*.d.ts",
   ],
   svelte: ["src/**/*.svelte"],
-  mocha: ["src/dogfood.ts"],
+  mocha: [],
   html: ["src/**/*.html"],
   json: ["**/*.json"],
   jsonc: [
