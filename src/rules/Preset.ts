@@ -6,6 +6,7 @@ import html from "./presets/Html.js";
 import json from "./presets/Json.js";
 import jsonc from "./presets/Jsonc.js";
 import yml from "./presets/Yml.js";
+import md from "./presets/Md.js";
 
 export default {
   js,
@@ -15,4 +16,5 @@ export default {
   json,
   jsonc,
   yml,
+  md,
 } as const satisfies Boundary.Input.Rules.Preset;
