@@ -19,5 +19,5 @@ export default {
     "**/*.yaml",
     ".github/workflows/*.yml",
   ],
-  md: ["dogfood.md"],
+  md: [],
 } as const satisfies Boundary.Input.Files.Base;
