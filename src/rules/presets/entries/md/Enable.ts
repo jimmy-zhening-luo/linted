@@ -41,7 +41,7 @@ export default [
     ],
     "markdownlint/md035": [
       ERROR,
-      { style: "___" },
+      { style: "---" },
     ],
     "markdownlint/md046": [
       ERROR,
