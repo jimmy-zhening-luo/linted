@@ -4,4 +4,4 @@ import parsers from "./parsers/index.js";
 export {
   plugins,
   parsers,
-}
+};

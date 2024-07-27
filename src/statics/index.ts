@@ -4,4 +4,4 @@ import preset from "./rules/index.js";
 export {
   base,
   preset,
-}
+};
