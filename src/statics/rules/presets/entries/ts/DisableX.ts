@@ -19,7 +19,6 @@ export default [
     "no-implied-eval": OFF,
     "no-invalid-this": OFF,
     "no-loop-func": OFF,
-    "no-loss-of-precision": OFF,
     "no-magic-numbers": OFF,
     "no-redeclare": OFF,
     "no-restricted-imports": OFF,

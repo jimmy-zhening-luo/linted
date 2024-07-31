@@ -46,7 +46,6 @@ export default [
     "@typescript-eslint/no-implied-eval": ERROR,
     "@typescript-eslint/no-invalid-this": OFF, /* tsconfig: { strict, noImplicitThis } */
     "@typescript-eslint/no-loop-func": ERROR,
-    "@typescript-eslint/no-loss-of-precision": ERROR,
     "@typescript-eslint/no-magic-numbers": OFF,
     "@typescript-eslint/no-redeclare": OFF, /* tsc (let, const, -var) */
     "@typescript-eslint/no-restricted-imports": OFF, /* preference */
