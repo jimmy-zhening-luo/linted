@@ -5,6 +5,7 @@ import {
   ALWAYS,
   AS_NEEDED,
   CONSECUTIVE,
+  ALLOW,
   ALL,
   MULTI,
   BOTH,
@@ -72,6 +73,7 @@ export default [
     "no-inner-declarations": [
       ERROR,
       BOTH,
+      { blockScopedFunctions: ALLOW },
     ],
     "no-invalid-regexp": [
       ERROR,
