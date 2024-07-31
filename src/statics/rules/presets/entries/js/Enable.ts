@@ -60,7 +60,13 @@ export default [
       { allowObjectPatternsAsParameters: false },
     ],
     "no-ex-assign": ERROR,
-    "no-fallthrough": OFF, /* BUG: */
+    "no-fallthrough": [
+      ERROR,
+      {
+        allowEmptyCase: true,
+        reportUnusedFallthroughComment: true,
+      },
+    ],
     "no-func-assign": ERROR, /* tsc */
     "no-import-assign": ERROR, /* tsc (except Object.assign()) */
     "no-inner-declarations": [
