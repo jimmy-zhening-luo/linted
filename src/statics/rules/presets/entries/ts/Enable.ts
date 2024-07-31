@@ -30,7 +30,6 @@ export default [
       },
     ],
     "@typescript-eslint/ban-tslint-comment": ERROR,
-    "@typescript-eslint/ban-types": ERROR,
     "@typescript-eslint/class-literal-property-style": [
       ERROR,
       "fields",
@@ -368,6 +367,7 @@ export default [
     "@typescript-eslint/no-non-null-asserted-optional-chain": ERROR,
     "@typescript-eslint/no-non-null-assertion": ERROR,
     "@typescript-eslint/no-redundant-type-constituents": ERROR,
+    "@typescript-eslint/no-restricted-types": OFF, /* preference - no shared custom types across all projects that I wish to ban*/
     "@typescript-eslint/no-require-imports": [
       ERROR,
       { allow: [] },
@@ -406,10 +406,12 @@ export default [
     "@typescript-eslint/no-unsafe-call": ERROR,
     "@typescript-eslint/no-unsafe-declaration-merging": ERROR,
     "@typescript-eslint/no-unsafe-enum-comparison": ERROR,
+    "@typescript-eslint/no-unsafe-function-type": ERROR,
     "@typescript-eslint/no-unsafe-member-access": ERROR,
     "@typescript-eslint/no-unsafe-return": ERROR,
     "@typescript-eslint/no-unsafe-unary-minus": ERROR,
     "@typescript-eslint/no-useless-empty-export": ERROR,
+    "@typescript-eslint/no-wrapper-object-types": ERROR,
     "@typescript-eslint/no-var-requires": OFF,
     "@typescript-eslint/non-nullable-type-assertion-style": OFF,
     "@typescript-eslint/parameter-properties": [
