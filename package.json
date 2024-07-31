@@ -82,7 +82,7 @@
     "build:svelte:compile": "vite build",
     "build:svelte:prelint": "npm run ln src/**/*.svelte",
     "lint": "npm run build",
-    "lint:built": "exit 0 || run-s lint:built:*",
+    "lint:built": "run-s lint:built:*",
     "lint:built:configs": "npm run ln {*,.github/workflows/*}.{json,jsonc,js,ts,yml}",
     "lint:built:source": "npm run ln src/**/*.{js,ts,html}",
     "ln": "eslint --cache --fix",
