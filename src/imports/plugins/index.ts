@@ -1,19 +1,19 @@
 import type { Boundary } from "@eslinted/core";
 import stylistic from "@stylistic/eslint-plugin";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import ts from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
 import mocha from "eslint-plugin-mocha";
-import htmlEslint from "@html-eslint/eslint-plugin";
+import html from "@html-eslint/eslint-plugin";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
 import markdownlint from "eslint-plugin-markdownlint";
 
 export default {
   "@stylistic": stylistic,
-  "@typescript-eslint": typescriptEslint as unknown as { configs: unknown },
+  "@typescript-eslint": ts as unknown as { configs: unknown },
   svelte,
   mocha,
-  "@html-eslint": htmlEslint,
+  "@html-eslint": html,
   jsonc,
   yml,
   markdownlint,
