@@ -145,6 +145,7 @@ export default [
         allowNamedExports: false,
       },
     ], /* TSLint */
+    "no-useless-assignment": ERROR,
     "no-useless-backreference": ERROR,
     "require-atomic-updates": [
       ERROR,
