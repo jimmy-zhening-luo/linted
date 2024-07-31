@@ -293,10 +293,6 @@ export default [
       },
     ],
     "@typescript-eslint/no-dynamic-delete": ERROR,
-    "@typescript-eslint/no-empty-interface": [
-      ERROR,
-      { allowSingleExtends: true },
-    ],
     "@typescript-eslint/no-empty-object-type": [
       ERROR,
       {
