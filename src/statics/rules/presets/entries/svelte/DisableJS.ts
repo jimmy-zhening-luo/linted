@@ -1,5 +1,6 @@
-import type RuleEntry from "../entry.js";
-import { OFF } from "../level.js";
+import { Strings, type RuleEntry } from "../index.js";
+
+const { Level: { OFF } } = Strings;
 
 export default [
   "disable-js",

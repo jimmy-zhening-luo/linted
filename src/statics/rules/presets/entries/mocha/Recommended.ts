@@ -1,6 +1,7 @@
 import mocha from "eslint-plugin-mocha";
-import type RuleEntry from "../entry.js";
-import { Recommended } from "../id.js";
+import { Strings, type RuleEntry } from "../index.js";
+
+const { Id: { Recommended } } = Strings;
 
 export default [
   Recommended,

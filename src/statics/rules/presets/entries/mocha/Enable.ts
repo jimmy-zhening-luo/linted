@@ -1,5 +1,6 @@
-import type RuleEntry from "../entry.js";
-import { Enable } from "../id.js";
+import { Strings, type RuleEntry } from "../index.js";
+
+const { Id: { Enable } } = Strings;
 
 export default [
   Enable,

@@ -1,4 +1,4 @@
-import type RuleEntry from "./entries/entry.js";
+import type RuleEntry from "./entries/index.js";
 import Json from "./Json.js";
 import OverrideJson from "./entries/jsonc/OverrideJson.js";
 

@@ -3,6 +3,7 @@ DisableX = "disable-extend",
 EnableX = "enable-extend",
 Enable = "enable",
 Override = "override",
+Stylistic = "stylistic",
 Recommended = "recommended";
 
 export {
@@ -11,5 +12,6 @@ export {
   EnableX,
   Enable,
   Override,
+  Stylistic,
   Recommended,
 };

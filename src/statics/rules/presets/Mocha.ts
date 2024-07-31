@@ -1,4 +1,4 @@
-import type RuleEntry from "./entries/entry.js";
+import type RuleEntry from "./entries/index.js";
 import Recommended from "./entries/mocha/Recommended.js";
 import Enable from "./entries/html/Enable.js";
 

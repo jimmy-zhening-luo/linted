@@ -1,4 +1,4 @@
-import type RuleEntry from "./entries/entry.js";
+import type RuleEntry from "./entries/index.js";
 import EnableStylistic from "./entries/js/EnableStylistic.js";
 import Enable from "./entries/js/Enable.js";
 

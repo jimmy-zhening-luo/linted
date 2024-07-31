@@ -1,4 +1,4 @@
-import type RuleEntry from "./entries/entry.js";
+import type RuleEntry from "./entries/index.js";
 import Js from "./Js.js";
 import DisableCompiler from "./entries/ts/DisableCompiler.js";
 import DisableX from "./entries/ts/DisableX.js";

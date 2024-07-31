@@ -1,9 +1,12 @@
-import type RuleEntry from "../entry.js";
-import { ERROR, OFF } from "../level.js";
-import {
-  NEVER,
-} from "../state.js";
-import { Enable } from "../id.js";
+import { Strings, type RuleEntry } from "../index.js";
+
+const {
+  Id: { Enable },
+  Level: { ERROR, OFF },
+  State: {
+    NEVER,
+  },
+} = Strings;
 
 export default [
   Enable,

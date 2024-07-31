@@ -1,4 +1,4 @@
-import type RuleEntry from "./entries/entry.js";
+import type RuleEntry from "./entries/index.js";
 import TsRuleset from "./Ts.js";
 import DisableJS from "./entries/svelte/DisableJS.js";
 import DisableTS from "./entries/svelte/DisableTS.js";

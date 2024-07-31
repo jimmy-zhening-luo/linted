@@ -1,9 +1,12 @@
-import type RuleEntry from "../entry.js";
-import { ERROR, OFF } from "../level.js";
-import {
-  ALWAYS_MULTILINE,
-} from "../state.js";
-import { Override } from "../id.js";
+import { Strings, type RuleEntry } from "../index.js";
+
+const {
+  Id: { Override },
+  Level: { ERROR, OFF },
+  State: {
+    ALWAYS_MULTILINE,
+  },
+} = Strings;
 
 export default [
   Override,

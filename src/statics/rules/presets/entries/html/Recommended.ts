@@ -1,6 +1,7 @@
 import html from "@html-eslint/eslint-plugin";
-import type RuleEntry from "../entry.js";
-import { Recommended } from "../id.js";
+import { Strings, type RuleEntry } from "../index.js";
+
+const { Id: { Recommended } } = Strings;
 
 export default [
   Recommended,

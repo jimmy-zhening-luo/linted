@@ -1,24 +1,28 @@
-import type RuleEntry from "../entry.js";
-import { ERROR, OFF } from "../level.js";
-import {
-  NEVER,
-  ALWAYS,
-  ALWAYS_MULTILINE,
-  AS_NEEDED,
-  STRICT,
-  ALL,
-  STAR,
-  LAST,
-  BEFORE,
-  AFTER,
-  BELOW,
-  BESIDE,
-  INSIDE,
-  DOUBLE,
-} from "../state.js";
+import { Strings, type RuleEntry } from "../index.js";
+
+const {
+  Id: { Stylistic },
+  Level: { ERROR, OFF },
+  State: {
+    NEVER,
+    ALWAYS,
+    ALWAYS_MULTILINE,
+    AS_NEEDED,
+    STRICT,
+    ALL,
+    STAR,
+    LAST,
+    BEFORE,
+    AFTER,
+    BELOW,
+    BESIDE,
+    INSIDE,
+    DOUBLE,
+  },
+} = Strings;
 
 export default [
-  "stylistic",
+  Stylistic,
   {
 
     // https://eslint.style/rules

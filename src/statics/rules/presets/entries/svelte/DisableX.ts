@@ -1,6 +1,6 @@
-import type RuleEntry from "../entry.js";
-import { OFF } from "../level.js";
-import { DisableX } from "../id.js";
+import { Strings, type RuleEntry } from "../index.js";
+
+const { Id: { DisableX }, Level: { OFF } } = Strings;
 
 export default [
   DisableX,
