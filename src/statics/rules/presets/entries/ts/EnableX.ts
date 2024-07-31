@@ -112,9 +112,5 @@ export default [
       { allowEmptyReject: false },
     ],
     "@typescript-eslint/require-await": ERROR,
-    "@typescript-eslint/return-await": [
-      ERROR,
-      "in-try-catch",
-    ],
   },
 ] as const satisfies RuleEntry;

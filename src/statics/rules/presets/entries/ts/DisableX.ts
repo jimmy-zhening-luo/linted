@@ -22,7 +22,6 @@ export default [
     "no-magic-numbers": OFF,
     "no-redeclare": OFF,
     "no-restricted-imports": OFF,
-    "no-return-await": OFF, /* DEPRECATED -- @typescript-eslint/return-await */
     "no-shadow": OFF,
     "no-throw-literal": OFF, /* @typescript-eslint/only-throw-error */
     "no-unused-expressions": OFF,

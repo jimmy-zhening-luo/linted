@@ -508,6 +508,10 @@ export default [
         allowRegExp: false,
       }, /* investigate: make stricter */
     ],
+    "@typescript-eslint/return-await": [
+      ERROR,
+      "in-try-catch",
+    ], /* BUG: doc incorrectly states that this extends the DEPRECATED (since 8.46) no-return-await: https://typescript-eslint.io/rules/return-await */
     "@typescript-eslint/strict-boolean-expressions": [
       ERROR,
       {
