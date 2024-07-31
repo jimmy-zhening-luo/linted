@@ -67,6 +67,8 @@ export default [
         args: ALL,
         caughtErrors: ALL,
         ignoreRestSiblings: false,
+        ignoreClassWithStaticInitBlock: false,
+        reportUsedIgnorePattern: true,
       },
     ],
     "@typescript-eslint/no-use-before-define": [
