@@ -124,6 +124,8 @@ export default [
         args: ALL,
         caughtErrors: ALL,
         ignoreRestSiblings: false,
+        ignoreClassWithStaticInitBlock: false,
+        reportUsedIgnorePattern: true,
       },
     ], /* TSLint */
     "no-use-before-define": [
