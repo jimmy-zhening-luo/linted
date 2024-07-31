@@ -322,6 +322,7 @@ export default [
     "@typescript-eslint/no-floating-promises": [
       ERROR,
       {
+        checkThenables: true,
         ignoreVoid: true,
         ignoreIIFE: false,
       },
