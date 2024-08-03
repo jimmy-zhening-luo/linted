@@ -6,7 +6,8 @@ const {
   State: {
     NEVER,
     ALWAYS,
-    ALWAYS_MULTILINE,
+    ALWAYS_MULTILINE, 
+    CONSISTENT,
     AS_NEEDED,
     STRICT,
     ALL,
@@ -123,7 +124,7 @@ export default [
     ],
     "@stylistic/function-call-argument-newline": [
       ERROR,
-      ALWAYS,
+      CONSISTENT,
     ],
     "@stylistic/function-call-spacing": [
       ERROR,
@@ -200,7 +201,7 @@ export default [
     "@stylistic/lines-around-comment": [
       ERROR,
       {
-        beforeBlockComment: true,
+        beforeBlockComment: false,
         afterBlockComment: false,
         beforeLineComment: true,
         afterLineComment: false,
