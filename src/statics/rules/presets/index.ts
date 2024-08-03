@@ -10,4 +10,4 @@ export type {
   RuleEntry as default,
   RuleEntry,
 };
-export * as Strings from "../../strings/index.js";
+export * as Strings from "../strings/index.js";
