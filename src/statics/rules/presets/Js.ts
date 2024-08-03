@@ -1,6 +1,6 @@
-import type RuleEntry from "./entries/index.js";
-import EnableStylistic from "./entries/js/EnableStylistic.js";
-import Enable from "./entries/js/Enable.js";
+import type RuleEntry from "./index.js";
+import EnableStylistic from "./js/EnableStylistic.js";
+import Enable from "./js/Enable.js";
 
 export default [
   EnableStylistic,

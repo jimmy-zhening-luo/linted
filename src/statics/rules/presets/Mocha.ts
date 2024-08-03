@@ -1,6 +1,6 @@
-import type RuleEntry from "./entries/index.js";
-import Recommended from "./entries/mocha/Recommended.js";
-import Enable from "./entries/html/Enable.js";
+import type RuleEntry from "./index.js";
+import Recommended from "./mocha/Recommended.js";
+import Enable from "./html/Enable.js";
 
 export default [
   Recommended,

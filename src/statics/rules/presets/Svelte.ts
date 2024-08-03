@@ -1,10 +1,10 @@
-import type RuleEntry from "./entries/index.js";
+import type RuleEntry from "./index.js";
 import TsRuleset from "./Ts.js";
-import DisableJS from "./entries/svelte/DisableJS.js";
-import DisableTS from "./entries/svelte/DisableTS.js";
-import DisableX from "./entries/svelte/DisableX.js";
-import EnableX from "./entries/svelte/EnableX.js";
-import Enable from "./entries/svelte/Enable.js";
+import DisableJS from "./svelte/DisableJS.js";
+import DisableTS from "./svelte/DisableTS.js";
+import DisableX from "./svelte/DisableX.js";
+import EnableX from "./svelte/EnableX.js";
+import Enable from "./svelte/Enable.js";
 
 export default [
   ...TsRuleset,

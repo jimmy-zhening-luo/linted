@@ -1,4 +1,4 @@
-import type RuleEntry from "./entries/index.js";
-import Enable from "./entries/md/Enable.js";
+import type RuleEntry from "./index.js";
+import Enable from "./md/Enable.js";
 
 export default [Enable] as const satisfies readonly RuleEntry[];

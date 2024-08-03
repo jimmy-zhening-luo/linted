@@ -1,6 +1,6 @@
-import type RuleEntry from "./entries/index.js";
-import EnableX from "./entries/yml/EnableX.js";
-import Enable from "./entries/yml/Enable.js";
+import type RuleEntry from "./index.js";
+import EnableX from "./yml/EnableX.js";
+import Enable from "./yml/Enable.js";
 
 export default [
   EnableX,

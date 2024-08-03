@@ -10,14 +10,8 @@ export default function (
     return core(
       plugins,
       parsers,
-      {
-        base,
-        includes,
-      },
-      {
-        preset,
-        overrides,
-      },
+      { base, includes },
+      { preset, overrides },
     );
   }
   catch (e) {

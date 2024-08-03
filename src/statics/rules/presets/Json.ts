@@ -1,6 +1,6 @@
-import type RuleEntry from "./entries/index.js";
-import EnableX from "./entries/json/EnableX.js";
-import Enable from "./entries/json/Enable.js";
+import type RuleEntry from "./index.js";
+import EnableX from "./json/EnableX.js";
+import Enable from "./json/Enable.js";
 
 export default [
   EnableX,
