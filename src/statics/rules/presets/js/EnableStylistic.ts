@@ -6,7 +6,7 @@ const {
   State: {
     NEVER,
     ALWAYS,
-    ALWAYS_MULTILINE, 
+    ALWAYS_MULTILINE,
     CONSISTENT,
     AS_NEEDED,
     STRICT,
