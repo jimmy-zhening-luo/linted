@@ -221,7 +221,7 @@ export default [
         allowEnumStart: true,
         allowInterfaceEnd: true,
         allowInterfaceStart: true,
-        allowModuleEnd: true
+        allowModuleEnd: true,
         allowModuleStart: true,
         allowTypeEnd: true,
         allowTypeStart: true,
