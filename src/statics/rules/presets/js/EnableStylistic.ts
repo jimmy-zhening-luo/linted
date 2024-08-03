@@ -217,14 +217,14 @@ export default [
         afterHashbangComment: false,
 
         // TS-only
-        allowEnumEnd: false,
-        allowEnumStart: false,
-        allowInterfaceEnd: false,
-        allowInterfaceStart: false,
-        allowModuleEnd: false,
-        allowModuleStart: false,
-        allowTypeEnd: false,
-        allowTypeStart: false,
+        allowEnumEnd: true,
+        allowEnumStart: true,
+        allowInterfaceEnd: true,
+        allowInterfaceStart: true,
+        allowModuleEnd: true
+        allowModuleStart: true,
+        allowTypeEnd: true,
+        allowTypeStart: true,
       },
     ],
     "@stylistic/lines-between-class-members": [
