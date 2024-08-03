@@ -48,7 +48,7 @@ export default [
         ArrayExpression: {
           consistent: true,
           multiline: true,
-          minItems: 3,
+          minItems: 4,
         },
         ArrayPattern: {
           consistent: true,
