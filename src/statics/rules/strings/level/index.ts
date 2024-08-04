@@ -2,8 +2,4 @@ const ERROR = "error",
 WARN = "warn",
 OFF = "off";
 
-export {
-  ERROR,
-  WARN,
-  OFF,
-};
+export { ERROR, WARN, OFF };

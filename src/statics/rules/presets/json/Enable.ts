@@ -5,7 +5,6 @@ const { Id: { Enable }, Level: { ERROR, OFF } } = Strings;
 export default [
   Enable,
   {
-
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#jsonc-rules
     "jsonc/auto": OFF,
     "jsonc/key-name-casing": OFF,

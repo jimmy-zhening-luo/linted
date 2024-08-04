@@ -15,9 +15,6 @@ export default function (
     );
   }
   catch (e) {
-    throw new Error(
-      `linted(): Caught exception.`,
-      { cause: e },
-    );
+    throw new Error(`linted(): Caught exception.`, { cause: e });
   }
 }

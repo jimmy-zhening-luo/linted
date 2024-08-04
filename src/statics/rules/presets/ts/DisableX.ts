@@ -5,7 +5,6 @@ const { Id: { DisableX }, Level: { OFF } } = Strings;
 export default [
   DisableX,
   {
-
     // https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
     "class-methods-use-this": OFF,
     "consistent-return": OFF,
@@ -23,7 +22,7 @@ export default [
     "no-redeclare": OFF,
     "no-restricted-imports": OFF,
     "no-shadow": OFF,
-    "no-throw-literal": OFF, /* @typescript-eslint/only-throw-error */
+    "no-throw-literal": OFF /* @typescript-eslint/only-throw-error */,
     "no-unused-expressions": OFF,
     "no-unused-vars": OFF,
     "no-use-before-define": OFF,

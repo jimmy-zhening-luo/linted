@@ -6,8 +6,5 @@ namespace RuleEntry {
   export type Object = Boundary.Input.Rules.Preset.Entry.Object;
 }
 
-export type {
-  RuleEntry as default,
-  RuleEntry,
-};
+export type { RuleEntry, RuleEntry as default };
 export * as Strings from "../strings/index.js";
