@@ -26,10 +26,10 @@ export default [
       ERROR,
       {
         "ts-check": false,
-        "ts-expect-error": true,
+        "ts-expect-error": { descriptionFormat: "^: BUG: .+$" },
         "ts-ignore": true,
         "ts-nocheck": true,
-        minimumDescriptionLength: 10,
+        minimumDescriptionLength: 32,
       },
     ],
     "@typescript-eslint/ban-tslint-comment": ERROR,
