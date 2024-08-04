@@ -416,7 +416,6 @@ export default [
     "@typescript-eslint/no-unsafe-unary-minus": ERROR,
     "@typescript-eslint/no-useless-empty-export": ERROR,
     "@typescript-eslint/no-wrapper-object-types": ERROR,
-    "@typescript-eslint/no-var-requires": OFF,
     "@typescript-eslint/non-nullable-type-assertion-style": OFF,
     "@typescript-eslint/parameter-properties": [
       ERROR,
@@ -473,7 +472,6 @@ export default [
       ERROR,
       { allowSingleElementEquality: NEVER },
     ],
-    "@typescript-eslint/prefer-ts-expect-error": ERROR,
     "@typescript-eslint/promise-function-async": [
       ERROR,
       {
