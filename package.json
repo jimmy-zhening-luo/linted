@@ -1,7 +1,7 @@
 {
   "_schemaVersion": "20.14.0",
   "name": "linted",
-  "version": "16.1.1-rc.1",
+  "version": "16.1.1",
   "description": "Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Mocha, JSON(C), and sadly YAML.",
   "keywords": [
     "eslint",
