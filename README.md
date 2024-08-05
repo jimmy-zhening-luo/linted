@@ -1,5 +1,7 @@
 # [`linted`](https://npmjs.com/package/linted)
 
+___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
+
 Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Mocha, JSON(C), and sadly YAML.
 
 1. [Languages](#languages)
@@ -9,15 +11,13 @@ Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, a
 1. [Roadmap](#roadmap)
 1. [Rule Logic (Advanced)](#rule-logic-advanced)
 
-v14.1 is in progress, in the meantime this readme is totally inaccurate.
-
 ## Languages
 
 ### Web
 
-- __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__ [`eslint`](https://eslint.org) + [`@stylistic`](https://eslint.style)
-- __[TypeScript](https://typescriptlang.org):__ _...JavaScript_ + [`@typescript-eslint`](https://typescript-eslint.io/)
-- __[Svelte](https://svelte.dev):__ _...TypeScript_ + [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/)
+- __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__ [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
+- __[TypeScript](https://typescriptlang.org):__ [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
+- __[Svelte](https://svelte.dev):__ [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
 - __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):__ [`@html-eslint`](https://html-eslint.org/)
 
 ### Data
@@ -25,11 +25,16 @@ v14.1 is in progress, in the meantime this readme is totally inaccurate.
 - __[JSON](https://json.org) & [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments):__ [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
 - __[YAML](https://redhat.com/en/topics/automation/what-is-yaml):__ [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
 
+### Library
+
+- __[Mocha](https://mochajs.org/):__ [`eslint-plugin-mocha`](https://github.com/lo1tuma/eslint-plugin-mocha) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
+
 ### Text
 
-- __[GitHub Flavored Markdown](https://github.github.com/gfm/) & [CommonMark](https://commonmark.org):__ [`eslint-plugin-markdownlint`](https://gitlab.com/pawelbbdrozd/eslint-plugin-markdownlint/-/blob/main/README.md)
+- __[Markdown](https://en.wikipedia.org/wiki/Markdown) ([GitHub Flavored Markdown](https://github.github.com/gfm/) & [CommonMark](https://commonmark.org)):__ [`eslint-plugin-markdownlint`](https://gitlab.com/pawelbbdrozd/eslint-plugin-markdownlint/-/blob/main/README.md) <- bad plugin, check it out and find out why. still mad at wasting my time on this gitlab-hosted piece of shit. Probably gonna deprecate it out of spite
 
-\
+<br />
+
 _See language support __[roadmap](#roadmap).___
 
 ## Features
@@ -78,10 +83,12 @@ import linted from "linted";
 export default linted();
 ```
 
-### (WIP for v14.1, currently inaccurate) Total Control via Optional Arguments
+### Total Control via Optional Arguments
 
-- `includes` (scoped [`glob patterns`](code.visualstudio.com/docs/editor/glob-patterns))
-- `ignores` (global [`glob patterns`](code.visualstudio.com/docs/editor/glob-patterns) and other options)
+___WIP for v14.1, currently inaccurate___.
+
+- `includes` (scoped [`glob patterns`](https://code.visualstudio.com/docs/editor/glob-patterns))
+- `ignores` (global [`glob patterns`](https://code.visualstudio.com/docs/editor/glob-patterns) and other options)
 - `overrides` (scoped rule statements)
 
 #### `includes` _(Scoped)_
@@ -189,7 +196,7 @@ tsc --skipLibCheck
         import linted from "linted";
         ```
 
-    - Export `linted` with optional [arguments](#one-argument-api):
+    - Export `linted` with optional [arguments](#total-control-via-optional-arguments):
 
         ```javascript
         import linted from "linted";
