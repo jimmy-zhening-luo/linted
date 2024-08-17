@@ -52,10 +52,10 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "~3.1.1",
+    "@eslinted/core": "~3.1.7",
     "@html-eslint/eslint-plugin": "~0.26.0",
     "@html-eslint/parser": "~0.26.0",
-    "@stylistic/eslint-plugin": "~2.6.2",
+    "@stylistic/eslint-plugin": "~2.6.4",
     "@typescript-eslint/eslint-plugin": "~8.1.0",
     "@typescript-eslint/parser": "~8.1.0",
     "eslint-plugin-jsonc": "~2.16.0",
@@ -69,9 +69,9 @@
     "yaml-eslint-parser": "~1.2.3"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^0.5.2",
+    "@eslint/config-inspector": "^0.5.3",
     "eslint": "~9.9.0",
-    "linted": "~16.2.1-rc.2",
+    "linted": "~16.2.1",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.5.4"
   },
