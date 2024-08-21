@@ -1,5 +1,5 @@
 {
-  "_schemaVersion": "20.15.0",
+  "_schemaVersion": "20.16.0",
   "name": "linted",
   "version": "16.3.0",
   "description": "Zero-config ESLint flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Mocha, JSON(C), and sadly YAML.",
@@ -35,7 +35,7 @@
   "types": "dist/index.d.ts",
   "engineStrict": true,
   "engines": {
-    "node": ">=20.15.0",
+    "node": ">=20.16.0",
     "npm": ">=10.7.0"
   },
   "peerDependencies": {
@@ -52,7 +52,7 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "~3.1.10",
+    "@eslinted/core": "~3.1.11",
     "@html-eslint/eslint-plugin": "~0.26.0",
     "@html-eslint/parser": "~0.26.0",
     "@stylistic/eslint-plugin": "~2.6.4",
@@ -71,7 +71,7 @@
   "devDependencies": {
     "@eslint/config-inspector": "^0.5.4",
     "eslint": "~9.9.0",
-    "linted": "~16.3.0-rc.3",
+    "linted": "~16.3.0",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.5.4"
   },
