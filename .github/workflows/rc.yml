@@ -1,0 +1,35 @@
+name: NPM Publish (rc)
+
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+
+
+jobs:
+  publish-rc:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: rc
+      url: https://www.npmjs.com/package/linted
+    name: Build/Publish (rc)
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          lfs: false
+      - name: Install Node v20
+        id: node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: "https://registry.npmjs.org"
+      - name: Install Dependencies
+        id: ci
+        run: npm ci
+      - name: Publish to NPM
+        id: publish
+        run: npm publish
+        env: { NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}" }
