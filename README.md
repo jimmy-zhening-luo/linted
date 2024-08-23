@@ -1,4 +1,6 @@
-# [`linted`](https://npmjs.com/package/linted)
+# [`linted`](https://www.npmjs.com/package/linted)
+
+[![NPM Publish (RELEASE)](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml/badge.svg)](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml)
 
 ___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
 
@@ -16,7 +18,7 @@ Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, a
 ### Web
 
 - __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__ [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
-- __[TypeScript](https://typescriptlang.org):__ [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
+- __[TypeScript](https://www.typescriptlang.org):__ [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
 - __[Svelte](https://svelte.dev):__ [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
 - __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):__ [`@html-eslint`](https://html-eslint.org/)
 
@@ -181,7 +183,7 @@ tsc --skipLibCheck
 
 ## Install
 
-1. Install [`eslint`](https://npmjs.com/package/eslint) and [`linted`](https://npmjs.com/package/linted).
+1. Install [`eslint`](https://www.npmjs.com/package/eslint) and [`linted`](https://www.npmjs.com/package/linted).
 
     ```bash
     npm i -D eslint@^8.57 linted
