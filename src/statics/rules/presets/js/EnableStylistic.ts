@@ -278,7 +278,14 @@ export default [
     "@stylistic/switch-colon-spacing": [ERROR, { after: true, before: false }],
     "@stylistic/template-curly-spacing": [ERROR, NEVER],
     "@stylistic/template-tag-spacing": [ERROR, NEVER],
-    "@stylistic/type-annotation-spacing": [ERROR, { before: false, after: true }],
+    "@stylistic/type-annotation-spacing": [
+      ERROR,
+      {
+        before: true,
+        after: true,
+        overrides: { colon: { before: false, after: true } },
+      } /* non-overriden rule affects all type annotations (arrows, "as" keyword, "satisfies" keyword) except colons */,
+    ],
     "@stylistic/type-generic-spacing": ERROR,
     "@stylistic/type-named-tuple-spacing": ERROR,
     "@stylistic/wrap-iife": [ERROR, INSIDE, { functionPrototypeMethods: true }],

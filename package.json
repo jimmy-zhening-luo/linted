@@ -55,7 +55,7 @@
     "@eslinted/core": "~3.1.21",
     "@html-eslint/eslint-plugin": "~0.26.0",
     "@html-eslint/parser": "~0.26.0",
-    "@stylistic/eslint-plugin": "~2.6.5",
+    "@stylistic/eslint-plugin": "2.6.4",
     "@typescript-eslint/eslint-plugin": "~8.3.0",
     "@typescript-eslint/parser": "~8.3.0",
     "eslint-plugin-jsonc": "~2.16.0",
