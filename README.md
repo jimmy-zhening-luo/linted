@@ -4,7 +4,7 @@
 
 ___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
 
-Zero-config [__ESLint__](https://eslint.org/) flat config factory for (strict, agglutinative) entire-stack formatting and linting: TypeScript, JavaScript, Svelte, HTML, (Tailwind) CSS, Mocha, JSON(C), and sadly YAML.
+[ESLint](https://eslint.org) mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.
 
 1. [Languages](#languages)
 1. [Features](#features)
