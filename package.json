@@ -1,5 +1,5 @@
 {
-  "_schemaVersion": "20.17.0",
+  "_schemaVersion": "20.17.8",
   "name": "linted",
   "version": "16.4.0",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -39,9 +39,9 @@
     "npm": ">=10.8.2"
   },
   "peerDependencies": {
-    "eslint": "~9.9.1",
+    "eslint": "~9.10.0",
     "mocha": "^10.7.3",
-    "typescript": ">=5.5.4"
+    "typescript": ">=5.6.2"
   },
   "peerDependenciesMeta": {
     "mocha": {
@@ -52,12 +52,12 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "3.2.0",
+    "@eslinted/core": "3.4.1",
     "@html-eslint/eslint-plugin": "0.26.0",
     "@html-eslint/parser": "0.26.0",
-    "@stylistic/eslint-plugin": "2.7.2",
-    "@typescript-eslint/eslint-plugin": "8.4.0",
-    "@typescript-eslint/parser": "8.4.0",
+    "@stylistic/eslint-plugin": "2.8.0",
+    "@typescript-eslint/eslint-plugin": "8.5.0",
+    "@typescript-eslint/parser": "8.5.0",
     "eslint-plugin-jsonc": "2.16.0",
     "eslint-plugin-markdownlint": "0.6.0",
     "eslint-plugin-mocha": "10.5.0",
@@ -70,10 +70,9 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^0.5.4",
-    "eslint": "~9.9.1",
-    "linted": "16.4.0-rc.13",
+    "eslint": "~9.10.0",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   },
   "scripts": {
     "build": "run-s \"build:{1}:*\" lint:built  --  ts",
@@ -84,9 +83,9 @@
     "build:svelte:prelint": "npm run ln src/**/*.svelte",
     "lint": "npm run build",
     "lint:built": "run-s lint:built:*",
-    "lint:built:configs": "npm run ln {*,.github/workflows/*}.{json,jsonc,js,ts,yml}",
-    "lint:built:source": "npm run ln src/**/*.{js,ts,html}",
-    "ln": "eslint --cache --fix",
+    "lint:built:configs": "npm run ln --files={*,.github/workflows/*}.{json,jsonc,js,ts,yml}",
+    "lint:built:source": "npm run ln --files=src/**/*.{js,ts,html}",
+    "ln": "eslint --cache --fix --no-error-on-unmatched-pattern %npm_config_files% || echo \"No linter installed.\"",
     "pretest": "npm run build",
     "test": "",
     "start": "vite preview || node .",
