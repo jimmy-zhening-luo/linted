@@ -7,11 +7,11 @@ ___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
 [ESLint](https://eslint.org) mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.
 
 1. [Languages](#languages)
-1. [Features](#features)
-1. [Limitation](#limitation)
-1. [Install](#install)
-1. [Roadmap](#roadmap)
-1. [Rule Logic (Advanced)](#rule-logic-advanced)
+2. [Features](#features)
+3. [Limitation](#limitation)
+4. [Install](#install)
+5. [Roadmap](#roadmap)
+6. [Rule Logic (Advanced)](#rule-logic-advanced)
 
 ## Languages
 
@@ -189,9 +189,9 @@ tsc --skipLibCheck
     npm i -D eslint@^8.57 linted
     ```
 
-1. Create `eslint.config.js` in your project root.
+2. Create `eslint.config.js` in your project root.
 
-1. In `eslint.config.js`:
+3. In `eslint.config.js`:
     - Import function `linted`.
 
         ```javascript
