@@ -1,6 +1,6 @@
 import core, { type Boundary } from "@eslinted/core";
-import { plugins, parsers } from "./imports/index.js";
-import { base, preset } from "./statics/index.js";
+import { plugins, parsers } from "./import/index.js";
+import { base, preset } from "./static/index.js";
 
 declare type Scope =
   | "js"
