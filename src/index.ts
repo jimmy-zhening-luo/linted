@@ -1,6 +1,8 @@
 import core, { type Boundary } from "@eslinted/core";
-import { plugins, parsers } from "./import/index.js";
-import { base, preset } from "./static/index.js";
+import plugins from "./import/plugins.js";
+import parsers from "./import/parsers.js";
+import files from "./default/files.js";
+import rules from "./default/rules.js";
 
 declare type Scope =
   | "js"
@@ -22,8 +24,8 @@ export default function (
     return core(
       plugins,
       parsers,
-      { base, includes },
-      { preset, overrides },
+      { base: files, includes },
+      { preset: rules, overrides },
     );
   }
   catch (e) { throw new Error(`linted(): `, { cause: e }); }
