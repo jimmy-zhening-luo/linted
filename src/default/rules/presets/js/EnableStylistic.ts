@@ -158,7 +158,7 @@ export default [
     ],
     "@stylistic/multiline-comment-style": OFF,
     "@stylistic/multiline-ternary": [ERROR, ALWAYS_MULTILINE],
-    "@stylistic/new-parens": [ERROR, NEVER],
+    "@stylistic/new-parens": [OFF, NEVER],
     "@stylistic/newline-per-chained-call": [ERROR, { ignoreChainWithDepth: 2 }],
     "@stylistic/no-confusing-arrow": OFF,
     "@stylistic/no-extra-parens": [
