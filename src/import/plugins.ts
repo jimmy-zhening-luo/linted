@@ -1,4 +1,4 @@
-import type { Boundary } from "@eslinted/core";
+import type { Core } from "@eslinted/core";
 import stylistic from "@stylistic/eslint-plugin";
 import typescript_eslint from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
@@ -17,4 +17,4 @@ export default {
   jsonc,
   yml,
   markdownlint,
-} as const satisfies Boundary.Input.Plugins;
+} as const satisfies Core.Input.Plugins;

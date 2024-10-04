@@ -1,9 +1,9 @@
-import type { Boundary } from "@eslinted/core";
+import type { Core } from "@eslinted/core";
 
-type RuleEntry = Boundary.Input.Rules.Preset.Entry;
+type RuleEntry = Core.Input.Rules.Base[Core.Scopes][number];
 
 namespace RuleEntry {
-  export type Object = Boundary.Input.Rules.Preset.Entry.Object;
+  export type Object = RuleEntry[1];
 }
 
 export type { RuleEntry, RuleEntry as default };

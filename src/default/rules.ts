@@ -1,4 +1,4 @@
-import type { Boundary } from "@eslinted/core";
+import type { Core } from "@eslinted/core";
 import js from "./rules/presets/Js.js";
 import ts from "./rules/presets/Ts.js";
 import svelte from "./rules/presets/Svelte.js";
@@ -19,4 +19,4 @@ export default {
   jsonc,
   yml,
   md,
-} as const satisfies Boundary.Input.Rules.Preset;
+} as const satisfies Core.Input.Rules.Base;

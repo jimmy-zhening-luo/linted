@@ -1,4 +1,4 @@
-import type { Boundary } from "@eslinted/core";
+import type { Core } from "@eslinted/core";
 import js from "./files/js/index.js";
 import ts from "./files/ts/index.js";
 import svelte from "./files/svelte/index.js";
@@ -19,4 +19,4 @@ export default {
   jsonc,
   yml,
   md,
-} as const satisfies Boundary.Input.Files.Base;
+} as const satisfies Core.Input.Files.Base;

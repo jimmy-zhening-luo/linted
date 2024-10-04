@@ -1,4 +1,4 @@
-import type { Boundary } from "@eslinted/core";
+import type { Core } from "@eslinted/core";
 import ts from "@typescript-eslint/parser";
 import svelte from "svelte-eslint-parser";
 import html from "@html-eslint/parser";
@@ -13,4 +13,4 @@ export default {
   jsonc,
   yml,
   md,
-} as const satisfies Boundary.Input.Parsers;
+} as const satisfies Core.Input.Parsers;
