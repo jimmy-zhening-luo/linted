@@ -1,8 +1,8 @@
 import core, { type Core } from "@eslinted/core";
 import plugins from "./import/plugins.js";
 import parsers from "./import/parsers.js";
-import files from "./default/files.js";
-import rules from "./default/rules.js";
+import files from "./base/files.js";
+import rules from "./base/rules.js";
 
 declare type Scope =
   | "js"
