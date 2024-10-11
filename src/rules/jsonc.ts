@@ -1,4 +1,4 @@
-import Json from "./json.js";
-import OverrideJson from "./jsonc/override.js";
+import json from "./json.js";
+import override from "./jsonc/override.js";
 
-export default [...Json, OverrideJson] as const;
+export default [...json, override] as const;

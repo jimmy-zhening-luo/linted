@@ -1,4 +1,4 @@
-import EnableX from "./yml/enable_x.js";
-import Enable from "./yml/enable.js";
+import enable_x from "./yml/enable_x.js";
+import enable from "./yml/enable.js";
 
-export default [EnableX, Enable] as const;
+export default [enable_x, enable] as const;

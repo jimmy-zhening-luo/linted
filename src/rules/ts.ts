@@ -1,13 +1,13 @@
-import Js from "./js.js";
-import DisableCompiler from "./ts/disable.js";
-import DisableX from "./ts/disable_x.js";
-import EnableX from "./ts/enable_x.js";
-import Enable from "./ts/enable.js";
+import js from "./js.js";
+import disable from "./ts/disable.js";
+import disable_x from "./ts/disable_x.js";
+import enable_x from "./ts/enable_x.js";
+import enable from "./ts/enable.js";
 
 export default [
-  ...Js,
-  DisableCompiler,
-  DisableX,
-  EnableX,
-  Enable,
+  ...js,
+  disable,
+  disable_x,
+  enable_x,
+  enable,
 ] as const;

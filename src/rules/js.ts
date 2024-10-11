@@ -1,4 +1,4 @@
-import EnableStylistic from "./js/enable_stylistic.js";
-import Enable from "./js/enable.js";
+import stylistic from "./js/stylistic.js";
+import enable from "./js/enable.js";
 
-export default [EnableStylistic, Enable] as const;
+export default [stylistic, enable] as const;

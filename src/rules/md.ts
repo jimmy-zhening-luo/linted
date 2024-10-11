@@ -1,3 +1,3 @@
-import Enable from "./md/enable.js";
+import enable from "./md/enable.js";
 
-export default [Enable] as const;
+export default [enable] as const;
