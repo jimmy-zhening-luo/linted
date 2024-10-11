@@ -52,7 +52,7 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "4.0.1",
+    "@eslinted/core": "4.0.2",
     "@html-eslint/eslint-plugin": "0.27.0",
     "@html-eslint/parser": "0.27.0",
     "@stylistic/eslint-plugin": "2.9.0",
@@ -71,7 +71,7 @@
   "devDependencies": {
     "@eslint/config-inspector": "^0.5.4",
     "eslint": "~9.12.0",
-    "linted": "16.12.2-rc.2",
+    "linted": "16.12.2",
     "npm-run-all": "^4.1.5",
     "typescript": "^5.6.3"
   },
