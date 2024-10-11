@@ -1,8 +1,6 @@
-import { id, level } from "../_strings.js";
+import { enable, level } from "../_strings.js";
 
-const
-{ enable } = id,
-{ ERROR, OFF } = level;
+const { ERROR, OFF } = level;
 
 export default [
   enable,
@@ -13,7 +11,7 @@ export default [
     "jsonc/no-bigint-literals": ERROR,
     "jsonc/no-binary-expression": ERROR,
     "jsonc/no-binary-numeric-literals": ERROR,
-    "jsonc/no-comments": ERROR, // comments are NOT allowed in JSON
+    "jsonc/no-comments": ERROR /* comments are NOT allowed in JSON */,
     "jsonc/no-escape-sequence-in-identifier": ERROR,
     "jsonc/no-hexadecimal-numeric-literals": ERROR,
     "jsonc/no-infinity": ERROR,

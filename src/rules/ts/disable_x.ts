@@ -1,13 +1,9 @@
-import { id, level } from "../_strings.js";
-
-const
-{ disable_x } = id,
-{ OFF } = level;
+import { disable_x, OFF } from "../_strings.js";
 
 export default [
   disable_x,
   {
-    // https://typescript-eslint.io/rules/?=extension-xdeprecated#rules ]
+    // https://typescript-eslint.io/rules/?=extension-xdeprecated#rules
     "class-methods-use-this": OFF,
     "consistent-return": OFF,
     "default-param-last": OFF,

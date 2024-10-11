@@ -1,13 +1,13 @@
 import type { Core } from "@eslinted/core";
-import js from "./rules/_js.js";
-import ts from "./rules/_ts.js";
-import svelte from "./rules/_svelte.js";
-import mocha from "./rules/_mocha.js";
-import html from "./rules/_html.js";
-import json from "./rules/_json.js";
-import jsonc from "./rules/_jsonc.js";
-import yml from "./rules/_yml.js";
-import md from "./rules/_md.js";
+import js from "./rules/js.js";
+import ts from "./rules/ts.js";
+import svelte from "./rules/svelte.js";
+import mocha from "./rules/mocha.js";
+import html from "./rules/html.js";
+import json from "./rules/json.js";
+import jsonc from "./rules/jsonc.js";
+import yml from "./rules/yml.js";
+import md from "./rules/md.js";
 
 export default {
   js,

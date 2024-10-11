@@ -1,10 +1,9 @@
-import { level } from "../_strings.js";
-
-const { OFF } = level;
+import { disable, OFF } from "../_strings.js";
 
 export default [
-  "disable-compiler",
+  disable,
   {
+    // Handled by TypeScript compiler
     "constructor-super": OFF,
     "no-const-assign": OFF,
     "no-dupe-args": OFF,
