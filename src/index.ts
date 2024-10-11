@@ -1,8 +1,7 @@
 import core, { type Core } from "@eslinted/core";
-import plugins from "./import/plugins.js";
-import parsers from "./import/parsers.js";
-import files from "./base/files.js";
-import rules from "./base/rules.js";
+import imports from "./imports.js";
+import files from "./files.js";
+import rules from "./rules.js";
 
 declare type Scope =
   | "js"
@@ -22,8 +21,8 @@ export default function (
 ) {
   try {
     return core(
-      plugins,
-      parsers,
+      imports.plugins,
+      imports.parsers,
       { files, includes },
       { rules, overrides },
     );
@@ -31,6 +30,7 @@ export default function (
   catch (e) { throw new Error(`linted(): `, { cause: e }); }
 }
 
-declare type ScopeOK = Scope extends keyof Core.Input.Files.Base ? keyof Core.Input.Files.Base extends Scope ? "OK" : never : never;
+type BaseScope = keyof Core.Input.Files.Base;
+type Scoped = Scope extends BaseScope ? BaseScope extends Scope ? "OK" : never : never;
 
-export type BoundaryTest = ScopeOK & {}; /* typescript-eslint will fail if `ScopeOK` is `never` */
+export type OK = Scoped & {}; /* Expected: "OK". Linter fails if `never` */
