@@ -1,4 +1,4 @@
-import type { Core } from "@eslinted/core";
+import type { Core } from "./index.js";
 import plugins from "./imports/plugins.js";
 import parsers from "./imports/parsers.js";
 

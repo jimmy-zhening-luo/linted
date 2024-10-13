@@ -1,4 +1,4 @@
-import { stylistic, level, state } from "../_strings.js";
+import { stylistic, level, state } from "../../.strings.js";
 
 const
 { ERROR, OFF } = level,

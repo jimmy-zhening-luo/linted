@@ -1,4 +1,4 @@
-import { recommended } from "../_strings.js";
+import { recommended } from "../../.strings.js";
 import mocha from "eslint-plugin-mocha";
 
 // REMOVE shared config once manually configured

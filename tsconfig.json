@@ -5,8 +5,8 @@
   "include": [
     "*.config.ts",
     "src/**/*.ts",
-    "types/**/*.d.ts", /* @OVERRIDE */
-  ],
+    "types/**/*.d.ts",
+  ] /* @OVERRIDE */,
   "exclude": [],
   "compilerOptions": {
     /* http://aka.ms/tsconfig#quick-nav-Top%20Level */

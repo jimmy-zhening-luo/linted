@@ -1,22 +1,13 @@
 import core, { type Core } from "@eslinted/core";
+
+export type { Core };
+
 import imports from "./imports.js";
 import files from "./files.js";
 import rules from "./rules.js";
 
-declare type Scope =
-  | "js"
-  | "ts"
-  | "svelte"
-  | "mocha"
-  | "html"
-  | "json"
-  | "jsonc"
-  | "yml"
-  | "md"
-;
-
 export default function (
-  includes: Partial<Record<Scope, readonly string[]>> = {},
+  includes: Core.Input.Files.Includes = {},
   overrides: Core.Input.Rules.Overrides = {},
 ) {
   try {
@@ -29,8 +20,3 @@ export default function (
   }
   catch (e) { throw new Error(`linted(): `, { cause: e }); }
 }
-
-type BaseScope = keyof Core.Input.Files.Base;
-type Scoped = Scope extends BaseScope ? BaseScope extends Scope ? "OK" : never : never;
-
-export type OK = Scoped & {}; /* Expected: "OK". Linter fails if `never` */

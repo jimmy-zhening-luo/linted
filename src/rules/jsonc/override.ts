@@ -1,4 +1,4 @@
-import { override, level, state } from "../_strings.js";
+import { override, level, state } from "../../.strings.js";
 
 const { ERROR, OFF } = level,
 { AlwaysMultiline } = state;

@@ -1,4 +1,4 @@
-import type { Core } from "@eslinted/core";
+import type { Core } from "./index.js";
 import js from "./files/js.js";
 import ts from "./files/ts.js";
 import svelte from "./files/svelte.js";

@@ -1,4 +1,4 @@
-import { OFF } from "../_strings.js";
+import { OFF } from "../../.strings.js";
 
 export default [
   "disable-ts",

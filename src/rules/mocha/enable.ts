@@ -1,3 +1,3 @@
-import { enable } from "../_strings.js";
+import { enable } from "../../.strings.js";
 
 export default [enable, {}] as const;
