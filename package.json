@@ -59,7 +59,6 @@
     "@typescript-eslint/eslint-plugin": "8.8.1",
     "@typescript-eslint/parser": "8.8.1",
     "eslint-plugin-jsonc": "2.16.0",
-    "eslint-plugin-markdownlint": "0.6.0",
     "eslint-plugin-mocha": "10.5.0",
     "eslint-plugin-svelte": "2.44.1",
     "eslint-plugin-yml": "1.14.0",

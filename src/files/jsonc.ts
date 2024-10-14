@@ -1,4 +1,4 @@
 export default [
   "**/*.jsonc",
-  "**/*/tsconfig.json",
+  "**/*.tsconfig.json",
 ] as const;

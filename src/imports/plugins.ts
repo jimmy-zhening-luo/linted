@@ -5,7 +5,6 @@ import mocha from "eslint-plugin-mocha";
 import html_eslint from "@html-eslint/eslint-plugin";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
-import markdownlint from "eslint-plugin-markdownlint";
 
 export default {
   "@stylistic": stylistic,
@@ -15,5 +14,5 @@ export default {
   "@html-eslint": html_eslint,
   jsonc,
   yml,
-  markdownlint,
+  markdownlint: { configs: {} },
 } as const;

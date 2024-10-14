@@ -3,7 +3,6 @@ import svelte from "svelte-eslint-parser";
 import html from "@html-eslint/parser";
 import jsonc from "jsonc-eslint-parser";
 import yml from "yaml-eslint-parser";
-import md from "eslint-plugin-markdownlint/parser.js";
 
 export default {
   ts,
@@ -11,5 +10,5 @@ export default {
   html,
   jsonc,
   yml,
-  md,
+  md: null,
 } as const;
