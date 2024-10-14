@@ -1,4 +1,4 @@
-import { enable, level } from "../../.strings.js";
+import { enable, level } from "../../.strings";
 
 const { ERROR, OFF } = level;
 

@@ -1,4 +1,4 @@
-import { disable_x, OFF } from "../../.strings.js";
+import { disable_x, OFF } from "../../.strings";
 
 export default [
   disable_x,

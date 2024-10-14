@@ -1,6 +1,6 @@
-import type { Core } from "./index.js";
-import plugins from "./imports/plugins.js";
-import parsers from "./imports/parsers.js";
+import type { Core } from "../index";
+import plugins from "./plugins";
+import parsers from "./parsers";
 
 export default {
   plugins,

@@ -2,9 +2,9 @@ import core, { type Core } from "@eslinted/core";
 
 export type { Core };
 
-import imports from "./imports.js";
-import files from "./files.js";
-import rules from "./rules.js";
+import imports from "./imports";
+import files from "./files";
+import rules from "./rules";
 
 export default function (
   includes: Core.Input.Files.Includes = {},
