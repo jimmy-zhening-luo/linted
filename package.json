@@ -99,7 +99,7 @@
     "fix:output:ts": "ts-add-js-extension --dir=dist",
     "fix:output:svelte": "echo \"Skipped fix for Svelte (handled by SvelteKit)\"",
     "lint": "npm run build",
-    "lint:false": "(npm run lint:true) || (exit 0)",
+    "lint:false": "(npm run lint:true) || (echo \"Skipped linting (lint=false)\")",
     "lint:true": "run-os",
     "lint:true:default": "run-s lint:all:* \"lint:scope:$npm_package_config_language\"",
     "lint:true:windows": "run-s lint:all:* \"lint:scope:%npm_package_config_language%\"",
