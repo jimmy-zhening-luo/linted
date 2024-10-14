@@ -101,7 +101,7 @@
     "lint": "npm run build",
     "lint:true": "run-s lint:all:* \"lint:scope:{1}\" --",
     "lint:false": "run-s -c lint:all:* \"lint:scope:{1}\" lint:false:deploy --",
-    "lint:false:deploy": "echo \"Skips linting on deployment (lint=false)\"",
+    "lint:false:deploy": "exit 0",
     "lint:all:configs": "npm run ln -- {*,.github/workflows/*}.{json,jsonc,yml,yaml,js,cjs,mjs,ts,cts,mts}",
     "lint:all:code": "npm run ln -- {src,tests,static,typings}/**/*.{html,js,cjs,mjs,ts,cts,mts}",
     "lint:scope:ts": "echo \"Done linting TypeScript\"",
