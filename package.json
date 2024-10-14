@@ -1,5 +1,5 @@
 {
-  "_schemaVersion": "20.17.10-rc.3",
+  "_schemaVersion": "20.17.10-rc.4",
   "name": "linted",
   "version": "16.13.1-rc.0",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -36,7 +36,7 @@
   "config": {
     "language": "ts",
     "fix": "true",
-    "lint": "true"
+    "lint": "false"
   },
   "engineStrict": true,
   "engines": {
@@ -99,8 +99,9 @@
     "fix:output:ts": "ts-add-js-extension --dir=dist",
     "fix:output:svelte": "echo \"Skipped fix for Svelte (handled by SvelteKit)\"",
     "lint": "npm run build",
-    "lint:false": "echo \"Skipped linting (lint=false)\"",
     "lint:true": "run-s lint:all:* \"lint:scope:{1}\" --",
+    "lint:false": "run-s -c lint:all:* \"lint:scope:{1}\" lint:false:deploy --",
+    "lint:false:deploy": "echo \"Skips linting on deployment (lint=false)\"",
     "lint:all:configs": "npm run ln -- {*,.github/workflows/*}.{json,jsonc,yml,yaml,js,cjs,mjs,ts,cts,mts}",
     "lint:all:code": "npm run ln -- {src,tests,static,typings}/**/*.{html,js,cjs,mjs,ts,cts,mts}",
     "lint:scope:ts": "echo \"Done linting TypeScript\"",
