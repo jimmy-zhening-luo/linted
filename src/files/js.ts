@@ -1,4 +1,4 @@
 export default [
-  "*.config.{c, m, }js",
-  "{src, tests, static, typings}/**/*.{c, m, }js",
+  "*.config.{cj, mj, j}s",
+  "{src, tests, static, typings}/**/*.{cj, mj, j}s",
 ] as const;

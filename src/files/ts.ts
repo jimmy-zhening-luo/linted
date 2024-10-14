@@ -1,1 +1,1 @@
-export default ["**/*.ts"] as const;
+export default ["**/*.{mt, ct, t}s"] as const;
