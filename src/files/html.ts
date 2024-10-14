@@ -1,1 +1,1 @@
-export default ["src/**/*.html"] as const;
+export default ["{src, tests, static}/**/*.html"] as const;

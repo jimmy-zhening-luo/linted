@@ -1,5 +1,4 @@
 export default [
-  "**/*.config.ts",
-  "src/**/*.ts",
-  "types/**/*.d.ts",
+  "*.config.ts",
+  "{src, tests, static, typings}/**/*.ts",
 ] as const;

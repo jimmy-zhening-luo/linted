@@ -1,5 +1,5 @@
 export default [
-  "**/*.yml",
-  "**/*.yaml",
-  ".github/workflows/*.yml",
+  "*.y{a, }ml",
+  ".github/**/*.yml",
+  "{.github, src, tests, static}/**/*.y{a}ml",
 ] as const;
