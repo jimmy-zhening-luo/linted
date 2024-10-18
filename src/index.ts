@@ -1,7 +1,5 @@
-import core, { type Core } from "@eslinted/core";
-
-export type { Core };
-
+import type { Core } from "@eslinted/core";
+import core from "@eslinted/core";
 import imports from "./imports";
 import files from "./files";
 import rules from "./rules";

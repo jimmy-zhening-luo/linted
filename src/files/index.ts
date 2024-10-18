@@ -1,4 +1,3 @@
-import type { Core } from "../index";
 import js from "./js";
 import ts from "./ts";
 import svelte from "./svelte";
@@ -19,4 +18,4 @@ export default {
   jsonc,
   yml,
   md,
-} as const satisfies Core.Input.Files.Base;
+} as const;
