@@ -1,7 +1,7 @@
 {
   "display": "@jimbojet/tsc",
   "$schema": "https://json.schemastore.org/tsconfig",
-  "_version": "5.6.1",
+  "_version": "5.6.1-linted.0",
   "include": [
     "*.config.ts",
     "src/**/*.ts",
@@ -10,7 +10,7 @@
   ],
   "exclude": [],
   "compilerOptions": {
-    /* http://aka.ms/tsconfig#quick-nav-Top%20Level */
+    /* https://www.typescriptlang.org/tsconfig#quick-nav-Top%20Level */
 
     // #region TYPE CHECKING
     "allowUnreachableCode": false,
@@ -118,7 +118,7 @@
       "es2023",
       /* {CONFIGURE} */
     ],
-    // "moduleDetection": "auto",
+    "moduleDetection": "force",
     // "noLib": true,
     // "reactNamespace": "",
     "target": "es2022",
