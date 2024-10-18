@@ -41,7 +41,7 @@
     // "allowUmdGlobalAccess": true,
     // "baseUrl": "./",
     // "customConditions": [],
-    "module": "es2022",
+    "module": "preserve",
     "moduleResolution": "bundler",
     // "moduleSuffixes": [],
     // "noResolve": true,
