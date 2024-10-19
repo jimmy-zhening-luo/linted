@@ -14,5 +14,4 @@ export default {
   "@html-eslint": html_eslint,
   jsonc,
   yml,
-  markdownlint: { configs: {} },
 } as const;

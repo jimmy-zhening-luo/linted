@@ -6,7 +6,6 @@ import html from "./html";
 import json from "./json";
 import jsonc from "./jsonc";
 import yml from "./yml";
-import md from "./md";
 
 export default {
   js,
@@ -17,5 +16,4 @@ export default {
   json,
   jsonc,
   yml,
-  md,
 };

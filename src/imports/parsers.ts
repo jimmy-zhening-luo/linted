@@ -10,5 +10,4 @@ export default {
   html,
   jsonc,
   yml,
-  md: null,
 } as const;
