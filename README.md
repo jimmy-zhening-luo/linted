@@ -30,10 +30,7 @@ ___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
 ### Library
 
 - __[Mocha](https://mochajs.org/):__ [`eslint-plugin-mocha`](https://github.com/lo1tuma/eslint-plugin-mocha) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
-
-### Text
-
-- __[Markdown](https://en.wikipedia.org/wiki/Markdown) ([GitHub Flavored Markdown](https://github.github.com/gfm/) & [CommonMark](https://commonmark.org)):__ [`eslint-plugin-markdownlint`](https://gitlab.com/pawelbbdrozd/eslint-plugin-markdownlint/-/blob/main/README.md) <- bad plugin, check it out and find out why. still mad at wasting my time on this gitlab-hosted piece of shit. Probably gonna deprecate it out of spite
+-
 
 <br />
 
@@ -192,13 +189,13 @@ tsc --skipLibCheck
 2. Create `eslint.config.js` in your project root.
 
 3. In `eslint.config.js`:
-    - Import function `linted`.
+    + Import function `linted`.
 
         ```javascript
         import linted from "linted";
         ```
 
-    - Export `linted` with optional [arguments](#total-control-via-optional-arguments):
+    + Export `linted` with optional [arguments](#total-control-via-optional-arguments):
 
         ```javascript
         import linted from "linted";
@@ -208,7 +205,7 @@ tsc --skipLibCheck
         );
         ```
 
-___
+---
 
 ## Roadmap
 
@@ -232,17 +229,17 @@ ___
 
 - Svelte Interaction TBD
 
-  - .svelte-embedded HTML (on top of Svelte HTML rules)
+  + .svelte-embedded HTML (on top of Svelte HTML rules)
 
-  - .html files in Svelte projects (e.g. title not required)
+  + .html files in Svelte projects (e.g. title not required)
 
-  - Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
+  + Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
 
 #### JSON (Custom Schema Validation)
 
 - [JSON Custom Schema Validation](https://github.com/ota-meshi/eslint-plugin-json-schema-validator)
 
-___
+---
 
 ## Rule Logic (Advanced)
 
