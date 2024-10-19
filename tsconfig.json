@@ -1,7 +1,8 @@
 {
-  "display": "@jimbojet/tsc",
+  "display": "jimmy/tsc",
+  "version": "5.6.2",
+  "help": "https://www.typescriptlang.org/tsconfig/#quick-nav-Top%20Level",
   "$schema": "https://json.schemastore.org/tsconfig",
-  "_version": "5.6.1-linted.0",
   "include": [
     "*.config.ts",
     "src/**/*.ts",
@@ -10,8 +11,6 @@
   ],
   "exclude": [],
   "compilerOptions": {
-    /* https://www.typescriptlang.org/tsconfig#quick-nav-Top%20Level */
-
     // #region TYPE CHECKING
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -118,11 +117,11 @@
       "es2023",
       /* {CONFIGURE} */
     ],
-    "moduleDetection": "force",
+    // "moduleDetection": "auto",
     // "noLib": true,
     // "reactNamespace": "",
     "target": "es2022",
-    "useDefineForClassFields": true,
+    // "useDefineForClassFields": true /* @default: target > es2022 : true; else : false*/,
     // #endregion
 
 
