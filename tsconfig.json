@@ -1,6 +1,6 @@
 {
   "display": "@jimbojet/tsc",
-  "_version": "5.6.3",
+  "_version": "5.6.4",
   "_help": "https://www.typescriptlang.org/tsconfig/#quick-nav-Top%20Level",
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": [
@@ -40,7 +40,7 @@
     // "allowUmdGlobalAccess": true,
     // "baseUrl": "./",
     // "customConditions": [],
-    "module": "preserve",
+    "module": "es2022",
     "moduleResolution": "bundler",
     // "moduleSuffixes": [],
     // "noResolve": true,
