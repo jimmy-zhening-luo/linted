@@ -10,10 +10,12 @@ export default function (
 ) {
   try {
     return core(
-      imports.plugins,
-      imports.parsers,
-      { files, includes },
-      { rules, overrides },
+      {
+        plugins: imports.plugins,
+        parsers: imports.parsers,
+        files: { files, includes },
+        rules: { rules, overrides },
+      },
     );
   }
   catch (e) { throw new Error(`linted(): `, { cause: e }); }
