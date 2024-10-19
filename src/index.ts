@@ -1,12 +1,12 @@
-import type { Core } from "@eslinted/core";
+import type { Input } from "@eslinted/core";
 import core from "@eslinted/core";
 import imports from "./imports";
 import files from "./files";
 import rules from "./rules";
 
 export default function (
-  includes: Core.Input.Files.Includes = {},
-  overrides: Core.Input.Rules.Overrides = {},
+  includes: Input["files"]["includes"] = {},
+  overrides: Input["rules"]["overrides"] = {},
 ) {
   try {
     return core(
