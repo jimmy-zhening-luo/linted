@@ -1,1 +1,1 @@
-export default ["**/*.y{a,}ml"] as const;
+export default ["**/*.y{a,}ml"];

@@ -1,1 +1,1 @@
-export default ["**/*.json"] as const;
+export default ["**/*.json"];

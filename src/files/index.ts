@@ -18,4 +18,4 @@ export default {
   jsonc,
   yml,
   md,
-} as const;
+};

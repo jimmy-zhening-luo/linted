@@ -1,1 +1,1 @@
-export default ["{src,tests,static}/**/*.svelte"] as const;
+export default ["{src,tests,static}/**/*.svelte"];

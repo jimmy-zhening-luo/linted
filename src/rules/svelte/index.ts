@@ -12,4 +12,4 @@ export default [
   disable,
   enable_x,
   enable,
-] as const;
+];
