@@ -1,3 +1,3 @@
-import { enable } from "../../.strings";
+import { enable } from "../../_strings";
 
 export default [enable, {}];

@@ -1,4 +1,4 @@
-import { enable, level, state } from "../../.strings";
+import { enable, level, state } from "../../_strings";
 
 const
 { ERROR, OFF } = level,

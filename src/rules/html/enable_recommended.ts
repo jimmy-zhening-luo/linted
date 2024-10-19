@@ -1,4 +1,4 @@
-import { recommended } from "../../.strings";
+import { recommended } from "../../_strings";
 import html from "@html-eslint/eslint-plugin";
 
 // REMOVE shared config once manually configured

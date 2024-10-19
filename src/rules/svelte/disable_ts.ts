@@ -1,4 +1,4 @@
-import { OFF } from "../../.strings";
+import { OFF } from "../../_strings";
 
 export default [
   "disable-ts",

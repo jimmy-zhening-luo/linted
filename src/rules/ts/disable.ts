@@ -1,4 +1,4 @@
-import { disable, OFF } from "../../.strings";
+import { disable, OFF } from "../../_strings";
 
 export default [
   disable,
