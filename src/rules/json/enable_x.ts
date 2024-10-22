@@ -1,7 +1,7 @@
 import { enable_x, level, state } from "../../_strings";
 
 const
-{ ERROR } = level,
+{ ERROR, OFF } = level,
 {
   Never,
   Always,
@@ -30,23 +30,7 @@ export default [
         arraysInArrays: false,
       },
     ] /* MUST match ../js/stylistic.ts */,
-    "jsonc/array-element-newline": [
-      ERROR,
-      {
-        ArrayExpression: {
-          multiline: true,
-          minItems: 4,
-        },
-        ArrayPattern: {
-          multiline: true,
-          minItems: 4,
-        },
-        JSONArrayExpression: {
-          multiline: true,
-          minItems: 4,
-        },
-      },
-    ] /* MUST match (+JSONArrayExpression)../js/stylistic.ts */,
+    "jsonc/array-element-newline": OFF,
     "jsonc/comma-dangle": [ERROR, Never] /* trailing commas are NOT allowed in JSON */,
     "jsonc/comma-style": [ERROR, Last],
     "jsonc/indent": [ERROR, 2],
