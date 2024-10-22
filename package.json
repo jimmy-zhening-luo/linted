@@ -65,11 +65,11 @@
     "@typescript-eslint/parser": "8.11.0",
     "eslint-plugin-jsonc": "2.16.0",
     "eslint-plugin-mocha": "10.5.0",
-    "eslint-plugin-svelte": "2.45.1",
+    "eslint-plugin-svelte": "2.46.0",
     "eslint-plugin-yml": "1.14.0",
     "jsonc-eslint-parser": "2.4.0",
-    "svelte": "^4.2.19",
-    "svelte-eslint-parser": "0.42.0",
+    "svelte": "^5.0.5",
+    "svelte-eslint-parser": "0.43.0",
     "yaml-eslint-parser": "1.2.3"
   },
   "devDependencies": {
