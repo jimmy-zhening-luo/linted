@@ -1,4 +1,5 @@
 const
+Ignore = "ignore",
 Never = "never",
 Always = "always",
 AlwaysMultiline = "always-multiline",
@@ -27,6 +28,7 @@ Multi = "multi",
 Both = "both";
 
 export {
+  Ignore,
   Never,
   Always,
   AlwaysMultiline,
