@@ -34,17 +34,14 @@ export default [
       ERROR,
       {
         ArrayExpression: {
-          consistent: true,
           multiline: true,
           minItems: 4,
         },
         ArrayPattern: {
-          consistent: true,
           multiline: true,
           minItems: 4,
         },
         JSONArrayExpression: {
-          consistent: true,
           multiline: true,
           minItems: 4,
         },
