@@ -5,7 +5,6 @@ const
 {
   Never,
   Always,
-  Consistent,
   Strict,
   Last,
   Double,
@@ -15,7 +14,13 @@ export default [
   enable_x,
   {
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
-    "jsonc/array-bracket-newline": [ERROR, Consistent],
+    "jsonc/array-bracket-newline": [
+      ERROR,
+      {
+        multiline: true,
+        minItems: null,
+      },
+    ] /* MUST match ../js/stylistic.ts */,
     "jsonc/array-bracket-spacing": [
       ERROR,
       Never,
@@ -24,8 +29,15 @@ export default [
         objectsInArrays: false,
         arraysInArrays: false,
       },
-    ],
-    "jsonc/array-element-newline": [ERROR, Always],
+    ] /* MUST match ../js/stylistic.ts */,
+    "jsonc/array-element-newline": [
+      ERROR,
+      {
+        consistent: true,
+        multiline: true,
+        minItems: 4,
+      },
+    ] /* MUST match CHILD of ../js/stylistic.ts */,
     "jsonc/comma-dangle": [ERROR, Never] /* trailing commas are NOT allowed in JSON */,
     "jsonc/comma-style": [ERROR, Last],
     "jsonc/indent": [ERROR, 2],
@@ -36,7 +48,7 @@ export default [
         afterColon: true,
         mode: Strict,
       },
-    ],
+    ] /* MUST match ../js/stylistic.ts */,
     "jsonc/no-dupe-keys": ERROR,
     "jsonc/no-floating-decimal": ERROR,
     "jsonc/no-irregular-whitespace": [
@@ -59,9 +71,9 @@ export default [
       {
         consistent: true,
         multiline: true,
-        minProperties: 2,
+        minProperties: 4,
       },
-    ],
+    ] /* MUST match CHILD of ../js/stylistic.ts */,
     "jsonc/object-curly-spacing": [
       ERROR,
       Always,
@@ -69,13 +81,13 @@ export default [
         arraysInObjects: true,
         objectsInObjects: true,
       },
-    ],
+    ] /* MUST match ../js/stylistic.ts */,
     "jsonc/object-property-newline": [
       ERROR,
       {
-        allowAllPropertiesOnSameLine: false,
+        allowAllPropertiesOnSameLine: true,
       },
-    ],
+    ] /* MUST match ../js/stylistic.ts */,
     "jsonc/quote-props": [ERROR, Always],
     "jsonc/quotes": [
       ERROR,
