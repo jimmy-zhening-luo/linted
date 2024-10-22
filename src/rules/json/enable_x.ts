@@ -33,11 +33,23 @@ export default [
     "jsonc/array-element-newline": [
       ERROR,
       {
-        consistent: true,
-        multiline: true,
-        minItems: 4,
+        ArrayExpression: {
+          consistent: true,
+          multiline: true,
+          minItems: 4,
+        },
+        ArrayPattern: {
+          consistent: true,
+          multiline: true,
+          minItems: 4,
+        },
+        JSONArrayExpression: {
+          consistent: true,
+          multiline: true,
+          minItems: 4,
+        },
       },
-    ] /* MUST match CHILD of ../js/stylistic.ts */,
+    ] /* MUST match (+JSONArrayExpression)../js/stylistic.ts */,
     "jsonc/comma-dangle": [ERROR, Never] /* trailing commas are NOT allowed in JSON */,
     "jsonc/comma-style": [ERROR, Last],
     "jsonc/indent": [ERROR, 2],
