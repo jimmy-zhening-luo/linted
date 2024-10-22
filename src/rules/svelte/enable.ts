@@ -3,6 +3,7 @@ import { enable, level, state } from "../../_strings";
 const
 { ERROR, OFF } = level,
 {
+  Ignore,
   Never,
   Always,
   Below,
@@ -146,11 +147,12 @@ export default [
     "svelte/html-self-closing": [
       ERROR,
       {
-        "void": Always /* or NEVER or "ignore" */,
-        normal: Always /* or NEVER or "ignore" */,
-        component: Always /* or NEVER or "ignore" */,
-        svelte: Always /* or NEVER or "ignore" */,
-      },
+        "void": Always,
+        foreign: Always,
+        component: Always,
+        svelte: Always,
+        normal: Ignore,
+      } /* always | never | ignore */,
     ],
     "svelte/indent": [
       ERROR,
