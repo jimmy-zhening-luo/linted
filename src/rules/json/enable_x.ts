@@ -1,7 +1,10 @@
 import { enable_x, level, state } from "../../_strings";
 
 const
-{ ERROR } = level,
+{
+  ERROR,
+  OFF,
+} = level,
 {
   Always,
   Consistent,
@@ -15,7 +18,7 @@ export default [
   enable_x,
   {
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
-    "jsonc/array-bracket-newline": ERROR /* DO NOT CHANGE */,
+    "jsonc/array-bracket-newline": OFF /* DO NOT CHANGE */,
     "jsonc/array-bracket-spacing": [
       ERROR,
       Never,
