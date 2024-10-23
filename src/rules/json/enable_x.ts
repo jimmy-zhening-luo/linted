@@ -15,10 +15,7 @@ export default [
   enable_x,
   {
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
-    "jsonc/array-bracket-newline": [
-      ERROR,
-      Consistent,
-    ] /* DO NOT CHANGE */,
+    "jsonc/array-bracket-newline": ERROR /* DO NOT CHANGE */,
     "jsonc/array-bracket-spacing": [
       ERROR,
       Never,
