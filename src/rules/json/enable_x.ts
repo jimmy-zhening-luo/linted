@@ -1,13 +1,14 @@
 import { enable_x, level, state } from "../../_strings";
 
 const
-{ ERROR, OFF } = level,
+{ ERROR } = level,
 {
-  Never,
   Always,
-  Strict,
-  Last,
+  Consistent,
   Double,
+  Last,
+  Never,
+  Strict,
 } = state;
 
 export default [
@@ -16,11 +17,8 @@ export default [
     // https://ota-meshi.github.io/eslint-plugin-jsonc/rules/#extension-rules
     "jsonc/array-bracket-newline": [
       ERROR,
-      {
-        multiline: true,
-        minItems: null,
-      },
-    ] /* MUST match ../js/stylistic.ts */,
+      Consistent,
+    ] /* DO NOT CHANGE */,
     "jsonc/array-bracket-spacing": [
       ERROR,
       Never,
@@ -30,7 +28,10 @@ export default [
         arraysInArrays: false,
       },
     ] /* MUST match ../js/stylistic.ts */,
-    "jsonc/array-element-newline": OFF,
+    "jsonc/array-element-newline": [
+      ERROR,
+      Consistent,
+    ],
     "jsonc/comma-dangle": [ERROR, Never] /* trailing commas are NOT allowed in JSON */,
     "jsonc/comma-style": [ERROR, Last],
     "jsonc/indent": [ERROR, 2],
