@@ -17,7 +17,7 @@ const rules: Partial<Record<`@html-eslint/${keyof typeof Rule}`, unknown>> = {
       skip: [],
     },
   ],
-  "@html-eslint/no-inline-styles": ERROR,
+  "@html-eslint/no-inline-styles": OFF /* breaks Svele app.html */,
   "@html-eslint/no-obsolete-tags": ERROR,
   "@html-eslint/no-restricted-attr-values": OFF,
   "@html-eslint/no-restricted-attrs": OFF,
