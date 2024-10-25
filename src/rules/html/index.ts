@@ -1,4 +1,3 @@
-import recommended from "./enable_recommended";
 import enable from "./enable";
 
-export default [recommended, enable];
+export default [enable];
