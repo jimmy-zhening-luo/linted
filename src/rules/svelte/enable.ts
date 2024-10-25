@@ -13,7 +13,7 @@ const
 export default [
   enable,
   {
-    // #region Possible Errors
+    // #region ERRORS
     // http://sveltejs.github.io/eslint-plugin-svelte/rules/#possible-errors
     "svelte/infinite-reactive-loop": ERROR,
     "svelte/no-dom-manipulating": ERROR,
@@ -49,9 +49,9 @@ export default [
     ],
     "svelte/valid-prop-names-in-kit-pages": ERROR,
 
-    // #endregion
+    // #endregion ERRORS
 
-    // #region Security
+    // #region SECURITY
     // http://sveltejs.github.io/eslint-plugin-svelte/rules/#security-vulnerability
     "svelte/no-at-html-tags": ERROR,
     "svelte/no-target-blank": [
@@ -62,9 +62,9 @@ export default [
       },
     ],
 
-    // #endregion
+    // #endregion SECURITY
 
-    // #region Best Practices
+    // #region BEST PRACTICES
     // http://sveltejs.github.io/eslint-plugin-svelte/rules/#best-practices
     "svelte/block-lang": [
       ERROR,
@@ -114,9 +114,9 @@ export default [
     "svelte/require-stores-init": ERROR,
     "svelte/valid-each-key": ERROR,
 
-    // #endregion
+    // #endregion BEST PRACTICES
 
-    // #region Style
+    // #region STYLE
     // http://sveltejs.github.io/eslint-plugin-svelte/rules/#stylistic-issues
     "svelte/derived-has-same-inputs-outputs": ERROR,
     "svelte/first-attribute-linebreak": [
@@ -206,15 +206,15 @@ export default [
     "svelte/sort-attributes": OFF /* INVESTIGATE: */,
     "svelte/spaced-html-comment": [ERROR, Always],
 
-    // #endregion
+    // #endregion STYLE
 
-    // #region svelte-kit
+    // #region SVELTE-KIT
     // http://sveltejs.github.io/eslint-plugin-svelte/rules/#svelte-kit
     "svelte/no-goto-without-base": ERROR,
 
-    // #endregion
+    // #endregion SVELTE-KIT
 
-    // #region System (REQUIRED)
+    // #region REQUIRED
     // http://sveltejs.github.io/eslint-plugin-svelte/rules/#system
     "svelte/comment-directive": [
       ERROR,
@@ -224,7 +224,7 @@ export default [
     ],
     "svelte/system": ERROR,
 
-    // #endregion
+    // #endregion REQUIRED
 
   },
 ] as const;

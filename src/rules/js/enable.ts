@@ -16,7 +16,7 @@ const
 export default [
   enable,
   {
-    // #region Problems
+    // #region PROBLEMS
     // https://eslint.org/docs/latest/rules/#possible-problems
     "array-callback-return": [
       ERROR,
@@ -184,9 +184,9 @@ export default [
       },
     ],
 
-    // #endregion
+    // #endregion PROBLEMS
 
-    // #region Suggestions
+    // #region SUGGESTIONS
     // [ https://eslint.org/docs/latest/rules/#suggestions ]
     "accessor-pairs": [
       ERROR,
@@ -513,12 +513,12 @@ export default [
       },
     ],
 
-    // #endregion
+    // #endregion SUGGESTIONS
 
-    // #region Layout & Formatting
+    // #region LAYOUT & FORMATTING
     // [ https://eslint.org/docs/latest/rules/#layout--formatting ]
     "unicode-bom": OFF /* preference: don't care */,
 
-    // #endregion
+    // #endregion LAYOUT & FORMATTING
   },
 ] as const;
