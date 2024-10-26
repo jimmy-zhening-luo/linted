@@ -1,3 +1,3 @@
 import { enable } from "../../_strings";
 
-export default [enable, {}];
+export default [enable, {}] as const;

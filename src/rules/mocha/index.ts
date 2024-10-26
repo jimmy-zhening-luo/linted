@@ -1,4 +1,7 @@
-import recommended from "./enable_recommended";
-import enable from "../html/enable";
+import ts from "../ts";
+import base from "./base";
 
-export default [recommended, enable];
+export default [
+  ...ts,
+  ...base,
+];
