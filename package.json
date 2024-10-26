@@ -1,5 +1,5 @@
 {
-  "_schemaVersion": "20.18.0",
+  "_schemaVersion": "20.18.1",
   "name": "linted",
   "version": "19.1.0",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -61,7 +61,7 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "5.0.2",
+    "@eslinted/core": "5.0.4",
     "@html-eslint/eslint-plugin": "0.27.0",
     "@html-eslint/parser": "0.27.0",
     "@stylistic/eslint-plugin": "2.9.0",
@@ -78,6 +78,10 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^0.5.5",
+    "@types/chai": "^5.0.0",
+    "@types/mocha": "^10.0.9",
+    "chai": "^5.1.2",
+    "mocha": "^10.7.3",
     "npm-run-all": "^4.1.5",
     "run-script-os": "^1.1.6",
     "ts-add-js-extension": "^1.6.4",
@@ -114,7 +118,7 @@
     "lint:scope:svelte": "npm run li -- {src,tests,static}/**/*.svelte",
     "postbuild": "echo \"Build (+lint) complete.\"",
     "pretest": "npm run build",
-    "test": "",
+    "test": "mocha",
     "start": "run-os",
     "start:default": "npm run starter:$npm_package_config_language",
     "start:windows": "npm run starter:%npm_package_config_language%",
@@ -124,6 +128,11 @@
     "prepublishOnly": "npm test",
     "predeploy": "npm test",
     "deploy": ""
+  },
+  "mocha": {
+    "spec": [
+      "dist/**/*.spec.js"
+    ]
   },
   "author": "Jimmy Zhening Luo <1450044+jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
 }
