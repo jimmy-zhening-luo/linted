@@ -520,6 +520,7 @@ export default [
       ERROR,
       {
         allowDefaultCaseForExhaustiveSwitch: false,
+        considerDefaultExhaustiveForUnions: true,
         requireDefaultForNonUnion: true,
       },
     ],
