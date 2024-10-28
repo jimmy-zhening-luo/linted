@@ -422,7 +422,6 @@ export default [
       {
         allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
         ignoreConditionalTests: false,
-        ignoreTernaryTests: false,
         ignoreMixedLogicalExpressions: false,
         ignorePrimitives: {
           bigint: false,
@@ -430,6 +429,7 @@ export default [
           number: false,
           string: false,
         },
+        ignoreTernaryTests: false,
       },
     ], /* requires tsconfig: strictNullChecks */
     "@typescript-eslint/prefer-optional-chain": [
