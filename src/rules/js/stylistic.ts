@@ -272,7 +272,10 @@ export default [
       ERROR,
       {
         ignoreEOLComments: false,
-        exceptions: { Property: false },
+        exceptions: {
+          Property: false,
+          ImportAttributes: false,
+        },
         includeTabs: true,
       },
     ],
