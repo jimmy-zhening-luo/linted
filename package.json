@@ -28,7 +28,8 @@
   "license": "MIT",
   "private": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "preid": "rc"
   },
   "type": "module",
   "main": "dist/index.js",
