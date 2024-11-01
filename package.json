@@ -1,5 +1,5 @@
 {
-  "_schemaVersion": "22.10.0",
+  "_schemaVersion": "22.10.1",
   "name": "linted",
   "version": "19.4.3-rc.5",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -28,7 +28,8 @@
   "license": "MIT",
   "private": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "next"
   },
   "type": "module",
   "main": "dist/index.js",
