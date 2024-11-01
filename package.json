@@ -1,5 +1,5 @@
 {
-  "_schemaVersion": "22.10.1",
+  "_schemaVersion": "22.10.2",
   "name": "linted",
   "version": "19.4.3-rc.6",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -62,7 +62,7 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "6.0.0-rc.1",
+    "@eslinted/core": "10.0.0-rc.0",
     "@html-eslint/eslint-plugin": "0.27.0",
     "@html-eslint/parser": "0.27.0",
     "@stylistic/eslint-plugin": "2.10.0",
@@ -129,6 +129,9 @@
     "starter:svelte": "vite preview",
     "prestart": "npm test",
     "prepublishOnly": "npm test",
+    "postpublish": "run-os",
+    "postpublish:default": "if [ \"${npm_package_version#*-}\" = \"${npm_package_version}\" ]; then npm dist-tag add \"$npm_package_name@$npm_package_version\" latest; fi",
+    "postpublish:windows": "cmd /c for /f \"delims=-\" %a in (\"%npm_package_version%\") do if \"%a\" == \"%npm_package_version%\" npm dist-tag add \"%npm_package_name%@%npm_package_version%\" latest",
     "predeploy": "npm test",
     "deploy": ""
   },
