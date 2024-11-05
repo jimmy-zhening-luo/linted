@@ -1,5 +1,5 @@
 {
-  "_schemaVersion": "22.10.2",
+  "_schemaVersion": "22.11.0",
   "name": "linted",
   "version": "20.3.0",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -41,7 +41,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">=22.10.0",
+    "node": ">=22.11.0",
     "npm": ">=10.9.0"
   },
   "peerDependencies": {
