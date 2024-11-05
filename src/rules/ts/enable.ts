@@ -421,6 +421,7 @@ export default [
       ERROR,
       {
         allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
+        ignoreBooleanCoercion: false,
         ignoreConditionalTests: false,
         ignoreMixedLogicalExpressions: false,
         ignorePrimitives: {
