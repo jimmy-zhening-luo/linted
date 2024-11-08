@@ -180,6 +180,5 @@ export default [
         allowAllPropertiesOnSameLine: true,
       },
     ],
-    "spaced-comment": [ERROR, Always],
   },
 ] as const;
