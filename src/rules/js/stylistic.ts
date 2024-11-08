@@ -68,7 +68,10 @@ export default [
         after: true,
       },
     ],
-    "@stylistic/block-spacing": [ERROR, Always],
+    "@stylistic/block-spacing": [
+      ERROR,
+      Always,
+    ],
     "@stylistic/brace-style": [
       ERROR,
       "stroustrup",
@@ -76,7 +79,10 @@ export default [
         allowSingleLine: true,
       },
     ],
-    "@stylistic/comma-dangle": [ERROR, AlwaysMultiline],
+    "@stylistic/comma-dangle": [
+      ERROR,
+      AlwaysMultiline,
+    ],
     "@stylistic/comma-spacing": [
       ERROR,
       {
@@ -110,12 +116,27 @@ export default [
         enforceForClassMembers: true,
       },
     ],
-    "@stylistic/dot-location": [ERROR, "property"],
-    "@stylistic/eol-last": [ERROR, Always],
-    "@stylistic/function-call-argument-newline": [ERROR, Consistent],
-    "@stylistic/function-call-spacing": [ERROR, Never],
+    "@stylistic/dot-location": [
+      ERROR,
+      "property",
+    ],
+    "@stylistic/eol-last": [
+      ERROR,
+      Always,
+    ],
+    "@stylistic/function-call-argument-newline": [
+      ERROR,
+      Consistent,
+    ],
+    "@stylistic/function-call-spacing": [
+      ERROR,
+      Never,
+    ],
 
-    "@stylistic/function-paren-newline": [ERROR, "multiline-arguments"] /* BUG: https://github.com/eslint-stylistic/eslint-stylistic/issues/290 */,
+    "@stylistic/function-paren-newline": [
+      ERROR,
+      "multiline-arguments",
+    ] /* BUG: https://github.com/eslint-stylistic/eslint-stylistic/issues/290 */,
     "@stylistic/generator-star-spacing": [
       ERROR,
       {
@@ -123,7 +144,10 @@ export default [
         after: false,
       },
     ],
-    "@stylistic/implicit-arrow-linebreak": [ERROR, Beside],
+    "@stylistic/implicit-arrow-linebreak": [
+      ERROR,
+      Beside,
+    ],
     "@stylistic/indent": [
       ERROR,
       2,
@@ -145,7 +169,10 @@ export default [
         ignoreComments: false,
       },
     ],
-    "@stylistic/indent-binary-ops": [ERROR, 2],
+    "@stylistic/indent-binary-ops": [
+      ERROR,
+      2,
+    ],
     "@stylistic/key-spacing": [
       ERROR,
       {
@@ -240,8 +267,14 @@ export default [
       },
     ],
     "@stylistic/multiline-comment-style": OFF,
-    "@stylistic/multiline-ternary": [ERROR, AlwaysMultiline],
-    "@stylistic/new-parens": [OFF, Never],
+    "@stylistic/multiline-ternary": [
+      ERROR,
+      AlwaysMultiline,
+    ],
+    "@stylistic/new-parens": [
+      OFF,
+      Never,
+    ],
     "@stylistic/newline-per-chained-call": [
       ERROR,
       {
@@ -352,7 +385,10 @@ export default [
         allowAllPropertiesOnSameLine: true,
       },
     ],
-    "@stylistic/one-var-declaration-per-line": [ERROR, Always],
+    "@stylistic/one-var-declaration-per-line": [
+      ERROR,
+      Always,
+    ],
     "@stylistic/operator-linebreak": [
       ERROR,
       Before,
@@ -518,7 +554,10 @@ export default [
         allowTemplateLiterals: true,
       },
     ],
-    "@stylistic/rest-spread-spacing": [ERROR, Never],
+    "@stylistic/rest-spread-spacing": [
+      ERROR,
+      Never,
+    ],
     "@stylistic/semi": [
       ERROR,
       Always,
@@ -534,7 +573,10 @@ export default [
         after: true,
       },
     ],
-    "@stylistic/semi-style": [ERROR, Last],
+    "@stylistic/semi-style": [
+      ERROR,
+      Last,
+    ],
     "@stylistic/space-before-blocks": [
       ERROR,
       {
@@ -551,7 +593,10 @@ export default [
         asyncArrow: Always,
       },
     ],
-    "@stylistic/space-in-parens": [ERROR, Never],
+    "@stylistic/space-in-parens": [
+      ERROR,
+      Never,
+    ],
     "@stylistic/space-infix-ops": [
       ERROR,
       {
@@ -566,7 +611,10 @@ export default [
         overrides: {},
       },
     ],
-    "@stylistic/spaced-comment": [ERROR, Always],
+    "@stylistic/spaced-comment": [
+      ERROR,
+      Always,
+    ],
     "@stylistic/switch-colon-spacing": [
       ERROR,
       {
@@ -574,8 +622,14 @@ export default [
         before: false,
       },
     ],
-    "@stylistic/template-curly-spacing": [ERROR, Never],
-    "@stylistic/template-tag-spacing": [ERROR, Never],
+    "@stylistic/template-curly-spacing": [
+      ERROR,
+      Never,
+    ],
+    "@stylistic/template-tag-spacing": [
+      ERROR,
+      Never,
+    ],
     "@stylistic/type-annotation-spacing": [
       ERROR,
       {

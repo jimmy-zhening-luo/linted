@@ -37,7 +37,10 @@ export default [
     "no-await-in-loop": ERROR,
     "no-class-assign": ERROR,
     "no-compare-neg-zero": ERROR,
-    "no-cond-assign": [ERROR, Always],
+    "no-cond-assign": [
+      ERROR,
+      Always,
+    ],
     "no-const-assign": ERROR, /* tsc */
     "no-constant-binary-expression": ERROR,
     "no-constant-condition": [
@@ -214,7 +217,10 @@ export default [
       },
     ] /* tsc -- TSLint:off: tsconfig: noImplicitReturns */,
     "consistent-this": ERROR,
-    curly: [ERROR, Multi],
+    curly: [
+      ERROR,
+      Multi,
+    ],
     "default-case": OFF, /* preference: don't care */
     "default-case-last": ERROR,
     "default-param-last": ERROR /* TSLint */,
@@ -224,7 +230,10 @@ export default [
         allowKeywords: true,
       },
     ] /* TSLint */,
-    eqeqeq: [ERROR, Always],
+    eqeqeq: [
+      ERROR,
+      Always,
+    ],
     "func-name-matching": OFF /* preference */,
     "func-names": OFF /* preference */,
     "func-style": OFF /* preference */,
@@ -233,7 +242,10 @@ export default [
     "id-denylist": OFF /* preference */,
     "id-length": OFF /* preference */,
     "id-match": OFF /* preference */,
-    "init-declarations": [ERROR, Always] /* TSLint */,
+    "init-declarations": [
+      ERROR,
+      Always,
+    ] /* TSLint */,
     "logical-assignment-operators": [
       ERROR,
       Always,
@@ -320,7 +332,10 @@ export default [
     "no-implicit-globals": OFF /* investigate (breaks Scriptable? breaks Sveltekit?) */,
     "no-implied-eval": ERROR /* TSLint */,
     "no-inline-comments": OFF /* preference */,
-    "no-invalid-this": [ERROR, { capIsConstructor: false }] /* TSLint:off: tsconfig: { strict, noImplicitThis } */,
+    "no-invalid-this": [
+      ERROR,
+      { capIsConstructor: false },
+    ] /* TSLint:off: tsconfig: { strict, noImplicitThis } */,
     "no-iterator": ERROR,
     "no-label-var": ERROR,
     "no-lone-blocks": ERROR,
@@ -358,14 +373,20 @@ export default [
       },
     ],
     "no-proto": ERROR,
-    "no-redeclare": [ERROR, { builtinGlobals: true }] /* tsc -- TSLint:off: tsc (let, const, -var) */,
+    "no-redeclare": [
+      ERROR,
+      { builtinGlobals: true },
+    ] /* tsc -- TSLint:off: tsc (let, const, -var) */,
     "no-regex-spaces": OFF /* preference */,
     "no-restricted-exports": OFF /* preference */,
     "no-restricted-globals": OFF /* preference */,
     "no-restricted-imports": OFF /* preference -- TSLint:off */,
     "no-restricted-properties": OFF /* preference */,
     "no-restricted-syntax": OFF /* preference */,
-    "no-return-assign": [ERROR, Always] /* ALWAYS | "except-parens" (disallow assignments unless enclosed in parens) */,
+    "no-return-assign": [
+      ERROR,
+      Always,
+    ] /* ALWAYS | "except-parens" (disallow assignments unless enclosed in parens) */,
     "no-script-url": ERROR,
     "no-sequences": [
       ERROR,
@@ -444,7 +465,10 @@ export default [
         separateRequires: true,
       },
     ],
-    "operator-assignment": [ERROR, Always],
+    "operator-assignment": [
+      ERROR,
+      Always,
+    ],
     "prefer-arrow-callback": [
       ERROR,
       {
@@ -493,7 +517,10 @@ export default [
     "prefer-rest-params": ERROR,
     "prefer-spread": ERROR,
     "prefer-template": ERROR,
-    radix: [ERROR, AsNeeded],
+    radix: [
+      ERROR,
+      AsNeeded,
+    ],
     "require-await": ERROR /* TSLint */,
     "require-unicode-regexp": ERROR,
     "require-yield": ERROR,

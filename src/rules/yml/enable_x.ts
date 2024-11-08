@@ -65,6 +65,9 @@ export default [
         maxBOF: 0,
       },
     ],
-    "yml/spaced-comment": [ERROR, Always],
+    "yml/spaced-comment": [
+      ERROR,
+      Always,
+    ],
   },
 ] as const;

@@ -6,6 +6,7 @@ import {
   Last,
   Never,
   Strict,
+  Consistent,
 } from "../../_strings";
 
 export default [
@@ -18,7 +19,7 @@ export default [
         multiline: true,
         minItems: null,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/array-bracket-newline */,
     "array-bracket-spacing": [
       ERROR,
       Never,
@@ -27,37 +28,29 @@ export default [
         objectsInArrays: false,
         arraysInArrays: false,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/array-bracket-spacing */,
     "array-element-newline": [
       ERROR,
-      {
-        ArrayExpression: {
-          consistent: true,
-          multiline: true,
-          minItems: 4,
-        },
-        ArrayPattern: {
-          consistent: true,
-          multiline: true,
-          minItems: 4,
-        },
-      },
-    ],
+      Consistent,
+    ] /* https://eslint.org/docs/latest/rules/array-element-newline */,
     "brace-style": [
       ERROR,
       "stroustrup",
       {
         allowSingleLine: true,
       },
-    ],
-    "comma-dangle": [ERROR, AlwaysMultiline],
+    ] /* https://eslint.org/docs/latest/rules/brace-style */,
+    "comma-dangle": [
+      ERROR,
+      AlwaysMultiline,
+    ] /* https://eslint.org/docs/latest/rules/comma-dangle */,
     "comma-spacing": [
       ERROR,
       {
         before: false,
         after: true,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/comma-spacing */,
     "comma-style": [
       ERROR,
       Last,
@@ -76,8 +69,11 @@ export default [
           NewExpression: false,
         },
       },
-    ],
-    "eol-last": [ERROR, Always],
+    ] /* https://eslint.org/docs/latest/rules/comma-style */,
+    "eol-last": [
+      ERROR,
+      Always,
+    ] /* https://eslint.org/docs/latest/rules/eol-last */,
     "key-spacing": [
       ERROR,
       {
@@ -85,7 +81,7 @@ export default [
         afterColon: true,
         mode: Strict,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/key-spacing */,
     indent: [
       ERROR,
       2,
@@ -106,8 +102,8 @@ export default [
         offsetTernaryExpressions: true,
         ignoreComments: false,
       },
-    ],
-    "no-mixed-spaces-and-tabs": ERROR,
+    ] /* https://eslint.org/docs/latest/rules/indent */,
+    "no-mixed-spaces-and-tabs": ERROR /* https://eslint.org/docs/latest/rules/no-mixed-spaces-and-tabs */,
     "no-multi-spaces": [
       ERROR,
       {
@@ -118,7 +114,7 @@ export default [
         },
         includeTabs: true,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/no-multi-spaces */,
     "no-multiple-empty-lines": [
       ERROR,
       {
@@ -126,46 +122,25 @@ export default [
         maxEOF: 1,
         maxBOF: 0,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/no-multiple-empty-lines */,
     "no-tabs": [
       ERROR,
       {
         allowIndentationTabs: false,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/no-tabs */,
     "no-trailing-spaces": [
       ERROR,
       {
         skipBlankLines: false,
         ignoreComments: false,
       },
-    ],
-    "no-whitespace-before-property": ERROR,
+    ] /* https://eslint.org/docs/latest/rules/no-trailing-spaces */,
+    "no-whitespace-before-property": ERROR /* https://eslint.org/docs/latest/rules/no-whitespace-before-property */,
     "object-curly-newline": [
       ERROR,
-      {
-        ObjectExpression: {
-          consistent: true,
-          multiline: true,
-          minProperties: 4,
-        },
-        ObjectPattern: {
-          consistent: true,
-          multiline: true,
-          minProperties: 4,
-        },
-        ImportDeclaration: {
-          consistent: true,
-          multiline: true,
-          minProperties: 4,
-        },
-        ExportDeclaration: {
-          consistent: true,
-          multiline: true,
-          minProperties: 4,
-        },
-      },
-    ],
+      Consistent,
+    ] /* https://eslint.org/docs/latest/rules/object-curly-newline */,
     "object-curly-spacing": [
       ERROR,
       Always,
@@ -173,12 +148,12 @@ export default [
         arraysInObjects: true,
         objectsInObjects: true,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/object-curly-spacing */,
     "object-property-newline": [
       ERROR,
       {
         allowAllPropertiesOnSameLine: true,
       },
-    ],
+    ] /* https://eslint.org/docs/latest/rules/object-property-newline */,
   },
 ] as const;

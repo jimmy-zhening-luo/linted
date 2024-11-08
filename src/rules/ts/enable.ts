@@ -32,9 +32,18 @@ export default [
       },
     ],
     "@typescript-eslint/ban-tslint-comment": ERROR,
-    "@typescript-eslint/class-literal-property-style": [ERROR, "fields"],
-    "@typescript-eslint/consistent-generic-constructors": [ERROR, "constructor"],
-    "@typescript-eslint/consistent-indexed-object-style": [ERROR, "record"],
+    "@typescript-eslint/class-literal-property-style": [
+      ERROR,
+      "fields",
+    ],
+    "@typescript-eslint/consistent-generic-constructors": [
+      ERROR,
+      "constructor",
+    ],
+    "@typescript-eslint/consistent-indexed-object-style": [
+      ERROR,
+      "record",
+    ],
     "@typescript-eslint/consistent-type-assertions": [
       ERROR,
       {
@@ -242,7 +251,10 @@ export default [
 
       },
     ],
-    "@typescript-eslint/method-signature-style": [ERROR, "property"],
+    "@typescript-eslint/method-signature-style": [
+      ERROR,
+      "property",
+    ],
     "@typescript-eslint/naming-convention": OFF,
     "@typescript-eslint/no-array-delete": ERROR,
     "@typescript-eslint/no-base-to-string": [
@@ -504,7 +516,10 @@ export default [
         allowRegExp: false,
       }, /* investigate: make stricter */
     ],
-    "@typescript-eslint/return-await": [ERROR, "in-try-catch"] /* BUG: doc incorrectly states that this extends the DEPRECATED (since 8.46) no-return-await: https://typescript-eslint.io/rules/return-await */,
+    "@typescript-eslint/return-await": [
+      ERROR,
+      "in-try-catch",
+    ] /* BUG: doc incorrectly states that this extends the DEPRECATED (since 8.46) no-return-await: https://typescript-eslint.io/rules/return-await */,
     "@typescript-eslint/strict-boolean-expressions": [
       ERROR,
       {

@@ -203,7 +203,10 @@ export default [
       },
     ],
     "svelte/sort-attributes": OFF /* INVESTIGATE: */,
-    "svelte/spaced-html-comment": [ERROR, Always],
+    "svelte/spaced-html-comment": [
+      ERROR,
+      Always,
+    ],
 
     // #endregion STYLE
 

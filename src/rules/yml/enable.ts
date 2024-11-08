@@ -11,8 +11,14 @@ export default [
   enable,
   {
     // https://ota-meshi.github.io/eslint-plugin-yml/rules/#yaml-rules
-    "yml/block-mapping-colon-indicator-newline": [ERROR, Never],
-    "yml/block-mapping-question-indicator-newline": [ERROR, Never],
+    "yml/block-mapping-colon-indicator-newline": [
+      ERROR,
+      Never,
+    ],
+    "yml/block-mapping-question-indicator-newline": [
+      ERROR,
+      Never,
+    ],
     "yml/block-mapping": [
       ERROR,
       {
@@ -51,7 +57,10 @@ export default [
     "yml/no-empty-sequence-entry": ERROR,
     "yml/no-tab-indent": ERROR,
     "yml/no-trailing-zeros": ERROR,
-    "yml/plain-scalar": [ERROR, Always],
+    "yml/plain-scalar": [
+      ERROR,
+      Always,
+    ],
     "yml/quotes": [
       ERROR,
       {
