@@ -1,7 +1,7 @@
-import enable from "./enable";
 import enable_x from "./enable_x";
+import enable from "./enable";
 
 export default [
-  enable,
   enable_x,
+  enable,
 ];
