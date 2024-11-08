@@ -1,8 +1,7 @@
-import { stylistic, level, state } from "../../_strings";
-
-const
-{ ERROR, OFF } = level,
-{
+import {
+  stylistic,
+  ERROR,
+  OFF,
   Never,
   Always,
   AlwaysMultiline,
@@ -18,7 +17,7 @@ const
   Beside,
   Inside,
   Double,
-} = state;
+} from "../../_strings";
 
 export default [
   stylistic,

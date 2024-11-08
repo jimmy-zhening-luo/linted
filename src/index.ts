@@ -13,8 +13,14 @@ export default function (
       {
         plugins: imports.plugins,
         parsers: imports.parsers,
-        files: { files, includes },
-        rules: { rules, overrides },
+        files: {
+          files,
+          includes,
+        },
+        rules: {
+          rules,
+          overrides,
+        },
       },
     );
   }

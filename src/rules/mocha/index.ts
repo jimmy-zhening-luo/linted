@@ -1,7 +1,9 @@
 import ts from "../ts";
-import base from "./base";
+import disable from "./disable";
+import enable from "./enable";
 
 export default [
   ...ts,
-  ...base,
+  disable,
+  enable,
 ];

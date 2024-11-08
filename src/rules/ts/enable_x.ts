@@ -1,8 +1,10 @@
-import { enable_x, level, state } from "../../_strings";
-
-const
-{ ERROR, OFF } = level,
-{ Always, All } = state;
+import {
+  enable_x,
+  ERROR,
+  OFF,
+  Always,
+  All,
+} from "../../_strings";
 
 export default [
   enable_x,

@@ -1,4 +1,4 @@
-import type * as Rule from "@html-eslint/eslint-plugin/types/rules";
+import type Rule from "@html-eslint/eslint-plugin/types/rules";
 import {
   enable,
   ERROR,
