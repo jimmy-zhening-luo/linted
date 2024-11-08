@@ -3,7 +3,7 @@ import typescript_eslint from "@typescript-eslint/eslint-plugin";
 import svelte from "eslint-plugin-svelte";
 import mocha from "eslint-plugin-mocha";
 import html_eslint from "@html-eslint/eslint-plugin";
-import jsonc from "eslint-plugin-jsonc";
+import json from "@eslint/json";
 import yml from "eslint-plugin-yml";
 
 export default {
@@ -12,6 +12,6 @@ export default {
   svelte,
   mocha,
   "@html-eslint": html_eslint,
-  jsonc,
+  json,
   yml,
 } as const;
