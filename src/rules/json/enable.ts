@@ -138,7 +138,9 @@ export default [
     "no-whitespace-before-property": ERROR /* https://eslint.org/docs/latest/rules/no-whitespace-before-property */,
     "object-curly-newline": [
       ERROR,
-      Consistent,
+      {
+        consistent: true,
+      },
     ] /* https://eslint.org/docs/latest/rules/object-curly-newline */,
     "object-curly-spacing": [
       ERROR,
