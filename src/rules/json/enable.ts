@@ -112,7 +112,6 @@ export default [
           Property: false,
           ImportAttributes: false,
         },
-        includeTabs: true,
       },
     ] /* https://eslint.org/docs/latest/rules/no-multi-spaces */,
     "no-multiple-empty-lines": [
