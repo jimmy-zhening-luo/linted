@@ -1,12 +1,8 @@
-import { enable, level } from "../../_strings";
-
-const { ERROR, OFF } = level;
+import { enable } from "../../_strings";
 
 export default [
   enable,
   {
-    // https://github.com/eslint/json?tab=readme-ov-file#rules
-    "json/no-duplicate-keys": ERROR,
-    "json/no-empty-keys": OFF,
+    // https://eslint.org/docs/latest/rules/#deprecated
   },
 ] as const;
