@@ -1,7 +1,3 @@
-import js from "../js";
 import enable from "./enable";
 
-export default [
-  ...js,
-  enable,
-];
+export default [enable];
