@@ -1,1 +1,1 @@
-export default ["**/*package-lock.json"];
+export default [];
