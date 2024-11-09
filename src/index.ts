@@ -3,6 +3,8 @@ import core from "@eslinted/core";
 import imports from "./imports";
 import settings from "./settings";
 import files from "./files";
+import ignores from "./ignores";
+import globalIgnores from "./ignores/global";
 import rules from "./rules";
 
 export default function (
@@ -15,9 +17,9 @@ export default function (
         plugins: imports.plugins,
         parsers: imports.parsers,
         settings,
-        ignores: {
+        globals: {
           ignores: {
-            ignores: [],
+            ignores: globalIgnores,
           },
           extend: {},
 
@@ -25,6 +27,10 @@ export default function (
         files: {
           files,
           includes,
+        },
+        ignores: {
+          ignores,
+          extend: {},
         },
         rules: {
           rules,
