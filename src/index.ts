@@ -1,6 +1,7 @@
 import type { Input } from "@eslinted/core";
 import core from "@eslinted/core";
 import imports from "./imports";
+import settings from "./settings";
 import files from "./files";
 import rules from "./rules";
 
@@ -13,6 +14,14 @@ export default function (
       {
         plugins: imports.plugins,
         parsers: imports.parsers,
+        settings,
+        ignores: {
+          ignores: {
+            ignores: [],
+          },
+          extend: {},
+
+        },
         files: {
           files,
           includes,
