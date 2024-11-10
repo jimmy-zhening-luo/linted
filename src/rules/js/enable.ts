@@ -383,10 +383,7 @@ export default [
     "no-restricted-imports": OFF /* preference -- TSLint:off */,
     "no-restricted-properties": OFF /* preference */,
     "no-restricted-syntax": OFF /* preference */,
-    "no-return-assign": [
-      ERROR,
-      "except-parens",
-    ] /* ALWAYS | "except-parens" (disallow assignments unless enclosed in parens) */,
+    "no-return-assign": OFF /* "always" | "except-parens" (disallow assignments unless enclosed in parens) */,
     "no-script-url": ERROR,
     "no-sequences": [
       ERROR,
