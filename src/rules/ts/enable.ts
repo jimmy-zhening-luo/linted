@@ -274,6 +274,7 @@ export default [
       {
         ignoreArrowShorthand: true,
         ignoreVoidOperator: true,
+        ignoreVoidReturningFunctions: true,
       },
     ],
     "@typescript-eslint/no-duplicate-enum-values": ERROR,
