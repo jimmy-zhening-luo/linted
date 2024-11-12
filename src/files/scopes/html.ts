@@ -1,1 +1,1 @@
-export default ["{src,tests,static}/**/*.html"];
+export default ["{src,tests,static,public}/**/*.html"];
