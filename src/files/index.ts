@@ -8,6 +8,7 @@ import jsonc from "./scopes/jsonc";
 import yml from "./scopes/yml";
 
 export default {
+  "*": [],
   js,
   ts,
   svelte,
