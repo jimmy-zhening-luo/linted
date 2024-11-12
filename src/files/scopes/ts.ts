@@ -1,1 +1,1 @@
-export default ["**/*.{c,m,}ts"];
+export default ["**/*.{c,m,}ts{,x}"];

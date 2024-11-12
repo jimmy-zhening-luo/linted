@@ -1,4 +1,4 @@
 export default [
-  "*.{c,m,}js",
-  "{src,tests,static,typings}/**/*.{c,m,}js",
+  "*.{c,m,}js{,x}",
+  "{src,tests,static,typings}/**/*.{c,m,}js{,x}",
 ];
