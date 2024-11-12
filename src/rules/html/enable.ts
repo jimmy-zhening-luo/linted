@@ -5,8 +5,9 @@ import {
   OFF,
   Never,
 } from "../../_strings";
+import type { RuleRecord } from "@eslinted/core";
 
-const rules: Partial<Record<`@html-eslint/${keyof typeof Rule}`, unknown>> = {
+const rules: Partial<Record<`@html-eslint/${keyof typeof Rule}`, RuleRecord[string]>> = {
   // #region BEST PRACTICE
   // https://html-eslint.org/docs/rules#best-practice
   "@html-eslint/no-duplicate-attrs": ERROR,

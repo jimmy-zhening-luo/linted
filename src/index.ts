@@ -1,35 +1,54 @@
 import type { Input } from "@eslinted/core";
 import core from "@eslinted/core";
 import imports from "./imports";
-import settings from "./settings";
 import files from "./files";
-import ignores from "./ignores";
+import scopedIgnores from "./ignores";
 import globalIgnores from "./ignores/global";
 import rules from "./rules";
 
-export default function (
-  includes: Input["files"]["includes"] = {},
-  overrides: Input["rules"]["overrides"] = {},
-) {
+export default function ({
+  globals: {
+    ecmaVersion = 2023,
+    sourceType = "module",
+    noInlineConfig = true,
+    reportUnusedDisableDirectives = "error",
+    inherit = true,
+    ignores = [],
+  },
+  includes,
+  overrides,
+}: {
+  globals: {
+    inherit: boolean;
+    ignores: string[];
+  } & Required<Input["settings"]>;
+} & Pick<Input["files"], "includes"> & Pick<Input["rules"], "overrides">) {
   try {
     return core(
       {
         plugins: imports.plugins,
         parsers: imports.parsers,
-        settings,
+        settings: {
+          ecmaVersion,
+          sourceType,
+          noInlineConfig,
+          reportUnusedDisableDirectives,
+        },
         globals: {
           ignores: {
             ignores: globalIgnores,
           },
-          extend: {},
-
+          extend: {
+            ignores,
+            inherit,
+          },
         },
         files: {
           files,
           includes,
         },
         ignores: {
-          ignores,
+          ignores: scopedIgnores,
           extend: {},
         },
         rules: {
