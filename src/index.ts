@@ -6,7 +6,7 @@ import files from "./files";
 import ignores from "./ignores";
 import rules from "./rules";
 
-export default function (extensions: Input["extensions"]) {
+export default function (extensions: Input["extensions"] = {}) {
   try {
     return core(
       {
