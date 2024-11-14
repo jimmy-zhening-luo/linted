@@ -1,5 +1,5 @@
-import Core from "@eslinted/core";
 import type { Input } from "@eslinted/core";
+import Core from "@eslinted/core";
 import imports from "./imports";
 import * as defaults from "@eslinted/config";
 
