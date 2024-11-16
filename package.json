@@ -45,9 +45,9 @@
     "npm": ">=10.9.0"
   },
   "peerDependencies": {
-    "eslint": "~9.14.0",
+    "eslint": "~9.15.0",
     "mocha": "^10.8.2",
-    "svelte": "^5.2.0",
+    "svelte": "^5.2.1",
     "typescript": ">=5.6.3"
   },
   "peerDependenciesMeta": {
@@ -74,7 +74,7 @@
     "eslint-plugin-svelte": "2.46.0",
     "eslint-plugin-yml": "1.15.0",
     "jsonc-eslint-parser": "2.4.0",
-    "svelte": "^5.2.0",
+    "svelte": "^5.2.1",
     "svelte-eslint-parser": "0.43.0",
     "yaml-eslint-parser": "1.2.3"
   },
