@@ -63,7 +63,7 @@
   },
   "dependencies": {
     "@eslinted/config": "2.0.0-rc.1",
-    "@eslinted/core": "13.4.0-rc.5",
+    "@eslinted/core": "13.4.0-rc.6",
     "@html-eslint/eslint-plugin": "0.27.0",
     "@html-eslint/parser": "0.27.0",
     "@stylistic/eslint-plugin": "2.10.1",
