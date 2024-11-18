@@ -1,8 +1,7 @@
-import type { Input } from "@eslinted/core";
-import Core from "@eslinted/core";
+import Core, { type Input } from "@eslinted/core";
+import * as defaults from "@eslinted/defaults";
 import plugins from "./plugins";
 import parsers from "./parsers";
-import * as defaults from "@eslinted/defaults";
 
 export default function (extensions: Input["extensions"] = {}) {
   try {
