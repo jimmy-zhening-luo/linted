@@ -11,13 +11,10 @@ describe("Linted", function () {
     });
   });
   describe("output", function () {
-    it("is an array", function () {
+    it("is a non-empty array", function () {
       expect(configs)
-        .an("array");
-    });
-    it("non-empty", function () {
-      expect(configs)
-        .lengthOf.above(1);
+        .an("array")
+        .not.empty;
     });
   });
 });
