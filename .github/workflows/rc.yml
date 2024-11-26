@@ -27,9 +27,6 @@ jobs:
           node-version: 22
           check-latest: true
           registry-url: "https://registry.npmjs.org"
-      - name: Install Dependencies
-        id: ci
-        run: npm ci
       - name: Publish to NPM
         id: publish
         run: npm publish
