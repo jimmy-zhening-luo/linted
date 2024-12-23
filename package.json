@@ -62,13 +62,13 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "14.2.12",
-    "@eslinted/defaults": "4.6.8",
+    "@eslinted/core": "14.2.13",
+    "@eslinted/defaults": "4.6.9",
     "@html-eslint/eslint-plugin": "0.31.1",
     "@html-eslint/parser": "0.31.0",
     "@stylistic/eslint-plugin": "2.12.1",
-    "@typescript-eslint/eslint-plugin": "8.18.1",
-    "@typescript-eslint/parser": "8.18.1",
+    "@typescript-eslint/eslint-plugin": "8.18.2",
+    "@typescript-eslint/parser": "8.18.2",
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.0.1",
     "eslint-plugin-jsonc": "2.18.2",
