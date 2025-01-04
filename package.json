@@ -1,7 +1,7 @@
 {
   "_schemaVersion": "22.12.1",
   "name": "linted",
-  "version": "23.12.0-rc.0",
+  "version": "23.12.0",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
   "keywords": [
     "eslint",
