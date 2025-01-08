@@ -62,13 +62,11 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "15.1.1",
+    "@eslinted/core": "15.2.0",
     "@eslinted/defaults": "4.8.1",
     "@html-eslint/eslint-plugin": "0.32.0",
     "@html-eslint/parser": "0.32.0",
     "@stylistic/eslint-plugin": "2.12.1",
-    "@typescript-eslint/eslint-plugin": "8.19.1",
-    "@typescript-eslint/parser": "8.19.1",
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.0.1",
     "eslint-plugin-jsonc": "2.18.2",
@@ -78,6 +76,7 @@
     "jsonc-eslint-parser": "2.4.0",
     "svelte": "^5.17.1",
     "svelte-eslint-parser": "0.43.0",
+    "typescript-eslint": "8.19.1",
     "yaml-eslint-parser": "1.2.3"
   },
   "devDependencies": {

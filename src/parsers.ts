@@ -1,4 +1,4 @@
-import ts from "@typescript-eslint/parser";
+import { parser as ts } from "typescript-eslint";
 import svelte from "svelte-eslint-parser";
 import html from "@html-eslint/parser";
 import jsonc from "jsonc-eslint-parser";
