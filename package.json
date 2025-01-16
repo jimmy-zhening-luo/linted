@@ -62,7 +62,7 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "15.2.1",
+    "@eslinted/core": "15.2.2",
     "@eslinted/defaults": "4.9.0",
     "@html-eslint/eslint-plugin": "0.32.0",
     "@html-eslint/parser": "0.32.0",
@@ -80,7 +80,7 @@
     "yaml-eslint-parser": "1.2.3"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^0.7.1",
+    "@eslint/config-inspector": "^1.0.0",
     "@types/chai": "^5.0.1",
     "@types/mocha": "^10.0.10",
     "chai": "^5.1.2",
