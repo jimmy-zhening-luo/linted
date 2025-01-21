@@ -63,9 +63,9 @@
   },
   "dependencies": {
     "@eslinted/core": "15.2.5",
-    "@eslinted/defaults": "4.9.3",
-    "@html-eslint/eslint-plugin": "0.32.0",
-    "@html-eslint/parser": "0.32.0",
+    "@eslinted/defaults": "4.10.0",
+    "@html-eslint/eslint-plugin": "0.33.0",
+    "@html-eslint/parser": "0.33.0",
     "@stylistic/eslint-plugin": "2.13.0",
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.0.1",
