@@ -46,8 +46,8 @@
   },
   "peerDependencies": {
     "eslint": "~9.18.0",
-    "mocha": "^11.0.1",
-    "svelte": "^5.19.1",
+    "mocha": "^11.1.0",
+    "svelte": "^5.19.2",
     "typescript": ">=5.7.3"
   },
   "peerDependenciesMeta": {
@@ -62,8 +62,8 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "15.2.5",
-    "@eslinted/defaults": "4.10.0",
+    "@eslinted/core": "15.2.6",
+    "@eslinted/defaults": "4.10.1",
     "@html-eslint/eslint-plugin": "0.33.0",
     "@html-eslint/parser": "0.33.0",
     "@stylistic/eslint-plugin": "2.13.0",
@@ -74,7 +74,7 @@
     "eslint-plugin-svelte": "2.46.1",
     "eslint-plugin-yml": "1.16.0",
     "jsonc-eslint-parser": "2.4.0",
-    "svelte": "^5.19.1",
+    "svelte": "^5.19.2",
     "svelte-eslint-parser": "0.43.0",
     "typescript-eslint": "8.21.0",
     "yaml-eslint-parser": "1.2.3"
@@ -84,7 +84,7 @@
     "@types/chai": "^5.0.1",
     "@types/mocha": "^10.0.10",
     "chai": "^5.1.2",
-    "mocha": "^11.0.1",
+    "mocha": "^11.1.0",
     "npm-run-all": "^4.1.5",
     "run-script-os": "^1.1.6",
     "ts-add-js-extension": "^1.6.5",
