@@ -1,8 +1,10 @@
 # [`linted`](https://www.npmjs.com/package/linted)
-
 [![NPM Publish (RELEASE)](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml/badge.svg)](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml)
 
-___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
+> [!CAUTION]
+> ___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
+
+---
 
 [ESLint](https://eslint.org) mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.
 
@@ -16,6 +18,8 @@ ___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
 ## Languages
 
 ### Web
+> [!NOTE]
+> _See language support __[roadmap](#roadmap).___
 
 - __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__ [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
 - __[TypeScript](https://www.typescriptlang.org):__ [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
@@ -30,20 +34,13 @@ ___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___
 ### Library
 
 - __[Mocha](https://mochajs.org/):__ [`eslint-plugin-mocha`](https://github.com/lo1tuma/eslint-plugin-mocha) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
--
-
-<br />
-
-_See language support __[roadmap](#roadmap).___
 
 ## Features
 
 ### Zero-Dependency
-
 No need to install 17 plugins and 12 parsers: each language's latest plugin is bundled and configured.
 
 ### Zero-Config
-
 No need to remember each plugin's `parserOptions`; you won't have to do _this_ just to enable Svelte linting:
 
 ```javascript
@@ -83,8 +80,6 @@ export default linted();
 ```
 
 ### Total Control via Optional Arguments
-
-___WIP for v14.1, currently inaccurate___.
 
 - `includes` (scoped [`glob patterns`](https://code.visualstudio.com/docs/editor/glob-patterns))
 - `ignores` (global [`glob patterns`](https://code.visualstudio.com/docs/editor/glob-patterns) and other options)
@@ -155,11 +150,9 @@ linted(
 ```
 
 ## Limitation
-
 In __TypeScript__ projects, [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) must be `true`.
 
 ### Enable `skipLibCheck`
-
 By default, `skipLibCheck` is `false`. To set it to `true`:
 
 #### `tsconfig.json`
@@ -186,9 +179,9 @@ tsc --skipLibCheck
     npm i -D eslint@^8.57 linted
     ```
 
-2. Create `eslint.config.js` in your project root.
+1. Create `eslint.config.js` in your project root.
 
-3. In `eslint.config.js`:
+1. In `eslint.config.js`:
     + Import function `linted`.
 
         ```javascript
@@ -211,17 +204,13 @@ tsc --skipLibCheck
 
 ### v11
 
-#### Mocha
-
-- Mocha
-
-#### Tailwind PostCSS
+#### Tailwind
 
 - [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 
 - [CSS](https://ota-meshi.github.io/eslint-plugin-css/)
 
-#### HTML Connectors
+#### HTML Embeds
 
 - [Embedded TypeScript](https://github.com/BenoitZugmeyer/eslint-plugin-html)
 
@@ -244,29 +233,20 @@ tsc --skipLibCheck
 ## Rule Logic (Advanced)
 
 ### What is `scope`?
-
 Each `scope` maps to a unique `language`:
 
 - __`js`:__ `JavaScript`
-
 - __`ts`:__ `TypeScript`
-
 - __`svelte`:__ `Svelte`
-
 - __`html`:__ `HTML`
-
 - __`json`:__ `JSON`
-
 - __`jsonc`:__ `JSONC`
-
 - __`yml`:__ `YAML`
 
 ### Rules
-
 Each `scope` supports:
 
 - all base ESLint rules
-
 - all rules from its `language`'s [__plugins__](#languages)
 
 #### Default Rules
@@ -274,29 +254,21 @@ Each `scope` supports:
 - Each `language` has a set of default rules.
 
 #### Language-Aggregate `scope`
-
 A `language` can be an extension of or depend on another `language`.
 
 For example:
 
 - TypeScript extends JavaScript
-
 - Svelte depends on TypeScript (which extends JavaScript)
 
 For such a `language`, its `scope`'s default rules are aggregated with the default rules of extended or consumed `language`s by `scope` precedence:
 
 - __`js`:__ `js`
-
 - __`ts`:__ `js` < `ts`
-
 - __`svelte`:__ `js` < `ts` < `svelte`
-
 - __`html`:__ `html`
-
 - __`json`:__ `json`
-
 - __`jsonc`:__ `json` < `jsonc`
-
 - __`yml`:__ `yml`
 
 ### Files
@@ -304,19 +276,15 @@ For such a `language`, its `scope`'s default rules are aggregated with the defau
 #### Global Ignores
 
 ##### `.gitignore`
-
 By default, `linted` ignores all files in `.gitignore`. This behavior can be disabled.
 
 ##### `package-lock.json`
-
 `**/*.package-lock.json` is always skipped. _This cannot be overriden._
 
 ##### `ignores`
-
 Additional glob patterns supplied if matched by a file will skip linting that file, even if a scope pattern matches the file.
 
 #### Scoped Includes
-
 Files specified in `scope` are appended to the following default files:
 
 ```javascript
@@ -354,7 +322,6 @@ Files specified in `scope` are appended to the following default files:
 #### Scope Conflict
 
 - If a given file matches more than one `scope` glob, then the set of all matching `scope`s' rules are applied to the file.
-
 - If any rule is specified in more than one `scope` matching a given file, the  specifies a rule, then the highest-precedence `scope`'s rule specification wins.
 
 ##### Scope Precedence (low to high)
@@ -371,17 +338,14 @@ ignores (global)
 ```
 
 ### Override
-
 Overrides are per-__scope.__
 
 #### Example
-
 `overrideTs` rules apply to files which:
 
 - ✅ ONLY match scope `ts`.
-
 - ✅ match scope `ts` and any number of lower precedence scopes (e.g. `js`).
-
-  `overrideTs` rules do __NOT__ apply to files which:
-
+  > [!NOTE]
+  > `overrideTs` rules do __NOT__ apply to files which:
+  > - TBD
 - ❌ match scope `ts` and at least one higher precedence scope (e.g. `svelte`), even if the higher precedence scope includes `ts` language default rules (e.g. `svelte` includes `ts` default rules, but NOT `overrideTs` rules).
