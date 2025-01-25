@@ -1,36 +1,11 @@
 {
-  "_schemaVersion": "22.13.1",
+  "$template": "22.13.4",
   "name": "linted",
   "version": "24.4.1-rc.1",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
-  "keywords": [
-    "eslint",
-    "eslint-config",
-    "eslint-plugin",
-    "linter",
-    "formatter",
-    "typescript",
-    "javascript",
-    "stylistic",
-    "svelte",
-    "sveltekit",
-    "html",
-    "css",
-    "mocha",
-    "tailwindcss",
-    "json",
-    "jsonc",
-    "yaml"
-  ],
   "repository": "github:jimmy-zhening-luo/linted",
-  "homepage": "https://github.com/jimmy-zhening-luo/linted#readme",
-  "bugs": "https://github.com/jimmy-zhening-luo/linted/issues",
   "license": "MIT",
   "private": false,
-  "publishConfig": {
-    "access": "public",
-    "tag": "next"
-  },
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -138,10 +113,33 @@
     "predeploy": "npm test",
     "deploy": ""
   },
+  "publishConfig": {
+    "access": "public",
+    "tag": "next"
+  },
   "mocha": {
     "spec": [
       "dist/**/*.spec.js"
     ]
   },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslint-plugin",
+    "linter",
+    "formatter",
+    "typescript",
+    "javascript",
+    "stylistic",
+    "svelte",
+    "sveltekit",
+    "html",
+    "css",
+    "mocha",
+    "tailwindcss",
+    "json",
+    "jsonc",
+    "yaml"
+  ],
   "author": "Jimmy Zhening Luo <1450044+jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
 }
