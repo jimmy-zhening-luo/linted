@@ -45,9 +45,9 @@
     "npm": ">=10.9.0"
   },
   "peerDependencies": {
-    "eslint": "~9.18.0",
+    "eslint": "~9.19.0",
     "mocha": "^11.1.0",
-    "svelte": "^5.19.2",
+    "svelte": "^5.19.3",
     "typescript": ">=5.7.3"
   },
   "peerDependenciesMeta": {
@@ -62,19 +62,19 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "15.2.6",
-    "@eslinted/defaults": "4.10.1",
-    "@html-eslint/eslint-plugin": "0.33.0",
+    "@eslinted/core": "15.2.7",
+    "@eslinted/defaults": "4.10.2",
+    "@html-eslint/eslint-plugin": "0.33.1",
     "@html-eslint/parser": "0.33.0",
     "@stylistic/eslint-plugin": "2.13.0",
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.0.1",
-    "eslint-plugin-jsonc": "2.18.2",
+    "eslint-plugin-jsonc": "2.19.1",
     "eslint-plugin-mocha": "10.5.0",
     "eslint-plugin-svelte": "2.46.1",
     "eslint-plugin-yml": "1.16.0",
     "jsonc-eslint-parser": "2.4.0",
-    "svelte": "^5.19.2",
+    "svelte": "^5.19.3",
     "svelte-eslint-parser": "0.43.0",
     "typescript-eslint": "8.21.0",
     "yaml-eslint-parser": "1.2.3"
