@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "@eslinted/core": "15.2.9",
-    "@eslinted/defaults": "4.10.6",
+    "@eslinted/defaults": "4.11.0",
     "@html-eslint/eslint-plugin": "0.33.1",
     "@html-eslint/parser": "0.33.0",
-    "@stylistic/eslint-plugin": "2.13.0",
+    "@stylistic/eslint-plugin": "3.0.0",
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.0.1",
     "eslint-plugin-jsonc": "2.19.1",
