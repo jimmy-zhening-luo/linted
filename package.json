@@ -1,19 +1,11 @@
 {
-  "$template": "22.13.4",
+  "$template": "22.13.5",
   "name": "linted",
   "version": "25.0.0",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
   "repository": "github:jimmy-zhening-luo/linted",
   "license": "MIT",
   "private": false,
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "config": {
-    "language": "ts",
-    "rewrite": "true",
-    "lint": "false"
-  },
   "engineStrict": true,
   "engines": {
     "node": ">=22.13.1",
@@ -64,6 +56,14 @@
     "run-script-os": "^1.1.6",
     "ts-add-js-extension": "^1.6.5",
     "typescript": "^5.7.3"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "config": {
+    "language": "ts",
+    "rewrite": "true",
+    "lint": "false"
   },
   "scripts": {
     "build": "run-os",
