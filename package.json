@@ -37,8 +37,8 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "15.2.9",
-    "@eslinted/defaults": "4.11.0",
+    "@eslinted/core": "15.2.10",
+    "@eslinted/defaults": "4.11.1",
     "@html-eslint/eslint-plugin": "0.33.1",
     "@html-eslint/parser": "0.33.0",
     "@stylistic/eslint-plugin": "3.0.0",
