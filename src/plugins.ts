@@ -8,9 +8,9 @@ import html_eslint from "@html-eslint/eslint-plugin";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
 
-export const plugins = {
+export const plugins: Readonly<Record<string, Partial<Record<"configs", unknown>>>> = {
   "@stylistic": stylistic,
-  "@typescript-eslint": typescript_eslint as { readonly config: Record<string, unknown> },
+  "@typescript-eslint": typescript_eslint,
   svelte,
   mocha,
   "chai-friendly": chai_friendly,
