@@ -1,5 +1,5 @@
 {
-  "$template": "22.13.6",
+  "$template": "22.13.7",
   "name": "linted",
   "version": "26.1.0",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -29,8 +29,8 @@
     }
   },
   "dependencies": {
-    "@eslinted/core": "15.2.13",
-    "@eslinted/defaults": "5.1.0",
+    "@eslinted/core": "15.2.14",
+    "@eslinted/defaults": "5.1.1",
     "@html-eslint/eslint-plugin": "0.34.0",
     "@html-eslint/parser": "0.34.0",
     "@stylistic/eslint-plugin": "3.0.1",
@@ -100,11 +100,6 @@
     "test": "",
     "test:ts": "mocha",
     "test:svelte": "",
-    "dev": "run-os",
-    "dev:default": "npm run dev+os:$npm_package_config_language",
-    "dev:windows": "npm run dev+os:%npm_package_config_language%",
-    "dev+os:ts": "npm start",
-    "dev+os:svelte": "vite dev",
     "start": "run-os",
     "start:default": "npm run start+os:$npm_package_config_language",
     "start:windows": "npm run start+os:%npm_package_config_language%",
