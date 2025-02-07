@@ -12,9 +12,9 @@
     "npm": ">=10.9.0"
   },
   "peerDependencies": {
-    "eslint": "~9.19.0",
+    "eslint": "~9.20.0",
     "mocha": "^11.1.0",
-    "svelte": "^5.19.8",
+    "svelte": "^5.19.9",
     "typescript": ">=5.7.3"
   },
   "peerDependenciesMeta": {
@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@eslint/css": "0.2.0",
-    "@eslinted/core": "16.0.2",
-    "@eslinted/defaults": "5.2.2",
+    "@eslinted/core": "16.0.3",
+    "@eslinted/defaults": "5.2.3",
     "@html-eslint/eslint-plugin": "0.34.0",
     "@html-eslint/parser": "0.34.0",
     "@stylistic/eslint-plugin": "3.0.1",
@@ -42,7 +42,7 @@
     "eslint-plugin-svelte": "2.46.1",
     "eslint-plugin-yml": "1.16.0",
     "jsonc-eslint-parser": "2.4.0",
-    "svelte": "^5.19.8",
+    "svelte": "^5.19.9",
     "svelte-eslint-parser": "0.43.0",
     "typescript-eslint": "8.23.0",
     "yaml-eslint-parser": "1.2.3"
