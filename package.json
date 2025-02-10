@@ -31,7 +31,7 @@
   "dependencies": {
     "@eslint/css": "0.2.0",
     "@eslinted/core": "16.0.6",
-    "@eslinted/defaults": "6.1.2",
+    "@eslinted/defaults": "6.2.0",
     "@html-eslint/eslint-plugin": "0.34.0",
     "@html-eslint/parser": "0.34.0",
     "@stylistic/eslint-plugin": "3.1.0",
@@ -44,7 +44,7 @@
     "jsonc-eslint-parser": "2.4.0",
     "svelte": "^5.19.9",
     "svelte-eslint-parser": "0.43.0",
-    "typescript-eslint": "8.23.0",
+    "typescript-eslint": "8.24.0",
     "yaml-eslint-parser": "1.2.3"
   },
   "devDependencies": {
