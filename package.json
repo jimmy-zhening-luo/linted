@@ -1,5 +1,5 @@
 {
-  "$template": "22.13.9",
+  "$template": "22.13.10",
   "name": "linted",
   "version": "27.1.1",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@eslint/css": "0.2.0",
-    "@eslinted/core": "16.0.5",
-    "@eslinted/defaults": "6.1.1",
+    "@eslinted/core": "16.0.6",
+    "@eslinted/defaults": "6.1.2",
     "@html-eslint/eslint-plugin": "0.34.0",
     "@html-eslint/parser": "0.34.0",
     "@stylistic/eslint-plugin": "3.1.0",
@@ -107,9 +107,6 @@
     "start:windows": "run-s start-%npm_package_config_language%",
     "start-ts": "node .",
     "start-svelte": "vite preview",
-    "postinstall": "run-os",
-    "postinstall:default": "rm -rf .eslintcache",
-    "postinstall:windows": "cmd /c if exist .eslintcache del /f /q .eslintcache",
     "prepublishOnly": "npm test",
     "postpublish": "run-os",
     "postpublish:default": "if [ \"${npm_package_version#*-}\" = \"${npm_package_version}\" ]; then npm dist-tag add \"$npm_package_name@$npm_package_version\" latest; fi",
