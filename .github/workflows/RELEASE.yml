@@ -1,20 +1,16 @@
 name: NPM Publish (RELEASE)
-
 on:
   push:
     tags:
       - v[0-9]+.[0-9]+.[0-9]+
-    branches:
-      - main
-
 jobs:
   publish-release:
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
+    name: Build/Publish (RELEASE)
     environment:
       name: RELEASE
       url: https://www.npmjs.com/package/linted?activeTab=versions
-    name: Build/Publish (RELEASE)
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
         id: checkout
