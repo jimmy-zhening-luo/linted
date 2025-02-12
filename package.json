@@ -1,7 +1,7 @@
 {
   "$template": "22.14.0",
   "name": "linted",
-  "version": "27.2.0",
+  "version": "27.2.1",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
   "repository": "github:jimmy-zhening-luo/linted",
   "license": "MIT",
