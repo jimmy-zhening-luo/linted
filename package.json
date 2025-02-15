@@ -48,7 +48,6 @@
     "yaml-eslint-parser": "1.2.3"
   },
   "devDependencies": {
-    "@eslint/config-inspector": "^1.0.0",
     "@types/chai": "^5.0.1",
     "@types/mocha": "^10.0.10",
     "chai": "^5.2.0",
