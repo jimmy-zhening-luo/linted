@@ -44,7 +44,7 @@
     "jsonc-eslint-parser": "2.4.0",
     "svelte": "^5.20.1",
     "svelte-eslint-parser": "0.43.0",
-    "typescript-eslint": "8.24.0",
+    "typescript-eslint": "8.24.1",
     "yaml-eslint-parser": "1.2.3"
   },
   "devDependencies": {
