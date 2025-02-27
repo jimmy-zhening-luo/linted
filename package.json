@@ -1,5 +1,7 @@
 {
-  "$template": "22.14.0",
+  "$template": "22.14.5",
+  "$schema": "https://json.schemastore.org/package",
+  "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
   "version": "27.4.2",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
@@ -91,8 +93,8 @@
     "make:lint+true:default": "(run-s lint-) && (npm run --if-present lint-$npm_package_config_language)",
     "make:lint+true:windows": "(run-s lint-) && (npm run --if-present lint-%npm_package_config_language%)",
     "lint": "run-s build",
-    "lint-": "npm run linter -- {,src/**/,tests/**/,static/**/,typings/**/,public/**/,tools/**/,.github/**/,.vscode/**/}*.{js,cjs,mjs,ts,cts,mts,html,json,jsonc,code-snippets,yml,yaml}",
-    "lint-svelte": "npm run linter -- {,src/**/,tests/**/,static/**/,typings/**/,public/**/,tools/**/,.github/**/,.vscode/**/}*",
+    "lint-": "npm run linter -- \"{,src/**/,tests/**/,static/**/,typings/**/,public/**/,tools/**/,.github/**/,.vscode/**/}*.{js,cjs,mjs,ts,cts,mts,html,json,jsonc,code-snippets,yml,yaml}\"",
+    "lint-svelte": "npm run linter -- \"{,src/**/,tests/**/,static/**/,typings/**/,public/**/,tools/**/,.github/**/,.vscode/**/}*\"",
     "linter": "eslint --cache --fix",
     "pretest": "run-s build",
     "test": "run-os",
@@ -141,5 +143,5 @@
     "jsonc",
     "yaml"
   ],
-  "author": "Jimmy Zhening Luo <1450044+jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
+  "author": "Jimmy Zhening Luo <jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
 }
