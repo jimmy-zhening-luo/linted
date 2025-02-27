@@ -12,9 +12,9 @@
     "npm": ">=10.9.0"
   },
   "peerDependencies": {
-    "eslint": "~9.20.1",
+    "eslint": "~9.21.0",
     "mocha": "^11.1.0",
-    "svelte": "^5.20.1",
+    "svelte": "^5.20.4",
     "typescript": ">=5.7.3"
   },
   "peerDependenciesMeta": {
@@ -29,22 +29,22 @@
     }
   },
   "dependencies": {
-    "@eslint/css": "0.3.0",
-    "@eslinted/core": "16.0.9",
-    "@eslinted/defaults": "6.3.0",
+    "@eslint/css": "0.4.0",
+    "@eslinted/core": "16.1.1",
+    "@eslinted/defaults": "7.0.0-rc.1",
     "@html-eslint/eslint-plugin": "0.35.0",
     "@html-eslint/parser": "0.35.0",
-    "@stylistic/eslint-plugin": "3.1.0",
+    "@stylistic/eslint-plugin": "4.1.0",
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.0.1",
     "eslint-plugin-jsonc": "2.19.1",
     "eslint-plugin-mocha": "10.5.0",
-    "eslint-plugin-svelte": "2.46.1",
-    "eslint-plugin-yml": "1.16.0",
+    "eslint-plugin-svelte": "3.0.2",
+    "eslint-plugin-yml": "1.17.0",
     "jsonc-eslint-parser": "2.4.0",
-    "svelte": "^5.20.1",
-    "svelte-eslint-parser": "0.43.0",
-    "typescript-eslint": "8.24.1",
+    "svelte": "^5.20.4",
+    "svelte-eslint-parser": "1.0.0",
+    "typescript-eslint": "8.25.0",
     "yaml-eslint-parser": "1.2.3"
   },
   "devDependencies": {
