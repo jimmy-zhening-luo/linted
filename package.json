@@ -1,5 +1,5 @@
 {
-  "$template": "22.14.7",
+  "$template": "22.14.9",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
@@ -10,8 +10,8 @@
   "private": false,
   "engineStrict": true,
   "engines": {
-    "node": ">=22.14.0",
-    "npm": ">=10.9.2"
+    "node": ">=22.14.0 <23",
+    "npm": ">=11.2.0 <12"
   },
   "peerDependencies": {
     "eslint": "~9.21.0",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@eslint/css": "0.4.0",
-    "@eslinted/core": "16.2.1",
-    "@eslinted/defaults": "7.1.1",
+    "@eslinted/core": "16.2.2",
+    "@eslinted/defaults": "7.1.2",
     "@html-eslint/eslint-plugin": "0.35.2",
     "@html-eslint/parser": "0.35.2",
     "@stylistic/eslint-plugin": "4.2.0",
