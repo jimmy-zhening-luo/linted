@@ -1,5 +1,5 @@
 {
-  "$template": "22.14.9",
+  "$template": "22.14.10",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
@@ -91,7 +91,7 @@
     "make:lint+false": "(run-s make:lint+true) || (echo \"Skip lint (optional).\")",
     "make:lint+true": "run-s lint-all",
     "lint": "run-s build",
-    "lint-all": "npm run linter -- \"{,src/**/,tests/**/,static/**/,typings/**/,public/**/,tools/**/,.github/**/,.vscode/**/}*.{js,cjs,mjs,ts,cts,mts,svelte,html,json,jsonc,code-snippets,yml,yaml}\"",
+    "lint-all": "npm run linter -- \"{,src/**/,tests/**/,static/**/,typings/**/,public/**/,tools/**/,.github/**/,.vscode/**/}*.{js,cjs,mjs,ts,cts,mts,svelte,html,css,json,jsonc,code-snippets,yml,yaml}\"",
     "linter": "eslint --cache --fix",
     "pretest": "run-s build",
     "test": "run-os",
