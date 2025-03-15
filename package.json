@@ -31,9 +31,9 @@
     }
   },
   "dependencies": {
-    "@eslint/css": "0.4.0",
+    "@eslint/css": "0.5.0",
     "@eslinted/core": "17.0.3",
-    "@eslinted/defaults": "8.0.0",
+    "@eslinted/defaults": "8.1.0",
     "@html-eslint/eslint-plugin": "0.35.2",
     "@html-eslint/parser": "0.35.2",
     "@stylistic/eslint-plugin": "4.2.0",
