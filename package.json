@@ -1,5 +1,5 @@
 {
-  "$template": "22.14.10",
+  "$template": "22.14.11",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@eslint/css": "0.5.0",
-    "@eslinted/core": "17.0.4",
-    "@eslinted/defaults": "9.0.1",
+    "@eslinted/core": "17.0.5",
+    "@eslinted/defaults": "9.0.2",
     "@html-eslint/eslint-plugin": "0.35.2",
     "@html-eslint/parser": "0.35.2",
     "@stylistic/eslint-plugin": "4.2.0",
@@ -104,7 +104,7 @@
     "start:default": "run-s start-$npm_package_config_language",
     "start:windows": "run-s start-%npm_package_config_language%",
     "start-ts": "node .",
-    "start-svelte": "vite preview",
+    "start-svelte": "vite preview --open",
     "prepublishOnly": "npm test",
     "postpublish": "run-os",
     "postpublish:default": "if [ \"${npm_package_version#*-}\" = \"${npm_package_version}\" ]; then npm dist-tag add \"$npm_package_name@$npm_package_version\" latest; fi",
