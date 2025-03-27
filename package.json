@@ -1,5 +1,5 @@
 {
-  "$template": "2214.0.0",
+  "$pkg": "2214.1.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@eslint/css": "0.6.0",
-    "@eslinted/core": "18.2.2",
-    "@eslinted/defaults": "10.1.0",
+    "@eslinted/core": "18.2.4",
+    "@eslinted/defaults": "10.1.1",
     "@html-eslint/eslint-plugin": "0.37.0",
     "@html-eslint/parser": "0.37.0",
     "@stylistic/eslint-plugin": "4.2.0",
