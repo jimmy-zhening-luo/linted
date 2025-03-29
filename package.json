@@ -1,18 +1,17 @@
 {
-  "$pkg": "2214.1.0",
+  "$pkg": "2214.4.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
   "version": "28.17.1",
-  "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
   "repository": "github:jimmy-zhening-luo/linted",
-  "license": "MIT",
   "private": false,
   "engineStrict": true,
   "engines": {
     "node": ">=22.14.0 <23",
     "npm": ">=11.2.0 <12"
   },
+  "type": "module",
   "peerDependencies": {
     "eslint": "~9.23.0",
     "mocha": "^11.1.0",
@@ -59,7 +58,6 @@
     "ts-add-js-extension": "^1.6.5",
     "typescript": "^5.8.2"
   },
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "config": {
@@ -114,14 +112,10 @@
     "deploy": ""
   },
   "publishConfig": {
-    "access": "public",
     "tag": "next"
   },
-  "mocha": {
-    "spec": [
-      "dist/**/*.spec.js"
-    ]
-  },
+  "license": "MIT",
+  "description": "ESLint mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
   "keywords": [
     "eslint",
     "eslint-config",
