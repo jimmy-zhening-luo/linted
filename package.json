@@ -39,7 +39,7 @@
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.0.1",
     "eslint-plugin-jsonc": "2.20.0",
-    "eslint-plugin-mocha": "10.5.0",
+    "eslint-plugin-mocha": "11.0.0",
     "eslint-plugin-svelte": "3.5.1",
     "eslint-plugin-yml": "1.18.0",
     "jsonc-eslint-parser": "2.4.0",
