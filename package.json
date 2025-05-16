@@ -13,7 +13,7 @@
   },
   "type": "module",
   "peerDependencies": {
-    "eslint": "~9.26.0",
+    "eslint": "~9.27.0",
     "mocha": "^11.2.2",
     "svelte": "^5.30.1",
     "typescript": "^5.8.3"
@@ -30,9 +30,9 @@
     }
   },
   "dependencies": {
-    "@eslint/css": "0.8.0",
-    "@eslinted/core": "18.7.3",
-    "@eslinted/defaults": "10.18.1",
+    "@eslint/css": "0.8.1",
+    "@eslinted/core": "18.7.4",
+    "@eslinted/defaults": "10.20.0",
     "@html-eslint/eslint-plugin": "0.40.3",
     "@html-eslint/parser": "0.40.0",
     "@stylistic/eslint-plugin": "4.2.0",
@@ -40,7 +40,7 @@
     "eslint-plugin-chai-friendly": "1.0.1",
     "eslint-plugin-jsonc": "2.20.0",
     "eslint-plugin-mocha": "11.0.0",
-    "eslint-plugin-svelte": "3.6.0",
+    "eslint-plugin-svelte": "3.7.0",
     "eslint-plugin-yml": "1.18.0",
     "jsonc-eslint-parser": "2.4.0",
     "svelte": "^5.30.1",
