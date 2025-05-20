@@ -15,7 +15,7 @@
   "peerDependencies": {
     "eslint": "~9.27.0",
     "mocha": "^11.4.0",
-    "svelte": "^5.31.0",
+    "svelte": "^5.31.1",
     "typescript": "^5.8.3"
   },
   "peerDependenciesMeta": {
@@ -40,10 +40,10 @@
     "eslint-plugin-chai-friendly": "1.0.1",
     "eslint-plugin-jsonc": "2.20.1",
     "eslint-plugin-mocha": "11.0.0",
-    "eslint-plugin-svelte": "3.8.1",
+    "eslint-plugin-svelte": "3.8.2",
     "eslint-plugin-yml": "1.18.0",
     "jsonc-eslint-parser": "2.4.0",
-    "svelte": "^5.31.0",
+    "svelte": "^5.31.1",
     "svelte-eslint-parser": "1.2.0",
     "typescript-eslint": "8.32.1",
     "yaml-eslint-parser": "1.3.0"
