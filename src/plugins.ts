@@ -10,7 +10,7 @@ import json from "@eslint/json";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
 
-export const plugins: Readonly<Record<string, Partial<Record<"configs", unknown>>>> = {
+export const plugins = {
   "@stylistic": stylistic,
   "@typescript-eslint": typescript_eslint,
   mocha,
