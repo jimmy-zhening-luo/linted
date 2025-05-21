@@ -32,8 +32,8 @@
   "dependencies": {
     "@eslint/css": "0.8.1",
     "@eslint/json": "0.12.0",
-    "@eslinted/core": "18.9.0-rc.2",
-    "@eslinted/defaults": "10.22.0",
+    "@eslinted/core": "18.9.0",
+    "@eslinted/defaults": "10.22.1",
     "@html-eslint/eslint-plugin": "0.40.3",
     "@html-eslint/parser": "0.40.0",
     "@stylistic/eslint-plugin": "4.2.0",
