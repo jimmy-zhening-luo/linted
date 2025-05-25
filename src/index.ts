@@ -2,7 +2,7 @@ import Core from "@eslinted/core";
 import * as defaults from "@eslinted/defaults";
 import * as imports from "./imports";
 
-export default function (extensions: Parameters<typeof Core>[0]["extensions"] = {}): readonly unknown[] {
+export default function (extensions: Parameters<typeof Core>[0]["extensions"] = {}) {
   try {
     return Core(
       {
