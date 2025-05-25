@@ -1,8 +1,8 @@
-import Core, { type Input } from "@eslinted/core";
+import Core from "@eslinted/core";
 import * as defaults from "@eslinted/defaults";
 import * as imports from "./imports";
 
-export default function (extensions: Input["extensions"] = {}): readonly unknown[] {
+export default function (extensions: Parameters<typeof Core>[0]["extensions"] = {}): readonly unknown[] {
   try {
     return Core(
       {
@@ -14,7 +14,7 @@ export default function (extensions: Input["extensions"] = {}): readonly unknown
   }
   catch (e) {
     throw new Error(
-      `linted: `,
+      "linted: ",
       { cause: e },
     );
   }
