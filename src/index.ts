@@ -1,18 +1,21 @@
 import Core, { type Input } from "@eslinted/core";
 import * as defaults from "@eslinted/defaults";
-import { plugins } from "./plugins";
-import { parsers } from "./parsers";
-// import type { Linter } from "eslint";
+import * as imports from "./imports";
 
 export default function (extensions: Input["extensions"] = {}): readonly unknown[] {
   try {
-    return Core({
-      imports: { plugins, parsers },
-      defaults,
-      extensions,
-    });
+    return Core(
+      {
+        imports,
+        defaults,
+        extensions,
+      },
+    );
   }
   catch (e) {
-    throw new Error(`linted: `, { cause: e });
+    throw new Error(
+      `linted: `,
+      { cause: e },
+    );
   }
 }
