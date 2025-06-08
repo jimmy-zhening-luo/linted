@@ -15,7 +15,7 @@
   "peerDependencies": {
     "eslint": "~9.28.0",
     "mocha": "^11.5.0",
-    "svelte": "^5.33.14",
+    "svelte": "^5.33.18",
     "typescript": "^5.8.3"
   },
   "peerDependenciesMeta": {
@@ -42,7 +42,7 @@
     "eslint-plugin-mocha": "11.1.0",
     "eslint-plugin-svelte": "3.9.1",
     "eslint-plugin-yml": "1.18.0",
-    "svelte": "^5.33.14",
+    "svelte": "^5.33.18",
     "typescript-eslint": "8.33.1"
   },
   "devDependencies": {
