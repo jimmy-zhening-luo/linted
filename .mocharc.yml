@@ -1,6 +1,6 @@
 ####################
 ###   .mocharc   ###
-###   1105.0.0   ###
+###   1105.1.0   ###
 ####################
 
 # https://mochajs.org/#configuration-format
@@ -12,3 +12,4 @@ extension:
   - js
   - cjs
   - mjs
+# require: dist/_test/hooks.js
