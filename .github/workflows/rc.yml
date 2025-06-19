@@ -9,6 +9,8 @@ jobs:
     environment:
       name: rc
       url: https://www.npmjs.com/package/linted?activeTab=versions
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
