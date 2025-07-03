@@ -1,14 +1,18 @@
-import Core from "@eslinted/core";
+import * as required from "./imports";
 import * as defaults from "@eslinted/defaults";
-import * as imports from "./imports";
+import Core from "@eslinted/core";
 
 export default function (
   extensions: Parameters<typeof Core>[0]["configuration"]["extensions"] = {},
+  optional: Parameters<typeof Core>[0]["imports"]["optional"] = {},
 ) {
   try {
     return Core(
       {
-        imports,
+        imports: {
+          required,
+          optional,
+        },
         configuration: {
           defaults,
           extensions,
