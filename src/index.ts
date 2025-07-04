@@ -1,5 +1,10 @@
 import * as required from "./imports";
-import * as defaults from "@eslinted/defaults";
+import {
+  settings,
+  files,
+  ignores,
+  rules,
+} from "@eslinted/defaults";
 import Core from "@eslinted/core";
 
 export default function (
@@ -14,7 +19,12 @@ export default function (
           optional,
         },
         configuration: {
-          defaults,
+          settings,
+          defaults: {
+            files,
+            ignores,
+            rules,
+          },
           extensions,
         },
       },
