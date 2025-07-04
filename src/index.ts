@@ -1,11 +1,9 @@
-import * as required from "./imports";
+import Core from "@eslinted/core";
 import {
   settings,
-  files,
-  ignores,
-  rules,
+  defaults,
 } from "@eslinted/defaults";
-import Core from "@eslinted/core";
+import * as required from "./imports";
 
 export default function (
   extensions: Parameters<typeof Core>[0]["configuration"]["extensions"] = {},
@@ -20,11 +18,7 @@ export default function (
         },
         configuration: {
           settings,
-          defaults: {
-            files,
-            ignores,
-            rules,
-          },
+          defaults,
           extensions,
         },
       },
