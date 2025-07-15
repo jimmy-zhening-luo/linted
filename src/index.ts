@@ -8,6 +8,7 @@ import * as required from "./imports";
 export default function (
   extensions: Parameters<typeof Core>[0]["configuration"]["extensions"] = {},
   optional: Parameters<typeof Core>[0]["imports"]["optional"] = {},
+  ...attachments: Parameters<typeof Core>[0]["configuration"]["attachments"],
 ) {
   try {
     return Core(
@@ -20,6 +21,7 @@ export default function (
           settings,
           defaults,
           extensions,
+          attachments,
         },
       },
     );
