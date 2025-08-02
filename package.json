@@ -16,7 +16,7 @@
     "eslint": "~9.32.0",
     "eslint-plugin-svelte": "~3.11.0",
     "mocha": "^11.7.1",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-svelte": {
@@ -32,8 +32,8 @@
   "dependencies": {
     "@eslint/css": "0.10.0",
     "@eslint/json": "0.13.1",
-    "@eslinted/core": "22.1.8",
-    "@eslinted/defaults": "12.7.1",
+    "@eslinted/core": "22.1.9",
+    "@eslinted/defaults": "12.7.2",
     "@html-eslint/eslint-plugin": "0.43.1",
     "@stylistic/eslint-plugin": "5.2.2",
     "eslint-plugin-chai-expect": "3.1.0",
