@@ -11,7 +11,7 @@ import yml from "eslint-plugin-yml";
 
 export const plugins = {
   "@stylistic": stylistic,
-  "@typescript-eslint": typescript_eslint,
+  "@typescript-eslint": typescript_eslint as { configs: unknown },
   mocha,
   "chai-friendly": chai_friendly,
   "chai-expect": chai_expect,
