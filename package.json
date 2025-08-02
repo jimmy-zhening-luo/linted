@@ -32,7 +32,7 @@
   "dependencies": {
     "@eslint/css": "0.10.0",
     "@eslint/json": "0.13.1",
-    "@eslinted/core": "22.1.6",
+    "@eslinted/core": "22.1.7",
     "@eslinted/defaults": "12.7.1",
     "@html-eslint/eslint-plugin": "0.43.1",
     "@stylistic/eslint-plugin": "5.2.2",
