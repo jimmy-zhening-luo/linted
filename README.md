@@ -218,11 +218,11 @@ tsc --skipLibCheck
 
 - Svelte Interaction TBD
 
-  + .svelte-embedded HTML (on top of Svelte HTML rules)
+    + .svelte-embedded HTML (on top of Svelte HTML rules)
 
-  + .html files in Svelte projects (e.g. title not required)
+    + .html files in Svelte projects (e.g. title not required)
 
-  + Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
+    + Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
 
 #### JSON (Custom Schema Validation)
 
