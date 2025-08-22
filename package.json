@@ -32,8 +32,8 @@
   "dependencies": {
     "@eslint/css": "0.10.0",
     "@eslint/json": "0.13.1",
-    "@eslinted/core": "23.0.5",
-    "@eslinted/defaults": "12.11.1",
+    "@eslinted/core": "23.0.6",
+    "@eslinted/defaults": "12.11.2",
     "@html-eslint/eslint-plugin": "0.44.0",
     "@stylistic/eslint-plugin": "5.2.3",
     "eslint-plugin-chai-expect": "3.1.0",
@@ -41,12 +41,12 @@
     "eslint-plugin-jsonc": "2.20.1",
     "eslint-plugin-mocha": "11.1.0",
     "eslint-plugin-yml": "1.18.0",
-    "typescript-eslint": "8.39.1"
+    "typescript-eslint": "8.40.0"
   },
   "devDependencies": {
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
-    "chai": "^5.2.1",
+    "chai": "^5.3.1",
     "mocha": "^11.7.1",
     "ts-add-js-extension": "^1.6.6",
     "typescript": "^5.9.2"
