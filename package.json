@@ -13,7 +13,7 @@
   },
   "type": "module",
   "peerDependencies": {
-    "eslint": "~9.33.0",
+    "eslint": "~9.34.0",
     "eslint-plugin-svelte": "~3.11.0",
     "mocha": "^11.7.1",
     "typescript": "^5.9.2"
