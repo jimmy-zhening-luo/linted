@@ -9,8 +9,7 @@ jobs:
     environment:
       name: RELEASE
       url: https://www.npmjs.com/package/linted?activeTab=versions
-    permissions:
-      contents: read
+    permissions: { contents: read }
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,7 +23,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          check-latest: true
           registry-url: https://registry.npmjs.org
       - name: Install Dependencies
         id: ci
@@ -32,5 +30,4 @@ jobs:
       - name: Publish to NPM
         id: publish
         run: npm publish
-        env:
-          NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}"
+        env: { NODE_AUTH_TOKEN: "${{ secrets.NPM_TOKEN }}" }
