@@ -1,3 +1,4 @@
+--- # rc.yml
 name: NPM Publish (rc)
 on: { push: { tags: ['v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+'] } }
 jobs:
@@ -25,3 +26,5 @@ jobs:
         id: publish
         run: npm publish
         env: { NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}" }
+
+...
