@@ -3,20 +3,16 @@ import {
   settings,
   defaults,
 } from "@eslinted/defaults";
-import * as required from "./imports";
+import * as imports from "./imports";
 
 export default function (
   extensions: Parameters<typeof Core>[0]["configuration"]["extensions"] = {},
-  optional: Parameters<typeof Core>[0]["imports"]["optional"] = {},
   ...attachments: Parameters<typeof Core>[0]["configuration"]["attachments"]
 ) {
   try {
     return Core(
       {
-        imports: {
-          required,
-          optional,
-        },
+        imports,
         configuration: {
           settings,
           defaults,
