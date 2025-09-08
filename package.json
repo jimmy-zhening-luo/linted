@@ -35,7 +35,7 @@
   "type": "module",
   "peerDependencies": {
     "eslint": "~9.35.0",
-    "eslint-plugin-svelte": "~3.12.1",
+    "eslint-plugin-svelte": "~3.12.2",
     "mocha": "^11.7.2",
     "typescript": "^5.9.2"
   },
@@ -53,8 +53,8 @@
   "dependencies": {
     "@eslint/css": "0.11.0",
     "@eslint/json": "0.13.2",
-    "@eslinted/core": "24.0.0",
-    "@eslinted/defaults": "12.18.0",
+    "@eslinted/core": "24.1.0",
+    "@eslinted/defaults": "12.19.0",
     "@html-eslint/eslint-plugin": "0.46.2",
     "@stylistic/eslint-plugin": "5.3.1",
     "eslint-plugin-chai-expect": "3.1.0",
