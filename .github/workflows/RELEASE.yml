@@ -21,7 +21,7 @@ jobs:
           registry-url: https://registry.npmjs.org
       - name: Install Dependencies
         id: ci
-        run: npm ci
+        run: npm ci --loglevel=error --fund=false
       - name: Publish to NPM
         id: publish
         run: npm publish
