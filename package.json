@@ -54,7 +54,7 @@
     "@eslint/css": "0.11.1",
     "@eslint/json": "0.13.2",
     "@eslinted/core": "24.1.7",
-    "@eslinted/defaults": "12.19.8",
+    "@eslinted/defaults": "12.20.0",
     "@html-eslint/eslint-plugin": "0.47.0",
     "@stylistic/eslint-plugin": "5.4.0",
     "eslint-plugin-chai-expect": "3.1.0",
