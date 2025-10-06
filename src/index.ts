@@ -23,7 +23,7 @@ export default function (
     );
   }
   catch (e) {
-    throw new Error(
+    throw TypeError(
       "linted: ",
       { cause: e },
     );
