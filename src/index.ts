@@ -1,8 +1,5 @@
 import Core from "@eslinted/core";
-import {
-  settings,
-  defaults,
-} from "@eslinted/defaults";
+import defaults from "@eslinted/defaults";
 import imports from "./imports";
 
 export default function (
@@ -13,7 +10,6 @@ export default function (
       {
         imports,
         configuration: {
-          settings,
           defaults,
           extensions,
         },
