@@ -5,21 +5,19 @@ import {
   scopes,
   optional,
   tree,
-} from "./scope"
+} from "./scope";
 
 export default function (
   extensions: Parameters<typeof Core>[4]["extensions"] = {},
 ) {
   return Core(
+    scopes,
+    optional,
+    tree,
+    imports,
     {
-      scope,
-      optional,
-      tree,
-      imports,
-      configuration: {
-        defaults,
-        extensions,
-      },
+      defaults,
+      extensions,
     },
   );
 }
