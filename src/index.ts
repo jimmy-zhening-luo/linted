@@ -7,7 +7,6 @@ import imports from "./imports";
 
 export default function (
   extensions: Parameters<typeof Core>[0]["configuration"]["extensions"] = {},
-  ...attachments: Parameters<typeof Core>[0]["configuration"]["attachments"]
 ) {
   try {
     return Core(
@@ -17,7 +16,6 @@ export default function (
           settings,
           defaults,
           extensions,
-          attachments,
         },
       },
     );
