@@ -3,7 +3,7 @@ import {
   settings,
   defaults,
 } from "@eslinted/defaults";
-import * as imports from "./imports";
+import imports from "./imports";
 
 export default function (
   extensions: Parameters<typeof Core>[0]["configuration"]["extensions"] = {},

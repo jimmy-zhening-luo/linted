@@ -9,9 +9,9 @@ import json from "@eslint/json";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
 
-export const plugins = {
-  "@stylistic": stylistic,
-  "@typescript-eslint": typescript_eslint as unknown as { configs: unknown },
+export default {
+  "@stylistic": stylistic as NoInfer<typeof stylistic>,
+  "@typescript-eslint": typescript_eslint as NoInfer<typeof typescript_eslint>,
   mocha,
   "chai-friendly": chai_friendly,
   "chai-expect": chai_expect,

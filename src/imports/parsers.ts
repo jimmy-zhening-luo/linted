@@ -1,9 +1,9 @@
-import { parser as tsParser } from "typescript-eslint";
+import { parser as ts } from "typescript-eslint";
 import html from "@html-eslint/parser";
 import yml from "yaml-eslint-parser";
 
-export const parsers = {
-  ts: tsParser as unknown,
+export default {
+  ts: ts as NoInfer<typeof ts>,
   html,
   yml,
 };

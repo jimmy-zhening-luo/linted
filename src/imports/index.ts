@@ -1,2 +1,7 @@
-export { parsers } from "./parsers";
-export { plugins } from "./plugins";
+import parsers from "./parsers";
+import plugins from "./plugins";
+
+export default {
+  parsers,
+  plugins,
+};
