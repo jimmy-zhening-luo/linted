@@ -1,5 +1,5 @@
 # [`linted`](https://www.npmjs.com/package/linted)
-[![NPM Publish (RELEASE)](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml/badge.svg)](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml)
+[![NPM Publish](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml/badge.svg)](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml)
 
 > [!CAUTION]
 > ___DO NOT USE - DOCUMENTATION IS SIGNIFICANTLY OUTDATED AS OF AUGUST 4, 2024___

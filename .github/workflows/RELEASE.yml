@@ -1,13 +1,19 @@
 --- # RELEASE.yml
-name: NPM Publish (RELEASE)
-on: { push: { tags: ['v[0-9]+.[0-9]+.[0-9]+'] } }
+name: NPM Publish
+on:
+  push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+      - v[0-9]+.[0-9]+.[0-9]+-rc.[0-9]+
 jobs:
   publish-release:
-    name: Build/Publish (RELEASE)
+    name: Build/Publish
     environment:
       name: RELEASE
       url: https://www.npmjs.com/package/linted?activeTab=versions
-    permissions: { contents: read }
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,12 +25,14 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org
+      - name: Install NPM
+        id: npm
+        run: npm install -g npm@latest
       - name: Install Dependencies
         id: ci
         run: npm ci --loglevel=error --fund=false
       - name: Publish to NPM
         id: publish
         run: npm publish
-        env: { NODE_AUTH_TOKEN: "${{secrets.NPM_TOKEN}}" }
 
 ...
