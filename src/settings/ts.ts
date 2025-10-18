@@ -27,5 +27,6 @@ export default {
     // - https://typescript-eslint.io/getting-started/typed-linting/
     // - https://typescript-eslint.io/troubleshooting/typed-linting/
     warnOnUnsupportedTypeScriptVersion: false /* preference due to nuisance | @default true */,
+    extraFileExtensions: [".svelte"] /* BUG: Needed to avoid performance issues in Svelte/TS projects: https://typescript-eslint.io/troubleshooting/typed-linting/performance/#changes-to-extrafileextensions-with-projectservice */,
   },
 };
