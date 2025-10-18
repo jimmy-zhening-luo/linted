@@ -1,5 +1,5 @@
 {
-  "$pkg": "2211.6.0",
+  "$pkg": "2211.7.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
@@ -91,7 +91,7 @@
     "start:ts": "node .",
     "start:svelte": "vite preview --open",
     "prepublishOnly": "npm test",
-    "publish:rc": "cmd --% /c \"for /f \"delims=-\" %a in (\"%npm_package_version%\") do if \"%a\" == \"%npm_package_version%\" (npm publish) else (npm publish --tag=next)\" || bash -c 'if [ \"${npm_package_version#*-}\" = \"${npm_package_version}\" ]; then npm publish; else npm publish --tag=next; fi'",
+    "publish:release": "cmd --% /c \"for /f \"delims=-\" %a in (\"%npm_package_version%\") do if \"%a\" == \"%npm_package_version%\" (npm publish) else (npm publish --tag=next)\" || bash -c 'if [ \"${npm_package_version#*-}\" = \"${npm_package_version}\" ]; then npm publish; else npm publish --tag=next; fi'",
     "predeploy": "npm test",
     "deploy": ""
   },
