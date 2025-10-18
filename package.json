@@ -91,11 +91,9 @@
     "start:ts": "node .",
     "start:svelte": "vite preview --open",
     "prepublishOnly": "npm test",
+    "publish:rc": "cmd --% /c \"for /f \"delims=-\" %a in (\"%npm_package_version%\") do if NOT \"%a\" == \"%npm_package_version%\" npm publish --tag=next || bash -c 'if [ \"${npm_package_version#*-}\" != \"${npm_package_version}\" ]; then npm publish --tag=next; fi'",
     "predeploy": "npm test",
     "deploy": ""
-  },
-  "publishConfig": {
-    "tag": "next"
   },
   "author": "Jimmy Zhening Luo <jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
 }
