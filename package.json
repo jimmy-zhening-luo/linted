@@ -91,7 +91,7 @@
     "start:ts": "node .",
     "start:svelte": "vite preview --open",
     "prepublishOnly": "npm test",
-    "publish:rc": "cmd --% /c \"for /f \"delims=-\" %a in (\"%npm_package_version%\") do if NOT \"%a\" == \"%npm_package_version%\" npm publish --tag=next || bash -c 'if [ \"${npm_package_version#*-}\" != \"${npm_package_version}\" ]; then npm publish --tag=next; fi'",
+    "publish:rc": "cmd --% /c \"for /f \"delims=-\" %a in (\"%npm_package_version%\") do if \"%a\" == \"%npm_package_version%\" npm publish ELSE npm publish --tag=next\" || bash -c 'if [ \"${npm_package_version#*-}\" = \"${npm_package_version}\" ]; then npm publish; else npm publish --tag=next; fi'",
     "predeploy": "npm test",
     "deploy": ""
   },
