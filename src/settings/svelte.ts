@@ -1,4 +1,5 @@
 export default {
+  plugins: ["svelte"] as const,
   languageOptions: {
     parser: "svelte" as const,
   },
