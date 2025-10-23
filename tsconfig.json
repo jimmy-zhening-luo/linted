@@ -48,10 +48,9 @@
     "lib": [
       "esnext",
       /* {CONFIGURE} */
-      "ES2015.Iterable" /* @OVERRIDE required by ESLint when skipLibCheck: false */,
     ],
     "target": "esnext",
     // "composite": true,
-    // "skipLibCheck": true,
+    "skipLibCheck": true /* @OVERRIDE */,
   },
 }
