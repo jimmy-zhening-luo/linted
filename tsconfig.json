@@ -51,6 +51,6 @@
     ],
     "target": "esnext",
     // "composite": true,
-    "skipLibCheck": true /* @OVERRIDE */,
+    // "skipLibCheck": true,
   },
 }
