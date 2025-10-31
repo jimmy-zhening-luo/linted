@@ -1,5 +1,5 @@
 {
-  "$pkg": "2211.7.0",
+  "$pkg": "2411.0.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
@@ -29,13 +29,13 @@
   "private": false,
   "engineStrict": true,
   "engines": {
-    "node": "^22",
-    "npm": "^10 || ^11"
+    "node": "^24",
+    "npm": "^11"
   },
   "type": "module",
   "peerDependencies": {
     "eslint": "~9.38.0",
-    "eslint-plugin-svelte": "~3.12.5",
+    "eslint-plugin-svelte": "~3.13.0",
     "mocha": "^11.7.4",
     "typescript": "^5.9.3"
   },
@@ -51,10 +51,10 @@
     }
   },
   "dependencies": {
-    "@eslint/css": "0.13.0",
+    "@eslint/css": "0.14.0",
     "@eslint/json": "0.13.2",
-    "@eslinted/core": "29.3.0",
-    "@eslinted/defaults": "17.1.2",
+    "@eslinted/core": "29.4.0",
+    "@eslinted/defaults": "17.2.0",
     "@html-eslint/eslint-plugin": "0.47.0",
     "@stylistic/eslint-plugin": "5.5.0",
     "eslint-plugin-chai-expect": "3.1.0",
