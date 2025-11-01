@@ -34,7 +34,7 @@
   },
   "type": "module",
   "main": "dist/index.js",
-  "types": "types/index.d.ts",
+  "types": "dist/index.d.ts",
   "peerDependencies": {
     "eslint": "~9.38.0",
     "eslint-plugin-svelte": "~3.13.0",
@@ -55,8 +55,8 @@
   "dependencies": {
     "@eslint/css": "0.14.0",
     "@eslint/json": "0.13.2",
-    "@eslinted/core": "29.4.1",
-    "@eslinted/defaults": "17.2.1",
+    "@eslinted/core": "29.4.2",
+    "@eslinted/defaults": "17.2.2",
     "@html-eslint/eslint-plugin": "0.47.0",
     "@stylistic/eslint-plugin": "5.5.0",
     "eslint-plugin-chai-expect": "3.1.0",
