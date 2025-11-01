@@ -1,11 +1,16 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../tsconfig-base.json",
   "include": [
     "../typings/**/*",
     "**/*",
   ],
+  "references": [
+    {
+      "path": "../typings",
+    },
+  ],
   "compilerOptions": {
-    "rootDir": ".",
     "outDir": "../dist",
+    "composite": true,
   },
 }
