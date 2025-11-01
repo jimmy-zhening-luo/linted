@@ -1,5 +1,5 @@
 import "chai/register-should.js";
-import linted from "../dist";
+import linted from "..";
 
 const configs = linted();
 
