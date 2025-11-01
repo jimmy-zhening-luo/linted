@@ -1,5 +1,5 @@
 import "chai/register-should.js";
-import { tree } from "../../dist/scope/tree";
+import { tree } from "../../scope/tree";
 
 const nodes = tree.map(([scope]) => scope);
 

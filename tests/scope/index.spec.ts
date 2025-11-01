@@ -1,5 +1,5 @@
 import "chai/register-should.js";
-import { scopes } from "../../dist/scope";
+import { scopes } from "../../scope";
 
 describe(
   "Scopes",
