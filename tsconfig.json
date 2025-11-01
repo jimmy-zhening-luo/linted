@@ -13,8 +13,6 @@
     },
   ],
   "compilerOptions": {
-    // "module": "esnext",
-    // "moduleResolution": "bundler",
     "types": [
       "mocha",
       "chai",
@@ -27,7 +25,6 @@
       "esnext",
       /* {CONFIGURE} */
     ],
-    // "target": "esnext",
     // "composite": false,
     // "skipLibCheck": true,
   },
