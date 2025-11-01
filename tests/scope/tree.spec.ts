@@ -1,19 +1,20 @@
 import "chai/register-should.js";
-import { scopes } from ".";
+import { tree } from "../../dist/scope/tree";
+
+const nodes = tree.map(([scope]) => scope);
 
 describe(
-  "Scopes",
+  "Tree",
   function () {
     describe(
       "shape",
       function () {
         it(
-          "is a non-empty array",
+          "is an array",
           function () {
-            scopes
+            tree
               .should.be
-              .an("array")
-              .not.empty;
+              .an("array");
           },
         );
       },
@@ -24,13 +25,22 @@ describe(
         it(
           "are unique",
           function () {
-            scopes
+            tree
               .length
               .should
               .equal(
-                new Set(scopes)
+                new Set(nodes)
                   .size,
               );
+          },
+        );
+        it(
+          "omit `js`",
+          function () {
+            nodes
+              .should
+              .not.include
+              .members(["js"]);
           },
         );
       },
@@ -39,38 +49,24 @@ describe(
       "order",
       function () {
         it(
-          "`jsoncc` > `jsonc` > `json`",
+          "`jsoncc` < [`jsonc`]?",
           function () {
-            scopes
+            nodes
               .should
               .include
-              .members(
-                [
-                  "jsoncc",
-                  "jsonc",
-                  "json",
-                ],
-              );
-            scopes
+              .members(["jsoncc"]);
+            nodes
               .indexOf("jsoncc")
               .should.be
-              .greaterThan(
-                scopes
-                  .indexOf("jsonc"),
-              );
-            scopes
-              .indexOf("jsonc")
-              .should.be
-              .greaterThan(
-                scopes
-                  .indexOf("json"),
+              .lessThan(
+                nodes.indexOf("jsonc") * tree.length,
               );
           },
         );
         it(
-          "`mocha` > `ts`",
+          "`mocha` < `ts`",
           function () {
-            scopes
+            nodes
               .should
               .include
               .members(
@@ -79,19 +75,19 @@ describe(
                   "ts",
                 ],
               );
-            scopes
+            nodes
               .indexOf("mocha")
               .should.be
-              .greaterThan(
-                scopes
+              .lessThan(
+                nodes
                   .indexOf("ts"),
               );
           },
         );
         it(
-          "`svelte` > `ts`",
+          "`svelte` < `ts`",
           function () {
-            scopes
+            nodes
               .should
               .include
               .members(
@@ -100,34 +96,26 @@ describe(
                   "ts",
                 ],
               );
-            scopes
+            nodes
               .indexOf("svelte")
               .should.be
-              .greaterThan(
-                scopes
+              .lessThan(
+                nodes
                   .indexOf("ts"),
               );
           },
         );
         it(
-          "`ts` > `js`",
+          "`ts` is last",
           function () {
-            scopes
+            nodes
               .should
               .include
-              .members(
-                [
-                  "ts",
-                  "js",
-                ],
-              );
-            scopes
+              .members(["ts"]);
+            nodes
               .indexOf("ts")
-              .should.be
-              .greaterThan(
-                scopes
-                  .indexOf("js"),
-              );
+              .should
+              .equal(tree.length - 1);
           },
         );
       },
