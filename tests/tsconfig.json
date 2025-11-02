@@ -1,7 +1,6 @@
 {
   "extends": "../tsconfig-base.json",
   "include": [
-    "../typings/**/*",
     "**/*",
   ],
   "references": [
@@ -13,6 +12,10 @@
     },
   ],
   "compilerOptions": {
+    "rootDirs": [
+      "../src",
+      "..",
+    ],
     "outDir": "../dist/tests",
   },
 }
