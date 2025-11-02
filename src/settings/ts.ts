@@ -1,6 +1,5 @@
 // DOC: https://typescript-eslint.io/packages/parser/#configuration
 export default {
-  plugins: ["ts"] as const,
   languageOptions: {
     parser: "ts" as const,
   },
