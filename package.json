@@ -53,11 +53,11 @@
     }
   },
   "dependencies": {
-    "@eslint/css": "0.14.0",
-    "@eslint/json": "0.13.2",
+    "@eslint/css": "0.14.1",
+    "@eslint/json": "0.14.0",
     "@eslinted/core": "29.4.8",
     "@eslinted/defaults": "17.2.7",
-    "@html-eslint/eslint-plugin": "0.47.0",
+    "@html-eslint/eslint-plugin": "0.47.1",
     "@stylistic/eslint-plugin": "5.5.0",
     "eslint-plugin-chai-expect": "3.1.0",
     "eslint-plugin-chai-friendly": "1.1.0",
