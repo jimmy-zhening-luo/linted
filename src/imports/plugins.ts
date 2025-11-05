@@ -18,6 +18,6 @@ export default {
   html,
   css,
   json,
-  jsonc,
+  jsonc: jsonc as NoInfer<typeof jsonc>,
   yml,
 };
