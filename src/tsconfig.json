@@ -6,11 +6,17 @@
   ],
   "references": [
     {
-      "path": "../typings",
+      "path": "imports",
     },
   ],
-  "compilerOptions": {
-    "outDir": "../dist",
-    "composite": true,
-  },
+  "references": [
+    {
+      "path": "scope",
+    },
+  ],
+  "references": [
+    {
+      "path": "settings",
+    },
+  ],
 }
