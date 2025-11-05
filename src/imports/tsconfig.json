@@ -1,7 +1,11 @@
 {
+  "files": [
+    "index.ts",
+    "plugins.ts",
+    "parsers.ts",
+  ],
   "extends": "../tsconfig-src.json",
   "include": [
     "../../typings/**/*",
-    "**/*",
   ],
 }

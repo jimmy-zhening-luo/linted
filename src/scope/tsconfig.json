@@ -1,8 +1,7 @@
 {
   "files": [
+    "index.ts",
+    "tree.ts",
   ],
   "extends": "../tsconfig-src.json",
-  "include": [
-    "**/*",
-  ],
 }
