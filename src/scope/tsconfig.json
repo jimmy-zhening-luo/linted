@@ -1,4 +1,6 @@
 {
+  "files": [
+  ],
   "extends": "../tsconfig-src.json",
   "include": [
     "**/*",
