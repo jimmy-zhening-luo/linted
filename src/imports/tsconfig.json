@@ -1,6 +1,5 @@
 {
   "files": [
-    "../../node_modules/
     "index.ts",
     "plugins.ts",
     "parsers.ts",
