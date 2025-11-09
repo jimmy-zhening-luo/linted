@@ -9,7 +9,7 @@ import settings from "./settings";
 import defaults from "@eslinted/defaults";
 
 export default function (
-  extensions: Parameters<typeof Core>[5]["extensions"] = {},
+  extensions?: Parameters<typeof Core>[6],
 ) {
   return Core(
     scopes,
@@ -17,9 +17,7 @@ export default function (
     tree,
     imports,
     settings,
-    {
-      defaults,
-      extensions,
-    },
+    defaults,
+    extensions,
   );
 }
