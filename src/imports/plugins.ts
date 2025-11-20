@@ -10,14 +10,14 @@ import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
 
 export default {
-  stylistic: stylistic as NoInfer<typeof stylistic>,
+  stylistic,
   ts: ts as NoInfer<typeof ts>,
   mocha,
   chai,
   "chai-expect": chaiExpect,
-  html,
+  html: html as object,
   css,
   json,
-  jsonc: jsonc as NoInfer<typeof jsonc>,
+  jsonc,
   yml,
 };
