@@ -12,6 +12,10 @@ export const tree = [
     ["ts"],
   ] as const,
   [
+    "mocha",
+    ["ts"],
+  ] as const,
+  [
     "ts",
     ["js"],
   ] as const,
