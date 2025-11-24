@@ -3,13 +3,13 @@ import { scopes } from "../../scope";
 
 describe(
   "Scopes",
-  function () {
+  () => {
     describe(
       "shape",
-      function () {
+      () => {
         it(
           "is a non-empty array",
-          function () {
+          () => {
             scopes
               .should.be
               .an("array")
@@ -20,10 +20,10 @@ describe(
     );
     describe(
       "members",
-      function () {
+      () => {
         it(
           "are unique",
-          function () {
+          () => {
             scopes
               .length
               .should
@@ -37,10 +37,10 @@ describe(
     );
     describe(
       "order",
-      function () {
+      () => {
         it(
           "`jsoncc` > `jsonc` > `json`",
-          function () {
+          () => {
             scopes
               .should
               .include
@@ -69,7 +69,7 @@ describe(
         );
         it(
           "`svelte` > `ts`",
-          function () {
+          () => {
             scopes
               .should
               .include
@@ -90,7 +90,7 @@ describe(
         );
         it(
           "`ts` > `js`",
-          function () {
+          () => {
             scopes
               .should
               .include

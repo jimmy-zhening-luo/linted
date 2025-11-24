@@ -5,13 +5,13 @@ const nodes = tree.map(([scope]) => scope);
 
 describe(
   "Tree",
-  function () {
+  () => {
     describe(
       "shape",
-      function () {
+      () => {
         it(
           "is an array",
-          function () {
+          () => {
             tree
               .should.be
               .an("array");
@@ -21,10 +21,10 @@ describe(
     );
     describe(
       "members",
-      function () {
+      () => {
         it(
           "are unique",
-          function () {
+          () => {
             tree
               .length
               .should
@@ -36,7 +36,7 @@ describe(
         );
         it(
           "omit `js`",
-          function () {
+          () => {
             nodes
               .should
               .not.include
@@ -47,10 +47,10 @@ describe(
     );
     describe(
       "order",
-      function () {
+      () => {
         it(
           "`jsoncc` < [`jsonc`]?",
-          function () {
+          () => {
             nodes
               .should
               .include
@@ -65,7 +65,7 @@ describe(
         );
         it(
           "`svelte` < `ts`",
-          function () {
+          () => {
             nodes
               .should
               .include
@@ -86,7 +86,7 @@ describe(
         );
         it(
           "`ts` is last",
-          function () {
+          () => {
             nodes
               .should
               .include
