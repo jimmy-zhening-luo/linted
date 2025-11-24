@@ -64,27 +64,6 @@ describe(
           },
         );
         it(
-          "`mocha` < `ts`",
-          function () {
-            nodes
-              .should
-              .include
-              .members(
-                [
-                  "mocha",
-                  "ts",
-                ],
-              );
-            nodes
-              .indexOf("mocha")
-              .should.be
-              .lessThan(
-                nodes
-                  .indexOf("ts"),
-              );
-          },
-        );
-        it(
           "`svelte` < `ts`",
           function () {
             nodes
