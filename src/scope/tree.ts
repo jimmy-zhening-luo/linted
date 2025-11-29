@@ -1,22 +1,22 @@
 export const tree = [
   [
     "jsoncc",
-    ["jsonc"],
+    ["jsonc"] as const,
   ] as const,
   [
     "jsonc",
-    ["json"],
+    ["json"] as const,
   ] as const,
   [
     "svelte",
-    ["ts"],
+    ["ts"] as const,
   ] as const,
   [
     "mocha",
-    ["ts"],
+    ["ts"] as const,
   ] as const,
   [
     "ts",
-    ["js"],
+    ["js"] as const,
   ] as const,
 ] as const;
