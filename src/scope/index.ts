@@ -1,4 +1,3 @@
-export { tree } from "./tree";
 export const scopes = [
   "js",
   "ts",
@@ -10,5 +9,7 @@ export const scopes = [
   "jsonc",
   "jsoncc",
   "yml",
-] as const,
-optional = ["svelte"] as const;
+] as const;
+
+export { optional } from "./optional";
+export { tree } from "./tree";

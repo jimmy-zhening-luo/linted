@@ -1,6 +1,7 @@
 {
   "files": [
     "index.ts",
+    "optional.ts",
     "tree.ts",
   ],
   "extends": "../tsconfig-src.json",
