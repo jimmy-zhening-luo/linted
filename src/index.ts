@@ -25,7 +25,7 @@ import ymlParser from "yaml-eslint-parser";
 // #endregion
 
 export default function (
-  extensions: Parameters<typeof Core>[6] = {},
+  extensions: Parameters<typeof Core<typeof scopes[number], typeof optional[number]>>[6] = {},
 ) {
   const configs = Core(
     scopes,
