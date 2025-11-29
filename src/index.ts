@@ -11,7 +11,7 @@ import defaults from "@eslinted/defaults";
 export default function (
   extensions: Parameters<typeof Core>[6] = {},
 ) {
-  return Core<typeof scopes[number], typeof optional[number]>(
+  return Core(
     scopes,
     optional,
     tree,
