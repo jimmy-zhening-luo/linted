@@ -19,4 +19,4 @@ export const tree = [
     "ts",
     ["js"],
   ] as const,
-];
+] as const;
