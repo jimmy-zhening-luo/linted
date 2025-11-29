@@ -11,9 +11,6 @@
       "path": "scope",
     },
     {
-      "path": "imports",
-    },
-    {
       "path": "settings",
     },
   ],
