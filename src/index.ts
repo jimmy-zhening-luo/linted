@@ -32,7 +32,7 @@ export default function (
     optional,
     tree,
     {
-      ts: tsParser as NoInfer<typeof tsParser>,
+      ts: tsParser as unknown,
       html: htmlParser,
       yml: ymlParser,
     },
@@ -44,8 +44,8 @@ export default function (
   configs[configs.length] = {
     plugins: {
       stylistic,
-      ts: ts as NoInfer<typeof ts>,
-      html: html as object,
+      ts: ts as unknown,
+      html: html as unknown,
       css,
       json,
       jsonc,

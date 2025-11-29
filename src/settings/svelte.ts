@@ -1,8 +1,8 @@
 export default {
   languageOptions: {
-    parser: "svelte" as const,
+    parser: "svelte",
     parserOptions: {
-      parser: "ts" as const,
+      parser: "ts",
     // extraFileExtensions: [".svelte"] /* inherits TS, needed for performance reasons: BUG: https://typescript-eslint.io/troubleshooting/typed-linting/performance/#changes-to-extrafileextensions-with-projectservice */,
     },
   },
