@@ -2,7 +2,7 @@
   "files": [
     "index.ts",
   ],
-  "extends": "./tsconfig-src.json",
+  "extends": "./tsconfig-src",
   "include": [
     "../typings/**/*",
   ],

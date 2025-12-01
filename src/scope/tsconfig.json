@@ -4,5 +4,5 @@
     "optional.ts",
     "tree.ts",
   ],
-  "extends": "../tsconfig-src.json",
+  "extends": "../tsconfig-src",
 }
