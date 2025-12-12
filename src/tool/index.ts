@@ -1,6 +1,6 @@
 import { Path } from "./path";
 
-export function dir(
+export function directory(
   path: string,
   subpath?: string,
 ) {
@@ -21,15 +21,15 @@ export function not(
   path: string,
   subpath?: string,
 ) {
-  return Path.Not + dir(path, subpath);
+  return Path.Not + directory(path, subpath);
 }
 
 export function flat(
   path: string,
   subpath?: string,
 ) {
-  return dir(
-    dir(path, subpath),
+  return directory(
+    directory(path, subpath),
     Path.Flat,
   );
 }
@@ -49,5 +49,5 @@ export function file(
     + Path.Directory
     + name
     + "."
-    + ext;
+    + extension;
 }
