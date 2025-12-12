@@ -13,5 +13,8 @@
     {
       "path": "settings",
     },
+    {
+      "path": "tool",
+    },
   ],
 }
