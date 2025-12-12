@@ -35,6 +35,17 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "dist/index.js",
+        "types": "dist/index.d.ts"
+      },
+      "require": {
+        "types": "dist/index.d.ts"
+      }
+    }
+  },
   "peerDependencies": {
     "eslint": "~9.39.1",
     "eslint-plugin-svelte": "~3.13.1",
