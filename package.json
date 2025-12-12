@@ -1,5 +1,5 @@
 {
-  "$pkg": "2411.7.0",
+  "$pkg": "2412.0.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
@@ -33,8 +33,6 @@
     "npm": "^11"
   },
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -45,6 +43,8 @@
       "default": "./dist/tool/index.js"
     }
   },
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
   "peerDependencies": {
     "eslint": "~9.39.1",
     "eslint-plugin-svelte": "~3.13.1",
