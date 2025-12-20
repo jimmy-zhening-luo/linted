@@ -1,5 +1,5 @@
 {
-  "display": "tsc@509.6.0",
+  "display": "tsc@509.7.0",
   "$help": "https://aka.ms/tsconfig/#quick-nav-Top%20Level",
   "compilerOptions": {
     "allowUnreachableCode": false,
@@ -18,8 +18,6 @@
     "moduleResolution": "bundler",
     "rewriteRelativeImportExtensions": true,
     "types": [
-      "mocha",
-      "chai",
       /* {CONFIGURE} */
     ],
     "declaration": true,
