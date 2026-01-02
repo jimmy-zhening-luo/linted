@@ -6,7 +6,7 @@
 
 ---
 
-[ESLint](https://eslint.org) mono-plugin bundler with strict, opinionated defaults for (Stylistic) JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.
+[ESLint](https://eslint.org) mono-plugin bundler with strict, opinionated defaults for JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.
 
 1. [Languages](#languages)
 2. [Features](#features)
@@ -21,19 +21,15 @@
 > [!NOTE]
 > _See language support __[roadmap](#roadmap).___
 
-- __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__ [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
-- __[TypeScript](https://www.typescriptlang.org):__ [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
-- __[Svelte](https://svelte.dev):__ [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
+- __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__  [`eslint`](https://eslint.org)
+- __[TypeScript](https://www.typescriptlang.org):__ [`@typescript-eslint`](https://typescript-eslint.io/) + [`eslint`](https://eslint.org)
+- __[Svelte](https://svelte.dev):__ [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`eslint`](https://eslint.org)
 - __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):__ [`@html-eslint`](https://html-eslint.org/)
 
 ### Data
 
 - __[JSON](https://json.org) & [JSONC](https://code.visualstudio.com/docs/languages/json#_json-with-comments):__ [`eslint-plugin-jsonc`](https://ota-meshi.github.io/eslint-plugin-jsonc/)
 - __[YAML](https://redhat.com/en/topics/automation/what-is-yaml):__ [`eslint-plugin-yml`](https://ota-meshi.github.io/eslint-plugin-yml/)
-
-### Library
-
-- __[Mocha](https://mochajs.org/):__ [`eslint-plugin-mocha`](https://github.com/lo1tuma/eslint-plugin-mocha) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`@stylistic`](https://eslint.style) + [`eslint`](https://eslint.org)
 
 ## Features
 
@@ -46,7 +42,6 @@ No need to remember each plugin's `parserOptions`; you won't have to do _this_ j
 ```javascript
     // lint TypeScript blocks in Svelte
     plugins: {
-      "@stylistic": stylistic,
       "@typescript-eslint": ts,
       svelte,
     },
