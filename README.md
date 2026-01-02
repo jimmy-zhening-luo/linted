@@ -1,4 +1,5 @@
 # [`linted`](https://www.npmjs.com/package/linted)
+
 [![NPM Publish](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml/badge.svg)](https://github.com/jimmy-zhening-luo/linted/actions/workflows/RELEASE.yml)
 
 > [!CAUTION]
@@ -18,10 +19,11 @@
 ## Languages
 
 ### Web
+
 > [!NOTE]
 > _See language support __[roadmap](#roadmap).___
 
-- __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__  [`eslint`](https://eslint.org)
+- __[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript):__ [`eslint`](https://eslint.org)
 - __[TypeScript](https://www.typescriptlang.org):__ [`@typescript-eslint`](https://typescript-eslint.io/) + [`eslint`](https://eslint.org)
 - __[Svelte](https://svelte.dev):__ [`eslint-plugin-svelte`](https://sveltejs.github.io/eslint-plugin-svelte/) + [`@typescript-eslint`](https://typescript-eslint.io/) + [`eslint`](https://eslint.org)
 - __[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML):__ [`@html-eslint`](https://html-eslint.org/)
@@ -34,30 +36,32 @@
 ## Features
 
 ### Zero-Dependency
+
 No need to install 17 plugins and 12 parsers: each language's latest plugin is bundled and configured.
 
 ### Zero-Config
+
 No need to remember each plugin's `parserOptions`; you won't have to do _this_ just to enable Svelte linting:
 
 ```javascript
-    // lint TypeScript blocks in Svelte
-    plugins: {
-      "@typescript-eslint": ts,
-      svelte,
-    },
-    languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-      parser: svelteParser,
-      parserOptions: {
-        parser: tsParser,
-        ecmaVersion: "latest",
-        sourceType: "module",
-        project: "tsconfig.json",
-        extraFileExtensions: [".svelte"],
-      },
-    },
-    processor: "svelte/svelte",
+// lint TypeScript blocks in Svelte
+plugins: {
+  "@typescript-eslint": ts,
+  svelte,
+},
+languageOptions: {
+  ecmaVersion: "latest",
+  sourceType: "module",
+  parser: svelteParser,
+  parserOptions: {
+    parser: tsParser,
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: "tsconfig.json",
+    extraFileExtensions: [".svelte"],
+  },
+},
+processor: "svelte/svelte",
 ```
 
 ### Zero-Arugment API
@@ -96,13 +100,12 @@ linted(
       "src/**/*.ts",
       "*.config.ts",
     ],
-
     // svelte: [],
     // html: [],
 
     /* ...json, jsonc, yml, */
   },
-)
+);
 ```
 
 #### `ignores` _(Global)_
@@ -125,8 +128,8 @@ linted(
 
 ```javascript
 linted(
-  { /** includes **/ },
-  { /** ignores **/ },
+  {/** includes **/},
+  {/** ignores **/},
   {
     /** overrides **/
     overrideJs: {}, /* js rule overrides */
@@ -138,16 +141,17 @@ linted(
       "no-unused-vars": "off", /* example: ESLint base rule */
       "@typescript-eslint/indent": "warn", /* example: TypeScript plugin rule */
     }, /* js rule overrides */
-
     /* ...overrideTs, overrideSvelte, overrideHtml, overrideJson, overrideJsonc, overrideYml, */
   },
-)
+);
 ```
 
 ## Limitation
+
 In __TypeScript__ projects, [`skipLibCheck`](https://www.typescriptlang.org/tsconfig/#skipLibCheck) must be `true`.
 
 ### Enable `skipLibCheck`
+
 By default, `skipLibCheck` is `false`. To set it to `true`:
 
 #### `tsconfig.json`
@@ -170,28 +174,28 @@ tsc --skipLibCheck
 
 1. Install [`eslint`](https://www.npmjs.com/package/eslint) and [`linted`](https://www.npmjs.com/package/linted).
 
-    ```bash
-    npm i -D eslint@^8.57 linted
-    ```
+   ```bash
+   npm i -D eslint@^8.57 linted
+   ```
 
 1. Create `eslint.config.js` in your project root.
 
 1. In `eslint.config.js`:
-    + Import function `linted`.
+   - Import function `linted`.
 
-        ```javascript
-        import linted from "linted";
-        ```
+     ```javascript
+     import linted from "linted";
+     ```
 
-    + Export `linted` with optional [arguments](#total-control-via-optional-arguments):
+   - Export `linted` with optional [arguments](#total-control-via-optional-arguments):
 
-        ```javascript
-        import linted from "linted";
+     ```javascript
+     import linted from "linted";
 
-        export default linted(
-          // ...
-        );
-        ```
+     export default linted(
+       // ...
+     );
+     ```
 
 ---
 
@@ -213,11 +217,11 @@ tsc --skipLibCheck
 
 - Svelte Interaction TBD
 
-    + .svelte-embedded HTML (on top of Svelte HTML rules)
+  - .svelte-embedded HTML (on top of Svelte HTML rules)
 
-    + .html files in Svelte projects (e.g. title not required)
+  - .html files in Svelte projects (e.g. title not required)
 
-    + Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
+  - Should Svelte-Linter handle all .html / HTML-embedded linting for Svelte projects, and HTML-Linter only handles non-Svelte projects?
 
 #### JSON (Custom Schema Validation)
 
@@ -228,6 +232,7 @@ tsc --skipLibCheck
 ## Rule Logic (Advanced)
 
 ### What is `scope`?
+
 Each `scope` maps to a unique `language`:
 
 - __`js`:__ `JavaScript`
@@ -239,6 +244,7 @@ Each `scope` maps to a unique `language`:
 - __`yml`:__ `YAML`
 
 ### Rules
+
 Each `scope` supports:
 
 - all base ESLint rules
@@ -249,6 +255,7 @@ Each `scope` supports:
 - Each `language` has a set of default rules.
 
 #### Language-Aggregate `scope`
+
 A `language` can be an extension of or depend on another `language`.
 
 For example:
@@ -271,53 +278,57 @@ For such a `language`, its `scope`'s default rules are aggregated with the defau
 #### Global Ignores
 
 ##### `.gitignore`
+
 By default, `linted` ignores all files in `.gitignore`. This behavior can be disabled.
 
 ##### `package-lock.json`
+
 `**/*.package-lock.json` is always skipped. _This cannot be overriden._
 
 ##### `ignores`
+
 Additional glob patterns supplied if matched by a file will skip linting that file, even if a scope pattern matches the file.
 
 #### Scoped Includes
+
 Files specified in `scope` are appended to the following default files:
 
 ```javascript
-  {
-    js: [
-      "{src,static}/**/*.{js,mjs,cjs}",
-      "*.{js,mjs,cjs}",
-    ],
-    ts: [
-      "{src,static}/**/*.{ts,mts,cts}",
-      "*.{ts,mts,cts}",
-    ],
-    svelte: ["{src,static}/**/*.svelte"],
-    html: [
-      "{src,static}/**/*.html",
-      "*.html",
-    ],
-    json: [
-      "{src,static}/**/*.json",
-      "*.json",
-    ],
-    jsonc: [
-      "tsconfig.json",
-      "{src,static}/**/*.jsonc",
-      "*.jsonc",
-    ],
-    yml: [
-      ".github/workflows/*.{yml,yaml}",
-      "{src,static}/**/*.{yml,yaml}",
-      "*.{yml,yaml}",
-    ],
-  },
+{
+  js: [
+    "{src,static}/**/*.{js,mjs,cjs}",
+    "*.{js,mjs,cjs}",
+  ],
+  ts: [
+    "{src,static}/**/*.{ts,mts,cts}",
+    "*.{ts,mts,cts}",
+  ],
+  svelte: ["{src,static}/**/*.svelte"],
+  html: [
+    "{src,static}/**/*.html",
+    "*.html",
+  ],
+  json: [
+    "{src,static}/**/*.json",
+    "*.json",
+  ],
+  jsonc: [
+    "tsconfig.json",
+    "{src,static}/**/*.jsonc",
+    "*.jsonc",
+  ],
+  yml: [
+    ".github/workflows/*.{yml,yaml}",
+    "{src,static}/**/*.{yml,yaml}",
+    "*.{yml,yaml}",
+  ],
+},
 ```
 
 #### Scope Conflict
 
 - If a given file matches more than one `scope` glob, then the set of all matching `scope`s' rules are applied to the file.
-- If any rule is specified in more than one `scope` matching a given file, the  specifies a rule, then the highest-precedence `scope`'s rule specification wins.
+- If any rule is specified in more than one `scope` matching a given file, the specifies a rule, then the highest-precedence `scope`'s rule specification wins.
 
 ##### Scope Precedence (low to high)
 
@@ -333,14 +344,17 @@ ignores (global)
 ```
 
 ### Override
+
 Overrides are per-__scope.__
 
 #### Example
+
 `overrideTs` rules apply to files which:
 
 - ✅ ONLY match scope `ts`.
 - ✅ match scope `ts` and any number of lower precedence scopes (e.g. `js`).
   > [!NOTE]
   > `overrideTs` rules do __NOT__ apply to files which:
+  >
   > - TBD
 - ❌ match scope `ts` and at least one higher precedence scope (e.g. `svelte`), even if the higher precedence scope includes `ts` language default rules (e.g. `svelte` includes `ts` default rules, but NOT `overrideTs` rules).
