@@ -10,6 +10,7 @@ import defaults from "@eslinted/defaults";
 // #endregion
 
 // #region External
+import stylistic from "@stylistic/eslint-plugin";
 import {
   plugin as ts,
   parser as tsParser,
@@ -42,6 +43,7 @@ export default function (
 
   configs[configs.length] = {
     plugins: {
+      stylistic,
       ts: ts as unknown,
       html: html as unknown,
       css,
