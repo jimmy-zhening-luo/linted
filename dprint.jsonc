@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/jimmy-zhening-luo/dprint/refs/heads/main/dprint-schema.json",
   // $help: https://dprint.dev/config/
-  // $version: 0.5101.0
+  // $version: 0.5101.2
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.13.wasm",
     "https://plugins.dprint.dev/json-0.21.0.wasm",
@@ -204,7 +204,7 @@
     "linebreakInPseudoParens": true,
     "declarationOrder": null,
     "declarationOrderGroupBy": "nonDeclaration",
-    "singleLineBlockThreshold": 1,
+    "singleLineBlockThreshold": null,
     "keyframeSelectorNotation": "keyword",
     "attrValueQuotes": "always",
     "preferSingleLine": false,
