@@ -60,12 +60,12 @@
     "@eslint/css": "0.14.1",
     "@eslint/json": "0.14.0",
     "@eslinted/core": "32.2.0",
-    "@eslinted/defaults": "19.1.0",
+    "@eslinted/defaults": "19.1.1",
     "@html-eslint/eslint-plugin": "0.52.1",
     "@stylistic/eslint-plugin": "5.7.0",
     "eslint-plugin-jsonc": "2.21.0",
     "eslint-plugin-yml": "1.19.1",
-    "typescript-eslint": "8.52.0"
+    "typescript-eslint": "8.53.0"
   },
   "devDependencies": {
     "@types/chai": "^5.2.3",
