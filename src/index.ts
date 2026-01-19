@@ -48,8 +48,8 @@ export default function (
       json,
       jsonc,
       yml,
-    },
-  } as { plugins: Record<string, unknown> };
+    } as Record<string, unknown>,
+  };
 
   return configs;
 }
