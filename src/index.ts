@@ -49,7 +49,7 @@ export default function (
       jsonc: jsonc as unknown,
       yml: yml as unknown,
     },
-  };
+  } as typeof configs[number];
 
   return configs;
 }
