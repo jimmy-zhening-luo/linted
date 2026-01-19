@@ -65,7 +65,7 @@
     "@stylistic/eslint-plugin": "5.7.0",
     "eslint-plugin-jsonc": "2.21.0",
     "eslint-plugin-yml": "3.0.0",
-    "typescript-eslint": "8.53.0"
+    "typescript-eslint": "8.53.1"
   },
   "devDependencies": {
     "@types/chai": "^5.2.3",
