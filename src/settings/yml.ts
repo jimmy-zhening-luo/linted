@@ -3,4 +3,5 @@ export default {
   languageOptions: {
     parser: "yml",
   },
+  language: "yml/yaml",
 };

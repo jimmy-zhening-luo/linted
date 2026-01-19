@@ -21,7 +21,7 @@ import css from "@eslint/css";
 import json from "@eslint/json";
 import jsonc from "eslint-plugin-jsonc";
 import yml from "eslint-plugin-yml";
-import ymlParser from "yaml-eslint-parser";
+import * as ymlParser from "yaml-eslint-parser";
 // #endregion
 
 export default function (
