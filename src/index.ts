@@ -48,8 +48,8 @@ export default function (
       json,
       jsonc,
       yml,
-    } as Record<string, unknown>,
-  };
+    },
+  } as unknown;
 
   return configs;
 }
