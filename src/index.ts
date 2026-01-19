@@ -41,15 +41,15 @@ export default function (
 
   configs[configs.length] = {
     plugins: {
-      stylistic: stylistic as unknown,
+      stylistic,
       ts: ts as unknown,
       html: html as unknown,
-      css: css as unknown,
-      json: json as unknown,
-      jsonc: jsonc as unknown,
-      yml: yml as unknown,
+      css,
+      json,
+      jsonc,
+      yml,
     },
-  } as typeof configs[number];
+  } as { plugins: Record<string, unknown> };
 
   return configs;
 }
