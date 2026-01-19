@@ -4,7 +4,7 @@ export default {
   languageOptions: {
     parser: "html",
     parserOptions: {
-      frontmatter: true /* @default: false | INFO: https://html-eslint.org/docs/integrating-template-engine#skip-frontmatter */,
+      frontmatter: true,
     } satisfies ParserOptions,
   },
   language: "html/html",

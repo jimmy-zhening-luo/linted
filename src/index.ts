@@ -32,7 +32,7 @@ export default function (
     tree,
     {
       ts: tsParser as unknown,
-      html: htmlParser,
+      html: htmlParser as unknown,
     },
     settings,
     defaults,
@@ -41,13 +41,13 @@ export default function (
 
   configs[configs.length] = {
     plugins: {
-      stylistic,
+      stylistic: stylistic as unknown,
       ts: ts as unknown,
       html: html as unknown,
-      css,
-      json,
-      jsonc,
-      yml,
+      css: css as unknown,
+      json: json as unknown,
+      jsonc: jsonc as unknown,
+      yml: yml as unknown,
     },
   };
 

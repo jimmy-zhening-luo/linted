@@ -15,7 +15,7 @@ export default {
       },
       projectService: true,
       warnOnUnsupportedTypeScriptVersion: false,
-      extraFileExtensions: [".svelte"] /* BUG: Needed to avoid performance issues in Svelte/TS projects: https://typescript-eslint.io/troubleshooting/typed-linting/performance/#changes-to-extrafileextensions-with-projectservice */,
+      extraFileExtensions: [".svelte"],
     } satisfies TsParserOptions,
   },
 
