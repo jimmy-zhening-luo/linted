@@ -61,11 +61,11 @@
     "@eslint/json": "0.14.0",
     "@eslinted/core": "32.2.0",
     "@eslinted/defaults": "19.3.1",
-    "@html-eslint/eslint-plugin": "0.53.0",
+    "@html-eslint/eslint-plugin": "0.54.0",
     "@stylistic/eslint-plugin": "5.7.1",
     "eslint-plugin-jsonc": "2.21.0",
     "eslint-plugin-yml": "3.0.0",
-    "typescript-eslint": "8.53.1"
+    "typescript-eslint": "8.54.0"
   },
   "devDependencies": {
     "@types/chai": "^5.2.3",
