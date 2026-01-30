@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "@eslint/css": "0.14.1",
-    "@eslint/json": "0.14.0",
+    "@eslint/json": "1.0.0",
     "@eslinted/core": "32.2.1",
     "@eslinted/defaults": "19.3.2",
     "@html-eslint/eslint-plugin": "0.54.0",
