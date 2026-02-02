@@ -61,7 +61,7 @@
     "@eslint/json": "1.0.0",
     "@eslinted/core": "32.2.1",
     "@eslinted/defaults": "19.3.2",
-    "@html-eslint/eslint-plugin": "0.54.0",
+    "@html-eslint/eslint-plugin": "0.54.2",
     "@stylistic/eslint-plugin": "5.7.1",
     "eslint-plugin-jsonc": "2.21.0",
     "eslint-plugin-yml": "3.0.0",
