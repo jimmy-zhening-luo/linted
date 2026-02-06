@@ -1,5 +1,5 @@
 {
   // $help: https://dprint.dev/config/
-  // $version: 0.5101.5
+  // $version: 0.5101.6
   "extends": "https://raw.githubusercontent.com/jimmy-zhening-luo/dprint/main/.dprint.jsonc",
 }
