@@ -43,11 +43,8 @@
   },
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
-  "overrides": {
-    "eslint": "10.0.0"
-  },
   "peerDependencies": {
-    "eslint": "10.0.0",
+    "eslint": "9.39.2",
     "eslint-plugin-svelte": "~3.14.0",
     "typescript": "^5.9.3"
   },
