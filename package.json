@@ -62,7 +62,7 @@
     "@eslinted/core": "32.2.5",
     "@eslinted/defaults": "19.6.0",
     "@html-eslint/eslint-plugin": "0.55.0",
-    "@stylistic/eslint-plugin": "5.8.0",
+    "@stylistic/eslint-plugin": "5.9.0",
     "eslint-plugin-jsonc": "2.21.1",
     "eslint-plugin-yml": "3.2.1",
     "typescript-eslint": "8.56.0"
