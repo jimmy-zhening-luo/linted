@@ -44,7 +44,7 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "peerDependencies": {
-    "eslint": "~10.0.0",
+    "eslint": "~10.0.1",
     "eslint-plugin-svelte": "~3.15.0",
     "typescript": "^5.9.3"
   },
@@ -61,7 +61,7 @@
     "@eslint/json": "1.0.1",
     "@eslinted/core": "32.4.0",
     "@eslinted/defaults": "19.7.0",
-    "@html-eslint/eslint-plugin": "0.55.0",
+    "@html-eslint/eslint-plugin": "0.56.0",
     "@stylistic/eslint-plugin": "5.9.0",
     "eslint-plugin-jsonc": "2.21.1",
     "eslint-plugin-yml": "3.2.1",
