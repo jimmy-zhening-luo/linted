@@ -18,5 +18,4 @@ export default {
       extraFileExtensions: [".svelte"],
     } satisfies TsParserOptions,
   },
-
 };
