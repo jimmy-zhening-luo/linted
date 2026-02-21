@@ -1,9 +1,5 @@
 export const tree = [
   [
-    "jsoncc",
-    ["jsonc"],
-  ],
-  [
     "jsonc",
     ["json"],
   ],

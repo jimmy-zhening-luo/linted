@@ -7,7 +7,6 @@ export const scopes = [
   "css",
   "json",
   "jsonc",
-  "jsoncc",
   "yml",
 ] as const;
 
