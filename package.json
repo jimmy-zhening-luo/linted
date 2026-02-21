@@ -60,7 +60,7 @@
     "@eslint/css": "0.14.1",
     "@eslint/json": "1.0.1",
     "@eslinted/core": "32.4.0",
-    "@eslinted/defaults": "19.7.0",
+    "@eslinted/defaults": "20.0.0",
     "@html-eslint/eslint-plugin": "0.56.0",
     "@stylistic/eslint-plugin": "5.9.0",
     "eslint-plugin-jsonc": "3.0.0",
