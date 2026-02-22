@@ -1,5 +1,5 @@
 {
-  "$pkg": "2412.0.0",
+  "$pkg": "2413.0.0",
   "$schema": "https://json.schemastore.org/package",
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "name": "linted",
@@ -72,23 +72,19 @@
     "typescript": "^5.9.3"
   },
   "scripts": {
-    "clean": "cmd --% /c \"for %G in (types dist build packed .svelte-kit) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .svelte-kit .eslintcache",
-    "build": "npm run build:ts",
-    "build:ts": "tsc -b src",
+    "clean": "cmd /q /c \"for %G in (types dist build packed .svelte-kit) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .svelte-kit .eslintcache",
+    "build": "tsc -b src && ts-add-js-extension --showprogress=false --dir=dist",
     "build:svelte": "svelte-kit sync && svelte-check && vite build",
-    "postbuild:ts": "npm run --if-present stage && ts-add-js-extension --showprogress=false --dir=dist",
-    "postbuild": "npm run lint || exit 0",
+    "prestart": "npm run build",
+    "start": "node .",
+    "start:svelte": "vite preview --open",
     "lint": "eslint --cache --fix",
     "pretest": "npm run build",
-    "test": "npm run --if-present test:suite",
-    "prestart": "npm run build",
-    "start": "npm run start:ts",
-    "start:ts": "node .",
-    "start:svelte": "vite preview --open",
+    "test": "",
+    "posttest": "npm run lint || exit 0",
     "prepublishOnly": "npm run clean && npm test",
     "publish:release": "cmd /q /c \"for /f \"delims=-\" %a in (\"%npm_package_version%\") do if \"%a\" == \"%npm_package_version%\" (npm publish) else (npm publish --tag=next)\" || bash -c 'if [ \"${npm_package_version#*-}\" = \"${npm_package_version}\" ]; then npm publish; else npm publish --tag=next; fi'",
     "predeploy": "npm run clean && npm test",
-    "stage": "",
     "deploy": ""
   },
   "author": "Jimmy Zhening Luo <1450044+jimmy-zhening-luo@users.noreply.github.com> (https://jimm.my/)"
