@@ -8,10 +8,6 @@ export const tree = [
     ["ts"],
   ],
   [
-    "mocha",
-    ["ts"],
-  ],
-  [
     "ts",
     ["js"],
   ],

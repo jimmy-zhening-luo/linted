@@ -7,7 +7,7 @@
 
 ---
 
-[ESLint](https://eslint.org) mono-plugin bundler with strict, opinionated defaults for JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.
+[ESLint](https://eslint.org) mono-plugin bundler with strict, opinionated defaults for JavaScript, TypeScript, Svelte, HTML, CSS, JSON, JSONC, and YAML.
 
 1. [Languages](#languages)
 2. [Features](#features)
@@ -202,12 +202,6 @@ tsc --skipLibCheck
 ## Roadmap
 
 ### v11
-
-#### Tailwind
-
-- [Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
-
-- [CSS](https://ota-meshi.github.io/eslint-plugin-css/)
 
 #### HTML Embeds
 

@@ -5,7 +5,7 @@
   "name": "linted",
   "version": "39.1.0",
   "repository": "github:jimmy-zhening-luo/linted",
-  "description": "ESLint mono-plugin bundler with strict, opinionated defaults for JavaScript, TypeScript, Svelte, HTML, Tailwind/CSS, JSON, JSONC, YAML, and Mocha.",
+  "description": "ESLint mono-plugin bundler with strict, opinionated defaults for JavaScript, TypeScript, Svelte, HTML, CSS, JSON, JSONC, and YAML.",
   "keywords": [
     "eslint",
     "eslint-config",
@@ -17,8 +17,6 @@
     "sveltekit",
     "html",
     "css",
-    "mocha",
-    "tailwindcss",
     "json",
     "jsonc",
     "yaml"
