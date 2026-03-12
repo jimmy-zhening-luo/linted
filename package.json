@@ -55,15 +55,15 @@
     }
   },
   "dependencies": {
-    "@eslint/css": "0.14.1",
-    "@eslint/json": "1.0.1",
+    "@eslint/css": "1.0.0",
+    "@eslint/json": "1.1.0",
     "@eslinted/core": "33.1.2",
     "@eslinted/defaults": "21.1.1",
     "@html-eslint/eslint-plugin": "0.58.1",
     "@stylistic/eslint-plugin": "5.10.0",
     "eslint-plugin-jsonc": "3.1.1",
     "eslint-plugin-yml": "3.3.1",
-    "typescript-eslint": "8.56.1"
+    "typescript-eslint": "8.57.0"
   },
   "devDependencies": {
     "ts-add-js-extension": "^1.6.6",
