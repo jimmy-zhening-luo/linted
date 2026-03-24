@@ -41,10 +41,13 @@
   },
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
+  "overrides": {
+    "typescript": "^6.0.2"
+  },
   "peerDependencies": {
     "eslint": "~10.1.0",
     "eslint-plugin-svelte": "~3.16.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3 || ^6.0.2"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-svelte": {
@@ -57,17 +60,17 @@
   "dependencies": {
     "@eslint/css": "1.0.0",
     "@eslint/json": "1.2.0",
-    "@eslinted/core": "33.1.4",
-    "@eslinted/defaults": "21.1.3",
+    "@eslinted/core": "34.0.0",
+    "@eslinted/defaults": "22.0.0",
     "@html-eslint/eslint-plugin": "0.58.1",
     "@stylistic/eslint-plugin": "5.10.0",
     "eslint-plugin-jsonc": "3.1.2",
     "eslint-plugin-yml": "3.3.1",
-    "typescript-eslint": "8.57.1"
+    "typescript-eslint": "8.57.2"
   },
   "devDependencies": {
     "ts-add-js-extension": "^1.6.6",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "scripts": {
     "clean": "cmd /q /c \"for %G in (types dist build packed .svelte-kit) do (if exist %G rmdir /s /q %G) & for %G in (.eslintcache) do (if exist %G del /f /q %G)\" || rm -rf types dist build packed .svelte-kit .eslintcache",
