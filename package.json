@@ -3,7 +3,7 @@
   "$help": "https://docs.npmjs.com/cli/configuring-npm/package-json",
   "$schema": "https://json.schemastore.org/package",
   "name": "linted",
-  "version": "40.6.0",
+  "version": "41.0.0-rc.0",
   "repository": "github:jimmy-zhening-luo/linted",
   "description": "ESLint mono-plugin bundler with strict, opinionated defaults for JavaScript, TypeScript, Svelte, HTML, CSS, JSON, JSONC, and YAML.",
   "keywords": [
