@@ -42,7 +42,7 @@
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "peerDependencies": {
-    "eslint": "~10.1.0",
+    "eslint": "~10.2.0",
     "eslint-plugin-svelte": "~3.17.0",
     "typescript": "^5.9.3 || ^6.0.2"
   },
