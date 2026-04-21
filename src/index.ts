@@ -31,8 +31,8 @@ export default function (
     optional,
     tree,
     {
-      ts: tsParser as unknown,
-      html: htmlParser as unknown,
+      ts: tsParser,
+      html: htmlParser,
     },
     settings,
     defaults,
@@ -49,7 +49,7 @@ export default function (
       jsonc,
       yml,
     },
-  } as unknown;
+  };
 
   return configs;
 }
