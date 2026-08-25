@@ -56,11 +56,11 @@
     "@eslinted/defaults": "22.5.0",
     "@html-eslint/eslint-plugin": "0.65.0",
     "@stylistic/eslint-plugin": "5.10.0",
-    "eslint": "10.9.0",
+    "eslint": "10.9.1",
     "eslint-plugin-jsonc": "3.4.2",
     "eslint-plugin-yml": "3.8.1",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "8.67.0"
+    "typescript-eslint": "8.68.0"
   },
   "devDependencies": {
     "@typescript/native": "npm:typescript@^7.0.2",
