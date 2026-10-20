@@ -50,17 +50,17 @@
     }
   },
   "dependencies": {
-    "@eslint/css": "2.0.0",
-    "@eslint/json": "2.1.0",
+    "@eslint/css": "2.0.1",
+    "@eslint/json": "2.1.1",
     "@eslinted/core": "34.1.1",
-    "@eslinted/defaults": "22.6.0",
-    "@html-eslint/eslint-plugin": "0.66.1",
+    "@eslinted/defaults": "22.6.1",
+    "@html-eslint/eslint-plugin": "0.67.0",
     "@stylistic/eslint-plugin": "5.10.0",
-    "eslint": "10.11.0",
+    "eslint": "10.13.0",
     "eslint-plugin-jsonc": "3.4.2",
-    "eslint-plugin-yml": "3.8.1",
+    "eslint-plugin-yml": "3.9.0",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "8.70.1"
+    "typescript-eslint": "8.72.0"
   },
   "devDependencies": {
     "@typescript/native": "npm:typescript@^7.0.2",
